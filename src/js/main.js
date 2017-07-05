@@ -7,7 +7,7 @@
 /**
  * Example of Require.js boostrap javascript
  */
-
+var baseurl="http://digital-db.us.oracle.com:7003/";
 requirejs.config(
 {
   baseUrl: 'js',

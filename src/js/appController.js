@@ -22,7 +22,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.router.configure({
         'welcome': { label: 'Welcome', isDefault: true },
         'cloudhubs': { label: 'Cloud Hubs' },
-        'profiles': { label: 'Profiles' },
+        'profileslist': { label: 'Profiles' },
+        'profiledetails': { label: 'Profile Details' },
         'catalogs': { label: 'Catalogs' },
         'assets': { label: 'Assets' },
         'performance': { label: 'Performance' }
@@ -35,7 +36,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       var navData = [
         { name: 'Welcome', id: 'welcome' },
         { name: 'Cloud Hubs', id: 'cloudhubs' },
-        { name: 'Profiles', id: 'profiles' },
+        { name: 'Profiles', id: 'profileslist' },
         { name: 'Catalogs', id: 'catalogs' },
         { name: 'Assets', id: 'assets' },
         { name: 'Perfomances', id: 'performance' }

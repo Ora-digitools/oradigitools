@@ -1,0 +1,39 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+
+<style>
+  .bg {
+    background-color: #F1F2F6;
+    border: 1px solid #D8DDE1;
+    height: 150px
+  }
+</style>
+<div>
+  <div class="oj-flex ">
+    <div class="oj-flex-item bg oj-lg-4">
+      <div class="oj-flex oj-flex-items-pad">
+        <div class="oj-flex-item oj-lg-2" style="padding-top:20px;">
+          <img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png" height="auto" width="80">
+        </div>
+        <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span ><h3 data-bind="text: profile().name"></h3></span></div>
+      </div>
+    </div>
+    <div class="oj-flex-item  bg oj-lg-4">
+      <div class="oj-flex oj-flex-items-pad oj-lg-align-items-center">
+        <div class="oj-flex-item oj-lg-8"><span ><h3 data-bind="text: profile().title()"></h3></span></div>
+      </div>
+    </div>
+    <div class="oj-flex-item bg oj-lg-4">
+      <div class="oj-flex oj-flex-items-pad oj-lg-align-items-center">
+        <div class="oj-flex-item oj-lg-8">
+                  <div class="oj-flex-item "  ><span data-bind="text: uuid"><h4 style="color:#8EB9D9" data-bind="text: profile().state()"></h4></span></div>
+                  <!--<div class="oj-flex-item " ><span data-bind="text: uuid"><h4 style="color:#8EB9D9" data-bind="text: profile().work_email()"></h4></span></div>
+                  <div class="oj-flex-item " ><span data-bind="text: uuid"><h4 style="color:#8EB9D9" data-bind="text: profile().work_phone()"></h4></span></div>-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
