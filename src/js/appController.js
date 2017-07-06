@@ -24,8 +24,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         'cloudhubs': { label: 'Cloud Hubs' },
         'profileslist': { label: 'Profiles' },
         'profiledetails': { label: 'Profile Details' },
-        'catalogs': { label: 'Catalogs' },
-        'assets': { label: 'Assets' },
+        '': { label: 'Catalogs' },
+        '': { label: 'Assets' },
         'performance': { label: 'Performance' }
       });
 
@@ -34,7 +34,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
       // Navigation setup
       var navData = [
-        { name: 'Welcome', id: 'welcome' },
+        { name: 'Welcome', id: 'welcome'},
         { name: 'Cloud Hubs', id: 'cloudhubs' },
         { name: 'Profiles', id: 'profileslist' },
         { name: 'Catalogs', id: 'catalogs' },

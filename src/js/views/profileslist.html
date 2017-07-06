@@ -13,26 +13,37 @@
         padding: 10px;
         border: 1px solid #D8DDE1;
     }
-    .space{
-        padding: 5px;
+    .bgpos {
+        background-color: #F1F2F6;
+        padding-left: 5px;
+        border: 1px solid #D8DDE1;
     }
+
+    .curpos{
+        font-weight: bold;
+        color: navy;
+    }
+
 </style>
-<div class="oj-lg-12 row">
-    <div class="oj-lg-6">
-        <h2>Profile</h2>
-    </div>
-    <div class="oj-lg-5" style="align-text:center">
-        <input id="inputSearch" placeholder="Search..." data-bind="ojComponent: {
+
+<div class="oj-lg-12 bgpos" ><h5 curpos>where are we: Home/SE faces</h5></div>
+<div class="oj-flex row oj-lg-12 oj-md-12 oj-sm-12" style="padding-top:8px">
+                            <div class="oj-md-5 ">
+                                <span class="data"><h2>Profile</h2><span class="data"></span>
+                                </span>
+                            </div>
+                            <div class="oj-md-4">
+                                <span class="data"><input id="inputSearch" placeholder="Search a profile..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             value: keyword,
             options: tags,
             optionChange: valueChangeHandle,
-            rootAttributes: {style:'max-width: 20em'}}">
-    </div>
+            rootAttributes: {style:'max-width: 20em'}}"></span>
+                            </div>
 </div>
 <ul id="listview" aria-label="list using array" data-bind="ojComponent: 
     {component: 'ojListView', data: dataSource, selection: selectedItems,
-item: {template: 'server_template'}, selectionMode: 'single'},optionChange: logSelected">
+item: {template: 'server_template'}, selectionMode: 'single'},click: opendetails">
 </ul>
 
 <script type="text/html" id="server_template">
@@ -50,7 +61,7 @@ item: {template: 'server_template'}, selectionMode: 'single'},optionChange: logS
                 <div class="oj-flex row oj-lg-10 oj-md-10 oj-sm-10">
                     <div class="oj-md-10">
                         <span data-bind="text: title"></span>
-                        <div class="oj-flex row oj-lg-10 oj-md-10 oj-sm-10" style="padding-top:8px">
+                        <div class="oj-flex row oj-lg-12 oj-md-12 oj-sm-12" style="padding-top:8px">
                             <div class="oj-md-4 ">
                                 <span class="data"><img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/mobile-icon-green.png" height=20 width=20><span class="data"><b> Mobile: </b><span data-bind="text: mobile_phone"></span></span>
                                 </span>
@@ -58,14 +69,13 @@ item: {template: 'server_template'}, selectionMode: 'single'},optionChange: logS
                             <div class="oj-md-4">
                                 <span class="data"><img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/phone-icon-orange.png" height=20 width=20><span class="data"><b> Work Phone: </b><span data-bind="text: work_phone"></span></span>
                             </div>
+                            <div class="oj-md-4">
+                                <span class="data"><img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/mail-icon-blue.png" height=20 width=20><span class="data"><b> Work Email: </b><span data-bind="text: work_email"></span></span>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-
-            <div class="oj-lg-12 oj-md-6 oj-sm-4" style="max-width:70px;padding-bottom:5px">
-                <span class="space"><img class="oj-lg-5" src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/mail-icon-blue.png" ><span class="space"><img class="oj-lg-5" src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/address-icon-purple.png" ></span>
             </div>
         </div>
     </li>

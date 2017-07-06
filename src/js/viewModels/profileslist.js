@@ -14,10 +14,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.data = ko.observableArray();
       self.renderData = ko.observableArray();
      self.selectedItems = ko.observableArray([]);
-     
+
       self.opendetails = function (event,ui) {
-        var uuid = ui.item.attr('id');
-        alert(uuid);
+         self.router = oj.Router.rootInstance;
+         self.router.go('profiledetails');
       }
 
       self.logSelected = function(event, ui)
@@ -50,7 +50,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       this.valueChangeHandle = function (context, ui) {
         console.log(self.data().length);
         self.renderData.removeAll();
-        if (ui.value != 'Search...' && ui.value != '' && ui.value.length > 1) {
+        if (ui.value != 'Search a profile...' && ui.value != '' && ui.value.length > 1) {
           for (var i = 0; i < self.data().length; i++) {
             try {
               console.log(self.data()[i].name.toLowerCase() + "   " + ui.value.toLowerCase());
