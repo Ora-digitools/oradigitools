@@ -13,44 +13,29 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       var self = this;
       self.data = ko.observableArray();
       self.renderData = ko.observableArray();
-     self.selectedItems = ko.observableArray([]);
 
-      self.opendetails = function (event,ui) {
-         self.router = oj.Router.rootInstance;
-         self.router.go('profiledetails');
-      }
-
-      self.logSelected = function(event, ui)
-        {
-            // Custom logic on selected elements
-            if (ui.option === 'selection')
-            {
-                // Access selected elements via ui.items
-                var selectedIdsArray = $.map(ui.items, function(selectedListItem) {
-                    return selectedListItem.id;
-                });
-                alert(selectedIdsArray); // show selected list item elements' ids
-            }
-
-            // Custom logic on current item element
-            if (ui.option === 'currentItem')
-            {
-                // Access current item via ui.item
-                var currentItemId = ui.item.attr('id');
-                alert("currentItemId:"+ currentItemId)
-                // launch popup to show current item element's id when current item changes
-            
-            }
-        }
+      self.currentItemId = ko.observable();
 
       this.tags = ko.observableArray([]);
-
       this.keyword = ko.observableArray();
 
-      this.valueChangeHandle = function (context, ui) {
+      self.valueChangeHandle = function () { }
+
+      self.logSelected = function (event, ui) {
+
+        if (ui.option === 'currentItem') {
+
+          selecteduuid = ui.item.attr('id');
+          self.router = oj.Router.rootInstance;
+          self.router.go('profiledetails');
+
+        }
+      }
+
+      this.searchhandler = function (context, ui) {
         console.log(self.data().length);
         self.renderData.removeAll();
-        if (ui.value != 'Search a profile...' && ui.value != '' && ui.value.length > 1) {
+        if (ui.value != 'Search faces...' && ui.value != '' && ui.value.length > 1) {
           for (var i = 0; i < self.data().length; i++) {
             try {
               console.log(self.data()[i].name.toLowerCase() + "   " + ui.value.toLowerCase());
@@ -71,13 +56,21 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
           }
         }
       }
-      
+
+
       $.getJSON(baseurl + "ords/seaas_stage/seaas/GetUserProfiles").
         then(function (profiles) {
           console.log(">> " + profiles.items.length);
           $.each(profiles.items, function () {
+
+            var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
+            if (!this.profile_photo_url.endsWith("GetPhoto/")) {
+              imageurl = this.profile_photo_url;
+            }
+
+
             var profile = {
-              icon: 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png',
+              icon: imageurl,
               name: this.display_name,
               title: this.title,
               work_email: this.work_email,
@@ -86,11 +79,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
               city: this.city,
               state: this.state,
               country: this.country,
-              uuid:this.uuid
+              uuid: this.uuid
             };
             if (this.display_name != "Subrah Kalaga") {
               self.data.push(profile);
               self.renderData.push(profile);
+              // profileList.push(profile);
             }
           });
         });

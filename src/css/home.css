@@ -1,0 +1,40 @@
+/*.oj-web-applayout-content{
+  background-image: url("../../css/images/home-page-bg.jpg");
+}*/
+@media only screen and (max-width:500px){
+  img{
+    width: 75px;
+    height: 80px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 13px;
+  }
+  .icon{
+    margin: 20px 0px 10px 0px;
+    width:45%;
+    display: inline-block;
+  }
+  .caption{
+    text-align: center;
+  }
+}
+@media only screen and (min-width:510px){
+
+.icon{
+    width: 105px;
+    vertical-align: top;
+    display: inline-block;
+    margin: 20px 10px 0px 10px;
+}
+}
+h3{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.home{
+  margin: auto;
+  width: 60%;
+}
+.caption{
+  text-align: center;
+}

@@ -13,46 +13,54 @@
         padding: 10px;
         border: 1px solid #D8DDE1;
     }
+
     .bgpos {
         background-color: #F1F2F6;
         padding-left: 5px;
         border: 1px solid #D8DDE1;
     }
 
-    .curpos{
+    .curpos {
         font-weight: bold;
         color: navy;
     }
-
 </style>
-
-<div class="oj-lg-12 bgpos" ><h5 curpos>where are we: Home/SE faces</h5></div>
+<link rel="stylesheet" href="../../css/hub.css">
+<div class="oj-lg-12 bgpos">
+    <ul class="breadcrumb">
+        <li><a href="/?root">Home</a></li>
+        <li>SE Faces</li>
+    </ul>
+</div>
 <div class="oj-flex row oj-lg-12 oj-md-12 oj-sm-12" style="padding-top:8px">
-                            <div class="oj-md-5 ">
-                                <span class="data"><h2>Profile</h2><span class="data"></span>
-                                </span>
-                            </div>
-                            <div class="oj-md-4">
-                                <span class="data"><input id="inputSearch" placeholder="Search a profile..." data-bind="ojComponent: {
+    <div class="oj-md-5 ">
+        <span class="data"><h2>SE Faces</h2><span class="data"></span>
+        </span>
+    </div>
+    <div class="oj-md-4">
+        <span class="data"><input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             value: keyword,
             options: tags,
-            optionChange: valueChangeHandle,
+            optionChange: searchhandler,
             rootAttributes: {style:'max-width: 20em'}}"></span>
-                            </div>
+    </div>
 </div>
-<ul id="listview" aria-label="list using array" data-bind="ojComponent: 
-    {component: 'ojListView', data: dataSource, selection: selectedItems,
-item: {template: 'server_template'}, selectionMode: 'single'},click: opendetails">
+<ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
+            component: 'ojListView', data: dataSource, selection: currentItemId,
+            item: {template: 'server_template'}, 
+            selectionMode: 'single',
+            optionChange: logSelected
+        }">
 </ul>
 
 <script type="text/html" id="server_template">
     <li data-bind="attr: {id: $data['uuid']}">
         <div class="oj-flex bg">
             <div class="oj-lg-2 oj-md-2 oj-sm-10" style="max-width:70px;padding-bottom:5px">
-                <img data-bind="attr: {src: icon, alt: name}" height=60 width=60></img>
+                <img data-bind="attr: {src: icon, alt: name}" height=60 width='auto'></img>
             </div>
-            <div class="oj-lg-10 oj-md-10 oj-sm-10" >
+            <div class="oj-lg-10 oj-md-10 oj-sm-10">
                 <div class="oj-flex row oj-lg-10 oj-md-10 oj-sm-10">
                     <div class="oj-lg-10">
                         <span class="header bold" data-bind="text:name"></span>

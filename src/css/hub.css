@@ -1,0 +1,87 @@
+
+@media only screen and (max-width:1059px){
+   .hub-video, .mission, .strategy{
+      vertical-align: top;
+      display: inline-block;
+      width:45%;
+      margin-left: 40px;
+   }
+   .service, .focus{
+      width:70%;
+      margin-left: 50px;
+   }
+}
+@media only screen and (min-width:1060px){
+   .hub-video, .hub-info{
+      vertical-align: top;
+      display: inline-block;
+      width:45%;
+      margin-left: 40px;
+   }
+   .service{
+      width:70%;
+      margin-left: 50px;
+   }
+}
+
+h2{
+   text-decoration: underline;
+
+}
+.hub-pic{
+   width:40%;
+   border-right: 2px solid grey;
+   padding-right: 20px;
+   margin-left: 20px;
+   margin-top: 10px;
+}
+.hub-pic, .hub-text{
+   vertical-align: top;
+   display: inline-block;
+}
+.hub-text{
+   width:50%;
+   margin-left: 20px;
+}
+h3{
+ text-align: center;
+ margin-bottom: 10px;
+}
+
+ul.breadcrumb {
+
+list-style: none;
+
+font-size: 17px;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+padding: 8px;
+color: black;
+content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+color: #0275d8;
+text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+color: #01447e;
+text-decoration: underline;
+}
+
+    .bgpos {
+        background-color: #F1F2F6;
+        padding-left: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #D8DDE1;
+    }

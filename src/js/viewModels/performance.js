@@ -3,37 +3,75 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your dashboard ViewModel code goes here
+ * Your incidents ViewModel code goes here
  */
 define(['ojs/ojcore', 'knockout', 'jquery'],
  function(oj, ko, $) {
   
-    function DashboardViewModel() {
+    function IncidentsViewModel() {
       var self = this;
-      self.profile=ko.observable();
+      // Below are a subset of the ViewModel methods invoked by the ojModule binding
+      // Please reference the ojModule jsDoc for additionaly available methods.
+
+      /**
+       * Optional ViewModel method invoked when this ViewModel is about to be
+       * used for the View transition.  The application can put data fetch logic
+       * here that can return a Promise which will delay the handleAttached function
+       * call below until the Promise is resolved.
+       * @param {Object} info - An object with the following key-value pairs:
+       * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
+       * @param {Function} info.valueAccessor - The binding's value accessor.
+       * @return {Promise|undefined} - If the callback returns a Promise, the next phase (attaching DOM) will be delayed until
+       * the promise is resolved
+       */
+      self.handleActivated = function(info) {
+        // Implement if needed
+      };
+
+      /**
+       * Optional ViewModel method invoked after the View is inserted into the
+       * document DOM.  The application can put logic that requires the DOM being
+       * attached here.
+       * @param {Object} info - An object with the following key-value pairs:
+       * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
+       * @param {Function} info.valueAccessor - The binding's value accessor.
+       * @param {boolean} info.fromCache - A boolean indicating whether the module was retrieved from cache.
+       */
+      self.handleAttached = function(info) {
+        // Implement if needed
+      };
 
 
-      $.getJSON(baseurl + "ords/seaas_stage/seaas/GetFullUserProfile/GWRIGHT").
-        then(function (profiles) {
-            self.profile({
-              icon: 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png',
-              name: ko.observable(profiles.items[0].display_name),
-              title: ko.observable(profiles.items[0].title),
-              work_email: ko.observable(profiles.items[0].work_email),
-              work_phone: ko.observable(profiles.items[0].work_phone),
-              mobile_phone: ko.observable(profiles.items[0].mobile_phone),
-              city: ko.observable(profiles.items[0].city),
-              state: ko.observable(profiles.items[0].state),
-              country: ko.observable(profiles.items[0].country),
-              uuid:ko.observable(profiles.items[0].uuid)
-            });
-            // alert(self.profile().work_email());
-           
-        });
-      
+      /**
+       * Optional ViewModel method invoked after the bindings are applied on this View. 
+       * If the current View is retrieved from cache, the bindings will not be re-applied
+       * and this callback will not be invoked.
+       * @param {Object} info - An object with the following key-value pairs:
+       * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
+       * @param {Function} info.valueAccessor - The binding's value accessor.
+       */
+      self.handleBindingsApplied = function(info) {
+        // Implement if needed
+      };
+
+      /*
+       * Optional ViewModel method invoked after the View is removed from the
+       * document DOM.
+       * @param {Object} info - An object with the following key-value pairs:
+       * @param {Node} info.element - DOM element or where the binding is attached. This may be a 'virtual' element (comment node).
+       * @param {Function} info.valueAccessor - The binding's value accessor.
+       * @param {Array} info.cachedNodes - An Array containing cached nodes for the View if the cache is enabled.
+       */
+      self.handleDetached = function(info) {
+        // Implement if needed
+      };
     }
 
-    
-    return new DashboardViewModel();
+    /*
+     * Returns a constructor for the ViewModel so that the ViewModel is constrcuted
+     * each time the view is displayed.  Return an instance of the ViewModel if
+     * only one instance of the ViewModel is needed.
+     */
+    return new IncidentsViewModel();
   }
 );

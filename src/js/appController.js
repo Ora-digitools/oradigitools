@@ -20,13 +20,14 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       // Router setup
       self.router = oj.Router.rootInstance;
       self.router.configure({
-        'welcome': { label: 'Welcome', isDefault: true },
+        'home': { label: 'Home', isDefault: true },
+        'welcome': { label: 'Welcome' },
         'cloudhubs': { label: 'Cloud Hubs' },
-        'profileslist': { label: 'Profiles' },
-        'profiledetails': { label: 'Profile Details' },
+        'profileslist': { label: 'SE Faces' },
+        'profiledetails': { label: 'ProfileDetails' },
         '': { label: 'Catalogs' },
         '': { label: 'Assets' },
-        'performance': { label: 'Performance' }
+        '': { label: 'Performance' }
       });
 
       //welcome,cloud hubs, profiles,catalogs, assets, performance
@@ -34,9 +35,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
       // Navigation setup
       var navData = [
-        { name: 'Welcome', id: 'welcome'},
+        { name: 'Home', id: 'home' },
+        { name: 'Welcome', id: 'welcome' },
         { name: 'Cloud Hubs', id: 'cloudhubs' },
-        { name: 'Profiles', id: 'profileslist' },
+        { name: 'SE Faces', id: 'profileslist' },
         { name: 'Catalogs', id: 'catalogs' },
         { name: 'Assets', id: 'assets' },
         { name: 'Perfomances', id: 'performance' }

@@ -9,47 +9,28 @@
     border: 1px solid #D8DDE1;
     height: 150px
   }
-
-  .txtblue {
-    color: #8EADBF;
+  .txtblue{
+    color:#8EADBF;
   }
-
-  .txtorange {
-    color: #FF8D14;
+  .txtorange{
+    color:#FF8D14;
   }
-
-  .txtdarkorange {
-    color: #CE6A00;
+  .txtdarkorange{
+    color:#CE6A00;
   }
-
   li:before {
-    background-color: #CE6A00;
+    background-color:#CE6A00;
   }
 
-  .bgpos {
-    background-color: #F1F2F6;
-    padding-left: 5px;
-    border: 1px solid #D8DDE1;
-    margin-bottom: 5px;
-  }
-
-  .curpos {
-    font-weight: bold;
-    color: navy;
-  }
 </style>
-<div class="oj-lg-12 bgpos">
-  <h5 curpos>where are we: Home/SE Details</h5>
-</div>
 <div>
   <div class="oj-flex bg ">
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-2" style="padding-top:20px;">
-          <img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png"
-            height="auto" width="80">
+          <img data-bind="attr: {src: profile().icon, alt: name}" height="80" width="auto">
         </div>
-        <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span><h2 class="txtorange">Gail Wright</h2></span><span><h4 class="txtblue">Solution Specialist, Enterprise Architecture</h4></span></div>
+        <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span ><h2 class="txtorange" data-bind="text: profile().name"></h2></span><span ><h4 class="txtblue" data-bind="text: profile().title"></h4></span></div>
       </div>
     </div>
     <div class="oj-flex-item oj-lg-4">
@@ -59,9 +40,9 @@
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad oj-lg-align-items-center">
         <div class="oj-flex-item oj-lg-8">
-          <div class="oj-flex-item "><span><h4 class="txtblue">Reston, USA</h4></span></div>
-          <div class="oj-flex-item "><span><h4 class="txtblue">gail.wright@oracle.com</h4></span></div>
-          <div class="oj-flex-item "><span><h4 class="txtblue">17033644218</h4></span></div>
+                  <div class="oj-flex-item "  ><span ><h4 class="txtblue" data-bind="text: profile().state"></h4></span></div>
+                  <div class="oj-flex-item " ><span ><h4 class="txtblue" data-bind="text: profile().work_email"></h4></span></div>
+                  <div class="oj-flex-item " ><span ><h4 class="txtblue" data-bind="text: profile().work_phone"></h4></span></div>
 
         </div>
       </div>
@@ -70,15 +51,15 @@
 
   <!--WORK SKILLS-->
   <div class="oj-flex" style="border-bottom:1px solid gray">
-    <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span><h2 class="txtdarkorange">Work Skills</h2></span></div>
-  </div>
-  <div class="oj-flex ">
+            <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span ><h2 class="txtdarkorange">Work Skills</h2></span></div>
+    </div>
+    <div class="oj-flex ">
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <li>Program management</li>
-          <li>PPT,Website & App Design</li>
-          <li>Enablement & Certification</li>
+                  <li >Program management</li>
+                  <li >PPT,Website & App Design</li>
+                  <li >Enablement & Certification</li> 
         </div>
       </div>
     </div>
@@ -89,24 +70,24 @@
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <li>Business & Enterprice architecture</li>
-          <li>Technical Writing</li>
-          <li>various</li>
+                  <li >Business & Enterprice architecture</li>
+                  <li >Technical Writing</li>
+                  <li >various</li> 
         </div>
       </div>
     </div>
   </div>
 
   <!--PROJECTS-->
-  <div class="oj-flex" style="border-bottom:1px solid gray">
-    <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span><h2 class="txtdarkorange">Projects</h2></span></div>
-  </div>
-  <div class="oj-flex ">
+   <div class="oj-flex" style="border-bottom:1px solid gray">
+            <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span ><h2 class="txtdarkorange">Projects</h2></span></div>
+    </div>
+    <div class="oj-flex ">
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <li>GEaaS</li>
-          <li>Target Digital Store</li>
+                  <li >GEaaS</li>
+                  <li >Target Digital Store</li>
         </div>
       </div>
     </div>
@@ -118,22 +99,22 @@
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <!--empty-->
+        <!--empty-->
         </div>
       </div>
     </div>
   </div>
 
   <!--LEARNING INTERESTS-->
-  <div class="oj-flex" style="border-bottom:1px solid gray">
-    <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span><h2 class="txtdarkorange">Learning Interests</h2></span></div>
-  </div>
-  <div class="oj-flex ">
+   <div class="oj-flex" style="border-bottom:1px solid gray">
+            <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span ><h2 class="txtdarkorange">Learning Interests</h2></span></div>
+    </div>
+    <div class="oj-flex ">
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <li>Mobile App Development</li>
-          <li>Digital Marketing</li>
+                  <li >Mobile App Development</li>
+                  <li >Digital Marketing</li>
         </div>
       </div>
     </div>
@@ -152,16 +133,16 @@
   </div>
 
   <!--OUTSIDE INSTERESTS & SOCIAL NETWORKING-->
-  <div class="oj-flex" style="border-bottom:1px solid gray">
-    <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span><h2 class="txtdarkorange">Outside Interests & Social Networking</h2></span></div>
-  </div>
-  <div class="oj-flex ">
+   <div class="oj-flex" style="border-bottom:1px solid gray">
+            <div class="oj-flex-item oj-lg-9" style="padding-top:25px;margin-left:10px"><span ><h2 class="txtdarkorange">Outside Interests & Social Networking</h2></span></div>
+    </div>
+    <div class="oj-flex ">
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <li>Crusing, biking, hiking, photography</li>
-          <li>Singing, piano/keyboard, Musical arrangement</li>
-          <li>Writing, Volunteering</li>
+                  <li >Crusing, biking, hiking, photography</li>
+                  <li >Singing, piano/keyboard, Musical arrangement</li>
+                  <li >Writing, Volunteering</li> 
         </div>
       </div>
     </div>
@@ -173,11 +154,19 @@
     <div class="oj-flex-item oj-lg-4">
       <div class="oj-flex oj-flex-items-pad">
         <div class="oj-flex-item oj-lg-8">
-          <li>On Facebook</li>
-          <li>On Linked In</li>
-          <li>Oracle Developer's Cloud Hub Meetup</li>
+                  <li >On Facebook</li>
+                  <li >On Linked In</li>
+                  <li >Oracle Developer's Cloud Hub Meetup</li> 
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div id="dialogWrapper">
+  <div style="display:none" id="dialog1" title="FETCHING PROFILE . . ." 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class ="oj-progressbar-embedded" id="progressbar" data-bind="ojComponent:{component: 'ojProgressbar', value: -1}"></div>
+
   </div>
 </div>

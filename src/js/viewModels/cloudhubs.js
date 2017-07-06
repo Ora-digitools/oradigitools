@@ -5,10 +5,16 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs/ojconveyorbelt'],
  function(oj, ko, $) {
-  
+
     function AboutViewModel() {
+      $(
+         function()
+         {
+            ko.applyBindings(null, document.getElementById('tabs-container'))
+         }
+      );
       var self = this;
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additionaly available methods.
@@ -43,7 +49,7 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
 
 
       /**
-       * Optional ViewModel method invoked after the bindings are applied on this View. 
+       * Optional ViewModel method invoked after the bindings are applied on this View.
        * If the current View is retrieved from cache, the bindings will not be re-applied
        * and this callback will not be invoked.
        * @param {Object} info - An object with the following key-value pairs:
@@ -66,6 +72,7 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
         // Implement if needed
       };
     }
+
 
     /*
      * Returns a constructor for the ViewModel so that the ViewModel is constrcuted
