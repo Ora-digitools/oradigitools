@@ -232,11 +232,12 @@ body {
 	text-decoration: underline
 }
 .cloud_hubs {
-	background: url(../img/cloud_hubs.jpg);
+	background: url(../img/cloud_hubs.jpg) no-repeat;
 	height: 232px;
 	color: #fff;
 	margin-bottom: 30px;
 	font-size: 20px;
+	background-size:cover;
 }
 .cloud_hubs h2 {
 	margin-top: 0px;
