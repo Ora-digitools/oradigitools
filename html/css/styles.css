@@ -351,6 +351,9 @@ footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.darkblue{
+	min-height: 240px;
+	}
 #text-carousel {
 	background-position: bottom;
 	background-color: #ddeff9
