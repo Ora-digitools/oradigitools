@@ -351,15 +351,18 @@ footer {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-.darkblue{
+.darkblue {
 	min-height: 240px;
-	}
+}
 #text-carousel {
 	background-position: bottom;
 	background-color: #ddeff9
 }
 .get_to_know, .how_to_engage {
 	margin-bottom: 20px;
+}
+.deliver img {
+	min-height: auto;
 }
 }
 
