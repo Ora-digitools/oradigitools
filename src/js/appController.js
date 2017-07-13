@@ -25,7 +25,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         'cloudhubs': { label: 'Cloud Hubs' },
         'profileslist': { label: 'SE Faces' },
         'profiledetails': { label: 'ProfileDetails' },
-        '': { label: 'Catalogs' },
+        '': { label: 'Catalogs'},
         '': { label: 'Assets' },
         '': { label: 'Performance' }
       });
@@ -39,9 +39,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         { name: 'Welcome', id: 'welcome' },
         { name: 'Cloud Hubs', id: 'cloudhubs' },
         { name: 'SE Faces', id: 'profileslist' },
-        { name: 'Catalogs', id: 'catalogs' },
-        { name: 'Assets', id: 'assets' },
-        { name: 'Perfomances', id: 'performance' }
+        { name: 'Catalogs', id: 'catalogs' ,'oj-disabled': 'disabled'},
+        { name: 'Assets', id: 'assets','oj-disabled': 'disabled' },
+        { name: 'Perfomances', id: 'performance','oj-disabled': 'disabled' }
       ];
       self.navDataSource = new oj.ArrayTableDataSource(navData, { idAttribute: 'id' });
 

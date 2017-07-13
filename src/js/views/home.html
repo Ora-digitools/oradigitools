@@ -1,31 +1,189 @@
-<link rel="stylesheet" href="../../css/home.css">
-<div class="oj-hybrid-padding">
-   <div class="home">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
 
-  <h3>Solution Engineering as a Service</h3>
-
-      <div class="icon">
-         <a href="/?root=welcome"><img src="../../css/images/welcome-icon.png" alt="" height="100"><p class="caption">Welcome</p></a>
+<!-- Bootstrap -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/styles.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../css/bootstrap.min.js"></script>
+</head>
+<div class="container-fluid">
+  <div class="row content">
+    <!-- Start Slider -->
+    <header class="role="banner" class="oj-web-applayout-header"">
+      <div class="col-md-12 orangeBg">
+        <!-- SearchBox -->
+        <div class="container">
+          <div class="col-lg-offset-7 col-lg-4 nopadding">
+            <div class="col-md-4 text-right nopadding searchTitle">Search</div>
+            <div class="col-md-8 searchbox">
+              <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+              <input class="form-control" placeholder="Search the site" type="search">
+            </div>
+          </div>
+          <!-- Contact Us -->
+          <div class="col-lg-1 text-right contactLink"><a href="#" class="navbar-link">Contact Us</a></div>
+        </div>
       </div>
-      <div class="icon">
-     <a href="?root=cloudhubs"><img src="../../css/images/our-centers-icon.png" alt="" height="100"><p class="caption">Cloud Hubs</p></a>
+      <div class="col-md-12 nopadding">
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <div class="col-xs-12 col-lg-5">
+              <div class="navbar-header logo">
+                <!-- Toggle for Mobile -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <!-- Logo -->
+                <a class="" href="#"><img src="../../css/images/logo.png" class="img-responsive"></a> </div>
+            </div>
+            <!-- Main Menu -->
+            <div class="col-xs-12 col-lg-7 mainNav nopadding">
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav  navbar-right">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="?root=profileslist">SE Faces</a></li>
+                  <li><a href="?root=assets">Assets</a></li>
+                  <li><a href="?root=performance">Performances</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
   </div>
-  <div class="icon">
-
-     <a href="?root=profiles"><img  src="../../css/images/profile-icon.png" alt="" height="100"><p class="caption">SE Faces</p></a>
+  <!-- Start Slider -->
+  <div class="row ccontainer">
+    <div id="text-carousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#text-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#text-carousel" data-slide-to="1"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="row">
+        <div class="container">
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="carousel-content">
+                <div>
+                  <div class="col-sm-6"><img src="../../css/images/slider_image.jpg" class="img-responsive"></div>
+                  <div class="col-sm-6">
+                    <p>Your source for innovative customer and industry Cloud Solutions, rapidly engineered and developed in
+                      our Oracle Cloud Hubs.</p>
+                    <p>“The Oracle Cloud Hubs fosters an environment of collaboration & innovation, servicing Oracle Sales and
+                      our customers in order to accelerate our Cloud business.” </p>
+                    <p> - Hamza Jahangir, VP, Oracle Cloud Hubs </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="carousel-content">
+                <div>
+                  <div class="col-sm-6"><img src="../../css/images/slider_image.jpg" class="img-responsive"></div>
+                  <div class="col-sm-6">
+                    <p>Your source for innovative customer and industry Cloud Solutions, rapidly engineered and developed in
+                      our Oracle Cloud Hubs.</p>
+                    <p>“The Oracle Cloud Hubs fosters an environment of collaboration & innovation, servicing Oracle Sales and
+                      our customers in order to accelerate our Cloud business.” </p>
+                    <p> - Hamza Jahangir, VP, Oracle Cloud Hubs </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="icon">
-
-     <a href="?root=catalogs"><img src="../../css/images/catalog-icon-disabled.png" alt="" height="100"><p class="caption">Catalogs</p></a>
+  <!-- End Slider -->
+  <!-- Start Icons -->
+  <div class="row icons">
+    <div class="icon-container">
+      <div class="col-xs-6 col-sm-3 text-center icon"><a href="#"><img src="../../css/images/se_faces.png" class=""><br>
+        SE Faces</a></div>
+      <div class="col-xs-6 col-sm-3 text-center icon"><a href="#"><img src="../../css/images/catalog.png" class=""><br>
+        SEaaS Catalog</a></div>
+      <div class="col-xs-6 col-sm-3 text-center icon"><a href="#"><img src="../../css/images/assets.png" class=""><br>
+        Assets</a></div>
+      <div class="col-xs-6 col-sm-3 text-center icon"><a href="#"><img src="../../css/images/performance.png" class=""><br>
+        Performance</a></div>
+    </div>
   </div>
-  <div class="icon">
-
-     <a href="?root=assets"><img src="../../css/images/asset-repo-icon-disabled.png" alt="" height="100"><p class="caption">Assets</p></a>
+  <!-- End Icons -->
+  <!-- Start Buttons -->
+  <div class="row">
+    <div class="container">
+      <div class="col-lg-4">
+        <div class="col-sm-12 darkblue">
+          <div class="col-sm-12">
+            <h2>WHO WE ARE </h2>
+          </div>
+          <div class="col-xs-3"><img src="../../css/images/who_we_are.png" class="img-responsive" align="left"></div>
+          <div class="col-xs-9">
+            <p>Where our solution engineers come together to design and build innovative industry and customer Cloud solutions.
+              <br>
+              <br>
+            </p>
+            <span class="pull-right more"><a href="#">Know More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-12 nopadding get_to_know">
+          <div class="col-xs-12 bottom-column text-right more"><a href="#">Get to know our Solution Engineers <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="col-sm-12 how_to_engage nopadding">
+          <div class="col-sm-8 nopadding blackBg">
+            <h2>HOW TO ENGAGE</h2>
+            <p>Use SCRM to request SE services and resources.</p>
+            <p><a href="mailto:oraclecloudhubs_us@oracle.com">oraclecloudhubs_us@oracle.com</a></p>
+            <p><br>
+            </p>
+            <p><a href="#">Hamza Jahangir</a><br>
+              <a href="#">Oracle Cloud Hubs</a><br>
+              <br>
+              <a href="#">Bob Stanoch</a><br>
+              <a href="https://otube.oracle.com/media/Austin+Cloud+Hub+Overview/0_2a91toco/-1" target="_blank">Austin Cloud Hub</a><br>
+              <br>
+              <a href="#">Jack Kingsley</a><br>
+              <a href="#">Bangalore Cloud Hub</a><br>
+              <br>
+              <a href="#">Girish Venkat</a><br>
+              <a href="#">Reston Cloud Hub</a></p>
+          </div>
+          <div class="col-sm-12 bottom-column1"><span class="more"><a href="#">Know More <span class="glyphicon glyphicon-chevron-right"></span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="col-sm-12 cloud_hubs nopadding">
+          <div class="col-sm-6 nopadding blackBg pull-right">
+            <h2>Cloud Hubs</h2>
+            <a href="#">Austin, Texas</a><br>
+            <a href="#">Bangalore, India</a><br>
+            <a href="#">Reston, Virginia</a><br>
+            <br>
+          </div>
+        </div>
+        <div class="col-sm-12 nopadding text-center deliver"> <img src="../../css/images/deliver_pocs.jpg" class="img-responsive"> </div>
+      </div>
+    </div>
   </div>
-  <div class="icon">
-
-     <a href="?root=performance"><img src="../../css/images/performance-icon-disabled.png" alt="" height="100"><p class="caption">Performances</p></a>
+  <!-- End Buttons -->
+  <div class="row">
+    <footer>&copy; Copyright 2017</footer>
   </div>
-</div>
-     
 </div>

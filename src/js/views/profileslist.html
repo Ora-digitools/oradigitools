@@ -40,9 +40,7 @@
     <div class="oj-md-4">
         <span class="data"><input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
             component: 'ojInputSearch',
-            value: keyword,
-            options: tags,
-            optionChange: searchhandler,
+            update: searchhandler,
             rootAttributes: {style:'max-width: 20em'}}"></span>
     </div>
 </div>

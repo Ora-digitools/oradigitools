@@ -14,6 +14,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdialog', 'ojs/ojprogressbar']
       self.skills_goodat = ko.observableArray();
       self.skills_thingstolearn = ko.observableArray();
       self.skills_interests = ko.observableArray();
+      self.projectInterest = ko.observable();
 
       function getProfile() {
         $.getJSON(baseurl + "ords/seaas_stage/seaas/GetFullUserProfile/" + selecteduuid).
@@ -21,27 +22,27 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdialog', 'ojs/ojprogressbar']
             console.log(profiles.items[0].skills.length);
             // SKILLS GOOD AT
 
-            for(var i=0;i<profiles.items[0].skills.length;i++){
-              var skill=profiles.items[0].skills[i];
+            for (var i = 0; i < profiles.items[0].skills.length; i++) {
+              var skill = profiles.items[0].skills[i];
               console.log(skill.category);
               if (skill.category === 'Good At') {
                 self.skills_goodat.push({
                   value: ko.observable(skill.value),
                   desc_text: ko.observable(skill.desc_text)
                 });
-              }else if (skill.category === 'Things to Learn') {
+              } else if (skill.category === 'Things to Learn') {
                 self.skills_thingstolearn.push({
-                 value: ko.observable(skill.value)
+                  value: ko.observable(skill.value)
                 });
-              }else if (skill.category === 'Interests') {
+              } else if (skill.category === 'Interests') {
                 self.skills_interests.push({
                   value: ko.observable(skill.value)
                 });
               }
             }
-            var imageurl='https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
-            if(!profiles.items[0].profile_photo_url.endsWith("GetPhoto/")){
-              imageurl=profiles.items[0].profile_photo_url;
+            var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
+            if (!profiles.items[0].profile_photo_url.endsWith("GetPhoto/")) {
+              imageurl = profiles.items[0].profile_photo_url;
             }
 
             // CREATE PROFILE DATA
@@ -63,20 +64,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdialog', 'ojs/ojprogressbar']
           });
       }
 
-      self.handleActivated = function (info) {
-        // OPEN THE LOADING DIALOG
-        $("#dialog1").ojDialog("open");
-
-        // FETCH THE PROFILE INFORMATION
-        getProfile();
-
-        // CLOSE THE LOADING DIALOG
+      self.updateProject = function () {
+        alert(self.projectInterest());
         $("#dialog1").ojDialog("close");
+        self.projectInterest("");
       }
 
+      self.openeditprojectdialog = function () {
+        $("#dialog1").ojDialog("open");
+      }
     }
-
-
     return new DashboardViewModel();
   }
 );
