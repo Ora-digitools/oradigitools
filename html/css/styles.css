@@ -76,6 +76,9 @@ body {
 	border: none;
 	border-radius: 0px;
 }
+.navbar-nav > li {
+	margin-left: 10px;
+}
 .navbar-nav > li > a {
 	padding: 10px 20px;
 }
@@ -84,11 +87,12 @@ body {
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
 	background: transparent;
-	color: #F80000;
+	color: #ff8d14;
 	border-bottom: 7px solid #ff8d14
 }
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
 	color: #ff8d14;
+	border-bottom: 7px solid #ff8d14
 }
 .navbar a:link, .navbar a:visited {
 	color: #fff
@@ -118,7 +122,7 @@ body {
 	width: 100%;
 	height: auto;
 	padding: 50px;
-	background: rgba(0, 0, 0, 0) url("../img/clouds_bg.jpg") no-repeat scroll 0 0 / cover ;
+	background: rgba(0, 0, 0, 0) url("../img/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
 	font-size: 20px;
 	font-style: italic;
 }
@@ -359,7 +363,7 @@ footer {
 @media (max-width: 1024px) {
 .searchTitle {
 	text-align: right;
-	padding-right:15px;
+	padding-right: 15px;
 }
 }
 
