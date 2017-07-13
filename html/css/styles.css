@@ -184,7 +184,7 @@ body {
 }
 .get_to_know {
 	background: rgba(0, 0, 0, 0) url("../img/get_to_know_bg.jpg") no-repeat scroll 0 0;
-	height: 232px;
+	height: 234px;
 	position: relative;
 	background-size: cover;
 }
@@ -221,7 +221,7 @@ body {
 }
 .how_to_engage a:link, .how_to_engage a:visited {
 	color: #fff;
-	text-decoration: underline
+	text-decoration: none
 }
 .how_to_engage a:hover, .how_to_engage a:visited:hover {
 	color: #f29111;
@@ -263,7 +263,8 @@ body {
 	text-align: center;
 }
 .deliver img {
-	display: inline-block
+	display: inline-block;
+	min-height: 220px;
 }
 footer {
 	font-size: 12px;
