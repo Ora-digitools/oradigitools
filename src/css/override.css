@@ -5,3 +5,48 @@
     Description:
         This is where any of your application specific styles should be included
 */
+
+.oj-listview-item {
+	background: none;
+}
+.oj-inputsearch {
+	max-width: 100%;
+}
+.oj-inputsearch-choice {
+	background-color: transparent;
+	border: medium none;
+}
+.oj-listview-item.oj-hover {
+	background-color: transparent;
+	border: none;
+}
+ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover + li.oj-listview-item {
+	background-color: transparent;
+	border: none;
+}
+.oj-listview-item{
+	border: none;
+	padding:0px;
+	}
+.oj-listview{
+	border: none;
+	}	
+	
+.oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item-label{
+	font-size: 19px;
+	font-family: Arial;}	
+
+.oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-selected a.oj-navigationlist-item-content > .oj-navigationlist-item-label{
+	color: #ff8d14;
+	}	
+
+.oj-navigationlist-horizontal .oj-navigationlist-item.oj-selected{
+	border-bottom: 7px solid #ff8d14
+	}	
+	
+.oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-hover:not(.oj-selected) a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
+  color: #ff8d14;
+  border-bottom: 7px solid #ff8d14 }
+  
+ .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item{
+	 border-bottom:none;} 	

@@ -3,13 +3,14 @@
 
 @font-face {
 	font-family: 'Calibri';
-	src: url('../../css/fonts/Calibri.eot?#iefix') format('embedded-opentype'), url('../../css/fonts/Calibri.woff') format('woff'), url('../../css/fonts/Calibri.ttf') format('truetype'), url('../../css/fonts/Calibri.svg#Calibri') format('svg');
+	src: url('../fonts/Calibri.eot?#iefix') format('embedded-opentype'), url('../fonts/Calibri.woff') format('woff'), url('../fonts/Calibri.ttf') format('truetype'), url('../fonts/Calibri.svg#Calibri') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 body {
 	font-family: 'Calibri';
 	font-size: 16px;
+	background-image:none;
 }
 .nopadding {
 	padding: 0px;
@@ -122,7 +123,7 @@ body {
 	width: 100%;
 	height: auto;
 	padding: 50px;
-	background: rgba(0, 0, 0, 0) url("../../css/images/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
+	background: rgba(0, 0, 0, 0) url("../img/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
 	font-size: 20px;
 	font-style: italic;
 }
@@ -187,7 +188,7 @@ body {
 	vertical-align: middle;
 }
 .get_to_know {
-	background: rgba(0, 0, 0, 0) url("../../css/images/get_to_know_bg.jpg") no-repeat scroll 0 0;
+	background: rgba(0, 0, 0, 0) url("../img/get_to_know_bg.jpg") no-repeat scroll 0 0;
 	height: 234px;
 	position: relative;
 	background-size: cover;
@@ -208,7 +209,7 @@ body {
 	padding-bottom: 10px;
 }
 .how_to_engage {
-	background: url(../../css/images/how_to_engage.jpg) no-repeat;
+	background: url(../img/how_to_engage.jpg) no-repeat;
 	height: 484px;
 	color: #fff;
 	background-size: cover;
@@ -232,12 +233,12 @@ body {
 	text-decoration: underline
 }
 .cloud_hubs {
-	background: url(../../css/images/cloud_hubs.jpg) no-repeat;
+	background: url(../img/cloud_hubs.jpg) no-repeat;
 	height: 232px;
 	color: #fff;
 	margin-bottom: 30px;
 	font-size: 20px;
-	background-size:cover;
+	background-size: cover;
 }
 .cloud_hubs h2 {
 	margin-top: 0px;
@@ -277,6 +278,115 @@ footer {
 	margin-bottom: 20px;
 	text-align: center;
 }
+.team {
+	padding-top: 20px;
+}
+.team h1 {
+	font-family: arial;
+	font-weight: bold;
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+.team img {
+	display: inline-block
+}
+.team input {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	color: #777879;
+	min-width: 252px;
+	font-size:19px;
+}
+.borderBottom {
+	border-bottom: 4px solid #f29111
+}
+.faces {
+	margin-top: 40px;
+	text-align: center;
+	min-height:420px;
+}
+.mainImage img {
+	max-width: 200px;
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	border: 5px solid #f29111;
+	min-width:200px;
+	min-height:200px;
+}
+.face {
+	
+	margin-bottom:10px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	min-height:420px
+	
+}
+.face:nth-child(4n) {
+	border-right: none;
+}
+.name {
+	font-family: Arial;
+	font-weight: bold;
+	color: #f39220;
+	margin-top: 10px;
+	font-size: 22px;
+	line-height: 24px;
+}
+.title {
+	font-family: Arial;
+	color: #444444;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.social img {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.fixedButton {
+	position: fixed;
+	top: 30%;
+	left: 0px;
+	z-index: 1001;
+	background: #18a6e6;
+	padding: 40px 20px;
+	border: none;
+	border-radius: 0px 10px 10px 0px;
+	
+}
+#slider {
+	background: #18a6e6;
+	height: auto;
+	width: 300px;
+	position: fixed;
+	left: -500px;
+	z-index: 1002;
+	padding: 20px;
+	top: 30%;
+	border-radius: 0px 10px 10px 0px;
+	color: #fff;
+	font-size: 19px;
+}
+#close {
+	color: #fff;
+	float: right;
+	font-family: arial;
+	font-size: 17px;
+	text-decoration: none;
+	cursor: pointer;
+}
+.open {
+	left: 0px !important;
+}
+.transition {
+	-webkit-transition: left 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+	-moz-transition: left 0.3s ease-out;  /* Firefox 4-15 */
+	-o-transition: left 0.3s ease-out;  /* Opera 10.50–12.00 */
+	transition: left 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+
 
 @media (max-width: 1024px) {
 .container {
@@ -291,6 +401,7 @@ footer {
 }
 .logo img {
 	max-width: 182px;
+	display: inline-block;
 }
 .contactLink {
 	padding: 0px;
@@ -302,6 +413,7 @@ footer {
 .searchbox {
 	padding: 0px;
 	margin-bottom: 10px;
+	margin-top: 10px;
 }
 .mainNav {
 	padding: 15px;
@@ -329,12 +441,15 @@ footer {
 	display: block;
 	float: right;
 	margin-top: 3px;
-	background: #797979;
-	border: none;
+	background: transparent;
 	padding: 5px;
+	top: -48px;
+	left: 3px;
+	position: absolute;
+	border: none;
 }
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-	background: #797979;
+	background: transparent;
 	border: none;
 }
 .navbar-collapse {
@@ -354,23 +469,45 @@ footer {
 }
 .darkblue {
 	min-height: 240px;
+	margin-bottom: 0px;
 }
 #text-carousel {
 	background-position: bottom;
 	background-color: #ddeff9
 }
-.get_to_know, .how_to_engage {
-	margin-bottom: 20px;
+.get_to_know, .how_to_engage, .cloud_hubs {
+	margin-bottom: 0px;
 }
 .deliver img {
 	min-height: auto;
 }
+.col-xs-0 {
+	display: none
 }
-
-@media (max-width: 1024px) {
+.orangeBg input {
+	min-width: auto;
+}
+.logo {
+	text-align: center;
+}
+#slider {
+	top: 0%;
+}
 .searchTitle {
 	text-align: right;
 	padding-right: 15px;
+}
+.face:nth-child(3n) {
+	border-right: none;
+}
+.face:nth-child(4n) {
+	border-right: 1px solid #d3d3d3;
+}
+}
+
+@media (max-width: 991px) {
+.face {
+	border-right: none;
 }
 }
 

@@ -1,88 +1,138 @@
-<!--
- Copyright (c) 2014, 2017, Oracle and/or its affiliates.
- The Universal Permissive License (UPL), Version 1.0
- @Auther angan.sen@oracle.com
- -->
-<style>
-    .bold {
-        font-weight: bold;
-    }
-
-    .bg {
-        background-color: #F1F2F6;
-        padding: 10px;
-        border: 1px solid #D8DDE1;
-    }
-
-    .bgpos {
-        background-color: #F1F2F6;
-        padding-left: 5px;
-        border: 1px solid #D8DDE1;
-    }
-
-    .curpos {
-        font-weight: bold;
-        color: navy;
-    }
-</style>
-<link rel="stylesheet" href="../../css/hub.css">
-<div class="oj-lg-12 bgpos">
-    <ul class="breadcrumb">
-        <li><a href="/?root">Home</a></li>
-        <li>SE Faces</li>
-    </ul>
-</div>
-<div class="oj-flex row oj-lg-12 oj-md-12 oj-sm-12" style="padding-top:8px">
-    <div class="oj-md-5 ">
-        <span class="data"><h2>SE Faces</h2><span class="data"></span>
-        </span>
-    </div>
-    <div class="oj-md-4">
-        <span class="data"><input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
+<!-- End Filter -->
+<!-- Start Heading -->
+<div class="row text-center team"><img src="../../css/images/meettheteam.png" class="img-responsive">
+    <h1>MEET <span class="borderBottom">THE</span> CREW</h1>
+    <div class="col-sm-4 text-center col-sm-offset-4">
+        <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+        <!--<input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             update: searchhandler,
-            rootAttributes: {style:'max-width: 20em'}}"></span>
+            rootAttributes: {class:'form-control'}}">-->
+        <!--<input class="form-control" placeholder="Search faces..." type="search" data-bind="click:searchhandler">-->
+
+
     </div>
 </div>
-<ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
+<!-- End Heading -->
+
+<!-- Start Faces -->
+<div class="row faces">
+    <div class="container">
+        <ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
             component: 'ojListView', data: dataSource, selection: currentItemId,
             item: {template: 'server_template'}, 
             selectionMode: 'single',
             optionChange: logSelected
         }">
-</ul>
+        </ul>
+
+
+    </div>
+</div>
+<!-- Filter -->
 
 <script type="text/html" id="server_template">
     <li data-bind="attr: {id: $data['uuid']}">
-        <div class="oj-flex bg">
-            <div class="oj-lg-2 oj-md-2 oj-sm-10" style="max-width:70px;padding-bottom:5px">
-                <img data-bind="attr: {src: icon, alt: name}" height=60 width='auto'></img>
+        <div class="col-md-4 col-lg-3 face">
+            <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}" height=60 width='auto'></img>
             </div>
-            <div class="oj-lg-10 oj-md-10 oj-sm-10">
-                <div class="oj-flex row oj-lg-10 oj-md-10 oj-sm-10">
-                    <div class="oj-lg-10">
-                        <span class="header bold" data-bind="text:name"></span>
-                    </div>
-                </div>
-                <div class="oj-flex row oj-lg-10 oj-md-10 oj-sm-10">
-                    <div class="oj-md-10">
-                        <span data-bind="text: title"></span>
-                        <div class="oj-flex row oj-lg-12 oj-md-12 oj-sm-12" style="padding-top:8px">
-                            <div class="oj-md-4 ">
-                                <span class="data"><img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/mobile-icon-green.png" height=20 width=20><span class="data"><b> Mobile: </b><span data-bind="text: mobile_phone"></span></span>
-                                </span>
-                            </div>
-                            <div class="oj-md-4">
-                                <span class="data"><img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/phone-icon-orange.png" height=20 width=20><span class="data"><b> Work Phone: </b><span data-bind="text: work_phone"></span></span>
-                            </div>
-                            <div class="oj-md-4">
-                                <span class="data"><img src="https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/mail-icon-blue.png" height=20 width=20><span class="data"><b> Work Email: </b><span data-bind="text: work_email"></span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
+            <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
+            <div class="col-sm-12 nopadding social"><a href="#"><img src="../../css/images/facebook_icon.png"></a><a href="#"><img src="../../css/images/linkedin_icon.png"></a>
+                <a href="#"><img src="../../css/images/instagram_icon.png"></a><a href="#"><img src="../../css/images/email_icon.png"></a></div>
         </div>
     </li>
+
 </script>
+<style>
+    .fixedButton {
+        display: block;
+    }
+</style>
+
+<button class="fixedButton" id="fixb" data-bind="click:openthefilterpanel"><img src="../../css/images/filter_button.png"></button>
+<div id="slider" class="transition">
+    <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
+        <br>
+        <!--<input class="form-control" placeholder="Search" type="search" data-bind="click:searchhandler">-->
+        <input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
+            component: 'ojInputSearch',
+            update: searchhandler,
+            rootAttributes: {class:'form-control'}}">
+        <br>
+        <p>Filter by Location</p>
+        <form >
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="austin" data-bind="click:locationFilterClicked">
+          Austin</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="bangalore" data-bind="click:locationFilterClicked">
+          Bangalore</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="reston" data-bind="click:locationFilterClicked">
+          Reston</label>
+            </div>
+            <p>Filter by Skills</p>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="java" data-bind="click:skillFilterClicked">
+          Java</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="database" data-bind="click:skillFilterClicked">
+          Database</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="UI/UX" data-bind="click:skillFilterClicked">
+          UI/UX</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="Security" data-bind="click:skillFilterClicked">
+          Security</label>
+            </div>
+        </form>
+    </div>
+    <!--<p>Filter by Pillers</p>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="java">
+          Java</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="database">
+          Database</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="UI/UX">
+          UI/UX</label>
+            </div>
+            <div class="checkbox">
+                <label>
+          <input type="checkbox" value="Security">
+          Security</label>
+            </div>-->
+        </form>
+    </div>
+</div>
+<!--<script>
+    $('.fixedButton').on('click', function () {
+
+        $('#slider').toggleClass('open');
+        $('button.fixedButton').hide();
+
+    });
+    $('#close').on('click', function () {
+        $('#slider').toggleClass('open');
+        $('button.fixedButton').show();
+    });
+</script>-->
