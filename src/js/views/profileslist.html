@@ -53,14 +53,14 @@
   <br>
     <p style="font-weight: bolder">Filter by Location</p>
         <ul data-bind="foreach: hubslist">
-            <div>
+            <div class="checkbox">
                 <input type="checkbox" data-bind="value: $data,checked:$root.selectechubs">
                 <span data-bind="text: $data"></span>
             </div>
-        </ul>
-        <p style="font-weight: bolder">Filter by Pillers</p>
+        </ul><br> 
+        <p style="font-weight: bolder">Filter by Pillar</p>
         <ul data-bind="foreach: listofpillers">
-            <div>
+            <div class="checkbox">
                 <input type="checkbox" data-bind="value: $data">
                 <span data-bind="text: $data"></span>
             </div>
