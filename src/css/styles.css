@@ -122,7 +122,7 @@ body {
 	width: 100%;
 	height: auto;
 	padding: 50px;
-	background: rgba(0, 0, 0, 0) url("../img/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
+	background: rgba(0, 0, 0, 0) url("images/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
 	font-size: 20px;
 	font-style: italic;
 }
@@ -187,7 +187,7 @@ body {
 	vertical-align: middle;
 }
 .get_to_know {
-	background: rgba(0, 0, 0, 0) url("../img/get_to_know_bg.jpg") no-repeat scroll 0 0;
+	background: rgba(0, 0, 0, 0) url("images/get_to_know_bg.jpg") no-repeat scroll 0 0;
 	height: 234px;
 	position: relative;
 	background-size: cover;
@@ -208,7 +208,7 @@ body {
 	padding-bottom: 10px;
 }
 .how_to_engage {
-	background: url(../img/how_to_engage.jpg) no-repeat;
+	background: url(images/how_to_engage.jpg) no-repeat;
 	height: 484px;
 	color: #fff;
 	background-size: cover;
@@ -232,7 +232,7 @@ body {
 	text-decoration: underline
 }
 .cloud_hubs {
-	background: url(../img/cloud_hubs.jpg) no-repeat;
+	background: url(images/cloud_hubs.jpg) no-repeat;
 	height: 232px;
 	color: #fff;
 	margin-bottom: 30px;
@@ -415,7 +415,7 @@ footer {
 	text-decoration: underline;
 }
 .blueBg {
-	background: #324b5c url(../img/test.jpg) no-repeat;
+	background: #324b5c url(images/test.jpg) no-repeat;
 	color: #fff;
 	padding: 20px;
 	min-height: 193px;
