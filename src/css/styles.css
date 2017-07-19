@@ -1,9 +1,19 @@
 @charset "utf-8";
 /* CSS Document */
+@font-face {
+  font-family: 'ArialMT';
+  src: url('fonts/ArialMT.eot?#iefix') format('embedded-opentype'),  url('fonts/ArialMT.woff') format('woff'), url('fonts/ArialMT.ttf')  format('truetype'), url('fonts/ArialMT.svg#ArialMT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+
+*{
+	outline:none;
+}
 
 body {
-	font-family: 'Arial';
+	font-family: 'ArialMT';
 	font-size: 14px;
 	background-image: none;
 }
@@ -22,7 +32,7 @@ body {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	color: #fff;
-	font-family: Arial;
+	font-family: ArialMT;
 	font-size: 16px;
 	line-height: 34px;
 }
@@ -59,8 +69,11 @@ body {
 	box-shadow: 0px 7px 7px 0px rgba(0,0,0,0.35);
 	position: relative;
 	z-index: 1000;
-	font-family: Arial;
+	font-family: ArialMT;
 	font-size: 18px;
+}
+.togglemenu{
+	padding-top:30px;
 }
 .clearfix {
 	display: block;
@@ -110,6 +123,12 @@ body {
 .mainNav {
 	padding-top: 18px;
 }
+
+.closebutton{
+	border:none;
+	background:transparent;
+	color:#fff;
+}
 .contact-link {
 	padding-right: 25px;
 }
@@ -122,7 +141,7 @@ body {
 	width: 100%;
 	height: auto;
 	padding: 50px;
-	background: rgba(0, 0, 0, 0) url("../img/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
+	background: rgba(0, 0, 0, 0) url("images/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
 	font-size: 20px;
 	font-style: italic;
 }
@@ -157,7 +176,7 @@ body {
 	margin-top: 25px;
 	margin-bottom: 25px;
 	font-size: 16px;
-	font-family: Arial;
+	font-family: ArialMT;
 }
 .icons a:link, .icons a:visited {
 	color: #444444;
@@ -187,7 +206,7 @@ body {
 	vertical-align: middle;
 }
 .get_to_know {
-	background: rgba(0, 0, 0, 0) url("../img/get_to_know_bg.jpg") no-repeat scroll 0 0;
+	background: rgba(0, 0, 0, 0) url("images/get_to_know_bg.jpg") no-repeat scroll 0 0;
 	height: 234px;
 	position: relative;
 	background-size: cover;
@@ -208,7 +227,7 @@ body {
 	padding-bottom: 10px;
 }
 .how_to_engage {
-	background: url(../img/how_to_engage.jpg) no-repeat;
+	background: url(images/how_to_engage.jpg) no-repeat;
 	height: 484px;
 	color: #fff;
 	background-size: cover;
@@ -232,7 +251,7 @@ body {
 	text-decoration: underline
 }
 .cloud_hubs {
-	background: url(../img/cloud_hubs.jpg) no-repeat;
+	background: url(images/cloud_hubs.jpg) no-repeat;
 	height: 232px;
 	color: #fff;
 	margin-bottom: 30px;
@@ -283,7 +302,7 @@ footer {
 	padding-top: 20px;
 }
 .team h1 {
-	font-family: arial;
+	font-family: ArialMT;
 	font-weight: bold;
 	font-size: 36px;
 	margin-bottom: 20px;
@@ -327,7 +346,7 @@ footer {
 	border-right: none;
 }
 .name {
-	font-family: Arial;
+	font-family: ArialMT;
 	font-weight: bold;
 	color: #f39220;
 	margin-top: 10px;
@@ -335,7 +354,7 @@ footer {
 	line-height: 24px;
 }
 .title {
-	font-family: Arial;
+	font-family: ArialMT;
 	color: #444444;
 	font-size: 15px;
 	margin-bottom: 10px;
@@ -371,7 +390,7 @@ footer {
 #close {
 	color: #fff;
 	float: right;
-	font-family: arial;
+	font-family: ArialMT;
 	font-size: 17px;
 	text-decoration: none;
 	cursor: pointer;
@@ -414,7 +433,7 @@ footer {
 	text-decoration: underline;
 }
 .blueBg {
-	background: #324b5c url(../img/test.jpg) no-repeat;
+	background: #324b5c url(images/test.jpg) no-repeat;
 	color: #fff;
 	padding: 20px;
 	min-height: 193px;
@@ -686,6 +705,12 @@ li.active .tabs {
 	margin-bottom: 20px;
 }
 
+.panel-heading{
+	overflow:hidden;
+}
+
+
+
 @media (max-width: 1024px) {
 .container {
 	width: auto;
@@ -716,9 +741,7 @@ li.active .tabs {
 .mainNav {
 	padding: 15px;
 }
-.navbar-header {
-	float: none;
-}
+
 .navbar-left, .navbar-right {
 	float: none !important;
 }
@@ -785,9 +808,7 @@ li.active .tabs {
 .orangeBg input {
 	min-width: auto;
 }
-.logo {
-	text-align: center;
-}
+
 #slider {
 	top: 0%;
 }
@@ -811,6 +832,10 @@ li.active .tabs {
 .profileAddress {
 	margin-top: 30px;
 	padding: 0px;
+}
+
+.togglemenu{
+	padding-top:10px;
 }
 
 }
