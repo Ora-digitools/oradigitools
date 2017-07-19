@@ -36,8 +36,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       // Navigation setup
       var navData = [
         { name: 'Home', id: 'home' },
-        { name: 'Welcome', id: 'welcome' },
-        { name: 'Cloud Hubs', id: 'cloudhubs' },
+       
         { name: 'SE Faces', id: 'profileslist' },
         { name: 'Catalogs', id: 'catalogs' ,'oj-disabled': 'disabled'},
         { name: 'Assets', id: 'assets','oj-disabled': 'disabled' },

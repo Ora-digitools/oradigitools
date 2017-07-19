@@ -1,138 +1,71 @@
 <!-- End Filter -->
 <!-- Start Heading -->
 <div class="row text-center team"><img src="../../css/images/meettheteam.png" class="img-responsive">
-    <h1>MEET <span class="borderBottom">THE</span> CREW</h1>
-    <div class="col-sm-4 text-center col-sm-offset-4">
-        <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
-        <!--<input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
+  <h1>MEET <span class="borderBottom">THE</span> CREW</h1>
+  <div class="col-sm-4 text-center col-sm-offset-4">
+    <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+    <input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             update: searchhandler,
-            rootAttributes: {class:'form-control'}}">-->
-        <!--<input class="form-control" placeholder="Search faces..." type="search" data-bind="click:searchhandler">-->
+            rootAttributes: {class:'form-control'}}">
 
-
-    </div>
+  </div>
 </div>
 <!-- End Heading -->
 
 <!-- Start Faces -->
 <div class="row faces">
-    <div class="container">
-        <ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
+  <div class="container">
+    <ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
             component: 'ojListView', data: dataSource, selection: currentItemId,
             item: {template: 'server_template'}, 
             selectionMode: 'single',
             optionChange: logSelected
         }">
-        </ul>
+    </ul>
 
 
-    </div>
+  </div>
 </div>
-<!-- Filter -->
 
+<!-- Filter -->
 <script type="text/html" id="server_template">
-    <li data-bind="attr: {id: $data['uuid']}">
-        <div class="col-md-4 col-lg-3 face">
-            <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}" height=60 width='auto'></img>
-            </div>
-            <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
-            <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
-            <div class="col-sm-12 nopadding social"><a href="#"><img src="../../css/images/facebook_icon.png"></a><a href="#"><img src="../../css/images/linkedin_icon.png"></a>
-                <a href="#"><img src="../../css/images/instagram_icon.png"></a><a href="#"><img src="../../css/images/email_icon.png"></a></div>
-        </div>
-    </li>
+  <li data-bind="attr: {id: $data['uuid']}">
+    <div class="col-md-4 col-lg-3 face">
+      <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}" height=60 width='auto'></img>
+      </div>
+      <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
+      <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
+      <div class="col-sm-12 nopadding social"><a href="#"><img src="../../css/images/phone_icon_orange.png"></a><a href="#"><img src="../../css/images/email_icon.png"></a></div>
+    </div>
+  </li>
 
 </script>
 <style>
-    .fixedButton {
-        display: block;
-    }
+  .fixedButton {
+    display: block !important;
+  }
 </style>
 
 <button class="fixedButton" id="fixb" data-bind="click:openthefilterpanel"><img src="../../css/images/filter_button.png"></button>
 <div id="slider" class="transition">
-    <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
-        <br>
-        <!--<input class="form-control" placeholder="Search" type="search" data-bind="click:searchhandler">-->
-        <input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
-            component: 'ojInputSearch',
-            update: searchhandler,
-            rootAttributes: {class:'form-control'}}">
-        <br>
-        <p>Filter by Location</p>
-        <form >
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="austin" data-bind="click:locationFilterClicked">
-          Austin</label>
+  <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
+  <br>
+    <p style="font-weight: bolder">Filter by Location</p>
+        <ul data-bind="foreach: hubslist">
+            <div>
+                <input type="checkbox" data-bind="value: $data,checked:$root.selectechubs">
+                <span data-bind="text: $data"></span>
             </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="bangalore" data-bind="click:locationFilterClicked">
-          Bangalore</label>
+        </ul>
+        <p style="font-weight: bolder">Filter by Pillers</p>
+        <ul data-bind="foreach: listofpillers">
+            <div>
+                <input type="checkbox" data-bind="value: $data">
+                <span data-bind="text: $data"></span>
             </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="reston" data-bind="click:locationFilterClicked">
-          Reston</label>
-            </div>
-            <p>Filter by Skills</p>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="java" data-bind="click:skillFilterClicked">
-          Java</label>
-            </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="database" data-bind="click:skillFilterClicked">
-          Database</label>
-            </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="UI/UX" data-bind="click:skillFilterClicked">
-          UI/UX</label>
-            </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="Security" data-bind="click:skillFilterClicked">
-          Security</label>
-            </div>
-        </form>
-    </div>
-    <!--<p>Filter by Pillers</p>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="java">
-          Java</label>
-            </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="database">
-          Database</label>
-            </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="UI/UX">
-          UI/UX</label>
-            </div>
-            <div class="checkbox">
-                <label>
-          <input type="checkbox" value="Security">
-          Security</label>
-            </div>-->
-        </form>
-    </div>
+        </ul>
+      <button id="apply" class="apply">Apply</button>
+    </form>
+  </div>
 </div>
-<!--<script>
-    $('.fixedButton').on('click', function () {
-
-        $('#slider').toggleClass('open');
-        $('button.fixedButton').hide();
-
-    });
-    $('#close').on('click', function () {
-        $('#slider').toggleClass('open');
-        $('button.fixedButton').show();
-    });
-</script>-->
