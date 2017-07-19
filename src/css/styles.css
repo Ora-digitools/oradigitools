@@ -400,7 +400,6 @@ footer {
 	font-size: 19px;
 	position: fixed;
 }
-
 .profileblackBg {
 	background: #1d2730;
 	color: #fff;
@@ -425,9 +424,11 @@ footer {
 .tabs {
 	background: #efefef;
 	text-align: center;
-	padding: 35px 0 0;
+	padding: 30px 0 0;
 	font-size: 16px;
 	opacity: 0.4;
+	min-height:90px;
+	position:relative;
 }
 li.active .tabs {
 	opacity: 1;
@@ -441,8 +442,8 @@ li.active .tabs {
 .arrowdown {
 	width: 100%;
 	bottom: 0;
-	margin-top: 35px;
-	position: relative;
+	
+	position: absolute;
 	color: #fff;
 }
 .yellowtab {
@@ -566,9 +567,9 @@ li.active .tabs {
 .carousel-indicators .active {
 	background: #333333;
 }
-.carousel-inner{
-	text-align:center;}
-
+.carousel-inner {
+	text-align: center;
+}
 .profileDetails {
 	line-height: 21px;
 	position: relative;
@@ -601,7 +602,8 @@ li.active .tabs {
 }
 .profileSummaryh {
 	font-size: 16px;
-	font-weight: bold
+	font-weight: bold;
+	overflow:hidden;
 }
 .profilePhone {
 	font-size: 14px;
@@ -648,8 +650,14 @@ li.active .tabs {
 	border: 8px solid #e6e4e4
 }
 .btn-info {
-	background: #00758F;
-	border: none;
+	 background: #dadada none repeat scroll 0 0;
+    border: 1px solid #ada9a9;
+    color: #444444;
+}
+.btn-info.focus, .btn-info:focus, .btn-info:hover, .btn-info.active, .btn-info:active, .open > .dropdown-toggle.btn-info, .btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info.focus:active, .btn-info:active:focus, .btn-info:active:hover, .open > .dropdown-toggle.btn-info.focus, .open > .dropdown-toggle.btn-info:focus, .open > .dropdown-toggle.btn-info:hover {
+   background: #ada9a9 none repeat scroll 0 0;
+    border: 1px solid #ada9a9;
+    color: #fff;
 }
 .footerheading {
 	color: #fff;
@@ -673,6 +681,9 @@ li.active .tabs {
 }
 .footermenu a {
 	color: #fff;
+}
+.addnew {
+	margin-bottom: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -793,9 +804,6 @@ li.active .tabs {
 #drawerToggleButton {
 	margin-top: 10px;
 }
-.nopaddingxs {
-	padding: 0px;
-}
 .profilePhone {
 	margin-top: 30px;
 	padding: 0px;
@@ -804,14 +812,36 @@ li.active .tabs {
 	margin-top: 30px;
 	padding: 0px;
 }
-.carousel-control {
-	width: 20%;
-}
+
 }
 
 @media (max-width: 991px) {
 .face {
 	border-right: none;
+}
+}
+
+@media (max-width: 767px) {
+.carousel-control {
+	width: 20%;
+}
+}
+
+@media (min-width: 768px) and  (max-width: 1023px){
+.carousel-control {
+	width: 10%;
+}
+}
+
+@media (max-width: 414px) {
+.nopaddingxs {
+	padding: 0px;
+}
+.tabs {
+	font-size: 13px;
+}
+.nav {
+	padding-left: 15px;
 }
 }
 
@@ -822,6 +852,8 @@ li.active .tabs {
 .contact-link {
 	font-size: 12px
 }
+.profileDetails{
+	top:25%;}
 }
 
 @media (min-width: 1025px) {
