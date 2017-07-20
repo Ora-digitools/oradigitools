@@ -21,8 +21,6 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.router = oj.Router.rootInstance;
       self.router.configure({
         'home': { label: 'Home', isDefault: true },
-        'welcome': { label: 'Welcome' },
-        'cloudhubs': { label: 'Cloud Hubs' },
         'profileslist': { label: 'SE Faces' },
         'profiledetails': { label: 'ProfileDetails' },
         '': { label: 'Catalogs'},
@@ -36,8 +34,6 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       // Navigation setup
       var navData = [
         { name: 'Home', id: 'home' },
-        { name: 'Welcome', id: 'welcome' },
-        { name: 'Cloud Hubs', id: 'cloudhubs' },
         { name: 'SE Faces', id: 'profileslist' },
         { name: 'Catalogs', id: 'catalogs' ,'oj-disabled': 'disabled'},
         { name: 'Assets', id: 'assets','oj-disabled': 'disabled' },

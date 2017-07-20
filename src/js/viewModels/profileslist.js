@@ -115,7 +115,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 self.data.push(profile);
                 self.renderData.push(profile);
               }
-              console.log("Parse completed");
+              console.log("Parse completed - succesfully loaded all user profiles");
             });
 
           });
