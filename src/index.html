@@ -111,7 +111,11 @@
     </div>
     <div role="main" class="" data-bind="ojModule: router.moduleConfig"> </div>
     <div class="row">
-      <footer><div class="container"><div class="footerheading">Cloud Hubs</div><div class="footermenu"><ul><li><a href="#">Sitemap</a></li><li><a href="#">Terms of Use & Privacy</a></li><li><a href="#">Cookie Preferences</a></li><li><a href="#">Contact Us</a></li></ul></div></div></footer>
+      <footer><div class="container"><div class="footerheading">Cloud Hubs</div><div class="footermenu"><ul>
+              <!-- ko foreach: footerLinks -->
+              <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
+              <!-- /ko -->
+            </ul></div></div></footer> 
     </div>
   </div>
 </div>
