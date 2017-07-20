@@ -255,12 +255,13 @@ body {
 	height: 232px;
 	color: #fff;
 	margin-bottom: 30px;
-	font-size: 20px;
+	font-size: 16px;
 	background-size: cover;
+	line-height:32px;
 }
 .cloud_hubs h2 {
 	margin-top: 0px;
-	font-size: 36px;
+	font-size: 28px;
 	font-weight: bold;
 }
 .cloud_hubs a:link, .cloud_hubs a:visited {
@@ -372,7 +373,6 @@ footer {
 	padding: 40px 20px;
 	border: none;
 	border-radius: 0px 10px 10px 0px;
-	display: none !important;
 }
 #slider {
 	background: #324b5c;
@@ -553,7 +553,7 @@ li.active .tabs {
 	padding: 0 40px;
 }
 /* Reposition the controls slightly */
-.carousel-control {
+ .carousel-control {
 	left: -12px;
 	background-color: rgba(0, 0, 0, 0);
 	bottom: 0;
@@ -579,13 +579,7 @@ li.active .tabs {
 	bottom: 0px;
 	margin-right: -19px;
 }
-/* Changes the colour of the indicators */
-.carousel-indicators li {
-	background: #c0c0c0;
-}
-.carousel-indicators .active {
-	background: #333333;
-}
+
 .carousel-inner {
 	text-align: center;
 }

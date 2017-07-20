@@ -38,34 +38,27 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-selected a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
 	color: #ff8d14;
 }
-
 .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-hover:not(.oj-selected) a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
 	color: #ff8d14;
 }
-.oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item{
-	border-bottom:none;
-	}
-	
+.oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
+	border-bottom: none;
+}
 .oj-navigationlist-horizontal .oj-navigationlist-item.oj-selected {
 	border-bottom: 7px solid #ff8d14
-}	
-
+}
 .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item .oj-selected {
 	border-bottom: 7px solid #ff8d14
 }
-
-
 .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-hover:not(.oj-selected) {
-	/*border-bottom: 7px solid #ff8d14*/
+/*border-bottom: 7px solid #ff8d14*/
 }
-
 .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
 	margin-left: 20px;
 	margin-right: 20px;
 }
 .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item:last-child {
 	margin-right: 0px;
-	
 }
 .oj-navigationlist-item {
 	margin-top: 10px;
@@ -78,7 +71,13 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	color: #fff
 }
 .oj-button.oj-default.oj-button-half-chrome .oj-button-icon, .oj-button.oj-focus-only.oj-button-half-chrome .oj-button-icon {
-	color: #fff
+	color: #939393
+}
+.oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #424243;
+}
+.oj-button.oj-selected.oj-hover.oj-button-half-chrome .oj-button-icon {
+	color: #424243;
 }
 .oj-button-jqui.oj-hover.oj-button-half-chrome, .oj-button.oj-hover.oj-button-half-chrome .oj-button-button {
 	color: #fff !important;
@@ -100,4 +99,8 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 .oj-navigationlist-item.oj-hover:not(.oj-selected) {
 	background-color: #ebeced;
 	border-color: #f29111;
+}
+
+.oj-web-applayout-offcanvas-icon {
+    font-size: 40px;
 }
