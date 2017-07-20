@@ -41,31 +41,26 @@
   </li>
 
 </script>
-<style>
-  .fixedButton {
-    display: block !important;
-  }
-</style>
 
 <button class="fixedButton" id="fixb" data-bind="click:openthefilterpanel"><img src="css/images/filter_button.png"></button>
 <div id="slider" class="transition">
   <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
   <br>
     <p style="font-weight: bolder">Filter by Location</p>
-        <ul data-bind="foreach: hubslist">
+        <div data-bind="foreach: hubslist">
             <div class="checkbox">
-                <input type="checkbox" data-bind="value: $data,checked:$root.selectechubs">
+                <label><input type="checkbox" data-bind="value: $data,checked:$root.selectechubs"></label>
                 <span data-bind="text: $data"></span>
             </div>
-        </ul><br> 
+        </div><br> 
         <p style="font-weight: bolder">Filter by Pillar</p>
-        <ul data-bind="foreach: listofpillers">
+        <div data-bind="foreach: listofpillers">
             <div class="checkbox">
-                <input type="checkbox" data-bind="value: $data">
+                <label><input type="checkbox" data-bind="value: $data"></label>
                 <span data-bind="text: $data"></span>
             </div>
-        </ul>
-      <button id="apply" class="apply">Apply</button>
-    </form>
+        </div>
+      <button id="apply" class="apply" data-bind="click:closethefilterpanel">Apply</button>
+    
   </div>
 </div>
