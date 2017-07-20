@@ -28,14 +28,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.listofpillers = ko.observableArray([]);
       self.selectechubs=ko.observableArray([]);
 
-      self.openthefilterpanel = function () {
-        $('#slider').toggleClass('open');
-        $('button.fixedButton').hide();
+       self.openthefilterpanel = function () {		
+        $('#slider').addClass('open');
+        $('#fixb').addClass('close');
       }
 
       self.closethefilterpanel = function () {
-        $('#slider').toggleClass('open');
-        $('button.fixedButton').show();
+		  $('#slider').removeClass('open');
+        $('#fixb').removeClass('close');
       }
 
       self.logSelected = function (event, ui) {
