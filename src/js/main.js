@@ -32,6 +32,7 @@ requirejs.config(
     'customElements': 'libs/webcomponents/CustomElements',
     'proj4': 'libs/proj4js/dist/proj4-src',
     'css': 'libs/require-css/css',
+	 'bootjs': 'libs/bootjs/bootstrap-tabcollapse',
   }
   //endinjector
   ,
@@ -53,7 +54,7 @@ requirejs.config(
  * objects in the callback
  */
 require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
-  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar'],
+  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar' ],
   function (oj, ko, app) { // this callback gets executed when all required modules are loaded
 
     $(function() {
@@ -77,8 +78,14 @@ require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
       } else {
         init();
       }
+	  
+
+
 
     });
+	
+	
 
-  }
-);
+  });
+
+

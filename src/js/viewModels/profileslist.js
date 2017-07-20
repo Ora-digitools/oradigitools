@@ -12,6 +12,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
     function DashboardViewModel() {
       var self = this;
       var selectedLocations = "", selectedSkills = "", selectedPillers = "";
+      self.url = "http://digital-db.us.oracle.com:7003/ords/seaas_stage/seaas/GetUserProfiles";
+      self.next = "";
+      self.prev = "";
       self.data = ko.observableArray();
       self.renderData = ko.observableArray();
       self.currentItemId = ko.observable();
@@ -21,14 +24,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         'ou', 'cost_center', 'target_dn', 'country', 'manager_email', 'profile_photo_id',
         'profile_photo_url', 'skills', 'customers', 'category', 'value', 'desc_text',]);
 
-      self.openthefilterpanel = function () {
-        $('#slider').toggleClass('open');
-        $('button.fixedButton').hide();
+      self.hubslist = ko.observableArray([]);
+      self.listofpillers = ko.observableArray([]);
+      self.selectechubs=ko.observableArray([]);
+
+       self.openthefilterpanel = function () {		
+        $('#slider').addClass('open');
+        $('#fixb').addClass('close');
       }
 
       self.closethefilterpanel = function () {
-        $('#slider').toggleClass('open');
-        $('button.fixedButton').show();
+		  $('#slider').removeClass('open');
+        $('#fixb').removeClass('close');
       }
 
       self.logSelected = function (event, ui) {
@@ -85,19 +92,45 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
       }
 
+      self.getFilters = function () {
+        $.getJSON("http://digital-db.us.oracle.com:7003/ords/seaas_stage/seaas/ListValues/SOLUTION_HUBS").
+          then(function (hubs) {
+            $.each(hubs.items, function () {
+              console.log(this.value);
+              // var hub = {
+              //   value: this.value
+              // }
+              self.hubslist.push(this.value);
+            })
+          });
+
+        $.getJSON("http://digital-db.us.oracle.com:7003/ords/seaas_stage/seaas/ListValues/ENGAGEMENT_PILLAR").
+          then(function (pillers) {
+            $.each(pillers.items, function () {
+              console.log(this.value);
+              // var piller = {
+              //   value: this.value
+              // }
+              self.listofpillers.push(this.value);
+            })
+          });
+      }
+
       self.getUserList = function () {
-        $.getJSON(baseurl + "ords/seaas_stage/seaas/GetUserProfiles").
+        $.getJSON(self.url).
           then(function (profiles) {
             console.log(">> " + profiles.items.length);
             self.data([]);
             self.renderData([]);
+            self.next = profiles.next!=undefined?profiles.next.$ref:'';
+            self.prev = profiles.previous!=undefined?profiles.previous.$ref:'';
             $.each(profiles.items, function () {
 
               var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
               if (!this.profile_photo_url.endsWith("GetPhoto/")) {
                 imageurl = this.profile_photo_url;
               }
-              var profilejson = stripkeys(JSON.stringify(this));
+              // var profilejson = stripkeys(JSON.stringify(this));
               var profile = {
                 icon: imageurl,
                 name: this.display_name,
@@ -108,8 +141,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 city: this.city,
                 state: this.state,
                 country: this.country,
-                uuid: this.uuid,
-                json: profilejson
+                uuid: this.uuid
               };
               if (this.work_email != 'matthew.orsie@oracle.com') {
                 self.data.push(profile);
@@ -121,34 +153,25 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
           });
       }
 
-      self.skillFilterClicked = function (val, evnt) {
-        var elemvalue = evnt.currentTarget.value;
-        selectedSkills = selectedSkills.includes(elemvalue) ? selectedSkills.replace(elemvalue + ',', '') : selectedSkills + elemvalue + ",";
-        selectedSkills.replace(',,', ',');
-        console.log(selectedSkills);
+      self.applyFilter=function(){
+        console.log(self.selectechubs);
       }
 
-      self.locationFilterClicked = function (val, evnt) {
-        var elemvalue = evnt.currentTarget.value;
-        selectedLocations = selectedLocations.includes(elemvalue) ? selectedLocations.replace(elemvalue + ',', '') : selectedLocations + elemvalue + ",";
-        selectedLocations.replace(',,', ',');
-        console.log(selectedLocations);
+      self.loadNextPage = function () {
+        self.url = self.next;
+        self.getUserList();
       }
 
-      self.pillerFilterClicked = function (val, evnt) {
-        var elemvalue = evnt.currentTarget.value;
-        selectedPillers = selectedPillers.includes(elemvalue) ? selectedPillers.replace(elemvalue + ',', '') : selectedPillers + elemvalue + ",";
-        selectedPillers.replace(',,', ',');
-        console.log(selectedPillers);
+      self.loadPrevPage = function () {
+        self.url = self.prev;
+        self.getUserList();
+      }
+      self.loadFirstPage = function () {
+        self.url = "http://digital-db.us.oracle.com:7003/ords/seaas_stage/seaas/GetUserProfiles";
+        self.getUserList();
       }
 
-      function stripkeys(profilejson) {
-        for (var i = 0; i < self.keywords().length; i++) {
-          profilejson = profilejson.replace(self.keywords()[i], '');
-        }
-        return profilejson;
-      }
-
+      self.getFilters();
       self.getUserList();
       self.dataSource = new oj.ArrayTableDataSource(self.renderData, { idAttribute: "uuid" })
     }
