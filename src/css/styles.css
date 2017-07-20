@@ -19,7 +19,7 @@ body {
 }
 .container {
 	/*width: 1366px;*/
-	width:1200px;
+	width: 1200px;
 }
 .icon-container {
 	width: 755px;
@@ -207,7 +207,7 @@ body {
 	height: 234px;
 	position: relative;
 	background-size: cover;
-	background-position:50%;
+	background-position: 50%;
 }
 .bottom-column {
 	background: rgba(0, 0, 0, 0.76) none repeat scroll 0 0;
@@ -229,7 +229,7 @@ body {
 	height: 484px;
 	color: #fff;
 	background-size: cover;
-	background-position:50%;
+	background-position: 50%;
 }
 .blackBg {
 	background: rgba(0, 0, 0, 0.76) none repeat scroll 0 0;
@@ -257,7 +257,7 @@ body {
 	font-size: 16px;
 	background-size: cover;
 	line-height: 32px;
-	background-position:50%;
+	background-position: 50%;
 }
 .cloud_hubs h2 {
 	margin-top: 0px;
@@ -373,6 +373,9 @@ footer {
 	padding: 40px 20px;
 	border: none;
 	border-radius: 0px 10px 10px 0px;
+}
+.fixedButton img {
+	width: 40px
 }
 #slider {
 	background: #324b5c;
@@ -701,7 +704,7 @@ li.active .tabs {
 }
 
 @media (max-width: 1199px) {
-	.container {
+.container {
 	width: auto;
 }
 .get_to_know, .how_to_engage, .cloud_hubs, .darkblue {
@@ -710,7 +713,6 @@ li.active .tabs {
 }
 
 @media (max-width: 1024px) {
-
 .icon-container {
 	width: auto;
 }
@@ -841,6 +843,21 @@ li.active .tabs {
 @media (max-width: 767px) {
 .carousel-control {
 	width: 20%;
+}
+.mainImage img {
+	max-width: 125px;
+	border-radius: 125px 125px 125px 125px;
+	-moz-border-radius: 125px 125px 125px 125px;
+	-webkit-border-radius: 125px 125px 125px 125px;
+	border: 5px solid #f29111;
+	min-width: 125px;
+	min-height: 125px;
+}
+.face {
+	min-height: 320px;
+}
+.fixedButton img {
+	width: 30px
 }
 }
 
