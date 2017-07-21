@@ -703,6 +703,8 @@ li.active .tabs {
 	overflow: hidden;
 }
 
+
+
 @media (max-width: 1199px) {
 .container {
 	width: auto;
@@ -868,6 +870,12 @@ li.active .tabs {
 @media (min-width: 768px) and (max-width: 1023px) {
 .carousel-control {
 	width: 10%;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ul#profiletabs {
+	padding-right:0px;
 }
 }
 
