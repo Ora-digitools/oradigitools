@@ -370,9 +370,9 @@ footer {
 	left: 0px;
 	z-index: 1001;
 	background: #324b5c;
-	padding: 40px 20px;
+	padding: 50px 10px;
 	border: none;
-	border-radius: 0px 10px 10px 0px;
+	border-radius: 0px 5px 5px 0px;
 }
 .fixedButton img {
 	width: 40px
@@ -806,7 +806,7 @@ li.active .tabs {
 	min-width: auto;
 }
 #slider {
-	top: 0%;
+	/*top: 0%;*/
 }
 .searchTitle {
 	text-align: right;
@@ -857,8 +857,12 @@ li.active .tabs {
 	min-height: 320px;
 }
 .fixedButton img {
-	width: 30px
+	width: 25px
 }
+
+.fixedButton{
+	padding: 30px 10px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
