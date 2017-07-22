@@ -443,7 +443,7 @@ footer {
 	background-size: cover;
 	font-weight: bold;
 }
-.tabs {
+.oj-tabs-gen-div {
 	background: #efefef;
 	text-align: center;
 	padding: 30px 0 0;
@@ -452,8 +452,9 @@ footer {
 	min-height: 90px;
 	position: relative;
 }
-li.active .tabs {
+li.oj-selected .oj-tabs-gen-div {
 	opacity: 1;
+	background: #efefef;
 }
 .margintop30 {
 	margin-top: 30px;
@@ -466,6 +467,7 @@ li.active .tabs {
 	bottom: 0;
 	position: absolute;
 	color: #fff;
+	left:0px;
 }
 .yellowtab {
 	background: #f29011 none repeat scroll 0 0;
@@ -479,12 +481,12 @@ li.active .tabs {
 .greentab {
 	background: #3a9140 none repeat scroll 0 0;
 }
-.tabs a:link, .tabs a:visited {
+.oj-tabs a:link, .oj-tabs a:visited {
 	text-decoration: none;
 	color: #000;
 	font-weight: bold;
 }
-.tabs a:hover, .tabs a:visited:hover {
+.oj-tabs a:hover, .oj-tabs a:visited:hover {
 	text-decoration: none;
 	color: #f29011;
 	font-weight: bold;
@@ -703,6 +705,22 @@ li.active .tabs {
 	overflow: hidden;
 }
 
+.demo-filmstrip-item {
+       box-sizing: border-box;
+      width: 230px;
+      
+      margin: 5px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .demo-arrow-controls {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px;
+    }
+	
 
 
 @media (max-width: 1199px) {
@@ -877,13 +895,18 @@ li.active .tabs {
 ul#profiletabs {
 	padding-right:0px;
 }
+.nopaddingsm{
+	padding:0px;}
+
+.nopaddingrightsm{
+	padding-right:0px;}	
 }
 
 @media (max-width: 414px) {
 .nopaddingxs {
 	padding: 0px;
 }
-.tabs {
+.oj-tabs {
 	font-size: 13px;
 }
 .nav {

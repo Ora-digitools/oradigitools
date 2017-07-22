@@ -19,12 +19,10 @@
 .oj-listview-item.oj-hover {
 	background-color: transparent;
 	border: none;
-	
 }
 ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover + li.oj-listview-item {
 	background-color: transparent;
 	border: none;
-	
 }
 .oj-listview-item {
 	border: none;
@@ -53,8 +51,8 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	border-bottom: 7px solid #ff8d14
 }
 .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-hover:not(.oj-selected) {
-/*border-bottom: 7px solid #ff8d14*/
-color: #ff8d14;
+	/*border-bottom: 7px solid #ff8d14*/
+	color: #ff8d14;
 }
 .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
 	margin-left: 20px;
@@ -103,7 +101,6 @@ color: #ff8d14;
 .oj-navigationlist-item.oj-hover:not(.oj-selected) {
 	background-color: #ebeced;
 	border-color: transparent;
-	
 }
 .oj-web-applayout-offcanvas-icon {
 	font-size: 35px;
@@ -111,13 +108,29 @@ color: #ff8d14;
 .oj-navigationlist-element a:link, .oj-navigationlist-element a:visited, .oj-navigationlist-element a:hover, .oj-navigationlist-element a:visited:hover {
 	text-decoration: none;
 }
-
 .oj-navigationlist-element a:hover, .oj-navigationlist-element a:visited:hover, .oj-navigationlist-element a:focus {
 	color: #f29111 !important;
 }
-
-  .oj-contrast-marker .oj-selected > a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
-    color: #f29111; }
-
+.oj-contrast-marker .oj-selected > a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
+	color: #f29111;
+}
 .oj-contrast-marker .oj-hover:not(.oj-selected) > a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
-  color: #f29111; }
+	color: #f29111;
+}
+#filmstrip-navarrows-example .oj-panel {
+	border: none
+}
+.oj-tabs-conveyor {
+	width: 100%
+}
+.oj-tabs {
+	font-size: inherit;
+}
+.oj-tabs-panel {
+	border: none
+}
+.oj-tabs-tab.oj-selected {
+	border: none
+}
+.oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab-content, .oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab-content, .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab{
+	border:none}
