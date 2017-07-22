@@ -5,7 +5,7 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdialog', 'ojs/ojprogressbar'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs/ojconveyorbelt', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojbutton','ojs/ojdialog'],
   function (oj, ko, $) {
 
     function DashboardViewModel() {
@@ -15,6 +15,32 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdialog', 'ojs/ojprogressbar']
       self.skills_thingstolearn = ko.observableArray();
       self.skills_interests = ko.observableArray();
       self.projectInterest = ko.observable();
+
+self.chemicals = [
+            { name: 'Hydrogen' },
+            { name: 'Helium' },
+            { name: 'Lithium' },
+            { name: 'Beryllium' },
+            { name: 'Boron' },
+            { name: 'Carbon' },
+            { name: 'Nitrogen' },
+            { name: 'Oxygen' },
+            { name: 'Fluorine' },
+            { name: 'Neon' },
+            { name: 'Sodium' },
+            { name: 'Magnesium' }
+        ];
+        
+        self.currentNavArrowPlacement = ko.observable("adjacent");
+        self.currentNavArrowVisibility = ko.observable("visible");
+        
+        getItemInitialDisplay = function(index)
+        {
+          return index < 4 ? '' : 'none';
+        };
+ 
+ 
+
 
       function getProfile() {
         $.getJSON(baseurl + "ords/seaas_stage/seaas/GetFullUserProfile/" + selecteduuid).
@@ -73,7 +99,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdialog', 'ojs/ojprogressbar']
       self.openeditprojectdialog = function () {
         $("#dialog1").ojDialog("open");
       }
+	  
     }
+	//ko.applyBindings(null, document.getElementById('tabs-container'));
     return new DashboardViewModel();
   }
 );
