@@ -8,7 +8,7 @@
 </div>
 <div class="row blueBg">
   <div class="container ">
-    <div class="col-sm-5 col-md-4 profileleft nopadding">
+    <div class="col-sm-5 col-md-4 profileleft nopadding"> 
       <!-- Image -->
       <div class="col-xs-7 col-sm-6 col-md-5 col-lg-4  profileImage nopadding"><img src="css/images/gail_wright.jpg" class="profileThumb">
         <div class="overlay">
@@ -17,11 +17,11 @@
           </div>
         </div>
       </div>
-      <!-- Image -->
+      <!-- Image --> 
       <!-- Name -->
       <div class="col-xs-5 col-sm-6 profileDetails nopadding"><span class="profileName">Gail Wright</span><br>
         <span class="profileTitle">Creative Director</span></div>
-      <!-- Name -->
+      <!-- Name --> 
     </div>
     <!-- Contact -->
     <div class="col-sm-4 col-md-3 profilePhone">
@@ -29,7 +29,7 @@
       <p><img src="css/images/mobile_icon.png">&nbsp;Mobile: +1 703-943-9369</p>
       <p><img src="css/images/email_icon_pink.png">&nbsp;gail.wright@oracle.com</p>
     </div>
-    <!-- Contact -->
+    <!-- Contact --> 
     <!-- Hub -->
     <div class="col-sm-3 col-md-3 profileAddress">
       <div>
@@ -40,49 +40,49 @@
       <p>Pillar: <br>
         Info Management</p>
     </div>
-    <!-- Hub -->
+    <!-- Hub --> 
   </div>
 </div>
 <div class="row margintop30">
-<!-- Tabs -->
 <div class="container nopaddingmd">
-<ul class="col-sm-12  nav nav-tabs" id="profiletabs">
-<li class="col-xs-4 active nopaddingxs">
-  <div class="tabs"><a data-toggle="tab" href="#about">About
-    <div class="yellowtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-    </a></div>
-</li>
-<li class="col-xs-4 nopaddingxs">
-  <div class="tabs"><a data-toggle="tab" href="#projects">Projects
-    <div class="bluetab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-    </a></div>
-</li>
-<li class="col-xs-4 nopaddingxs">
-  <div class="tabs"><a data-toggle="tab" href="#outside">Outside Interests
-    <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-    </a></div>
-</li>
-</div>
-</div>
-<!-- Tabs -->
-<div class="row margintop30">
-  <div class="container">
-    <div class="col-sm-12 nopadding">
-      <div class="tab-content">
+  <div id="tabs-container">
+    <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}"> 
+      <!-- tab bar -->
+      <ul class="col-sm-12 nopadding">
+        <li class="col-xs-4 active nopaddingxs">
+          About
+            <div class="yellowtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
+           
+        </li>
+        <li class="col-xs-4 nopaddingxs">
+         Projects
+            <div class="bluetab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
+          
+        </li>
+        <li class="col-xs-4 nopaddingxs">
+          Outside Interests
+            <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
+            
+        </li>
+      </ul>
+      
+      <!-- tab contents -->
+      <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs"> 
         <!-- about -->
-        <div id="about" class="tab-pane fade in active">
-          <div class="col-sm-9 nopaddingmd ">
+        <div id="about">
+          <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
             <!-- Profile summary -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Profile summary
                 <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editsummary">Edit</button>
+        
               </div>
               <div class="profileSummary">
                 <p>Gail works in the Oracle North America Technology Division (NATD) Sales Engineering and Customer Cloud Success organization. Gail supports Enterprise Cloud Architect (ECA) enablement and certification efforts as well as manages the development of the Enterprise Cloud Adoption Lifecycle (ECAL).</p>
                 <p>Gail is based out of Reston, VA and is a certified Enterprise Architect (TOGAF v8, FEAC Institute).</p>
               </div>
             </div>
-            <!-- Profile summary -->
+            <!-- Profile summary --> 
             <!-- Skills -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Skills
@@ -90,7 +90,7 @@
               </div>
               <div class="profileSummary"><span class="orangeTags">Enterprise Architecture</span><span class="orangeTags">OEA</span><span class="orangeTags">JAVA</span><span class="orangeTags">Management</span><span class="orangeTags">Oracle Enterprise Architect</span><span class="orangeTags">Solution Engineer</span></div>
             </div>
-            <!-- Skills -->
+            <!-- Skills --> 
             <!-- Learning Interests -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Learning Interests
@@ -98,9 +98,9 @@
               </div>
               <div class="profileSummary">Java, HTML</div>
             </div>
-            <!-- Learning Interests -->
+            <!-- Learning Interests --> 
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
             <!-- Share Profile -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Share Gail’s Profile</div>
@@ -108,7 +108,7 @@
                 <button class="shareprofile" onclick="location.href='mailto:?subject=Share%20Profile&body=Share%20Profile'">Share Profile</button>
               </div>
             </div>
-            <!-- Share Profile -->
+            <!-- Share Profile --> 
             <!-- Organization -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Organization</div>
@@ -121,17 +121,19 @@
                 </ul>
               </div>
             </div>
-            <!-- Organization -->
+            <!-- Organization --> 
           </div>
         </div>
         <!-- about Ends -->
-        <!-- projects -->
-        <div id="projects" class="tab-pane fade in">
-          <div class="col-sm-9 addnew">
+       
+      </div>
+      <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn">
+        <div id="projects">
+          <div class="col-sm-9 addnew nopaddingxs nopaddingsm">
             <button type="button" class="btn  btn-info btn-xs " data-toggle="modal" data-target="#addnewprojects">+ Add new Projects</button>
           </div>
-          <div class="col-sm-9 nopaddingmd">
-            <div class="panel-group" id="accordion">
+          <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
+            <div class="panel-group" id="accordion"> 
               <!-- Project 1 -->
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -148,7 +150,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Project 1 -->
+              <!-- Project 1 --> 
               <!-- Project 2 -->
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -162,7 +164,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Project 2 -->
+              <!-- Project 2 --> 
               <!-- Project 3-->
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -186,10 +188,10 @@
                   </div>
                 </div>
               </div>
-              <!-- Project 3 -->
+              <!-- Project 3 --> 
             </div>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
             <!-- Achievements -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Achievements</div>
@@ -201,7 +203,7 @@
                 </ul>
               </div>
             </div>
-            <!-- Achievements -->
+            <!-- Achievements --> 
             <!-- Other Acknowledgements -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Other Acknowledgements</div>
@@ -214,78 +216,38 @@
                 </ul>
               </div>
             </div>
-            <!-- Other Acknowledgements -->
+            <!-- Other Acknowledgements --> 
           </div>
         </div>
-        <!-- projects -->
+      </div>
+      <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
         <!-- Outside -->
-        <div id="outside" class="tab-pane fade in">
-          <div class="col-sm-12 nopaddingleftmd">
+        <div id="outside">
+          <div class="col-sm-12 nopadding"> 
             <!-- Uploads -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Recent Uploads</div>
-              <div class="profileSummary row">
-			  <!-- for tablets and desktop -->
-                <div id="uploadCarousel" class="carousel slide hidden-xs" data-interval="false">
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
-                    <div class="item active">
-                      <div class="row-fluid">
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/user_upload_1.png" alt="Image" style="max-width:100%;"></a></div>
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/austin.jpg" alt="Image" style="max-width:100%;"></a></div>
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/user_upload_1.png" alt="Image" style="max-width:100%;"></a></div>
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/user_upload_1.png" alt="Image" style="max-width:100%;"></a></div>
-                      </div>
-                      <!--/row-fluid-->
-                    </div>
-                    <!--/item-->
-                    <div class="item">
-                      <div class="row-fluid">
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/austin.jpg" alt="Image" style="max-width:100%;"></a></div>
-                      </div>
-                      <!--/row-fluid-->
-                    </div>
-                    <!--/item-->
-                    <!--/item-->
-                  </div>
-                  <!--/carousel-inner-->
-                  <a class="left carousel-control" href="#uploadCarousel" data-slide="prev">‹</a> <a class="right carousel-control" href="#uploadCarousel" data-slide="next">›</a> </div>
-				  <!-- for tablets and desktop ends here -->
-                <!-- for mobile with just one image at a time -->
-                <div id="uploadCarouselxs" class="carousel slide hidden-sm hidden-md hidden-lg" data-interval="false">
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
-                    <div class="item active">
-                      <div class="row-fluid">
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/user_upload_1.png" alt="Image" style="max-width:100%;"></a></div>
-                      </div>
-                      <!--/row-fluid-->
-                    </div>
-                    <!--/item-->
-                    <div class="item">
-                      <div class="row-fluid">
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/austin.jpg" alt="Image" style="max-width:100%;"></a></div>
-                      </div>
-                      <!--/row-fluid-->
-                    </div>
-                    <!--/item-->
-                    <div class="item">
-                      <div class="row-fluid">
-                        <div class="col-sm-3"><a href="#x" class=""><img src="css/images/user_upload_1.png" alt="Image" style="max-width:100%;"></a></div>
-                      </div>
-                      <!--/row-fluid-->
-                    </div>
-                    <!--/item-->
-                  </div>
-                  <!--/carousel-inner-->
-                  <a class="left carousel-control" href="#uploadCarouselxs" data-slide="prev">‹</a> <a class="right carousel-control" href="#uploadCarouselxs" data-slide="next">›</a> </div>
-				  <!-- for mobile ends here -->
-                <!--/myCarousel-->
-              </div>
+              <div class="profileSummary "> <div id="filmstrip-navarrows-example">
+          <div id="filmStripDiv" class="oj-panel">
+            <div id="filmStrip" 
+         aria-label="Set of chemicals" 
+         data-bind="ojComponent: {
+           component: 'ojFilmStrip', 
+           arrowPlacement: currentNavArrowPlacement, 
+           arrowVisibility: currentNavArrowVisibility}"> 
+              <!-- ko foreach: chemicals -->
+              <div class="oj-panel oj-panel-alt2 demo-filmstrip-item " 
+           data-bind="style: {
+             display: getItemInitialDisplay($index())}"> <span data-bind="text: name"></span> </div>
+              <!-- /ko --> 
             </div>
-            <!-- Uploads -->
           </div>
-          <div class="col-sm-9 nopaddingmd">
+          <!-- end filmStripDiv --> 
+        </div> </div>
+            </div>
+            <!-- Uploads --> 
+          </div>
+          <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
             <!-- Outside Interests -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Outside Interests and hobbies
@@ -296,9 +258,9 @@
                 <p>Past Life: Skiing, Whitewater Rafting, Rock Scrambling </p>
               </div>
             </div>
-            <!-- Outside Interests -->
+            <!-- Outside Interests --> 
           </div>
-          <div class="col-sm-3 ">
+          <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
             <!-- Outside Achievements -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Outside Achievements</div>
@@ -311,7 +273,7 @@
                 </ul>
               </div>
             </div>
-            <!-- Outside Achievements -->
+            <!-- Outside Achievements --> 
             <!-- Links -->
             <div class="profileSection">
               <div  class="greyBg profileSummaryh">Links</div>
@@ -323,18 +285,19 @@
                 </ul>
               </div>
             </div>
-            <!-- Links -->
+            <!-- Links --> 
           </div>
         </div>
-        <!-- Outside -->
+        <!-- Outside --> 
       </div>
+      
     </div>
   </div>
 </div>
 </div>
 <!-- Summary Edit -->
 <div class="modal fade" id="editsummary" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -348,7 +311,7 @@
                   <p>Gail is based out of Reston, VA and is a certified Enterprise Architect (TOGAF v8, FEAC Institute).</p>
 </textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -356,7 +319,7 @@
 </div>
 <!-- Skills Edit -->
 <div class="modal fade" id="editskills" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -368,7 +331,7 @@
           <div class="form-group">
             <textarea class="form-control">Enterprise Architecture, OEA, JAVA, Management, Oracle Enterprise Architect, Solution Engineer</textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -376,7 +339,7 @@
 </div>
 <!-- Location Edit -->
 <div class="modal fade" id="editlocation" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -393,7 +356,7 @@
             <label for="pillar">Pillar:</label>
             <input type="text" class="form-control" id="pillar" value="Info Management">
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -401,7 +364,7 @@
 </div>
 <!-- Image Edit -->
 <div class="modal fade" id="editimage" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -414,7 +377,7 @@
             <label class="control-label">Select File</label>
             <input id="input-1" type="file" class="file">
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -422,7 +385,7 @@
 </div>
 <!-- Learning Interests Edit -->
 <div class="modal fade" id="learninginterests" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -434,7 +397,7 @@
           <div class="form-group">
             <textarea class="form-control">Java, HTML</textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -442,7 +405,7 @@
 </div>
 <!-- Project 1 Edit -->
 <div class="modal fade" id="editproject1" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -463,7 +426,7 @@
                       <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean erat diam, vehicula vitae commodo ut, vehicula et mi. Nam risus neque, auctor ac quam quis, porta ullamcorper tortor.</p>
 </textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -471,7 +434,7 @@
 </div>
 <!-- Project 2 Edit -->
 <div class="modal fade" id="editproject2" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -489,7 +452,7 @@
             <textarea class="form-control"> <p>Start Date: 12/01/2017 End Date: Ongoing</p>
 </textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -497,7 +460,7 @@
 </div>
 <!-- Past Projects Edit -->
 <div class="modal fade" id="editpastprojects" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -520,7 +483,7 @@
                         <p>Role: Create UI/UX for Onboarding Web Applications</p>
 </textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -528,7 +491,7 @@
 </div>
 <!-- Add New Projects -->
 <div class="modal fade" id="addnewprojects" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -545,7 +508,7 @@
             <label for="pillar">Description:</label>
             <textarea class="form-control"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -553,7 +516,7 @@
 </div>
 <!-- Add Past Projects  -->
 <div class="modal fade" id="addpastprojects" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -566,7 +529,7 @@
             <label for="pillar">Project:</label>
             <textarea class="form-control"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -574,7 +537,7 @@
 </div>
 <!-- Outside Interests and hobbies Edit -->
 <div class="modal fade" id="editoutsideinterests" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -588,7 +551,7 @@
                   <p>Past Life: Skiing, Whitewater Rafting, Rock Scrambling </p>
 </textarea>
           </div>
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
