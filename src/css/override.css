@@ -132,5 +132,19 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 .oj-tabs-tab.oj-selected {
 	border: none
 }
-.oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab-content, .oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab-content, .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab{
-	border:none}
+.oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab-content, .oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab-content, .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab {
+	border: none
+}
+.oj-inputsearch-input {
+	font-size: 13px;
+}
+.oj-conveyorbelt-overflow-indicator.oj-active, .oj-conveyorbelt-overflow-indicator.oj-active.oj-hover {
+	background-color: transparent !important;
+	border-color: none !important;
+}
+.oj-conveyorbelt-overflow-indicator{
+	height:auto;}
+.oj-conveyorbelt-overflow-indicator.oj-hover {
+  background-color: transparent !important;
+	border:transparent !important;
+}

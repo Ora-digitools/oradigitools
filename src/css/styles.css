@@ -9,6 +9,9 @@
 * {
 	outline: none;
 }
+a {
+	outline: none;
+}
 body {
 	font-family: 'ArialMT';
 	font-size: 14px;
@@ -226,7 +229,7 @@ body {
 }
 .how_to_engage {
 	background: url(images/how_to_engage.jpg) no-repeat;
-	height: 484px;
+	height: 515px;
 	color: #fff;
 	background-size: cover;
 	background-position: 50%;
@@ -251,7 +254,7 @@ body {
 }
 .cloud_hubs {
 	background: url(images/cloud_hubs.jpg) no-repeat;
-	height: 232px;
+	height: 263px;
 	color: #fff;
 	margin-bottom: 30px;
 	font-size: 16px;
@@ -285,12 +288,22 @@ body {
 }
 .deliver {
 	background: #f29111;
+	color: rgb(255, 255, 255);
+	height: 221px;
 	text-align: center;
+	background-image: url(images/orange_bg_2.png);
+	background-position: top;
+	padding: 10px;
+	text-align: left;
+	font-size: 19px;
+	background-repeat:repeat-x;
+	position:relative;
 }
-.deliver img {
-	display: inline-block;
-	min-height: 220px;
-}
+.orangetext{
+	position:absolute;
+	bottom:10px;
+	width:100%}
+
 footer {
 	font-size: 12px;
 	margin-top: 60px;
@@ -335,6 +348,11 @@ footer {
 	border: 5px solid #f29111;
 	min-width: 200px;
 	min-height: 200px;
+	cursor: pointer;
+}
+.mainImage img:hover {
+	opacity: 0.6;
+	background: #000;
 }
 .face {
 	border-right: 1px solid #d3d3d3;
@@ -345,6 +363,9 @@ footer {
 }
 .oj-listview-item:nth-child(4n) .face {
 	border-right: none;
+}
+.oj-tabs-tab, .oj-tabs-tab-content {
+	white-space: normal !important
 }
 .name {
 	font-family: ArialMT;
@@ -363,6 +384,7 @@ footer {
 .social img {
 	margin-left: 5px;
 	margin-right: 5px;
+	max-height: 29px;
 }
 .fixedButton {
 	position: fixed;
@@ -451,6 +473,10 @@ footer {
 	opacity: 0.4;
 	min-height: 90px;
 	position: relative;
+	outline: none;
+}
+.oj-tabs a {
+	outline: none;
 }
 li.oj-selected .oj-tabs-gen-div {
 	opacity: 1;
@@ -467,7 +493,7 @@ li.oj-selected .oj-tabs-gen-div {
 	bottom: 0;
 	position: absolute;
 	color: #fff;
-	left:0px;
+	left: 0px;
 }
 .yellowtab {
 	background: #f29011 none repeat scroll 0 0;
@@ -704,24 +730,26 @@ li.oj-selected .oj-tabs-gen-div {
 .panel-heading {
 	overflow: hidden;
 }
-
 .demo-filmstrip-item {
-       box-sizing: border-box;
-      width: 230px;
-      
-      margin: 5px;
-      text-align: center;
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .demo-arrow-controls {
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 20px;
-    }
-	
-
+	box-sizing: border-box;
+	width: 230px;
+	margin: 5px;
+	text-align: center;
+	font-weight: bold;
+	color: #333;
+}
+.demo-arrow-controls {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+}
+.grayTags:after {
+	content: ", ";
+	color: #aaa;
+}
+.grayTags:last-child:after {
+	content: "";
+}
 
 @media (max-width: 1199px) {
 .container {
@@ -806,7 +834,7 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-bottom: 10px;
 }
 .darkblue {
-	min-height: 240px;
+	min-height: 280px;
 	margin-bottom: 0px;
 }
 #text-carousel {
@@ -826,7 +854,7 @@ li.oj-selected .oj-tabs-gen-div {
 	min-width: auto;
 }
 #slider {
-	/*top: 0%;*/
+/*top: 0%;*/
 }
 .searchTitle {
 	text-align: right;
@@ -852,6 +880,8 @@ li.oj-selected .oj-tabs-gen-div {
 .togglemenu {
 	padding-top: 10px;
 }
+.orangetext{
+	text-align:center;}
 }
 
 @media (max-width: 991px) {
@@ -879,40 +909,75 @@ li.oj-selected .oj-tabs-gen-div {
 .fixedButton img {
 	width: 25px
 }
-
-.fixedButton{
+.fixedButton {
 	padding: 30px 10px;
-	}
+}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
 .carousel-control {
 	width: 10%;
 }
+.darkblue {
+	min-height: auto;
+	
+}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-ul#profiletabs {
-	padding-right:0px;
-}
-.nopaddingsm{
-	padding:0px;}
 
-.nopaddingrightsm{
-	padding-right:0px;}	
+.darkblue {
+	min-height: auto;
+	
+}
+}
+
+@media (min-width: 527px) and (max-width: 1024px) {
+ul#profiletabs {
+	padding-right: 0px;
+}
+.nopaddingsm {
+	padding: 0px;
+}
+.nopaddingrightsm {
+	padding-right: 0px;
+}
+}
+
+@media (min-width: 415px) and (max-width: 767px) {
+.oj-tabs-panel .nopaddingxs {
+	padding: 0px;
+}
+.oj-tabs-gen-div {
+	font-size: 15px;
+}
+}
+
+@media (min-width: 415px) and (max-width: 511px) {
+.oj-tabs-gen-div {
+	font-size: 14px;
+}
 }
 
 @media (max-width: 414px) {
 .nopaddingxs {
 	padding: 0px;
 }
-.oj-tabs {
+.oj-tabs, .oj-tabs-gen-div {
 	font-size: 13px;
 }
 .nav {
 	padding-left: 15px;
 }
 }
+
+@media (max-width: 360px) {
+
+.darkblue {
+	min-height: 350px;
+	margin-bottom: 0px;
+}	
+	}
 
 @media (max-width: 320px) {
 .logo img {
@@ -924,6 +989,7 @@ ul#profiletabs {
 .profileDetails {
 	top: 25%;
 }
+
 }
 
 @media (min-width: 1025px) {
