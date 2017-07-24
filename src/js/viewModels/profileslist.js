@@ -28,7 +28,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.listofpillers = ko.observableArray([]);
       self.selectechubs=ko.observableArray([]);
 
-       self.openthefilterpanel = function () {		
+       self.openthefilterpanel = function () {
         $('#slider').addClass('open');
         $('#fixb').addClass('close');
       }
@@ -38,8 +38,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $('#fixb').removeClass('close');
       }
 
+      //switch to different html page
       self.logSelected = function (event, ui) {
-
+         console.log("event", event)
+         console.log("ui", ui)
         if (ui.option === 'currentItem') {
           selecteduuid = ui.item.attr('id');
           self.router = oj.Router.rootInstance;
@@ -96,7 +98,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $.getJSON("http://digital-db.us.oracle.com:7003/ords/seaas_stage/seaas/ListValues/SOLUTION_HUBS").
           then(function (hubs) {
             $.each(hubs.items, function () {
-              console.log(this.value);
+              console.log("hub value is", this.value);
               // var hub = {
               //   value: this.value
               // }
@@ -107,7 +109,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $.getJSON("http://digital-db.us.oracle.com:7003/ords/seaas_stage/seaas/ListValues/ENGAGEMENT_PILLAR").
           then(function (pillers) {
             $.each(pillers.items, function () {
-              console.log(this.value);
+              console.log("pillar value is", this.value);
               // var piller = {
               //   value: this.value
               // }
