@@ -19,7 +19,7 @@ body {
 }
 .container {
 	/*width: 1366px;*/
-	width: 1200px;
+	width:1200px;
 }
 .icon-container {
 	width: 755px;
@@ -207,7 +207,7 @@ body {
 	height: 234px;
 	position: relative;
 	background-size: cover;
-	background-position: 50%;
+	background-position:50%;
 }
 .bottom-column {
 	background: rgba(0, 0, 0, 0.76) none repeat scroll 0 0;
@@ -229,7 +229,7 @@ body {
 	height: 484px;
 	color: #fff;
 	background-size: cover;
-	background-position: 50%;
+	background-position:50%;
 }
 .blackBg {
 	background: rgba(0, 0, 0, 0.76) none repeat scroll 0 0;
@@ -257,7 +257,7 @@ body {
 	font-size: 16px;
 	background-size: cover;
 	line-height: 32px;
-	background-position: 50%;
+	background-position:50%;
 }
 .cloud_hubs h2 {
 	margin-top: 0px;
@@ -370,12 +370,9 @@ footer {
 	left: 0px;
 	z-index: 1001;
 	background: #324b5c;
-	padding: 50px 10px;
+	padding: 40px 20px;
 	border: none;
-	border-radius: 0px 5px 5px 0px;
-}
-.fixedButton img {
-	width: 40px
+	border-radius: 0px 10px 10px 0px;
 }
 #slider {
 	background: #324b5c;
@@ -443,7 +440,7 @@ footer {
 	background-size: cover;
 	font-weight: bold;
 }
-.oj-tabs-gen-div {
+.tabs {
 	background: #efefef;
 	text-align: center;
 	padding: 30px 0 0;
@@ -452,9 +449,8 @@ footer {
 	min-height: 90px;
 	position: relative;
 }
-li.oj-selected .oj-tabs-gen-div {
+li.active .tabs {
 	opacity: 1;
-	background: #efefef;
 }
 .margintop30 {
 	margin-top: 30px;
@@ -467,7 +463,6 @@ li.oj-selected .oj-tabs-gen-div {
 	bottom: 0;
 	position: absolute;
 	color: #fff;
-	left:0px;
 }
 .yellowtab {
 	background: #f29011 none repeat scroll 0 0;
@@ -481,12 +476,12 @@ li.oj-selected .oj-tabs-gen-div {
 .greentab {
 	background: #3a9140 none repeat scroll 0 0;
 }
-.oj-tabs a:link, .oj-tabs a:visited {
+.tabs a:link, .tabs a:visited {
 	text-decoration: none;
 	color: #000;
 	font-weight: bold;
 }
-.oj-tabs a:hover, .oj-tabs a:visited:hover {
+.tabs a:hover, .tabs a:visited:hover {
 	text-decoration: none;
 	color: #f29011;
 	font-weight: bold;
@@ -705,26 +700,8 @@ li.oj-selected .oj-tabs-gen-div {
 	overflow: hidden;
 }
 
-.demo-filmstrip-item {
-       box-sizing: border-box;
-      width: 230px;
-
-      margin: 5px;
-      text-align: center;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .demo-arrow-controls {
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 20px;
-    }
-
-
-
 @media (max-width: 1199px) {
-.container {
+	.container {
 	width: auto;
 }
 .get_to_know, .how_to_engage, .cloud_hubs, .darkblue {
@@ -733,6 +710,7 @@ li.oj-selected .oj-tabs-gen-div {
 }
 
 @media (max-width: 1024px) {
+
 .icon-container {
 	width: auto;
 }
@@ -826,7 +804,7 @@ li.oj-selected .oj-tabs-gen-div {
 	min-width: auto;
 }
 #slider {
-	/*top: 0%;*/
+	top: 0%;
 }
 .searchTitle {
 	text-align: right;
@@ -864,25 +842,6 @@ li.oj-selected .oj-tabs-gen-div {
 .carousel-control {
 	width: 20%;
 }
-.mainImage img {
-	max-width: 125px;
-	border-radius: 125px 125px 125px 125px;
-	-moz-border-radius: 125px 125px 125px 125px;
-	-webkit-border-radius: 125px 125px 125px 125px;
-	border: 5px solid #f29111;
-	min-width: 125px;
-	min-height: 125px;
-}
-.face {
-	min-height: 320px;
-}
-.fixedButton img {
-	width: 25px
-}
-
-.fixedButton{
-	padding: 30px 10px;
-	}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -891,22 +850,11 @@ li.oj-selected .oj-tabs-gen-div {
 }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-ul#profiletabs {
-	padding-right:0px;
-}
-.nopaddingsm{
-	padding:0px;}
-
-.nopaddingrightsm{
-	padding-right:0px;}
-}
-
 @media (max-width: 414px) {
 .nopaddingxs {
 	padding: 0px;
 }
-.oj-tabs {
+.tabs {
 	font-size: 13px;
 }
 .nav {

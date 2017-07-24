@@ -708,19 +708,19 @@ li.oj-selected .oj-tabs-gen-div {
 .demo-filmstrip-item {
        box-sizing: border-box;
       width: 230px;
-
+      
       margin: 5px;
       text-align: center;
       font-weight: bold;
       color: #333;
     }
-
+    
     .demo-arrow-controls {
       display: inline-block;
       vertical-align: top;
       margin-right: 20px;
     }
-
+	
 
 
 @media (max-width: 1199px) {
@@ -899,7 +899,7 @@ ul#profiletabs {
 	padding:0px;}
 
 .nopaddingrightsm{
-	padding-right:0px;}
+	padding-right:0px;}	
 }
 
 @media (max-width: 414px) {

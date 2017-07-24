@@ -21,11 +21,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.router = oj.Router.rootInstance;
       self.router.configure({
         'home': { label: 'Home', isDefault: true },
+        'welcome': { label: 'Welcome' },
+        'cloudhubs': { label: 'Cloud Hubs' },
         'profileslist': { label: 'SE Faces' },
         'profiledetails': { label: 'ProfileDetails' },
-        '': { label: 'Catalogs'},
-        '': { label: 'Assets' },
-        '': { label: 'Performance' }
+        'catalogs': { label: 'Catalogs'},
+        'assets': { label: 'Assets' },
+        'performance': { label: 'Performance' }
       });
 
       //welcome,cloud hubs, profiles,catalogs, assets, performance
@@ -70,11 +72,11 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         this.linkTarget = linkTarget;
       }
       self.footerLinks = ko.observableArray([
-        new footerLink('About Oracle', 'aboutOracle', 'http://www.oracle.com/us/corporate/index.html#menu-about'),
-        new footerLink('Contact Us', 'contactUs', 'http://www.oracle.com/us/corporate/contact/index.html'),
-        new footerLink('Legal Notices', 'legalNotices', 'http://www.oracle.com/us/legal/index.html'),
-        new footerLink('Terms Of Use', 'termsOfUse', 'http://www.oracle.com/us/legal/terms/index.html'),
-        new footerLink('Your Privacy Rights', 'yourPrivacyRights', 'http://www.oracle.com/us/legal/privacy/index.html')
+        new footerLink('Sitemap', 'sitemap', '#'),
+		new footerLink('Terms of Use & Privacy', 'terms', '#'),
+		new footerLink('Cookie Preferences', 'cookie', '#'),
+        new footerLink('Contact Us', 'contactUs', '#')
+
       ]);
     }
 
