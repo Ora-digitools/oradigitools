@@ -3,14 +3,14 @@
  The Universal Permissive License (UPL), Version 1.0
  -->
 
-<div class="row profileblackBg">
-  <div class="container">Where are we: <a href="#">SE Faces</a> / <a href="#">Gail Wright</a></div>
+<div class="row profileblackBg" data-bind="with:profile">
+  <div class="container">Where are we: <a href="#">SE Faces</a> / <a href="#" data-bind="text:name"></a></div>
 </div>
-<div class="row blueBg">
+<div class="row blueBg" data-bind="with:profile">
   <div class="container ">
     <div class="col-sm-5 col-md-4 profileleft nopadding"> 
       <!-- Image -->
-      <div class="col-xs-7 col-sm-6 col-md-5 col-lg-4  profileImage nopadding"><img src="css/images/gail_wright.jpg" class="profileThumb">
+      <div class="col-xs-7 col-sm-6 col-md-5 col-lg-4  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay">
           <div class="text">
             <button type="button" data-toggle="modal" data-target="#editimage"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
@@ -19,15 +19,15 @@
       </div>
       <!-- Image --> 
       <!-- Name -->
-      <div class="col-xs-5 col-sm-6 profileDetails nopadding"><span class="profileName">Gail Wright</span><br>
-        <span class="profileTitle">Creative Director</span></div>
+      <div class="col-xs-5 col-sm-6 profileDetails nopadding"><span class="profileName" data-bind="text:name"></span><br>
+        <span class="profileTitle" data-bind="text:title"></span></div>
       <!-- Name --> 
     </div>
     <!-- Contact -->
     <div class="col-sm-4 col-md-3 profilePhone">
-      <p><img src="css/images/phone_icon.png">&nbsp;Work Phone: +1 703-364-032</p>
-      <p><img src="css/images/mobile_icon.png">&nbsp;Mobile: +1 703-943-9369</p>
-      <p><img src="css/images/email_icon_pink.png">&nbsp;gail.wright@oracle.com</p>
+      <p><img src="css/images/phone_icon.png">&nbsp;Work Phone: <span data-bind="text:work_phone"></span></p>
+      <p><img src="css/images/mobile_icon.png">&nbsp;Mobile: <span data-bind="text:mobile_phone"></span></p>
+      <p><img src="css/images/email_icon_pink.png">&nbsp;<span data-bind="text:work_email"></span></p>
     </div>
     <!-- Contact --> 
     <!-- Hub -->
@@ -36,9 +36,9 @@
         <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlocation">Edit</button>
       </div>
       <p>Hub: <br>
-        Reston - 1910 Oracle Way</p>
+        <span data-bind="text:center"></span></p>
       <p>Pillar: <br>
-        Info Management</p>
+        <span data-bind="text:pillar"></span></p>
     </div>
     <!-- Hub --> 
   </div>
@@ -49,25 +49,26 @@
     <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}"> 
       <!-- tab bar -->
       <ul class="col-sm-12 nopadding">
-        <li class="col-xs-4 active nopaddingxs">
+        <li class="col-xs-4 active nopaddingxs" data-bind="click: tabClick1">
           About
             <div class="yellowtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
            
         </li>
-        <li class="col-xs-4 nopaddingxs">
+        <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick2">
          Projects
             <div class="bluetab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
           
         </li>
-        <li class="col-xs-4 nopaddingxs">
+        <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick3">
           Outside Interests
             <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
             
         </li>
+       
       </ul>
       
       <!-- tab contents -->
-      <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs"> 
+      <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs" data-bind="with:profile"> 
         <!-- about -->
         <div id="about">
           <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
@@ -78,8 +79,7 @@
         
               </div>
               <div class="profileSummary">
-                <p>Gail works in the Oracle North America Technology Division (NATD) Sales Engineering and Customer Cloud Success organization. Gail supports Enterprise Cloud Architect (ECA) enablement and certification efforts as well as manages the development of the Enterprise Cloud Adoption Lifecycle (ECAL).</p>
-                <p>Gail is based out of Reston, VA and is a certified Enterprise Architect (TOGAF v8, FEAC Institute).</p>
+                 <p data-bind="text:profile_summary"></p>
               </div>
             </div>
             <!-- Profile summary --> 
@@ -88,7 +88,7 @@
               <div  class="greyBg profileSummaryh">Skills
                 <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editskills">Edit</button>
               </div>
-              <div class="profileSummary"><span class="orangeTags">Enterprise Architecture</span><span class="orangeTags">OEA</span><span class="orangeTags">JAVA</span><span class="orangeTags">Management</span><span class="orangeTags">Oracle Enterprise Architect</span><span class="orangeTags">Solution Engineer</span></div>
+              <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
             </div>
             <!-- Skills --> 
             <!-- Learning Interests -->
@@ -96,7 +96,7 @@
               <div  class="greyBg profileSummaryh">Learning Interests
                 <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#learninginterests">Edit</button>
               </div>
-              <div class="profileSummary">Java, HTML</div>
+              <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
             </div>
             <!-- Learning Interests --> 
           </div>
@@ -114,10 +114,10 @@
               <div  class="greyBg profileSummaryh">Organization</div>
               <div class="profileSummary">
                 <ul>
-                  <li>Data Management - US </li>
-                  <li>Cost Center: S0D1 </li>
-                  <li>Company Code: 001 </li>
-                  <li>Manager: Venu Mantha</li>
+                  <li data-bind="text:ou"> </li>
+                  <li>Cost Center: <span data-bind="text:cost_center"></span></li>
+                  <li>Company Code: <span data-bind="text:cost_center"></span> </li>
+                  <li>Manager: <span data-bind="text:mgr_display_name"></span></li>
                 </ul>
               </div>
             </div>
@@ -127,12 +127,12 @@
         <!-- about Ends -->
        
       </div>
-      <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn">
+      <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn" data-bind="with:profile">
         <div id="projects">
-          <div class="col-sm-9 addnew nopaddingxs nopaddingsm">
+          <div class="col-sm-12 addnew nopaddingxs nopaddingsm">
             <button type="button" class="btn  btn-info btn-xs " data-toggle="modal" data-target="#addnewprojects">+ Add new Projects</button>
           </div>
-          <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
+          <div class="col-sm-12 nopaddingmd nopaddingxs nopaddingsm">
             <div class="panel-group" id="accordion"> 
               <!-- Project 1 -->
               <div class="panel panel-default">
@@ -191,97 +191,62 @@
               <!-- Project 3 --> 
             </div>
           </div>
-          <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
-            <!-- Achievements -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Achievements</div>
-              <div class="profileSummary">
-                <ul>
-                  <li><a href="#">Shared Services Sales Engineer of Year  - 2016</a>
-                    <p align="center"><img src="css/images/oracle_patent_logo.png"></p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Achievements --> 
-            <!-- Other Acknowledgements -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Other Acknowledgements</div>
-              <div class="profileSummary">
-                <ul>
-                  <li>
-                    <p>BOA - Onboarding App</p>
-                    <p>Acknowledgement: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean erat diam, vehicula vitae commodo ut, vehicula et mi. Nam risus neque, auctor ac quam quis, porta ullamcorper tortor. </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Other Acknowledgements --> 
-          </div>
+          
         </div>
       </div>
+      
       <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
-        <!-- Outside -->
+        <!-- Outside --> 
         <div id="outside">
-          <div class="col-sm-12 nopadding"> 
+          <div class="col-sm-12 nopadding" > 
             <!-- Uploads -->
             <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Recent Uploads</div>
-              <div class="profileSummary "> <div id="filmstrip-navarrows-example">
-          <div id="filmStripDiv" class="oj-panel">
-            <div id="filmStrip" 
-         aria-label="Set of chemicals" 
-         data-bind="ojComponent: {
-           component: 'ojFilmStrip', 
-           arrowPlacement: currentNavArrowPlacement, 
-           arrowVisibility: currentNavArrowVisibility}"> 
-              <!-- ko foreach: chemicals -->
-              <div class="oj-panel oj-panel-alt2 demo-filmstrip-item " 
-           data-bind="style: {
-             display: getItemInitialDisplay($index())}"> <span data-bind="text: name"></span> </div>
-              <!-- /ko --> 
-            </div>
-          </div>
-          <!-- end filmStripDiv --> 
-        </div> </div>
+              <div  class="greyBg profileSummaryh">Recent Uploads<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#uploadImage">Upload</button></div>
+              <div class="profileSummary "> <div id="conveyorbelt-horizontal-example">
+
+    <div class=""
+         data-bind="ojComponent: {component: 'ojConveyorBelt'}">
+          <!-- ko foreach: personalphotoslist -->
+         <img data-bind="attr:{src:photo_url}">
+    
+       <!-- /ko --> 
+    </div>
+  
+</div>
+        
+         </div>
             </div>
             <!-- Uploads --> 
           </div>
           <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
             <!-- Outside Interests -->
-            <div class="profileSection">
+            <div class="profileSection" data-bind="with:profile">
               <div  class="greyBg profileSummaryh">Outside Interests and hobbies
                 <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
               </div>
-              <div class="profileSummary">
-                <p>Singing, Piano/Keyboards, Musical Arrangement, Writing, Photography, Biking, Hiking, Nature, Cruising, Volunteering.</p>
-                <p>Past Life: Skiing, Whitewater Rafting, Rock Scrambling </p>
+              <div class="profileSummary" data-bind="foreach:interests">
+                <span class="grayTags" data-bind="text:value"></span>
               </div>
             </div>
             <!-- Outside Interests --> 
           </div>
           <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
             <!-- Outside Achievements -->
-            <div class="profileSection">
+            <div class="profileSection" data-bind="with:profile">
               <div  class="greyBg profileSummaryh">Outside Achievements</div>
-              <div class="profileSummary">
+               <div class="profileSummary" data-bind="foreach:achivements">
                 <ul>
-                  <li>Took part in Boise Marathon, 2016</li>
-                  <li>Won 1st Prize in Mtn Bike ride</li>
-                  <li>Company Code: 001 </li>
-                  <li>Attended Holiday Musical Serenades</li>
+                  <li data-bind="text:value"></li>
                 </ul>
               </div>
             </div>
             <!-- Outside Achievements --> 
             <!-- Links -->
-            <div class="profileSection">
+            <div class="profileSection" data-bind="with:profile">
               <div  class="greyBg profileSummaryh">Links</div>
-              <div class="profileSummary">
+              <div class="profileSummary" data-bind="foreach:links">
                 <ul>
-                  <li><a href="#">Blog post Nature & Photography</a></li>
-                  <li><a href="#">Blog post Sports1</a></li>
-                  <li><a href="#">Blog post Sports2</a></li>
+                  <li><a data-bind="text:value,attr:{href:url}"></a></li>
                 </ul>
               </div>
             </div>
@@ -297,21 +262,20 @@
 </div>
 <!-- Summary Edit -->
 <div class="modal fade" id="editsummary" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Profile Summary</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" data-bind="with:profile">
         <form action="#">
           <div class="form-group">
-            <textarea class="form-control"><p>Gail works in the Oracle North America Technology Division (NATD) Sales Engineering and Customer Cloud Success organization. Gail supports Enterprise Cloud Architect (ECA) enablement and certification efforts as well as manages the development of the Enterprise Cloud Adoption Lifecycle (ECAL).</p>
-                  <p>Gail is based out of Reston, VA and is a certified Enterprise Architect (TOGAF v8, FEAC Institute).</p>
-</textarea>
+            <textarea class="form-control" data-bind="value:profile_summary">
+            </textarea>
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveSummary" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -319,19 +283,19 @@
 </div>
 <!-- Skills Edit -->
 <div class="modal fade" id="editskills" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Skills</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" data-bind="with:profile">
         <form action="#">
           <div class="form-group">
-            <textarea class="form-control">Enterprise Architecture, OEA, JAVA, Management, Oracle Enterprise Architect, Solution Engineer</textarea>
+            <textarea class="form-control" data-bind="value:flatSkills"></textarea>
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveSkills" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -339,24 +303,30 @@
 </div>
 <!-- Location Edit -->
 <div class="modal fade" id="editlocation" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Hub and Pillar</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" data-bind="with:profile">
         <form action="#">
           <div class="form-group">
-            <label for="hub">Hub:</label>
-            <input type="text" class="form-control" id="hub" value="Reston - 1910 Oracle Way">
+            <label>Hub:</label>
+            <input class="form-control" type="text" list="listohub" data-bind="value:center">
+            <datalist id="listohub" data-bind="foreach:hublist">
+              <option data-bind="text:$data">
+            </datalist>
           </div>
           <div class="form-group">
-            <label for="pillar">Pillar:</label>
-            <input type="text" class="form-control" id="pillar" value="Info Management">
+            <label>Pillar:</label>
+            <input class="form-control" type="text" list="listopillar" data-bind="value:pillar">
+            <datalist id="listopillar" data-bind="foreach:pillarlist">
+              <option data-bind="text:$data">
+            </datalist>
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
+          <button data-bind="click:showsavedialog" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -364,7 +334,7 @@
 </div>
 <!-- Image Edit -->
 <div class="modal fade" id="editimage" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -375,9 +345,9 @@
         <form action="#">
           <div class="form-group">
             <label class="control-label">Select File</label>
-            <input id="input-1" type="file" class="file">
+            <input class="btn btn-default" id="input-1" type="file" class="file" onchange="loadFile(event)">
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
+          <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
         </form>
       </div>
     </div>
@@ -385,19 +355,19 @@
 </div>
 <!-- Learning Interests Edit -->
 <div class="modal fade" id="learninginterests" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Learning Interests</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" data-bind="with:profile">
         <form action="#">
           <div class="form-group">
-            <textarea class="form-control">Java, HTML</textarea>
+            <textarea class="form-control" data-bind="value:flatlearnings"></textarea>
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveLearning" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -405,7 +375,7 @@
 </div>
 <!-- Project 1 Edit -->
 <div class="modal fade" id="editproject1" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -415,11 +385,11 @@
       <div class="modal-body">
         <form action="#">
           <div class="form-group">
-            <label for="hub">Title:</label>
-            <input type="text" class="form-control"  value="Bank of America - Onboarding Prototype">
+            <label>Title:</label>
+            <input type="text" class="form-control" value="Bank of America - Onboarding Prototype">
           </div>
           <div class="form-group">
-            <label for="pillar">Description:</label>
+            <label>Description:</label>
             <textarea class="form-control"> <p>Bank of America - Onboarding Prototype </p>
                       <p>Start Date: 12/01/2017       End Date: Ongoing</p>
                       <p>Role: Create UI/UX for Onboarding Web Applications</p>
@@ -434,7 +404,7 @@
 </div>
 <!-- Project 2 Edit -->
 <div class="modal fade" id="editproject2" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -444,11 +414,11 @@
       <div class="modal-body">
         <form action="#">
           <div class="form-group">
-            <label for="hub">Title:</label>
-            <input type="text" class="form-control"  value="Coca Cola - TCCC">
+            <label>Title:</label>
+            <input type="text" class="form-control" value="Coca Cola - TCCC">
           </div>
           <div class="form-group">
-            <label for="pillar">Description:</label>
+            <label>Description:</label>
             <textarea class="form-control"> <p>Start Date: 12/01/2017 End Date: Ongoing</p>
 </textarea>
           </div>
@@ -460,7 +430,7 @@
 </div>
 <!-- Past Projects Edit -->
 <div class="modal fade" id="editpastprojects" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -470,14 +440,14 @@
       <div class="modal-body">
         <form action="#">
           <div class="form-group">
-            <label for="pillar">Project 1:</label>
+            <label>Project 1:</label>
             <textarea class="form-control"><p>Cloud Accelerate </p>
                         <p>Start Date: 12/01/2017       End Date: Ongoing</p>
                         <p>Role: Create UI/UX for Onboarding Web Applications</p>
 </textarea>
           </div>
           <div class="form-group">
-            <label for="pillar">Project 2:</label>
+            <label>Project 2:</label>
             <textarea class="form-control"><p>Cloud Accelerate </p>
                         <p>Start Date: 12/01/2017       End Date: Ongoing</p>
                         <p>Role: Create UI/UX for Onboarding Web Applications</p>
@@ -491,7 +461,7 @@
 </div>
 <!-- Add New Projects -->
 <div class="modal fade" id="addnewprojects" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -501,11 +471,11 @@
       <div class="modal-body">
         <form action="#">
           <div class="form-group">
-            <label for="hub">Title:</label>
-            <input type="text" class="form-control"  value="">
+            <label>Title:</label>
+            <input type="text" class="form-control" value="">
           </div>
           <div class="form-group">
-            <label for="pillar">Description:</label>
+            <label>Description:</label>
             <textarea class="form-control"></textarea>
           </div>
           <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
@@ -516,7 +486,7 @@
 </div>
 <!-- Add Past Projects  -->
 <div class="modal fade" id="addpastprojects" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -526,7 +496,7 @@
       <div class="modal-body">
         <form action="#">
           <div class="form-group">
-            <label for="pillar">Project:</label>
+            <label>Project:</label>
             <textarea class="form-control"></textarea>
           </div>
           <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
@@ -537,21 +507,19 @@
 </div>
 <!-- Outside Interests and hobbies Edit -->
 <div class="modal fade" id="editoutsideinterests" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Outside Interests and hobbies</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" data-bind="with:profile">
         <form action="#">
           <div class="form-group">
-            <textarea class="form-control"><p>Singing, Piano/Keyboards, Musical Arrangement, Writing, Photography, Biking, Hiking, Nature, Cruising, Volunteering.</p>
-                  <p>Past Life: Skiing, Whitewater Rafting, Rock Scrambling </p>
-</textarea>
+            <textarea class="form-control" data-bind="value:flatinterests"></textarea>
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveInterest" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
