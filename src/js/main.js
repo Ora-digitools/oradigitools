@@ -7,7 +7,7 @@
 /**
  * Example of Require.js boostrap javascript
  */
-var baseurl="http://digital-db.us.oracle.com:7003/";
+var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
 var selecteduuid="";
 requirejs.config(
 {
@@ -53,8 +53,8 @@ requirejs.config(
  * by the modules themselves), we are listing them explicitly to get the references to the 'oj' and 'ko'
  * objects in the callback
  */
-require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
-  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar' ],
+require(['ojs/ojcore', 'knockout',  'appController', 'ojs/ojknockout',
+  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojconveyorbelt', 'ojs/ojtabs', 'ojs/ojdialog'],
   function (oj, ko, app) { // this callback gets executed when all required modules are loaded
 
     $(function() {
@@ -78,8 +78,10 @@ require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
       } else {
         init();
       }
-	  
-
+	
+    
+     
+    
 
 
     });
