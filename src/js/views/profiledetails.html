@@ -8,12 +8,9 @@
 </div>
 <div class="row blueBg" data-bind="with:profile">
   <div class="container ">
-    <div class="col-sm-5 col-md-4 profileleft nopadding"> 
+    <div class="col-sm-5 col-md-6 profileleft nopadding">
       <!-- Image -->
-
-      <div class="col-xs-7 col-sm-6 col-md-5 col-lg-4  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
-
-      <div class="col-xs-5 col-sm-6 col-md-5 col-lg-4  profileImage nopadding"><img data-bind="attr:{src:profileicon}" class="profileThumb">
+      <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay">
           <div class="text">
             <button type="button" data-toggle="modal" data-target="#editimage"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
@@ -22,13 +19,9 @@
       </div>
       <!-- Image -->
       <!-- Name -->
-      <div class="col-xs-5 col-sm-6 profileDetails nopadding"><span class="profileName" data-bind="text:name"></span><br>
-        <span class="profileTitle" data-bind="text:title"></span></div>
-      <!-- Image --> 
-      <!-- Name -->
       <div class="col-xs-7 col-sm-6 profileDetails nopadding"><span class="profileName" data-bind="text:name"></span><br>
         <span class="profileTitle" data-bind="text:title"></span></div>
-      <!-- Name --> 
+      <!-- Name -->
     </div>
     <!-- Contact -->
     <div class="col-sm-4 col-md-3 profilePhone">
@@ -36,7 +29,7 @@
       <p><img src="css/images/mobile_icon.png">&nbsp;Mobile: <span data-bind="text:mobile_phone"></span></p>
       <p><img src="css/images/email_icon_pink.png">&nbsp;<span data-bind="text:work_email"></span></p>
     </div>
-    <!-- Contact --> 
+    <!-- Contact -->
     <!-- Hub -->
     <div class="col-sm-3 col-md-3 profileAddress">
       <div>
@@ -47,7 +40,7 @@
       <p>Pillar: <br>
         <span data-bind="text:pillar"></span></p>
     </div>
-    <!-- Hub --> 
+    <!-- Hub -->
   </div>
 </div>
 <div class="row margintop30">
@@ -84,103 +77,6 @@
                 <div class="greyBg profileSummaryh">Profile summary
                   <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editsummary">Edit</button>
 
-<div class="container nopaddingmd">
-  <div id="tabs-container">
-    <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}"> 
-      <!-- tab bar -->
-      <ul class="col-sm-12 nopadding">
-        <li class="col-xs-4 active nopaddingxs" data-bind="click: tabClick1">
-          About
-            <div class="yellowtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-           
-        </li>
-        <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick2">
-         Projects
-            <div class="bluetab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-          
-        </li>
-        <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick3">
-          Outside Interests
-            <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-            
-        </li>
-       
-      </ul>
-      
-      <!-- tab contents -->
-      <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs" data-bind="with:profile"> 
-        <!-- about -->
-        <div id="about">
-          <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
-            <!-- Profile summary -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Profile summary
-                <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editsummary">Edit</button>
-        
-              </div>
-              <div class="profileSummary">
-                 <p data-bind="text:profile_summary"></p>
-              </div>
-            </div>
-            <!-- Profile summary --> 
-            <!-- Skills -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Skills
-                <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editskills">Edit</button>
-              </div>
-              <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
-            </div>
-            <!-- Skills --> 
-            <!-- Learning Interests -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Learning Interests
-                <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#learninginterests">Edit</button>
-              </div>
-              <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
-            </div>
-            <!-- Learning Interests --> 
-          </div>
-          <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
-            <!-- Share Profile -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Share Gail’s Profile</div>
-              <div class="profileSummary">
-                <button class="shareprofile" onclick="location.href='mailto:?subject=Share%20Profile&body=Share%20Profile'">Share Profile</button>
-              </div>
-            </div>
-            <!-- Share Profile --> 
-            <!-- Organization -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Organization</div>
-              <div class="profileSummary">
-                <ul>
-                  <li data-bind="text:ou"> </li>
-                  <li>Cost Center: <span data-bind="text:cost_center"></span></li>
-                  <li>Company Code: <span data-bind="text:cost_center"></span> </li>
-                  <li>Manager: <span data-bind="text:mgr_display_name"></span></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Organization --> 
-          </div>
-        </div>
-        <!-- about Ends -->
-       
-       
-      </div>
-      <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn" data-bind="with:profile">
-        <div id="projects">
-          <div class="col-sm-12 addnew nopaddingxs nopaddingsm">
-            <button type="button" class="btn  btn-info btn-xs " data-toggle="modal" data-target="#addnewprojects">+ Add new Projects</button>
-          </div>
-          <div class="col-sm-12 nopaddingmd nopaddingxs nopaddingsm">
-            <div class="panel-group" id="accordion"> 
-              <!-- Project 1 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Bank of America - Onboarding Prototype</a>
-                    <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editproject1">Edit</button>
-                  </h4>
                 </div>
                 <div class="profileSummary">
                   <p data-bind="text:profile_summary"></p>
@@ -191,18 +87,6 @@
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Skills
                   <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editskills">Edit</button>
-              <!-- Project 1 --> 
-              <!-- Project 2 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Coca Cola - TCCC </a>
-                    <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editproject2">Edit</button>
-                  </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    <p>Start Date: 12/01/2017       End Date: Ongoing</p>
-                  </div>
                 </div>
                 <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
               </div>
@@ -211,28 +95,6 @@
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Learning Interests
                   <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#learninginterests">Edit</button>
-              <!-- Project 2 --> 
-              <!-- Project 3-->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Projects done in Past</a>
-                    <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editpastprojects">Edit</button>
-                  </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                  <div class="panel-body">
-                    <button type="button" class="btn  btn-info btn-xs " data-toggle="modal" data-target="#addpastprojects">+ Add past Projects</button>
-                    <div class="pastProjects">
-                      <p>Cloud Accelerate </p>
-                      <p>Start Date: 12/01/2017       End Date: Ongoing</p>
-                      <p>Role: Create UI/UX for Onboarding Web Applications</p>
-                    </div>
-                    <div class="pastProjects">
-                      <p>Cloud Accelerate </p>
-                      <p>Start Date: 12/01/2017       End Date: Ongoing</p>
-                      <p>Role: Create UI/UX for Onboarding Web Applications</p>
-                    </div>
-                  </div>
                 </div>
                 <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
               </div>
@@ -241,7 +103,7 @@
             <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
               <!-- Share Profile -->
               <div class="profileSection">
-                <div class="greyBg profileSummaryh">Share Gail’s Profile</div>
+                <div class="greyBg profileSummaryh">Share <span data-bind="text:name"></span>’s Profile</div>
                 <div class="profileSummary">
                   <button class="shareprofile" onclick="location.href='mailto:?subject=Share%20Profile&body=Share%20Profile'">Share Profile</button>
                 </div>
@@ -359,44 +221,6 @@
                   </div>
 
                 </div>
-              <!-- Project 3 --> 
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
-        <!-- Outside --> 
-        <div id="outside">
-          <div class="col-sm-12 nopadding" > 
-            <!-- Uploads -->
-            <div class="profileSection">
-              <div  class="greyBg profileSummaryh">Recent Uploads<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#uploadImage">Upload</button></div>
-              <div class="profileSummary "> <div id="conveyorbelt-horizontal-example">
-
-    <div class=""
-         data-bind="ojComponent: {component: 'ojConveyorBelt'}">
-          <!-- ko foreach: personalphotoslist -->
-         <img data-bind="attr:{src:photo_url}">
-    
-       <!-- /ko --> 
-    </div>
-  
-</div>
-        
-         </div>
-            </div>
-            <!-- Uploads --> 
-          </div>
-          <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
-            <!-- Outside Interests -->
-            <div class="profileSection" data-bind="with:profile">
-              <div  class="greyBg profileSummaryh">Outside Interests and hobbies
-                <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
-              </div>
-              <div class="profileSummary" data-bind="foreach:interests">
-                <span class="grayTags" data-bind="text:value"></span>
               </div>
               <!-- Uploads -->
             </div>
@@ -409,16 +233,6 @@
                 <div class="profileSummary" data-bind="foreach:interests">
                   <span class="grayTags" data-bind="text:value"></span>
                 </div>
-            <!-- Outside Interests --> 
-          </div>
-          <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
-            <!-- Outside Achievements -->
-            <div class="profileSection" data-bind="with:profile">
-              <div  class="greyBg profileSummaryh">Outside Achievements</div>
-               <div class="profileSummary" data-bind="foreach:achivements">
-                <ul>
-                  <li data-bind="text:value"></li>
-                </ul>
               </div>
               <!-- Outside Interests -->
             </div>
@@ -431,14 +245,6 @@
                     <li data-bind="text:value"></li>
                   </ul>
                 </div>
-            <!-- Outside Achievements --> 
-            <!-- Links -->
-            <div class="profileSection" data-bind="with:profile">
-              <div  class="greyBg profileSummaryh">Links</div>
-              <div class="profileSummary" data-bind="foreach:links">
-                <ul>
-                  <li><a data-bind="text:value,attr:{href:url}"></a></li>
-                </ul>
               </div>
               <!-- Outside Achievements -->
               <!-- Links -->
@@ -452,15 +258,11 @@
               </div>
               <!-- Links -->
             </div>
-            <!-- Links --> 
           </div>
           <!-- Outside -->
         </div>
 
-
-        <!-- Outside --> 
       </div>
-      
     </div>
   </div>
 </div>
@@ -574,10 +376,6 @@
             <input class="btn btn-default" id="input-1" type="file" class="file" onchange="uploadpersonalphoto(event)">
           </div>
           <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
-
-            <input class="btn btn-default" id="input-1" type="file" class="file" onchange="loadFile(event)">
-          </div>
-          <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
         </form>
       </div>
     </div>
@@ -671,15 +469,6 @@
           <div class="form-group">
             <label>Description:</label>
             <textarea class="form-control"> <p>Start Date: 12/01/2017 End Date: Ongoing</p>
-
-            <input type="text" class="form-control" value="Bank of America - Onboarding Prototype">
-          </div>
-          <div class="form-group">
-            <label>Description:</label>
-            <textarea class="form-control"> <p>Bank of America - Onboarding Prototype </p>
-                      <p>Start Date: 12/01/2017       End Date: Ongoing</p>
-                      <p>Role: Create UI/UX for Onboarding Web Applications</p>
-                      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean erat diam, vehicula vitae commodo ut, vehicula et mi. Nam risus neque, auctor ac quam quis, porta ullamcorper tortor.</p>
 </textarea>
           </div>
           <button type="submit" class="btn btn-default" data-dismiss="modal">Save</button>

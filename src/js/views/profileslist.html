@@ -2,14 +2,6 @@
 <!-- Start Heading -->
 <div class="row text-center team"><img src="css/images/meettheteam.png" class="img-responsive">
   <h1>MEET <span class="borderBottom">THE</span> CREW</h1>
-  <div class="col-sm-4 text-center col-sm-offset-4">
-    <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
-    <!-- <input placeholder="Search faces..." data-bind="ojComponent: {
-            component: 'ojInputSearch',
-            update: searchhandler,
-            rootAttributes: {class:'form-control'}}"> -->
-  </div>
-
   
 </div>
 <!-- End Heading -->
@@ -36,13 +28,11 @@
 <script type="text/html" id="server_template">
   <li data-bind="attr: {id: $data['uuid']}">
     <div class="col-md-4 col-lg-3 face">
-      <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}" height=60 width='auto'></img>
+      <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}"></img>
       </div>
       <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
       <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
-      <div class="col-sm-12 nopadding social"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a>
-	  <a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a>
-	  </div>
+      <div class="col-sm-12 nopadding social"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></div>
     </div>
   </li>
 
@@ -52,15 +42,12 @@
 <div id="slider" class="transition">
   <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
     <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
-      <p><div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
     <input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             update: searchhandler,
             value:searchtext,
             rootAttributes: {class:'form-control'}}">
   </div>
-
-            rootAttributes: {class:'form-control'}}"></p>
   <br>
   <p style="font-weight: bolder">Filter by Location</p>
   <div data-bind="foreach: hubslist">
