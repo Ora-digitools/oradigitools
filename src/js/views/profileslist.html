@@ -2,7 +2,17 @@
 <!-- Start Heading -->
 <div class="row text-center team"><img src="css/images/meettheteam.png" class="img-responsive">
   <h1>MEET <span class="borderBottom">THE</span> CREW</h1>
+<<<<<<< HEAD
+  <div class="col-sm-4 text-center col-sm-offset-4">
+    <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+    <!-- <input placeholder="Search faces..." data-bind="ojComponent: {
+            component: 'ojInputSearch',
+            update: searchhandler,
+            rootAttributes: {class:'form-control'}}"> -->
+  </div>
+=======
   
+>>>>>>> 1bc7137ebe081f7f81e36ce1df3defab3b979b49
 </div>
 <!-- End Heading -->
 
@@ -16,8 +26,11 @@
             optionChange: logSelected
         }">
     </ul>
-
-
+  </div>
+  <div>
+    <button data-bind="click:loadFirstPage">FIRST</button>
+    <button data-bind="click:loadPrevPage">PREV</button>
+    <button data-bind="click:loadNextPage">NEXT</button>
   </div>
 </div>
 
@@ -40,28 +53,36 @@
 <button class="fixedButton" id="fixb" data-bind="click:openthefilterpanel"><img src="css/images/FILTER1.svg" class="img-responsive"></button>
 <div id="slider" class="transition">
   <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
+<<<<<<< HEAD
+    <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+=======
       <p><div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+>>>>>>> 1bc7137ebe081f7f81e36ce1df3defab3b979b49
     <input id="inputSearch" placeholder="Search faces..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             update: searchhandler,
             value:searchtext,
-            rootAttributes: {class:'form-control'}}"></p>
-  <br>
-    <p style="font-weight: bolder">Filter by Location</p>
-        <div data-bind="foreach: hubslist">
-            <div class="checkbox">
-                <label><input type="checkbox" data-bind="value: $data,checked:$root.selectechubs"></label>
-                <span data-bind="text: $data"></span>
-            </div>
-        </div><br> 
-        <p style="font-weight: bolder">Filter by Pillar</p>
-        <div data-bind="foreach: listofpillers">
-            <div class="checkbox">
-                <label><input type="checkbox" data-bind="value: $data"></label>
-                <span data-bind="text: $data"></span>
-            </div>
-        </div>
-      <button id="apply" class="apply" data-bind="click:closethefilterpanel">Apply</button>
-    
+<<<<<<< HEAD
+            rootAttributes: {class:'form-control'}}">
   </div>
+=======
+            rootAttributes: {class:'form-control'}}"></p>
+>>>>>>> 1bc7137ebe081f7f81e36ce1df3defab3b979b49
+  <br>
+  <p style="font-weight: bolder">Filter by Location</p>
+  <div data-bind="foreach: hubslist">
+    <div class="checkbox">
+      <label><input type="checkbox" data-bind="value: $data" onchange="filteredhubs(this)"></label>
+      <span data-bind="text: $data"></span>
+    </div>
+  </div><br>
+  <p style="font-weight: bolder">Filter by Pillar</p>
+  <div data-bind="foreach: listofpillers">
+    <div class="checkbox">
+      <label><input type="checkbox" data-bind="value: $data" onchange="filteredpillars(this)"></label>
+      <span data-bind="text: $data"></span>
+    </div>
+  </div>
+  <button id="apply" class="apply" data-bind="click:searchhandler">Apply</button>
+
 </div>
