@@ -178,5 +178,4 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.dataSource = new oj.ArrayTableDataSource(self.renderData, { idAttribute: "uuid" })
     }
     return new DashboardViewModel();
-  }
-);
+  });

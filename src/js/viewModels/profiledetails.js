@@ -30,21 +30,21 @@ self.chemicals = [
             { name: 'Sodium' },
             { name: 'Magnesium' }
         ];
-        
+
         self.currentNavArrowPlacement = ko.observable("adjacent");
         self.currentNavArrowVisibility = ko.observable("visible");
-        
-        getItemInitialDisplay = function(index)
-        {
+
+        getItemInitialDisplay = function(index){
           return index < 4 ? '' : 'none';
         };
- 
- 
+
+
 
 
       function getProfile() {
         $.getJSON(baseurl + "ords/seaas_stage/seaas/GetFullUserProfile/" + selecteduuid).
           then(function (profiles) {
+             console.log("working")
             console.log(profiles.items[0].skills.length);
             // SKILLS GOOD AT
 
@@ -85,7 +85,7 @@ self.chemicals = [
               uuid: ko.observable(profiles.items[0].uuid)
             });
 
-            console.log("profile created");
+            console.log("profile created!!!");
 
           });
       }
@@ -99,7 +99,7 @@ self.chemicals = [
       self.openeditprojectdialog = function () {
         $("#dialog1").ojDialog("open");
       }
-	  
+
     }
 	//ko.applyBindings(null, document.getElementById('tabs-container'));
     return new DashboardViewModel();
