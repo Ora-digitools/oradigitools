@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
@@ -617,7 +616,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
     return new DashboardViewModel();
   }
 );
-=======
 /**
  * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
@@ -1109,4 +1107,3 @@ self.currentNavArrowPlacement = ko.observable("adjacent");
     return new DashboardViewModel();
   }
 );
->>>>>>> 1bc7137ebe081f7f81e36ce1df3defab3b979b49
