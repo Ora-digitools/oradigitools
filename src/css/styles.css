@@ -341,18 +341,16 @@ footer {
 	min-height: 420px;
 }
 .mainImage img {
-	max-width: 200px;
-	border-radius: 200px 200px 200px 200px;
-	-moz-border-radius: 200px 200px 200px 200px;
-	-webkit-border-radius: 200px 200px 200px 200px;
+	width: 200px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
 	border: 5px solid #f29111;
-	min-width: 200px;
-	min-height: 200px;
+	height: 200px;
 	cursor: pointer;
 }
 .mainImage img:hover {
 	opacity: 0.6;
-	background: #000;
 }
 .face {
 	border-right: 1px solid #d3d3d3;
@@ -392,12 +390,12 @@ footer {
 	left: 0px;
 	z-index: 1001;
 	background: #324b5c;
-	padding: 50px 10px;
+	padding: 40px 10px;
 	border: none;
 	border-radius: 0px 5px 5px 0px;
 }
 .fixedButton img {
-	width: 40px
+	width: 30px
 }
 #slider {
 	background: #324b5c;
@@ -608,9 +606,7 @@ li.oj-selected .oj-tabs-gen-div {
 	bottom: 0px;
 	margin-right: -19px;
 }
-.carousel-inner {
-	text-align: center;
-}
+
 .profileDetails {
 	line-height: 21px;
 	position: relative;
@@ -901,13 +897,12 @@ li.oj-selected .oj-tabs-gen-div {
 	width: 20%;
 }
 .mainImage img {
-	max-width: 125px;
-	border-radius: 125px 125px 125px 125px;
-	-moz-border-radius: 125px 125px 125px 125px;
-	-webkit-border-radius: 125px 125px 125px 125px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
 	border: 5px solid #f29111;
-	min-width: 125px;
-	min-height: 125px;
+	width: 125px;
+	height: 125px;
 }
 .face {
 	min-height: 320px;
