@@ -25,7 +25,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         'cloudhubs': { label: 'Cloud Hubs' },
         'profileslist': { label: 'SE Faces' },
         'profiledetails': { label: 'ProfileDetails' },
-        'catalogs': { label: 'Catalogs'},
+        'catalogs': { label: 'SEaaS Catalog'},
         'assets': { label: 'Assets' },
         'performance': { label: 'Performance' }
       });
@@ -38,7 +38,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         { name: 'Home', id: 'home' },
 
         { name: 'SE Faces', id: 'profileslist' },
-        { name: 'Catalogs', id: 'catalogs' ,'oj-disabled': 'disabled'},
+        { name: 'SEaaS Catalog', id: 'catalogs' ,'oj-disabled': 'disabled'},
         { name: 'Assets', id: 'assets','oj-disabled': 'disabled' },
         { name: 'Perfomances', id: 'performance','oj-disabled': 'disabled' }
       ];
