@@ -296,14 +296,15 @@ body {
 	padding: 10px;
 	text-align: left;
 	font-size: 19px;
-	background-repeat:repeat-x;
-	position:relative;
+	background-repeat: repeat-x;
+	position: relative;
 }
-.orangetext{
-	position:absolute;
-	bottom:10px;
-	width:100%}
-
+.orangetext {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	left: 0px;
+}
 footer {
 	font-size: 12px;
 	margin-top: 60px;
@@ -880,8 +881,9 @@ li.oj-selected .oj-tabs-gen-div {
 .togglemenu {
 	padding-top: 10px;
 }
-.orangetext{
-	text-align:center;}
+.orangetext {
+	text-align: center;
+}
 }
 
 @media (max-width: 991px) {
@@ -920,15 +922,12 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .darkblue {
 	min-height: auto;
-	
 }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-
 .darkblue {
 	min-height: auto;
-	
 }
 }
 
@@ -972,12 +971,11 @@ ul#profiletabs {
 }
 
 @media (max-width: 360px) {
-
 .darkblue {
 	min-height: 350px;
 	margin-bottom: 0px;
-}	
-	}
+}
+}
 
 @media (max-width: 320px) {
 .logo img {
@@ -989,7 +987,27 @@ ul#profiletabs {
 .profileDetails {
 	top: 25%;
 }
+.profileImage img {
+	max-width: 85px;
+	border-radius: 85px 85px 85px 85px;
+	-moz-border-radius: 85px 85px 85px 85px;
+	-webkit-border-radius: 85px 85px 85px 85px;
+	border: 5px solid #c8c8c8;
+	min-width: 85px;
+	min-height: 85px;
+}
+}
 
+@media (max-width: 427px) {
+.profileImage img {
+	max-width: 85px;
+	border-radius: 85px 85px 85px 85px;
+	-moz-border-radius: 85px 85px 85px 85px;
+	-webkit-border-radius: 85px 85px 85px 85px;
+	border: 5px solid #c8c8c8;
+	min-width: 85px;
+	min-height: 85px;
+}
 }
 
 @media (min-width: 1025px) {
