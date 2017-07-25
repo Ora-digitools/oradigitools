@@ -36,7 +36,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       // Navigation setup
       var navData = [
         { name: 'Home', id: 'home' },
-       
+
         { name: 'SE Faces', id: 'profileslist' },
         { name: 'SEaaS Catalog', id: 'catalogs' ,'oj-disabled': 'disabled'},
         { name: 'Assets', id: 'assets','oj-disabled': 'disabled' },
@@ -76,7 +76,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 		new footerLink('Terms of Use & Privacy', 'terms', '#'),
 		new footerLink('Cookie Preferences', 'cookie', '#'),
         new footerLink('Contact Us', 'contactUs', '#')
-       
+
       ]);
     }
 

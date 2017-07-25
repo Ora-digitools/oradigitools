@@ -116,6 +116,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
         self.resetValues();
         $.getJSON(baseurl + "GetFullUserProfile/" + uuid).
           then(function (profiles) {
+<<<<<<< HEAD
+             console.log("working")
+            console.log(profiles.items[0].skills.length);
+=======
+>>>>>>> upstream/master
             // SKILLS GOOD AT
             var skills_string = "";
             var interests_string = "";
@@ -188,6 +193,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
               imageurl = profiles.items[0].profile_photo_url;
             }
 
+<<<<<<< HEAD
+            // CREATE PROFILE DATA
+            self.profile({
+              icon: ko.observable(imageurl), //'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png',
+              name: ko.observable(profiles.items[0].display_name),
+              title: ko.observable(profiles.items[0].title),
+              work_email: ko.observable(profiles.items[0].work_email),
+              work_phone: ko.observable(profiles.items[0].work_phone),
+              mobile_phone: ko.observable(profiles.items[0].mobile_phone),
+              city: ko.observable(profiles.items[0].city),
+              state: ko.observable(profiles.items[0].state),
+              country: ko.observable(profiles.items[0].country),
+              uuid: ko.observable(profiles.items[0].uuid)
+            });
+
+            console.log("profile created!!!");
+=======
             self.profile().profileicon(imageurl);
             self.profile().employee_key(profiles.items[0].employee_key);
             self.profile().title(profiles.items[0].title);
@@ -212,6 +234,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             self.profile().flatlearnings(learnings_string);
             self.profile().flatinterests(interests_string);
             console.log("profile created");
+>>>>>>> upstream/master
 
           });
       }
@@ -228,7 +251,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             })
           });
       }
-     
+
 
 
       self.handleAttached = function (info) {
@@ -246,6 +269,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
         $("#dialog1").ojDialog("open");
       }
 
+<<<<<<< HEAD
+=======
       // ALL EDIT EVENTS ARE HANDLED DOWN
       self.resetValues = function () {
         self.customers([]);
@@ -629,8 +654,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
     function DashboardViewModel() {
       var self = this;
 /* for recent uploads gallery*/
-            
-            
+
+
 
             /* fadein animations effect for tab content */
             self.effect = ko.observable('fadeIn');
@@ -697,8 +722,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
         flatlearnings: ko.observable(),
         flatinterests: ko.observable()
       });
-	  
-	  
+
+
 
       self.photograph({
         photo_url: ko.observable('https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png'),
@@ -829,7 +854,7 @@ self.currentNavArrowPlacement = ko.observable("adjacent");
             self.currentNavArrowVisibility = ko.observable("auto");
 
             getItemInitialDisplay = function(index) {
-				
+
                 return index < 4 ? '' : 'none';
             };
 
@@ -1102,6 +1127,7 @@ self.currentNavArrowPlacement = ko.observable("adjacent");
         };
         reader.readAsDataURL(event.target.files[0]);
       };
+>>>>>>> upstream/master
     }
 
     return new DashboardViewModel();

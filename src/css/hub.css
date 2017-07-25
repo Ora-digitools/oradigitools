@@ -79,9 +79,20 @@ color: #01447e;
 text-decoration: underline;
 }
 
-    .bgpos {
-        background-color: #F1F2F6;
-        padding-left: 5px;
-        margin-bottom: 10px;
-        border: 1px solid #D8DDE1;
-    }
+.bgpos {
+  background-color: #F1F2F6;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #D8DDE1;
+}
+
+.responsive-drawer, .profiles{
+   display: inline-block;
+}
+.arrow1{
+   height: 30px;
+   vertical-align: middle;
+}
+.arrow1, .arrow2{
+   margin-top: 380px;
+}
