@@ -188,7 +188,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
     return new DashboardViewModel();
   }
 );
-=======
 /**
  Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
