@@ -43,6 +43,7 @@
 <link rel="stylesheet" href="css/override.css" type="text/css"/>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +56,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="css/bootstrap.min.js"></script>
 <script src="css/bootstrap-tabcollapse.js"></script>
-
 </head>
 <body class="oj-web-applayout-body">
 <!-- Template for rendering navigation items shared between nav bar and nav list --> 
@@ -67,7 +67,9 @@
     </script>
 <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
   <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-end">
-  <div class="pull-right"><button  data-bind="click: toggleDrawer" class="closebutton">X</button></div>
+    <div class="pull-right">
+      <button  data-bind="click: toggleDrawer" class="closebutton">X</button>
+    </div>
     <div role="navigation" data-bind="click: toggleDrawer, ojComponent: {component: 'ojNavigationList',
           navigationLevel: 'application', item: {template: 'navTemplate'}, data: navDataSource,
           selection: router.stateId, edge: 'start'}"> </div>
@@ -76,8 +78,8 @@
     <div class="row content"> 
       <!-- Start Slider -->
       <header  role="banner">
-        <div class="col-md-12 orangeBg nopaddingxs">
-         
+        <div class="col-md-12 orangeBg nopaddingxs"> 
+          
           <!-- SearchBox -->
           <div class="container"> 
             
@@ -93,12 +95,11 @@
                   
                   <!-- Logo --> 
                   <a class="" href="?root=home"><img src="css/images/logo.png" class="img-responsive"></a> </div>
-
-				   <div class=" col-xs-6 togglemenu">
-            <button id="drawerToggleButton" class="pull-right oj-button-lg" data-bind="click: toggleDrawer,
+                <div class=" col-xs-6 togglemenu">
+                  <button id="drawerToggleButton" class="pull-right oj-button-lg" data-bind="click: toggleDrawer,
                 ojComponent: {component:'ojButton', label: 'Application Navigation',
                 chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}"> </button>
-          </div>
+                </div>
               </div>
               <!-- Toggle for Mobile --> 
               <!-- Main Menu --> 
@@ -111,15 +112,32 @@
     </div>
     <div role="main" class="" data-bind="ojModule: router.moduleConfig"> </div>
     <div class="row">
-      <footer><div class="container"><div class="footerheading">Cloud Hubs</div><div class="footermenu"><ul>
+      <footer>
+        <div class="container">
+          <div class="footerheading">Cloud Hubs</div>
+          <div class="footer-social">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="footermenu">
+            <ul>
               <!-- ko foreach: footerLinks -->
               <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
               <!-- /ko -->
-            </ul></div></div></footer> 
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
   </div>
 </div>
 <script type="text/javascript" src="js/libs/require/require.js"></script> 
-<script type="text/javascript" src="js/main.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
