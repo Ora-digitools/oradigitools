@@ -3,9 +3,7 @@
  The Universal Permissive License (UPL), Version 1.0
  -->
 
-<div class="row profileblackBg" data-bind="with:profile">
-  <div class="container">Where are we: <a href="#">SE Faces</a> / <a href="#" data-bind="text:name"></a></div>
-</div>
+
 <div class="row blueBg" data-bind="with:profile">
   <div class="container ">
     <div class="col-sm-5 col-md-6 profileleft nopadding">
@@ -13,7 +11,7 @@
       <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay">
           <div class="text">
-            <button type="button" data-toggle="modal" data-target="#editimage"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
+            <button type="button"  data-bind="click: openmodal"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
           </div>
         </div>
       </div>
@@ -25,9 +23,9 @@
     </div>
     <!-- Contact -->
     <div class="col-sm-4 col-md-3 profilePhone">
-      <p><img src="css/images/phone_icon.png">&nbsp;Work Phone: <span data-bind="text:work_phone"></span></p>
-      <p><img src="css/images/mobile_icon.png">&nbsp;Mobile: <span data-bind="text:mobile_phone"></span></p>
-      <p><img src="css/images/email_icon_pink.png">&nbsp;<span data-bind="text:work_email"></span></p>
+      <p data-bind="if: work_phone"><img src="css/images/phone_icon.png">&nbsp;Work Phone: <span data-bind="text:work_phone"></span></p>
+      <p data-bind="if: mobile_phone"><img src="css/images/mobile_icon.png">&nbsp;Mobile: <span data-bind="text:mobile_phone"></span></p>
+      <p data-bind="if: work_email"><img src="css/images/email_icon_pink.png">&nbsp;<span data-bind="text:work_email"></span></p>
     </div>
     <!-- Contact -->
     <!-- Hub -->
@@ -239,7 +237,7 @@
             <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Outside Achievements</div>
+                <div class="greyBg profileSummaryh">Outside Achievements<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideachievements">Edit</button></div>
                 <div class="profileSummary" data-bind="foreach:achivements">
                   <ul>
                     <li data-bind="text:value"></li>
@@ -249,7 +247,7 @@
               <!-- Outside Achievements -->
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Links</div>
+                <div class="greyBg profileSummaryh">Links<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlinks">Edit</button></div>
                 <div class="profileSummary" data-bind="foreach:links">
                   <ul>
                     <li><a data-bind="text:value,attr:{href:url}"></a></li>
@@ -339,25 +337,22 @@
   </div>
 </div>
 <!-- Image Edit -->
-<div class="modal fade" id="editimage" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Profile Picture</h4>
-      </div>
-      <div class="modal-body">
-        <form action="#">
+<div id="dialogWrapper">
+  <div style="display:none" id="editimage1" title="Edit Profile Picture" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body">
+        <form action="#" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label class="control-label">Select File</label>
-            <input class="btn btn-default" id="input-1" type="file" class="file" onchange="updateicon(event)">
+            <input class="btn btn-default file" id="input-1" type="file" onchange="updateicon(event)">
           </div>
           <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
         </form>
-      </div>
-    </div>
+     </div>
+   
   </div>
+ 
+
 </div>
 
 <!-- upload personal image -->
@@ -595,6 +590,46 @@
             <textarea class="form-control" data-bind="value:flatinterests"></textarea>
           </div>
           <button data-bind="click:saveInterest" class="btn btn-default" data-dismiss="modal">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Outside Achievements -->
+<div class="modal fade" id="editoutsideachievements" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Outside Achievements</h4>
+      </div>
+      <div class="modal-body" data-bind="with:profile">
+        <form action="#">
+          <div class="form-group">
+            <textarea class="form-control" data-bind="value:flatachivements"></textarea>
+          </div>
+          <button data-bind="click:saveAchievements" class="btn btn-default" data-dismiss="modal">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Links -->
+<div class="modal fade" id="editlinks" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Links</h4>
+      </div>
+      <div class="modal-body" data-bind="with:profile">
+        <form action="#">
+          <div class="form-group">
+            <textarea class="form-control" data-bind="value:flatlinks"></textarea>
+          </div>
+          <button data-bind="click:saveLinks" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
