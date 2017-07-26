@@ -32,7 +32,7 @@
       </div>
       <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
       <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
-      <div class="col-sm-12 nopadding social"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></div>
+      <div class="col-sm-12 nopadding social"><span data-bind="if: work_phone"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a></span><span data-bind="if: work_email"><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></span></div>
     </div>
   </li>
 
