@@ -6,6 +6,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 * {
 	outline: none;
 }
@@ -233,6 +234,7 @@ body {
 	color: #fff;
 	background-size: cover;
 	background-position: 50%;
+	margin-bottom:30px;
 }
 .blackBg {
 	background: rgba(0, 0, 0, 0.76) none repeat scroll 0 0;
@@ -750,9 +752,7 @@ li.oj-selected .oj-tabs-gen-div {
 .container {
 	width: auto;
 }
-.get_to_know, .how_to_engage, .cloud_hubs, .darkblue {
-	margin-bottom: 0px;
-}
+
 }
 
 @media (max-width: 1024px) {
@@ -828,17 +828,13 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-.darkblue {
-	min-height: 280px;
-	margin-bottom: 0px;
-}
+
 #text-carousel {
 	background-position: bottom;
-	background-color: #ddeff9
+	background-color: #ddeff9;
+	padding: 50px 10px;
 }
-.get_to_know, .how_to_engage, .cloud_hubs {
-	margin-bottom: 0px;
-}
+
 .deliver img {
 	min-height: auto;
 }
@@ -913,6 +909,16 @@ li.oj-selected .oj-tabs-gen-div {
 .fixedButton {
 	padding: 30px 10px;
 }
+.get_to_know, .how_to_engage, .cloud_hubs {
+	margin-bottom: 0px;
+}
+.darkblue {
+	min-height: 280px;
+	margin-bottom: 0px;
+}
+.nopaddingipd{
+	padding:0px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
