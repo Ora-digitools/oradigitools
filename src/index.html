@@ -66,7 +66,7 @@
       </a></li>
     </script>
 <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
-  <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-end">
+  <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
     <div class="pull-right">
       <button  data-bind="click: toggleDrawer" class="closebutton">X</button>
     </div>
@@ -91,15 +91,16 @@
           <nav class="navbar navbar-inverse">
             <div class="container">
               <div class="col-xs-12 nopadding">
-                <div class="col-xs-6 navbar-header logo"> 
-                  
-                  <!-- Logo --> 
-                  <a class="" href="?root=home"><img src="css/images/logo.png" class="img-responsive"></a> </div>
-                <div class=" col-xs-6 togglemenu">
-                  <button id="drawerToggleButton" class="pull-right oj-button-lg" data-bind="click: toggleDrawer,
+              <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 togglemenu">
+                  <button id="drawerToggleButton" class=" oj-button-lg" data-bind="click: toggleDrawer,
                 ojComponent: {component:'ojButton', label: 'Application Navigation',
                 chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}"> </button>
                 </div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11 navbar-header logo"> 
+                  
+                  <!-- Logo --> 
+                  <a class="" href="?root=home"><img src="css/images/logo.png" class="img-responsive"></a> </div>
+                
               </div>
               <!-- Toggle for Mobile --> 
               <!-- Main Menu --> 
@@ -117,12 +118,12 @@
           <div class="footerheading">Cloud Hubs</div>
           <div class="footer-social">
             <ul>
-              <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-               <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-               <li><a href="#"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+              <li><a href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+              <li><a href="#" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+              <li><a href="#" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+              <li><a href="#" title="Google Plus"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+              <li><a href="#" title="YouTube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+              <li><a href="#" title="Facebook"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
             </ul>
           </div>
           <div class="footermenu">
