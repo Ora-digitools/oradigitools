@@ -76,6 +76,11 @@ body {
 .togglemenu {
 	padding-top: 25px;
 }
+.oj-fwk-icon-hamburger::before, .oj-web-applayout-offcanvas-icon::before {
+	content:url(images/hamburger-menu.png);
+	
+}
+
 .clearfix {
 	display: block;
 	clear: both
@@ -443,7 +448,7 @@ footer {
 }
 #navDrawer {
 	background: #324b5c;
-	font-size: 19px;
+	font-size: 16px;
 	position: fixed;
 }
 .profileblackBg {

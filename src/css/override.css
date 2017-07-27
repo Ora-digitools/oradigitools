@@ -20,8 +20,13 @@
 	background-color: transparent;
 	border: none;
 }
+
+.oj-navigationlist-item-element{
+	border-bottom:3px solid #3e5869 !important;}
+
 ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover + li.oj-listview-item {
 	background-color: transparent;
+	
 	border: none;
 }
 .oj-listview-item {
@@ -36,10 +41,10 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	font-family: Arial;
 }
 .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-selected a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
-	color: #ff8d14;
+	color: #fff;
 }
 .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-hover:not(.oj-selected) a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
-	color: #ff8d14;
+	color: #fff;
 }
 .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
 	border-bottom: none;
@@ -62,12 +67,10 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	margin-right: 0px;
 }
 .oj-navigationlist-item {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-.oj-navigationlist-item.oj-selected {
-	border-color: #f29111 !important
-}
+
 .oj-contrast-marker a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	color: #fff
 }
@@ -95,8 +98,8 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	color: #f29111
 }
 .oj-contrast-marker .oj-navigationlist-item.oj-hover:not(.oj-selected) {
-	background-color: transparent;
-	color: #f29111
+	color: #fff;
+	background: #ff8d14;
 }
 .oj-navigationlist-item.oj-hover:not(.oj-selected) {
 	background-color: #ebeced;
@@ -109,13 +112,13 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	text-decoration: none;
 }
 .oj-navigationlist-element a:hover, .oj-navigationlist-element a:visited:hover, .oj-navigationlist-element a:focus {
-	color: #f29111 !important;
+	color: #fff !important;
 }
 .oj-contrast-marker .oj-selected > a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
-	color: #f29111;
+	color: #fff;
 }
 .oj-contrast-marker .oj-hover:not(.oj-selected) > a.oj-navigationlist-item-content > .oj-navigationlist-item-label {
-	color: #f29111;
+	color: #fff;
 }
 #filmstrip-navarrows-example .oj-panel {
 	border: none
@@ -142,9 +145,16 @@ ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover 
 	background-color: transparent !important;
 	border-color: none !important;
 }
-.oj-conveyorbelt-overflow-indicator{
-	height:auto;}
+.oj-conveyorbelt-overflow-indicator {
+	height: auto;
+}
 .oj-conveyorbelt-overflow-indicator.oj-hover {
-  background-color: transparent !important;
-	border:transparent !important;
+	background-color: transparent !important;
+	border: transparent !important;
+}
+html:not([dir="rtl"]) .oj-navigationlist-vertical:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
+	padding-left: 20px;
+}
+.oj-navigationlist-vertical:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
+	border: none;
 }
