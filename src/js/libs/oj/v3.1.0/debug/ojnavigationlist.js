@@ -3,6 +3,7 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 "use strict";
+
 define(['ojs/ojcore', 'jquery', 'ojs/ojcomponentcore','ojs/ojbutton','ojs/ojmenu','ojs/ojlistview'], 
        function(oj, $)
 {

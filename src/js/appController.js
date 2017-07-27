@@ -31,18 +31,21 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       });
 
       //welcome,cloud hubs, profiles,catalogs, assets, performance
-      oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+   oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+	 
 
       // Navigation setup
       var navData = [
         { name: 'Home', id: 'home' },
-       
+      
         { name: 'Our People', id: 'profileslist' },
         { name: 'Our Services', id: 'catalogs' ,'oj-disabled': 'disabled'},
         { name: 'Our Assets', id: 'assets','oj-disabled': 'disabled' },
         
       ];
       self.navDataSource = new oj.ArrayTableDataSource(navData, { idAttribute: 'id' });
+	  
+	  
 
       // Drawer
       // Close offcanvas on medium and larger screens
