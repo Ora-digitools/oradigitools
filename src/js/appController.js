@@ -37,10 +37,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       var navData = [
         { name: 'Home', id: 'home' },
        
-        { name: 'SE Faces', id: 'profileslist' },
-        { name: 'SEaaS Catalog', id: 'catalogs' ,'oj-disabled': 'disabled'},
-        { name: 'Assets', id: 'assets','oj-disabled': 'disabled' },
-        { name: 'Perfomances', id: 'performance','oj-disabled': 'disabled' }
+        { name: 'Our People', id: 'profileslist' },
+        { name: 'Our Services', id: 'catalogs' ,'oj-disabled': 'disabled'},
+        { name: 'Our Assets', id: 'assets','oj-disabled': 'disabled' },
+        
       ];
       self.navDataSource = new oj.ArrayTableDataSource(navData, { idAttribute: 'id' });
 
@@ -48,7 +48,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       // Close offcanvas on medium and larger screens
       self.mdScreen.subscribe(function () { oj.OffcanvasUtils.close(self.drawerParams); });
       self.drawerParams = {
-        displayMode: 'push',
+        displayMode: 'overlay',
         selector: '#navDrawer',
         content: '#pageContent'
       };
