@@ -9,9 +9,11 @@
 * {
 	outline: none;
 }
-a, button {
+a, button, a:focus, button:focus {
 	outline: none;
 }
+
+
 body {
 	font-family: 'ArialMT';
 	font-size: 14px;
@@ -73,14 +75,33 @@ body {
 	font-family: ArialMT;
 	font-size: 18px;
 }
+.mainNav ul {
+	padding: 0px;
+}
+.mainNav li {
+	list-style: none;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:20px;
+	border-bottom:3px solid #3e5869;
+}
+.mainNav li:hover{
+	background:#f29111
+	}
+.mainNav li a:link, .mainNav li a:visited {
+	color: #fff;
+	text-decoration:none
+}
+.mainNav li a:hover, .mainNav li a:visited:hover {
+	color: #fff;
+	text-decoration:none
+}
 .togglemenu {
 	padding-top: 25px;
 }
 .oj-fwk-icon-hamburger::before, .oj-web-applayout-offcanvas-icon::before {
-	content:url(images/hamburger-menu.png);
-	
+	content: url(images/hamburger-menu.png);
 }
-
 .clearfix {
 	display: block;
 	clear: both
@@ -127,7 +148,7 @@ body {
 	padding-left: 0px;
 }
 .mainNav {
-	padding-top: 18px;
+	padding-top: 2px;
 }
 .closebutton {
 	border: none;

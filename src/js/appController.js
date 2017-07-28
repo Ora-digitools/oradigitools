@@ -27,25 +27,34 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         'profiledetails': { label: 'ProfileDetails' },
         'catalogs': { label: 'SEaaS Catalog'},
         'assets': { label: 'Assets' },
-        'performance': { label: 'Performance' }
+        'performance': { label: 'Performance' },
+		'sitemap': { label: 'Sitemap' },
+		'terms': { label: 'Terms of Use & Privacy' },
+		'cookies': { label: 'Cookie Preferences' }
       });
 
       //welcome,cloud hubs, profiles,catalogs, assets, performance
    oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
-	 
 
-      // Navigation setup
-      var navData = [
-        { name: 'Home', id: 'home' },
       
-        { name: 'Our People', id: 'profileslist' },
-        { name: 'Our Services', id: 'catalogs' ,'oj-disabled': 'disabled'},
-        { name: 'Our Assets', id: 'assets','oj-disabled': 'disabled' },
-        
-      ];
-      self.navDataSource = new oj.ArrayTableDataSource(navData, { idAttribute: 'id' });
 	  
+	  // Footer
+      function headerLink(name, id, linkTarget, linkTarget1) {
+        this.name = name;
+        this.linkId = id;
+        this.linkTarget = linkTarget;
+		this.linkTarget1 = linkTarget1;		
+		
+      }
+      self.headerLinks = ko.observableArray([
+        new headerLink('Home', 'home', '?root=home'),
+		new headerLink('Our People', 'profileslist', '?root=profileslist'),
+		new headerLink('Our Services', 'catalogs', '?root=catalogs'),
+        new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/tab_website/','_blank')
+       
+      ]);
 	  
+	
 
       // Drawer
       // Close offcanvas on medium and larger screens
@@ -60,17 +69,16 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         return oj.OffcanvasUtils.toggle(self.drawerParams);
       }
       // Add a close listener so we can move focus back to the toggle button when the drawer closes
-      $("#navDrawer").on("ojclose", function (event,ui) {
-         $('#drawerToggleButton').focus(); 
-         
-        });
+      $("#navDrawer").on("ojclose", function () { $('#drawerToggleButton').focus(); });
 
       // Header
       // Application Name used in Branding Area
       self.appName = ko.observable("App Name");
       // User Info used in Global Navigation area
       self.userLogin = ko.observable("john.hancock@oracle.com");
+      
 
+    	
       // Footer
       function footerLink(name, id, linkTarget) {
         this.name = name;
@@ -78,10 +86,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         this.linkTarget = linkTarget;
       }
       self.footerLinks = ko.observableArray([
-        new footerLink('Sitemap', 'sitemap', '#'),
-		new footerLink('Terms of Use & Privacy', 'terms', '#'),
-		new footerLink('Cookie Preferences', 'cookie', '#'),
-        new footerLink('Contact Us', 'contactUs', '#')
+        new footerLink('Sitemap', 'sitemap', '?root=sitemap'),
+		new footerLink('Terms of Use & Privacy', 'terms', '?root=terms'),
+		new footerLink('Cookie Preferences', 'cookie', '?root=cookies'),
+        new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
        
       ]);
     }

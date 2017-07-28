@@ -189,8 +189,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         self.getUserList();
       }
       resetsearch = function () {
+		 
         // $('#hubcheck').attr('checked', false);
-       $('#slider').find('input:checkbox').prop('checked');  
+       //$('#slider').find('input:checkbox').prop('checked'); 
+	   $("#slider input[type=checkbox]").each(function() { this.checked=false; });
+	    self.closethefilterpanel();
+	  self.getUserList();
       }
 
       self.getFilters();
