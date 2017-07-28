@@ -4,20 +4,17 @@
  */
 /*
  * Your dashboard ViewModel code goes here
+ * 
  */
 define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs/ojconveyorbelt', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojbutton', 'ojs/ojdialog', 'ojs/ojmoduleanimations', 'ojs/ojanimation', 'ojs/ojselectcombobox'],
   function (oj, ko, $) {
 
     function DashboardViewModel() {
       var self = this;
-      /* for recent uploads gallery*/
-
-	   
-	    
-
 
       /* fadein animations effect for tab content */
       self.effect = ko.observable('fadeIn');
+      self.uuid = "";
       self.effectOptions = {};
       self.tabClick1 = function (data, event) {
         // Invoke the animation effect method with options
@@ -92,10 +89,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
         flatSkills: ko.observable(),
         flatlearnings: ko.observable(),
         flatinterests: ko.observable(),
+        flatachivements: ko.observable(),
+        flatlinks: ko.observable(),
         projects: self.customers,
-		openmodal : function () {
-         $("#editimage1").ojDialog("open");
-      }
+        openmodal: function () {
+          $("#editimage1").ojDialog("open");
+        }
 
       });
 
@@ -126,6 +125,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             var skills_string = "";
             var interests_string = "";
             var learnings_string = "";
+            var achivement_string = "";
+            var link_string = "";
+
             for (var i = 0; i < profiles.items[0].list_values.length; i++) {
               var skill = profiles.items[0].list_values[i];
               if (skill.category === 'Skills') {
@@ -160,6 +162,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
                   value: ko.observable(skill.value),
                   url: ko.observable(skill.url)
                 });
+                link_string = link_string.length > 0 ? link_string + ";" + skill.value + "(" + skill.url + ")" : skill.value + "(" + skill.url + ")";
+
               } else if (skill.category === 'Achievements') {
                 self.achivements.push({
                   employee_profile_key: ko.observable(skill.employee_profile_key),
@@ -167,8 +171,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
                   value: ko.observable(skill.value),
                   url: ko.observable(skill.url)
                 });
+                achivement_string = achivement_string.length > 0 ? achivement_string + ";" + skill.value : skill.value;
               }
-
             }
 
             for (var i = 0; i < profiles.items[0].customers.length; i++) {
@@ -207,24 +211,25 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             self.profile().uuid(profiles.items[0].uuid);
             self.profile().ou(profiles.items[0].ou);
             self.profile().cost_center(profiles.items[0].cost_center);
-            self.profile().pillar(profiles.items[0].pillar != undefined ? profiles.items[0].pillar : 'NA');
-            self.profile().center(profiles.items[0].center != undefined ? profiles.items[0].center : 'NA');
+            self.profile().pillar(profiles.items[0].pillar);
+            self.profile().center(profiles.items[0].center);
             self.profile().mgr_email(profiles.items[0].mgr_email);
             self.profile().mgr_display_name(profiles.items[0].mgr_display_name);
-            self.profile().profile_summary(profiles.items[0].profile_summary != undefined ? profiles.items[0].profile_summary : "No Contents Available!");
-            // self.center_edit(profiles.items[0].center);
-            // self.pillar_edit(profiles.items[0].pillar);
+            self.profile().profile_summary(profiles.items[0].profile_summary);
             self.profile().flatSkills(skills_string);
             self.profile().flatlearnings(learnings_string);
             self.profile().flatinterests(interests_string);
+            self.profile().flatachivements(achivement_string);
+            self.profile().flatlinks(link_string);
             console.log("profile created");
 
           });
       }
 
       self.getpersonalphotos = function () {
-        $.getJSON(baseurl + 'GetPersonalPhotoLinks/GWRIGHT').
+        $.getJSON(baseurl + 'GetPersonalPhotoLinks/' + self.uuid).
           then(function (photos) {
+            self.personalphotoslist([]);
             $.each(photos.items[0].personal_photos, function () {
               self.personalphotoslist.push({
                 personal_photo_id: this.personal_photo_id,
@@ -234,16 +239,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             })
           });
       }
-     
+
 
 
       self.handleAttached = function (info) {
+        // GET THE SELECTED USER UUID 
+        self.uuid = localStorage.getItem('uuid');
         self.getFilters();
-        self.getProfile(selecteduuid);
+        self.getProfile(self.uuid);
         self.getpersonalphotos();
       };
       self.updateProject = function () {
-        alert(self.projectInterest());
+        //alert(self.projectInterest());
         $("#dialog1").ojDialog("close");
         self.projectInterest("");
       }
@@ -251,8 +258,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       self.openeditprojectdialog = function () {
         $("#dialog1").ojDialog("open");
       }
-	  
-	  
+
+
 
       // ALL EDIT EVENTS ARE HANDLED DOWN
       self.resetValues = function () {
@@ -267,219 +274,259 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
 
       //------- SAVE PROFILE LOCATION INFORMATION ------------
-      showsavedialog = function () {
-        var location = {
-          employee_key: self.profile().employee_key(),
-          pillar: self.profile().pillar(),
-          center: self.profile().center()
-        };
-        console.log(ko.toJSON(location));
-        $.ajax({
-          url: baseurl + 'ExtendedProfile',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(location),
-          success: function (data) {
-            alert("Information saved successfully!");
-          }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-        });
+      saveprofilepillarinfo = function () {
+        if (self.profile().pillar().length > 0 && self.profile().center().length > 0) {
+          var location = {
+            employee_key: self.profile().employee_key(),
+            pillar: self.profile().pillar(),
+            center: self.profile().center()
+          };
+          //console.log(ko.toJSON(location));
+          $.ajax({
+            url: baseurl + 'ExtendedProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(location),
+            success: function (data) {
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert('Please select Pillar and Hub.');
+        }
 
       }
 
 
       //----- SAVE PROFILE SUMMARY -------
       saveSummary = function () {
-        console.log()
-        var summary = {
-          employee_key: self.profile().employee_key(),
-          pillar: self.profile().pillar(),
-          center: self.profile().center(),
-          profile_summary: self.profile().profile_summary()
-        };
-        console.log(ko.toJSON(summary));
-        $.ajax({
-          url: baseurl + 'ExtendedProfile',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(summary),
-          success: function (data) {
-            self.getProfile(selecteduuid);
-            alert("Information saved successfully!");
-          }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-        });
+        if (self.profile().profile_summary().length > 0) {
+          //console.log()
+          var summary = {
+            employee_key: self.profile().employee_key(),
+            pillar: self.profile().pillar(),
+            center: self.profile().center(),
+            profile_summary: self.profile().profile_summary()
+          };
+          //console.log(ko.toJSON(summary));
+          $.ajax({
+            url: baseurl + 'ExtendedProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(summary),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert("Please write a summary about your profile before we proceed.");
+        }
 
       }
 
       //-----  SAVE SKILL LIST FOR USER -----
       saveSkills = function () {
-        var skills = self.profile().flatSkills().split(';');
-        var profileSkills = self.skills_skills();
-        var updatedSkillList = ko.observableArray([]);
-        var requestdata = ko.observable();
-        for (var i = 0; i < skills.length; i++) {
-          var isNew = false;
-          for (var j = 0; j < profileSkills.length; j++) {
-            if (skills[i] === profileSkills[j].value()) {
-              // alert("Its a match");
-              isNew = false;
-              updatedSkillList.push(profileSkills[j]);
-              break;
-            } else {
-              // alert("Not a match!");
-              isNew = true;
+        if (self.profile().flatSkills().length > 0) {
+          var skills = self.profile().flatSkills().split(';');
+          var profileSkills = self.skills_skills();
+          var updatedSkillList = ko.observableArray([]);
+          var requestdata = ko.observable();
+          for (var i = 0; i < skills.length; i++) {
+            var isNew = false;
+            for (var j = 0; j < profileSkills.length; j++) {
+              if (skills[i] === profileSkills[j].value()) {
+                // alert("Its a match");
+                isNew = false;
+                updatedSkillList.push(profileSkills[j]);
+                break;
+              } else {
+                // alert("Not a match!");
+                isNew = true;
+              }
+            }
+            if (isNew) {
+              //alert('New item added: ' + skills[i]);
+              updatedSkillList.push({
+                employee_profile_key: '',
+                value: skills[i],
+                desc_text: ''
+              })
             }
           }
-          if (isNew) {
-            alert('New item added: ' + skills[i]);
-            updatedSkillList.push({
-              employee_profile_key: '',
-              value: skills[i],
-              desc_text: ''
-            })
-          }
+
+          // CREATE THE REQUEST JSON
+          requestdata = ({
+            employee_key: self.profile().employee_key(),
+            category: 'Skills',
+            profileUpdates: updatedSkillList
+          })
+          //console.log(ko.toJSON(requestdata));
+
+          // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'UpdateProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(requestdata),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert("Please enter your skills that you are good at before we proceed.");
         }
-
-        // CREATE THE REQUEST JSON
-        requestdata = ({
-          employee_key: self.profile().employee_key(),
-          category: 'Skills',
-          profileUpdates: updatedSkillList
-        })
-        console.log(ko.toJSON(requestdata));
-
-        // SEND TO SERVER
-        $.ajax({
-          url: baseurl + 'UpdateProfile',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(requestdata),
-          success: function (data) {
-            self.getProfile(selecteduuid);
-            alert("Information saved successfully!");
-          }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-        });
 
       }
 
       //----- SAVE LEARNING INTEREST LIST FOR USER ------
       saveLearning = function () {
-        var skills = self.profile().flatlearnings().split(';');
-        var profileLearnings = self.skills_learning();
-        var updatedSkillList = ko.observableArray([]);
-        var requestdata = ko.observable();
-        for (var i = 0; i < skills.length; i++) {
-          var isNew = false;
-          for (var j = 0; j < profileLearnings.length; j++) {
-            // console.log(skills[i].trim() + " --- " + profileLearnings[j].value().trim());
-            if (skills[i].trim() === profileLearnings[j].value().trim()) {
-              isNew = false;
-              updatedSkillList.push(profileLearnings[j]);
-              break;
-            } else {
-              isNew = true;
+        if (self.profile().flatlearnings().length > 0) {
+          var skills = self.profile().flatlearnings().split(';');
+          var profileLearnings = self.skills_learning();
+          var updatedSkillList = ko.observableArray([]);
+          var requestdata = ko.observable();
+          for (var i = 0; i < skills.length; i++) {
+            var isNew = false;
+            for (var j = 0; j < profileLearnings.length; j++) {
+              // console.log(skills[i].trim() + " --- " + profileLearnings[j].value().trim());
+              if (skills[i] === profileLearnings[j].value()) {
+                isNew = false;
+                updatedSkillList.push(profileLearnings[j]);
+                break;
+              } else {
+                isNew = true;
+              }
+            }
+            if (isNew) {
+              //alert('New item added: ' + skills[i]);
+              updatedSkillList.push({
+                employee_profile_key: '',
+                value: skills[i],
+                desc_text: ''
+              })
             }
           }
-          if (isNew) {
-            alert('New item added: ' + skills[i]);
-            updatedSkillList.push({
-              employee_profile_key: '',
-              value: skills[i],
-              desc_text: ''
-            })
-          }
+
+          // CREATE THE REQUEST JSON
+          requestdata = ({
+            employee_key: self.profile().employee_key(),
+            category: 'Learning',
+            profileUpdates: updatedSkillList
+          })
+          //console.log(ko.toJSON(requestdata));
+
+          // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'UpdateProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(requestdata),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert("Please enter some learning interets you have before we proceed.");
         }
 
-        // CREATE THE REQUEST JSON
-        requestdata = ({
-          employee_key: self.profile().employee_key(),
-          category: 'Learning',
-          profileUpdates: updatedSkillList
-        })
-        console.log(ko.toJSON(requestdata));
-
-        // SEND TO SERVER
-        $.ajax({
-          url: baseurl + 'UpdateProfile',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(requestdata),
-          success: function (data) {
-            self.getProfile(selecteduuid);
-            alert("Information saved successfully!");
-          }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-        });
-
       }
+
 
 
       //----- SAVE OUTSIDE INTEREST LIST FOR USER ------
       saveInterest = function () {
-        var skills = self.profile().flatinterests().split(';');
-        var profileInterests = self.skills_interests();
-        var updatedSkillList = ko.observableArray([]);
-        var requestdata = ko.observable();
-        for (var i = 0; i < skills.length; i++) {
-          var isNew = false;
-          for (var j = 0; j < profileInterests.length; j++) {
-            // console.log(skills[i].trim() + " --- " + profileLearnings[j].value().trim());
-            if (skills[i].trim() === profileInterests[j].value().trim()) {
-              isNew = false;
-              updatedSkillList.push(profileInterests[j]);
-              break;
-            } else {
-              isNew = true;
+        if (self.profile().flatinterests().length > 0) {
+          var skills = self.profile().flatinterests().split(';');
+          var profileInterests = self.skills_interests();
+          var updatedSkillList = ko.observableArray([]);
+          var requestdata = ko.observable();
+          for (var i = 0; i < skills.length; i++) {
+            var isNew = false;
+            for (var j = 0; j < profileInterests.length; j++) {
+              // console.log(skills[i].trim() + " --- " + profileLearnings[j].value().trim());
+              if (skills[i] === profileInterests[j].value()) {
+                isNew = false;
+                updatedSkillList.push(profileInterests[j]);
+                break;
+              } else {
+                isNew = true;
+              }
+            }
+            if (isNew) {
+              //alert('New item added: ' + skills[i]);
+              updatedSkillList.push({
+                employee_profile_key: '',
+                value: skills[i],
+                desc_text: ''
+              })
             }
           }
-          if (isNew) {
-            alert('New item added: ' + skills[i]);
-            updatedSkillList.push({
-              employee_profile_key: '',
-              value: skills[i],
-              desc_text: ''
-            })
-          }
+
+          // CREATE THE REQUEST JSON
+          requestdata = ({
+            employee_key: self.profile().employee_key(),
+            category: 'Interests',
+            profileUpdates: updatedSkillList
+          })
+          //console.log(ko.toJSON(requestdata));
+
+          // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'UpdateProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(requestdata),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert("Please fill in with some of your Interests before we proceed.");
         }
 
-        // CREATE THE REQUEST JSON
-        requestdata = ({
-          employee_key: self.profile().employee_key(),
-          category: 'Interests',
-          profileUpdates: updatedSkillList
-        })
-        console.log(ko.toJSON(requestdata));
+      }
 
-        // SEND TO SERVER
-        $.ajax({
-          url: baseurl + 'UpdateProfile',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(requestdata),
-          success: function (data) {
-            self.getProfile(selecteduuid);
-            alert("Information saved successfully!");
-          }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-        });
-
+      removeimage = function (event) {
+        if (confirm('Please Confirm Deletion!')) {
+          var photoid = event.personal_photo_id;
+          var url = baseurl + 'GetPhoto/' + photoid;
+          //console.log(url);
+          $.ajax({
+            url: url,
+            cache: false,
+            type: 'DELETE',
+            success: function (data) {
+              self.getpersonalphotos();
+              alert("Deleted successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        }
       }
 
       updateicon = function (event) {
         var reader = new FileReader();
-        var mimetype=event.target.files[0].type;
+        var mimetype = event.target.files[0].type;
         reader.onload = function () {
           var uploadheader = {
             "in_employeekey": self.profile().employee_key(),
@@ -487,7 +534,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             "in_value": "NA",
             "in_mimetype": mimetype
           }
-          console.log(uploadheader);
+          var imagedata = reader.result.split('base64,')[1];
+
           // SEND TO SERVER
           $.ajax({
             url: baseurl + 'UpdatePhoto',
@@ -495,30 +543,28 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             cache: false,
             type: 'POST',
             contentType: 'application/json; charset=utf-8',
-            data: reader.result,
+            data: imagedata,
             success: function (data) {
-              self.getProfile(selecteduuid);
-              alert("Information saved successfully11!");
-			   $("#editimage1").ojDialog("close");
-			   
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+
+              $("#editimage1").ojDialog("close");
+
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
           });
         };
         reader.readAsDataURL(event.target.files[0]);
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
       };
 
-      deleteimage = function (event, ui) {
-        alert("delete image is clicked");
-      };
-	  
 
-	   
+
+
       uploadpersonalphoto = function (event) {
         var reader = new FileReader();
-        var mimetype=event.target.files[0].type;
+        var mimetype = event.target.files[0].type;
         reader.onload = function () {
           var uploadheader = {
             "in_employeekey": self.profile().employee_key(),
@@ -526,7 +572,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             "in_value": "NA",
             "in_mimetype": mimetype
           }
-          console.log(uploadheader);
+          //console.log(uploadheader);
+
+          var imagedata = reader.result.split('base64,')[1];
 
           // SEND TO SERVER
           $.ajax({
@@ -535,10 +583,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             cache: false,
             type: 'POST',
             contentType: 'application/json; charset=utf-8',
-            data: reader.result,
+            data: imagedata,
             success: function (data) {
-              self.getProfile(selecteduuid);
+              self.getpersonalphotos();
               alert("Information saved successfully!");
+
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -590,7 +639,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
         }
 
         var method = project.employee_customer_profile_key === "" ? 'POST' : 'PUT';
-        console.log(method + "---- > " + ko.toJSON(project));
+        //console.log(method + "---- > " + ko.toJSON(project));
         $.ajax({
           url: baseurl + 'UpdateCustomerProfile',
           cache: false,
@@ -598,7 +647,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
           contentType: 'application/json; charset=utf-8',
           data: ko.toJSON(project),
           success: function (data) {
-            self.getProfile(selecteduuid);
+            self.getProfile(self.uuid);
             alert("Information saved successfully!");
           }
         }).fail(function (xhr, textStatus, err) {
@@ -609,19 +658,130 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
       deleteproject = function (value) {
         var projectid = value.employee_customer_profile_key();
-        alert('deleting ' + projectid);
+        var url = baseurl + 'CustomerProfile/' + projectid;
+        //console.log(url);
         $.ajax({
-          url: baseurl + 'CustomerProfile/'+projectid,
+          url: url,
           cache: false,
           type: 'DELETE',
-          contentType: 'application/json; charset=utf-8',
           success: function (data) {
-            self.getProfile(selecteduuid);
+            self.getProfile(self.uuid);
             alert("Deleted successfully!");
           }
         }).fail(function (xhr, textStatus, err) {
           alert(err);
         });
+      }
+
+      saveLinks = function () {
+
+        if (self.profile().flatlinks().length) {
+          var skills = self.profile().flatlinks().split(';');
+          var profileLinks = self.links();
+          var updatedSkillList = ko.observableArray([]);
+          var requestdata = ko.observable();
+          for (var i = 0; i < skills.length; i++) {
+            var isNew = false;
+            var linkname = skills[i].split('(')[0];
+            var linkurl = skills[i].split('(')[1];
+            for (var j = 0; j < profileLinks.length; j++) {
+              if (linkname === profileLinks[j].value()) {
+                isNew = false;
+                updatedSkillList.push(profileLinks[j]);
+                break;
+              } else {
+                isNew = true;
+              }
+            }
+            if (isNew) {
+              //alert('New item added: ' + skills[i]);
+              updatedSkillList.push({
+                employee_profile_key: '',
+                value: linkname,
+                url: linkurl
+              })
+            }
+          }
+          requestdata = ({
+            employee_key: self.profile().employee_key(),
+            category: 'Links',
+            profileUpdates: updatedSkillList
+          })
+          console.log(ko.toJSON(requestdata));
+
+          // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'UpdateProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(requestdata),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert("Please enter some links before we proceed.");
+        }
+
+      }
+
+      saveAchievements = function () {
+        if (self.profile().flatachivements().length > 0) {
+          var skills = self.profile().flatachivements().split(';');
+          var profileAchivements = self.achivements();
+          var updatedSkillList = ko.observableArray([]);
+          var requestdata = ko.observable();
+          for (var i = 0; i < skills.length; i++) {
+            var isNew = false;
+            for (var j = 0; j < profileAchivements.length; j++) {
+              // console.log(skills[i].trim() + " --- " + profileLearnings[j].value().trim());
+              if (skills[i] === profileAchivements[j].value()) {
+                isNew = false;
+                updatedSkillList.push(profileAchivements[j]);
+                break;
+              } else {
+                isNew = true;
+              }
+            }
+            if (isNew) {
+              //alert('New item added: ' + skills[i]);
+              updatedSkillList.push({
+                employee_profile_key: '',
+                value: skills[i],
+                desc_text: ''
+              })
+            }
+          }
+
+          // CREATE THE REQUEST JSON
+          requestdata = ({
+            employee_key: self.profile().employee_key(),
+            category: 'Achievements',
+            profileUpdates: updatedSkillList
+          })
+          console.log(ko.toJSON(requestdata));
+
+          // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'UpdateProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(requestdata),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              alert("Information saved successfully!");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        } else {
+          alert("Please fill in some of your achivements before we proceed.");
+        }
       }
     }
 

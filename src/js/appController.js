@@ -60,7 +60,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         return oj.OffcanvasUtils.toggle(self.drawerParams);
       }
       // Add a close listener so we can move focus back to the toggle button when the drawer closes
-      $("#navDrawer").on("ojclose", function () { $('#drawerToggleButton').focus(); });
+      $("#navDrawer").on("ojclose", function (event,ui) {
+         $('#drawerToggleButton').focus(); 
+         
+        });
 
       // Header
       // Application Name used in Branding Area

@@ -53,7 +53,7 @@
   <p style="font-weight: bolder">Filter by Location</p>
   <div data-bind="foreach: hubslist">
     <div class="checkbox">
-      <label><input type="checkbox" data-bind="value: $data" onchange="filteredhubs(this)"></label>
+      <label><input class="hubcheck" type="checkbox" data-bind="value: $data" onchange="filteredhubs(this)"></label>
       <span data-bind="text: $data"></span>
     </div>
   </div><br>
@@ -64,6 +64,10 @@
       <span data-bind="text: $data"></span>
     </div>
   </div>
-  <button id="apply" class="apply" data-bind="click:searchhandler">Apply</button>
-
+ <div>
+    <button id="apply" class="apply" data-bind="click:searchhandler">Apply</button>
+    <button id="apply" class="apply" data-bind="click:resetsearch">Reset</button>
+  </div>
 </div>
+
+<script>

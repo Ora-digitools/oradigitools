@@ -210,8 +210,9 @@
 
                     <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}">
                       <!-- ko foreach: personalphotoslist -->
-                      <div>
-                        <img data-bind="attr:{src:photo_url}">
+                      <div class="demo-conveyor-item">
+                        <p data-bind="click:removeimage" style="cursor: pointer">X</p>
+                        <img data-bind="attr:{src:photo_url}" style="height: 200px;margin: 0px 0px 0px 10px">
                       </div>
                       <!-- /ko -->
                     </div>
@@ -330,7 +331,7 @@
               <option data-bind="text:$data">
             </datalist>
           </div>
-          <button data-bind="click:showsavedialog" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveprofilepillarinfo" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>

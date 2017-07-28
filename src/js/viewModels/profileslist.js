@@ -36,8 +36,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.logSelected = function (event, ui) {
 
         if (ui.option === 'currentItem') {
-			
-          selecteduuid = ui.item.attr('id');
+          var selecteduuid = ui.item.attr('id');
+          // STORE THE SELECTED USER UUID in LOCASTORAGE
+          localStorage.setItem('uuid', selecteduuid);
+
+          // NAVIGATE TO PROFILE DETAILS PAGE
           self.router = oj.Router.rootInstance;
           self.router.go('profiledetails');
 
@@ -95,7 +98,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $.getJSON(baseurl + "ListValues/SOLUTION_HUBS").
           then(function (hubs) {
             $.each(hubs.items, function () {
-              console.log(this.value);
+              // console.log(this.value);
               self.hubslist.push(this.value);
             })
           });
@@ -103,7 +106,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $.getJSON(baseurl + "ListValues/ENGAGEMENT_PILLAR").
           then(function (pillers) {
             $.each(pillers.items, function () {
-              console.log(this.value);
+              // console.log(this.value);
               self.listofpillers.push(this.value);
             })
           });
@@ -146,6 +149,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
           });
       }
 
+      self.handleActivated = function (info) {
+        console.log('loading profile list. . .');
+      };
+
+
       filteredhubs = function (desc) {
 
         if (desc.checked) {
@@ -180,10 +188,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         self.url = baseurl + "GetUserProfiles";
         self.getUserList();
       }
+      resetsearch = function () {
+        // $('#hubcheck').attr('checked', false);
+       $('#slider').find('input:checkbox').prop('checked');  
+      }
 
       self.getFilters();
       self.getUserList();
       self.dataSource = new oj.ArrayTableDataSource(self.renderData, { idAttribute: "uuid" });
+
+
 
     }
     return new DashboardViewModel();
