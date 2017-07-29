@@ -2,7 +2,12 @@
  Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
-
+<style>
+  .hint {
+    color: darkslateblue;
+    font-weight: bold;
+  }
+</style>
 
 <div class="row blueBg" data-bind="with:profile">
   <div class="container ">
@@ -11,7 +16,7 @@
       <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay">
           <div class="text">
-            <button type="button"  data-bind="click: openmodal"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
+            <button type="button" data-bind="click: openmodal"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
           </div>
         </div>
       </div>
@@ -299,6 +304,7 @@
         <form action="#">
           <div class="form-group">
             <textarea class="form-control" data-bind="value:flatSkills"></textarea>
+            <h6 class="hint">*All skills should be separated by ';' and any excluded skills will be considered removed.</h6>
           </div>
           <button data-bind="click:saveSkills" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
@@ -320,13 +326,16 @@
           <div class="form-group">
             <label>Hub:</label>
             <input class="form-control" type="text" list="listohub" data-bind="value:center">
+            <h6 class="hint">*Type or select Hub from the dropdown</h6>
             <datalist id="listohub" data-bind="foreach:hublist">
               <option data-bind="text:$data">
             </datalist>
           </div>
           <div class="form-group">
             <label>Pillar:</label>
-            <input class="form-control" type="text" list="listopillar" data-bind="value:pillar">
+            <a tabindex="0" href="#" data-title="Select hub from the dropdown">
+            <input class="form-control" type="text" list="listopillar" data-bind="value:pillar"></a>
+            <h6 class="hint">*Type or select Pillar from the dropdown</h6>
             <datalist id="listopillar" data-bind="foreach:pillarlist">
               <option data-bind="text:$data">
             </datalist>
@@ -339,20 +348,19 @@
 </div>
 <!-- Image Edit -->
 <div id="dialogWrapper">
-  <div style="display:none" id="editimage1" title="Edit Profile Picture" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body">
-        <form action="#" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label class="control-label">Select File</label>
-            <input class="btn btn-default file" id="input-1" type="file" onchange="updateicon(event)">
-          </div>
-          <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
-        </form>
-     </div>
-   
+  <div style="display:none" id="editimage1" title="Edit Profile Picture" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+    <div class="oj-dialog-body">
+      <form action="#" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="control-label">Select File</label>
+          <input class="btn btn-default file" id="input-1" type="file" onchange="updateicon(event)">
+        </div>
+        <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
+      </form>
+    </div>
+
   </div>
- 
+
 
 </div>
 
@@ -390,6 +398,8 @@
         <form action="#">
           <div class="form-group">
             <textarea class="form-control" data-bind="value:flatlearnings"></textarea>
+            <h6 class="hint">*All Learning interests should be separated by ';' and any excluded Interests will be considered removed.</h6>
+
           </div>
           <button data-bind="click:saveLearning" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
@@ -589,6 +599,8 @@
         <form action="#">
           <div class="form-group">
             <textarea class="form-control" data-bind="value:flatinterests"></textarea>
+            <h6 class="hint">*All Outside Interests should be separated by ';' and any excluded Interests will be considered removed.</h6>
+
           </div>
           <button data-bind="click:saveInterest" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
@@ -609,6 +621,7 @@
         <form action="#">
           <div class="form-group">
             <textarea class="form-control" data-bind="value:flatachivements"></textarea>
+            <h6 class="hint">*All achievements should be separated by ';' and any excluded achievements will be considered removed.</h6>
           </div>
           <button data-bind="click:saveAchievements" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
@@ -629,6 +642,8 @@
         <form action="#">
           <div class="form-group">
             <textarea class="form-control" data-bind="value:flatlinks"></textarea>
+            <h6 class="hint">*All link should be entered as follows "facebook Oracle Cloud(https://www.facebook.com/OracleCloud/);LinkedIn
+              oracle Cloud(https://in.linkedin.com/company/oracle-cloud)". Each entry should be separated by ';'. </h6>
           </div>
           <button data-bind="click:saveLinks" class="btn btn-default" data-dismiss="modal">Save</button>
         </form>
@@ -636,3 +651,4 @@
     </div>
   </div>
 </div>
+

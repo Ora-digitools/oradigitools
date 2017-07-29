@@ -379,6 +379,10 @@ footer {
 .mainImage img:hover {
 	opacity: 0.6;
 }
+.hinttext{
+	color: darkolivegreen;
+	font-weight: bold
+}
 .face {
 	border-right: 1px solid #d3d3d3;
 	padding-top: 40px;
@@ -1051,6 +1055,7 @@ ul#profiletabs {
 	border: 5px solid #c8c8c8;
 	height: 100px;
 }
+
 .blueBg {
 	padding: 0px;
 }

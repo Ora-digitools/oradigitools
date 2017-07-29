@@ -25,122 +25,131 @@
   section to represent the appropriate content type.
   ***************************** IMPORTANT INFORMATION ************************************ -->
 <html lang="en-us">
+
 <head>
-<title>Solution Engineering</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+  <title>Solution Engineering</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
 
-<!-- This is the main css file for the default Alta theme -->
-<!-- injector:theme -->
-<link rel="stylesheet" href="css/libs/oj/v3.1.0/alta/oj-alta-min.css" type="text/css"/>
-<!-- endinjector -->
+  <!-- This is the main css file for the default Alta theme -->
+  <!-- injector:theme -->
+  <link rel="stylesheet" href="css/libs/oj/v3.1.0/alta/oj-alta-min.css" type="text/css" />
+  <!-- endinjector -->
 
-<!-- This contains icon fonts used by the starter template -->
-<link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css"/>
+  <!-- This contains icon fonts used by the starter template -->
+  <link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css" />
 
-<!-- This is where you would add any app specific styling -->
-<link rel="stylesheet" href="css/override.css" type="text/css"/>
-<!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+  <!-- This is where you would add any app specific styling -->
+  <link rel="stylesheet" href="css/override.css" type="text/css" />
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="css/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="css/bootstrap.min.js"></script>
-<script src="css/bootstrap-tabcollapse.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="css/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="css/bootstrap.min.js"></script>
+  <script src="css/bootstrap-tabcollapse.js"></script>
 </head>
+
+
 <body class="oj-web-applayout-body">
-<!-- Template for rendering navigation items shared between nav bar and nav list --> 
-<script type="text/html" id="navTemplate">
-      <li><a href="#">
+  <!-- Template for rendering navigation items shared between nav bar and nav list -->
+  <script type="text/html" id="navTemplate">
+    <li><a href="#">
         <span data-bind="css: $data['iconClass']"></span>
         <!-- ko text: $data['name'] --> <!--/ko-->
       </a></li>
-    </script>
-<div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
-  <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start mainNav">
-    <div>
-      <ul>
-        <!-- ko foreach: headerLinks -->
-        
-        <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget, target: linkTarget1}"></a></li>
-        <!-- /ko -->
-      </ul>
+  </script>
+  <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+    <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start mainNav">
+      <div>
+        <ul>
+          <!-- ko foreach: headerLinks -->
+
+          <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget, target: linkTarget1}"></a></li>
+          <!-- /ko -->
+        </ul>
+      </div>
     </div>
-  </div>
-  <div id="pageContent" class="container-fluid oj-web-applayout-page">
-    <div class="row content"> 
-      <!-- Start Slider -->
-      <header  role="banner">
-        <div class="col-md-12 orangeBg nopaddingxs"> 
-          
-          <!-- SearchBox -->
-          <div class="container"> 
-            
-            <!-- Contact Us -->
-            <div class="col-xs-12 text-right contactLink"><a href="mailto:oraclecloudhubs_us@oracle.com" title="oraclecloudhubs_us@oracle.com" class="navbar-link">Contact Us</a></div>
-          </div>
-        </div>
-        <div class="col-md-12 nopadding">
-          <nav class="navbar navbar-inverse">
+    <div id="pageContent" class="container-fluid oj-web-applayout-page">
+      <div class="row content">
+        <!-- Start Slider -->
+        <header role="banner">
+          <div class="col-md-12 orangeBg nopaddingxs">
+
+            <!-- SearchBox -->
             <div class="container">
-              <div class="col-xs-12 nopadding">
-                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 togglemenu">
-                  <button id="drawerToggleButton" class=" oj-button-lg" data-bind="click: toggleDrawer,
+              <!-- Contact Us -->
+              <div class="col-xs-12 text-right contactLink"><a href="mailto:oraclecloudhubs_us@oracle.com" title="oraclecloudhubs_us@oracle.com" class="navbar-link">Contact Us</a></div>
+            </div>
+          </div>
+          <div class="col-md-12 nopadding">
+            <nav class="navbar navbar-inverse">
+              <div class="container">
+                <div class="col-xs-12 nopadding">
+                  <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1 togglemenu">
+                    <button id="drawerToggleButton" class=" oj-button-lg" data-bind="click: toggleDrawer,
                 ojComponent: {component:'ojButton', label: '',
                 chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}"> </button>
-                </div>
-                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11 navbar-header logo"> 
-                  
-                  <!-- Logo --> 
-                  <a class="" href="?root=home"><img src="css/images/logo.png" class="img-responsive"></a> </div>
-              </div>
-              <!-- Toggle for Mobile --> 
-              <!-- Main Menu --> 
-              
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- End Header --> 
-    </div>
+                  </div>
+                  <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11 navbar-header logo">
 
-    <div role="main" class="" data-bind="ojModule: router.moduleConfig"> </div>
-    <div class="row">
-      <footer>
-        <div class="container">
-          <div class="footerheading">Cloud Hubs</div>
-          <div class="footer-social">
-            <ul>
-              <li><a href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-              <li><a href="#" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-              <li><a href="#" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-              <li><a href="#" title="Google Plus"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-              <li><a href="#" title="YouTube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-              <li><a href="#" title="Facebook"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
-            </ul>
+                    <!-- Logo -->
+                    <a class="" href="?root=home"><img src="css/images/logo.png" class="img-responsive"></a>
+                    <div id="dialog" class="oj-flex" style="visibility: hidden">
+                      <div class="oj-sm-4">
+                        <div><span>Loading</span> <img src="css/images/loading.gif" height="20px"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Toggle for Mobile -->
+                <!-- Main Menu -->
+
+              </div>
+            </nav>
           </div>
-          <div class="footermenu">
-            <ul>
-              <!-- ko foreach: footerLinks -->
-              <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
-              <!-- /ko -->
-            </ul>
+        </header>
+        <!-- End Header -->
+      </div>
+
+      <div role="main" class="" data-bind="ojModule: router.moduleConfig"> </div>
+      <div class="row">
+        <footer>
+          <div class="container">
+            <div class="footerheading">Cloud Hubs</div>
+            <div class="footer-social">
+              <ul>
+                <li><a href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                <li><a href="#" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                <li><a href="#" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="#" title="Google Plus"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                <li><a href="#" title="YouTube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                <li><a href="#" title="Facebook"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+            <div class="footermenu">
+              <ul>
+                <!-- ko foreach: footerLinks -->
+                <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
+                <!-- /ko -->
+              </ul>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   </div>
-</div>
-<script type="text/javascript" src="js/libs/require/require.js"></script> 
-<script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/libs/require/require.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>

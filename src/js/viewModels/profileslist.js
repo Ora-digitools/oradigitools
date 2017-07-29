@@ -13,8 +13,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       var self = this;
       var selectedLocations = "", selectedPillars = "";
       self.url = baseurl + "GetUserProfiles";
-      self.next = "";
-      self.prev = "";
+      self.next = ko.observable();
+      self.prev = ko.observable();
       self.data = ko.observableArray();
       self.renderData = ko.observableArray();
       self.currentItemId = ko.observable();
@@ -48,6 +48,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       }
 
       this.searchhandler = function (context, ui) {
+        showdialog();
         self.closethefilterpanel();
         var searchkey = self.searchtext() != "" ? self.searchtext()[0] : "";//;
         selectedLocations = selectedLocations.length > 0 ? selectedLocations : 'All';
@@ -60,6 +61,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             console.log(">> " + profiles.items.length);
             self.data([]);
             self.renderData([]);
+            var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
+            var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
+            self.next = (nxturl);
+            self.prev = (prevurl);
             $.each(profiles.items, function () {
 
               var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
@@ -78,10 +83,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 country: this.country,
                 uuid: this.uuid
               };
-              if (this.work_email != 'matthew.orsie@oracle.com') {
-                self.data.push(profile);
-                self.renderData.push(profile);
-              }
+              self.data.push(profile);
+              self.renderData.push(profile);
+              hidedialog();
               console.log("Parse completed");
             });
 
@@ -113,13 +117,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       }
 
       self.getUserList = function () {
+        showdialog();
         $.getJSON(self.url).
           then(function (profiles) {
             console.log(">> " + profiles.items.length);
             self.data([]);
             self.renderData([]);
-            self.next = profiles.next != undefined ? profiles.next.$ref : '';
-            self.prev = profiles.previous != undefined ? profiles.previous.$ref : '';
+            var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
+            var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
+            self.next = (nxturl);
+            self.prev = (prevurl);
+            checkvisible();
             $.each(profiles.items, function () {
 
               var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
@@ -139,11 +147,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 country: this.country,
                 uuid: this.uuid
               };
-              if (this.work_email != 'matthew.orsie@oracle.com') {
-                self.data.push(profile);
-                self.renderData.push(profile);
-              }
+              self.data.push(profile);
+              self.renderData.push(profile);
+
               console.log("Parse completed");
+              hidedialog();
             });
 
           });
@@ -175,6 +183,20 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
           selectedPillars = selectedPillars.replace(desc.defaultValue, '');
         }
       }
+      setpaginationbutton = function () {
+        if (self.prev != null && self.prev.length > 0) {
+          $("prevbtn").show();
+        } else {
+          $("prevbtn").hide();
+        }
+
+        if (self.next != null && self.next.length > 0) {
+          $("nextbtn").show();
+        } else {
+          $("nextbtn").hide();
+        }
+      }
+
       loadNextPage = function () {
         self.url = self.next;
         self.getUserList();
@@ -188,20 +210,59 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         self.url = baseurl + "GetUserProfiles";
         self.getUserList();
       }
+      checkvisible = function () {
+        var elms = document.querySelectorAll("[name='navbtn']");
+
+        for (var i = 0; i < elms.length; i++) {
+          if (elms[i].id === 'PREV') {
+            if (self.prev != null && self.prev.length > 0) {
+              elms[i].style.visibility = 'visible';
+            } else {
+              elms[i].style.visibility = 'hidden';
+            }
+          }
+
+          if (elms[i].id === 'NEXT') {
+            if (self.next != null && self.next.length > 0) {
+              elms[i].style.visibility = 'visible';
+            } else {
+              elms[i].style.visibility = 'hidden';
+            }
+          }
+        }
+
+      }
       resetsearch = function () {
-		 
+
         // $('#hubcheck').attr('checked', false);
-       //$('#slider').find('input:checkbox').prop('checked'); 
-	   $("#slider input[type=checkbox]").each(function() { this.checked=false; });
-	    self.closethefilterpanel();
-	  self.getUserList();
+        //$('#slider').find('input:checkbox').prop('checked'); 
+        $("#slider input[type=checkbox]").each(function () { this.checked = false; });
+        selectedLocations ='All';
+        selectedPillars = 'All';
+        searchkey = 'All';
+        self.closethefilterpanel();
+        self.getUserList();
       }
 
-      self.getFilters();
-      self.getUserList();
+      self.handleAttached = function (info) {
+
+        self.getFilters();
+        self.getUserList();
+
+      }
+
       self.dataSource = new oj.ArrayTableDataSource(self.renderData, { idAttribute: "uuid" });
 
 
+      showdialog = function () {
+        var elms = document.getElementById('dialog');
+        elms.style.visibility = 'visible';
+      }
+
+      hidedialog = function () {
+        var elms = document.getElementById('dialog');
+        elms.style.visibility = 'hidden';
+      }
 
     }
     return new DashboardViewModel();

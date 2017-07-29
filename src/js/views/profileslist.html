@@ -2,7 +2,7 @@
 <!-- Start Heading -->
 <div class="row text-center team"><img src="css/images/meettheteam.png" class="img-responsive">
   <h1><span class="borderBottom">Our People</span></h1>
-  
+
 </div>
 <!-- End Heading -->
 
@@ -17,10 +17,10 @@
         }">
     </ul>
   </div>
-  <div>
-    <button data-bind="click:loadFirstPage">FIRST</button>
-    <button data-bind="click:loadPrevPage">PREV</button>
-    <button data-bind="click:loadNextPage">NEXT</button>
+  <div id="page">
+    <button class="apply" data-bind="click:loadFirstPage">FIRST</button>
+    <button class="apply" name="navbtn" id='PREV' data-bind="click:loadPrevPage">PREV</button>
+    <button class="apply" name="navbtn" id='NEXT' data-bind="click:loadNextPage">NEXT</button>
   </div>
 </div>
 
@@ -28,12 +28,14 @@
 <script type="text/html" id="server_template">
   <li data-bind="attr: {id: $data['uuid']}">
     <div class="col-sm-4 col-md-3 col-lg-2 face">
-	
+
       <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}"></img>
       </div>
       <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
       <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
-      <div class="col-sm-12 nopadding social"><span data-bind="if: work_phone"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a></span><span data-bind="if: work_email"><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></span></div>
+      <div class="col-sm-12 nopadding social"><span data-bind="if: work_phone"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a></span>
+        <span data-bind="if: work_email"><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></span>
+      </div>
     </div>
   </li>
 
@@ -64,7 +66,7 @@
       <span data-bind="text: $data"></span>
     </div>
   </div>
- <div>
+  <div>
     <button id="apply" class="apply" data-bind="click:searchhandler">Apply</button>
     <button id="apply" class="apply" data-bind="click:resetsearch">Reset</button>
   </div>

@@ -118,6 +118,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
 
       self.getProfile = function (uuid) {
+        showdialog();
         self.resetValues();
         $.getJSON(baseurl + "GetFullUserProfile/" + uuid).
           then(function (profiles) {
@@ -222,11 +223,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             self.profile().flatachivements(achivement_string);
             self.profile().flatlinks(link_string);
             console.log("profile created");
+            hidedialog();
 
           });
       }
 
       self.getpersonalphotos = function () {
+        showdialog();
         $.getJSON(baseurl + 'GetPersonalPhotoLinks/' + self.uuid).
           then(function (photos) {
             self.personalphotoslist([]);
@@ -236,6 +239,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
                 photo_value: this.value,
                 photo_url: this.personal_photo_url
               });
+              hidedialog();
             })
           });
       }
@@ -244,10 +248,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
       self.handleAttached = function (info) {
         // GET THE SELECTED USER UUID 
+        showdialog();
         self.uuid = localStorage.getItem('uuid');
         self.getFilters();
         self.getProfile(self.uuid);
         self.getpersonalphotos();
+        hidedialog();
       };
       self.updateProject = function () {
         //alert(self.projectInterest());
@@ -276,6 +282,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       //------- SAVE PROFILE LOCATION INFORMATION ------------
       saveprofilepillarinfo = function () {
         if (self.profile().pillar().length > 0 && self.profile().center().length > 0) {
+          showdialog();
           var location = {
             employee_key: self.profile().employee_key(),
             pillar: self.profile().pillar(),
@@ -290,6 +297,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             data: ko.toJSON(location),
             success: function (data) {
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -304,7 +312,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       //----- SAVE PROFILE SUMMARY -------
       saveSummary = function () {
         if (self.profile().profile_summary().length > 0) {
-          //console.log()
+          showdialog();
           var summary = {
             employee_key: self.profile().employee_key(),
             pillar: self.profile().pillar(),
@@ -321,6 +329,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -334,6 +343,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       //-----  SAVE SKILL LIST FOR USER -----
       saveSkills = function () {
         if (self.profile().flatSkills().length > 0) {
+          showdialog();
           var skills = self.profile().flatSkills().split(';');
           var profileSkills = self.skills_skills();
           var updatedSkillList = ko.observableArray([]);
@@ -379,6 +389,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -392,6 +403,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       //----- SAVE LEARNING INTEREST LIST FOR USER ------
       saveLearning = function () {
         if (self.profile().flatlearnings().length > 0) {
+          showdialog();
           var skills = self.profile().flatlearnings().split(';');
           var profileLearnings = self.skills_learning();
           var updatedSkillList = ko.observableArray([]);
@@ -436,6 +448,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -451,6 +464,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       //----- SAVE OUTSIDE INTEREST LIST FOR USER ------
       saveInterest = function () {
         if (self.profile().flatinterests().length > 0) {
+          showdialog();
           var skills = self.profile().flatinterests().split(';');
           var profileInterests = self.skills_interests();
           var updatedSkillList = ko.observableArray([]);
@@ -495,6 +509,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -507,6 +522,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
       removeimage = function (event) {
         if (confirm('Please Confirm Deletion!')) {
+          showdialog();
           var photoid = event.personal_photo_id;
           var url = baseurl + 'GetPhoto/' + photoid;
           //console.log(url);
@@ -517,6 +533,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getpersonalphotos();
               alert("Deleted successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -525,6 +542,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       }
 
       updateicon = function (event) {
+        $("#editimage1").ojDialog("close");
+        showdialog();
         var reader = new FileReader();
         var mimetype = event.target.files[0].type;
         reader.onload = function () {
@@ -547,8 +566,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
-
-              $("#editimage1").ojDialog("close");
+              hidedialog();
 
             }
           }).fail(function (xhr, textStatus, err) {
@@ -563,6 +581,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
 
       uploadpersonalphoto = function (event) {
+        showdialog();
         var reader = new FileReader();
         var mimetype = event.target.files[0].type;
         reader.onload = function () {
@@ -587,6 +606,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getpersonalphotos();
               alert("Information saved successfully!");
+              hidedialog();
 
             }
           }).fail(function (xhr, textStatus, err) {
@@ -625,6 +645,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       }
 
       saveproject = function (event, ui) {
+        showdialog();
         var project = {
           employee_customer_profile_key: self.project_employee_customer_profile_key(),
           industry: self.project_industry(),
@@ -649,6 +670,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
           success: function (data) {
             self.getProfile(self.uuid);
             alert("Information saved successfully!");
+            hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
           alert(err);
@@ -657,6 +679,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       }
 
       deleteproject = function (value) {
+        showdialog();
         var projectid = value.employee_customer_profile_key();
         var url = baseurl + 'CustomerProfile/' + projectid;
         //console.log(url);
@@ -667,6 +690,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
           success: function (data) {
             self.getProfile(self.uuid);
             alert("Deleted successfully!");
+            hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
           alert(err);
@@ -674,8 +698,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
       }
 
       saveLinks = function () {
-
-        if (self.profile().flatlinks().length) {
+        if (self.profile().flatlinks().trim().length > 0) {
+          showdialog();
           var skills = self.profile().flatlinks().split(';');
           var profileLinks = self.links();
           var updatedSkillList = ko.observableArray([]);
@@ -719,6 +743,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -731,6 +756,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
 
       saveAchievements = function () {
         if (self.profile().flatachivements().length > 0) {
+          showdialog()
           var skills = self.profile().flatachivements().split(';');
           var profileAchivements = self.achivements();
           var updatedSkillList = ko.observableArray([]);
@@ -775,6 +801,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
             success: function (data) {
               self.getProfile(self.uuid);
               alert("Information saved successfully!");
+              hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -782,6 +809,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs
         } else {
           alert("Please fill in some of your achivements before we proceed.");
         }
+      }
+
+      showdialog = function () {
+        var elms = document.getElementById('dialog');
+        elms.style.visibility = 'visible';
+      }
+
+      hidedialog = function () {
+        var elms = document.getElementById('dialog');
+        elms.style.visibility = 'hidden';
       }
     }
 
