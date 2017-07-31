@@ -15,7 +15,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.url = baseurl + "GetUserProfiles";
       self.next = ko.observable();
       self.prev = ko.observable();
-      self.data = ko.observableArray();
+      // self.data = ko.observableArray();
       self.renderData = ko.observableArray();
       self.currentItemId = ko.observable();
 
@@ -59,7 +59,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $.getJSON(url).
           then(function (profiles) {
             console.log(">> " + profiles.items.length);
-            self.data([]);
+            // self.data([]);
             self.renderData([]);
             var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
             var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
@@ -83,15 +83,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 country: this.country,
                 uuid: this.uuid
               };
-              self.data.push(profile);
+              // self.data.push(profile);
               self.renderData.push(profile);
               hidedialog();
+              debuglog(ko.toJSON(self.renderData()));
               console.log("Parse completed");
             });
 
 
           }).fail(function (xhr, textStatus, err) {
             alert(err);
+            hidedialog();
           });
       }
 
@@ -121,7 +123,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         $.getJSON(self.url).
           then(function (profiles) {
             console.log(">> " + profiles.items.length);
-            self.data([]);
+            // self.data([]);
             self.renderData([]);
             var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
             var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
@@ -147,13 +149,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 country: this.country,
                 uuid: this.uuid
               };
-              self.data.push(profile);
+              // self.data.push(profile);
               self.renderData.push(profile);
 
               console.log("Parse completed");
+              debuglog(ko.toJSON(self.renderData()));
               hidedialog();
             });
 
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+            hidedialog();
           });
       }
 
@@ -237,7 +243,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         // $('#hubcheck').attr('checked', false);
         //$('#slider').find('input:checkbox').prop('checked'); 
         $("#slider input[type=checkbox]").each(function () { this.checked = false; });
-        selectedLocations ='All';
+        selectedLocations = 'All';
         selectedPillars = 'All';
         searchkey = 'All';
         self.closethefilterpanel();
@@ -263,6 +269,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         var elms = document.getElementById('dialog');
         elms.style.visibility = 'hidden';
       }
+
+      debuglog = function (msg) {
+        if (debug) {
+          console.log(msg);
+        }
+      };
 
     }
     return new DashboardViewModel();

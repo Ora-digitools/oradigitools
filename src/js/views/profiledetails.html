@@ -158,45 +158,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Project 1 -->
-                <!-- Project 2 -->
-                <!-- <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Coca Cola - TCCC </a>
-                      <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editproject2">Edit</button>
-                    </h4>
-                  </div>
-                  <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>Start Date: 12/01/2017 End Date: Ongoing</p>
-                    </div>
-                  </div>
-                </div> -->
-                <!-- Project 2 -->
-                <!-- Project 3-->
-                <!-- <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Projects done in Past</a>
-                      <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editpastprojects">Edit</button>
-                    </h4>
-                  </div>
-                  <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <button type="button" class="btn  btn-info btn-xs " data-toggle="modal" data-target="#addpastprojects">+ Add past Projects</button>
-                      <div class="pastProjects">
-                        <p>Cloud Accelerate </p>
-                        <p>Start Date: 12/01/2017 End Date: Ongoing</p>
-                        <p>Role: Create UI/UX for Onboarding Web Applications</p>
-                      </div>
-                      <div class="pastProjects">
-                        <p>Cloud Accelerate </p>
-                        <p>Start Date: 12/01/2017 End Date: Ongoing</p>
-                        <p>Role: Create UI/UX for Onboarding Web Applications</p>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-                <!-- Project 3 -->
+
               </div>
             </div>
 
@@ -256,7 +218,7 @@
                 <div class="greyBg profileSummaryh">Links<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlinks">Edit</button></div>
                 <div class="profileSummary" data-bind="foreach:links">
                   <ul>
-                    <li><a data-bind="text:value,attr:{href:url}"></a></li>
+                    <li><a target="_blank" data-bind="text:value,attr:{href:url}"></a></li>
                   </ul>
                 </div>
               </div>
@@ -300,17 +262,38 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Skills</h4>
       </div>
-      <div class="modal-body" data-bind="with:profile">
+      <div class="modal-body">
+        <!-- data-bind="with:profile" -->
         <form action="#">
-          <div class="form-group">
-            <textarea class="form-control" data-bind="value:flatSkills"></textarea>
-            <h6 class="hint">*All skills should be separated by ';' and any excluded skills will be considered removed.</h6>
+          <div class="form-group oj-flex">
+            <div>
+              <tr><input type="text" placeholder="skill . . ." data-bind="value:newSkill"></tr>
+              </br>
+              </br>
+              <tr><input id="slider-id" list="tickmarks" type="range" min="1" max="5" step="1" data-bind="value:ratting" />
+                <datalist id="tickmarks">
+                  <option value="1" label="1">
+                    <option value="2" label="2">
+                      <option value="3" label="3">
+                        <option value="4" label="4">
+                          <option value="5" label="5">
+                </datalist>
+              </tr>
+              <tr>Rating: <span data-bind="text:ratting"></span></tr>
+            </div>&nbsp;&nbsp;
+            <div><button class="apply" data-bind="click:saveSkills">Add</button></div>
+            <br></div>
+          <div class="profileSummary oj-flex" data-bind="foreach:profile().skills">
+            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
+              <spna data-bind="click:deleteskill,attr:{id:employee_profile_key}">X</span>
+                <span class="orangeTags" data-bind="text:value"></span>
+            </div>
           </div>
-          <button data-bind="click:saveSkills" class="btn btn-default" data-dismiss="modal">Save</button>
-        </form>
       </div>
+      </form>
     </div>
   </div>
+</div>
 </div>
 <!-- Location Edit -->
 <div class="modal fade" id="editlocation" role="dialog">
@@ -318,25 +301,26 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button data-bind="click:editclose" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Hub and Pillar</h4>
       </div>
-      <div class="modal-body" data-bind="with:profile">
+      <div class="modal-body" >
+        <!-- data-bind="with:profile" -->
         <form action="#">
           <div class="form-group">
             <label>Hub:</label>
-            <input class="form-control" type="text" list="listohub" data-bind="value:center">
+            <input class="form-control" type="text" list="listohub" data-bind="value:center"><a style="cursor: pointer" data-bind="click:clearhubfld">clear</a>
             <h6 class="hint">*Type or select Hub from the dropdown</h6>
-            <datalist id="listohub" data-bind="foreach:hublist">
+            <datalist id="listohub" data-bind="foreach:profile().hublist">
               <option data-bind="text:$data">
             </datalist>
           </div>
           <div class="form-group">
             <label>Pillar:</label>
-            <a tabindex="0" href="#" data-title="Select hub from the dropdown">
-            <input class="form-control" type="text" list="listopillar" data-bind="value:pillar"></a>
+            
+            <input class="form-control" type="text" list="listopillar" data-bind="value:pillar"><a style="cursor: pointer" data-bind="click:clearpillarfld">clear</a>
             <h6 class="hint">*Type or select Pillar from the dropdown</h6>
-            <datalist id="listopillar" data-bind="foreach:pillarlist">
+            <datalist id="listopillar" data-bind="foreach:profile().pillarlist">
               <option data-bind="text:$data">
             </datalist>
           </div>
@@ -394,18 +378,25 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Learning Interests</h4>
       </div>
-      <div class="modal-body" data-bind="with:profile">
+      <div class="modal-body">
         <form action="#">
-          <div class="form-group">
-            <textarea class="form-control" data-bind="value:flatlearnings"></textarea>
-            <h6 class="hint">*All Learning interests should be separated by ';' and any excluded Interests will be considered removed.</h6>
-
+          <div class="form-group oj-flex">
+            <div>
+              <input type="text" placeholder="learning interests . . ." data-bind="value:newSkill">&nbsp;&nbsp;<button class="apply"
+                data-bind="click:saveLearning">Add</button>
+            </div>
+            <br></div>
+          <div class="profileSummary oj-flex" data-bind="foreach:profile().learnings">
+            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
+              <spna data-bind="click:deletelearning,attr:{id:employee_profile_key}">X</span>
+                <span class="orangeTags" data-bind="text:value"></span>
+            </div>
           </div>
-          <button data-bind="click:saveLearning" class="btn btn-default" data-dismiss="modal">Save</button>
-        </form>
       </div>
+      </form>
     </div>
   </div>
+</div>
 </div>
 <!-- Project 1 Edit -->
 <div style="display:none" id="editprojectwindow" title="Edit Project" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
@@ -595,18 +586,25 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Outside Interests and hobbies</h4>
       </div>
-      <div class="modal-body" data-bind="with:profile">
+      <div class="modal-body">
         <form action="#">
-          <div class="form-group">
-            <textarea class="form-control" data-bind="value:flatinterests"></textarea>
-            <h6 class="hint">*All Outside Interests should be separated by ';' and any excluded Interests will be considered removed.</h6>
-
+          <div class="form-group oj-flex">
+            <div>
+              <input type="text" placeholder="outside interests . . ." data-bind="value:newSkill">&nbsp;&nbsp;<button class="apply"
+                data-bind="click:saveInterest">Add</button>
+            </div>
+            <br></div>
+          <div class="profileSummary oj-flex" data-bind="foreach:profile().interests">
+            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
+              <spna data-bind="click:deleteInterest,attr:{id:employee_profile_key}">X</span>
+                <span class="orangeTags" data-bind="text:value"></span>
+            </div>
           </div>
-          <button data-bind="click:saveInterest" class="btn btn-default" data-dismiss="modal">Save</button>
-        </form>
       </div>
+      </form>
     </div>
   </div>
+</div>
 </div>
 <!-- Outside Achievements -->
 <div class="modal fade" id="editoutsideachievements" role="dialog">
@@ -617,17 +615,25 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Outside Achievements</h4>
       </div>
-      <div class="modal-body" data-bind="with:profile">
+      <div class="modal-body">
         <form action="#">
-          <div class="form-group">
-            <textarea class="form-control" data-bind="value:flatachivements"></textarea>
-            <h6 class="hint">*All achievements should be separated by ';' and any excluded achievements will be considered removed.</h6>
+          <div class="form-group oj-flex">
+            <div>
+              <input type="text" placeholder="achievements . . ." data-bind="value:newSkill">&nbsp;&nbsp;<button class="apply"
+                data-bind="click:saveAchievements">Add</button>
+            </div>
+            <br></div>
+          <div class="profileSummary oj-flex" data-bind="foreach:profile().achivements">
+            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
+              <spna data-bind="click:deleteAchievements,attr:{id:employee_profile_key}">X</span>
+                <span class="orangeTags" data-bind="text:value"></span>
+            </div>
           </div>
-          <button data-bind="click:saveAchievements" class="btn btn-default" data-dismiss="modal">Save</button>
-        </form>
       </div>
+      </form>
     </div>
   </div>
+</div>
 </div>
 <!-- Links -->
 <div class="modal fade" id="editlinks" role="dialog">
@@ -638,17 +644,26 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Links</h4>
       </div>
-      <div class="modal-body" data-bind="with:profile">
+      <div class="modal-body">
         <form action="#">
-          <div class="form-group">
-            <textarea class="form-control" data-bind="value:flatlinks"></textarea>
-            <h6 class="hint">*All link should be entered as follows "facebook Oracle Cloud(https://www.facebook.com/OracleCloud/);LinkedIn
-              oracle Cloud(https://in.linkedin.com/company/oracle-cloud)". Each entry should be separated by ';'. </h6>
+          <div class="form-group oj-flex">
+            <div>
+              <tr><input type="text" placeholder="name . . ." data-bind="value:newSkill"></tr>
+              </br>
+              </br>
+              <tr><input type="text" placeholder="url . . ." data-bind="value:linkurl"></tr>
+            </div>
+            <div>&nbsp;&nbsp;<button class="apply" data-bind="click:saveLinks">Add</button></div>
+            <br></div>
+          <div class="profileSummary oj-flex" data-bind="foreach:profile().links">
+            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
+              <spna data-bind="click:deleteLinks,attr:{id:employee_profile_key}">X</span>
+                <span class="orangeTags" data-bind="text:value"></span>
+            </div>
           </div>
-          <button data-bind="click:saveLinks" class="btn btn-default" data-dismiss="modal">Save</button>
-        </form>
       </div>
+      </form>
     </div>
   </div>
 </div>
-
+</div>

@@ -3,7 +3,7 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 'use strict';
-
+var debug=true;
 /**
  * Example of Require.js boostrap javascript
  */
@@ -85,8 +85,6 @@ require(['ojs/ojcore', 'knockout',  'appController', 'ojs/ojknockout',
 
 
     });
-	
-	
 
   });
 
