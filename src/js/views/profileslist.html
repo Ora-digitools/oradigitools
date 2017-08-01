@@ -9,6 +9,13 @@
 <!-- Start Faces -->
 <div class="row faces">
   <div class="container">
+  <div id="dialog" class="oj-flex" style="display: none;text-align:center">
+                      <div class="oj-sm-12">
+                                            
+<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
     <ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
             component: 'ojListView', data: dataSource, selection: currentItemId,
             item: {template: 'server_template'}, 

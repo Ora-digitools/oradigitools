@@ -11,6 +11,13 @@
 
 <div class="row blueBg" data-bind="with:profile">
   <div class="container ">
+  <div id="dialog" class="oj-flex" style="display: none;text-align:center">
+                      <div class="oj-sm-12">
+                                            
+<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
     <div class="col-sm-5 col-md-6 profileleft nopadding">
       <!-- Image -->
       <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">

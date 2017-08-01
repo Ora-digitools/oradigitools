@@ -992,12 +992,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
       showdialog = function () {
         var elms = document.getElementById('dialog');
-        elms.style.visibility = 'visible';
+        elms.style.display = 'block';
       }
 
       hidedialog = function () {
         var elms = document.getElementById('dialog');
-        elms.style.visibility = 'hidden';
+        elms.style.display = 'none';
       }
 
       debuglog = function (msg) {
