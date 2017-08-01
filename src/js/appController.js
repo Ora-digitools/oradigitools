@@ -53,7 +53,15 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/tab_website/', '_blank')
 
       ]);
-
+	
+self.addActive = function(routername, pid){
+	
+			 if(routername===pid){
+				
+				 return 'active';
+				 }
+				 
+			}
 
 
       // Drawer

@@ -74,7 +74,7 @@
         <ul>
           <!-- ko foreach: headerLinks -->
 
-          <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget, target: linkTarget1}"></a></li>
+          <li data-bind="css: $parent.addActive($parent.router.stateId(),linkId)"><a data-bind="text : name, attr : {id: linkId, href : linkTarget, target: linkTarget1}"></a></li>
           <!-- /ko -->
         </ul>
       </div>
