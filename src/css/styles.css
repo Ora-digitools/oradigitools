@@ -828,9 +828,7 @@ li.oj-selected .oj-tabs-gen-div {
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
-.mainNav {
-	padding: 15px;
-}
+
 .navbar-left, .navbar-right {
 	float: none !important;
 }
@@ -892,7 +890,7 @@ li.oj-selected .oj-tabs-gen-div {
 	min-width: auto;
 }
 #slider {
-/*top: 0%;*/
+top: 0%;
 }
 .searchTitle {
 	text-align: right;
