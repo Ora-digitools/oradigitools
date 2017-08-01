@@ -13,6 +13,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
       var self = this;
 
+
       /* fadein animations effect for tab content */
       self.effect = ko.observable('fadeIn');
       self.ratting = ko.observable(1);
@@ -21,6 +22,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       self.center = ko.observable('');
       self.pillar = ko.observable('');
       self.uuid = "";
+      self.profilelink = 'http://solutionengineering.us.oracle.com:7777/site/?root=profiledetails#';
       self.effectOptions = {};
       self.tabClick1 = function (data, event) {
         // Invoke the animation effect method with options
@@ -102,21 +104,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         openmodal: function () {
           $("#editimage1").ojDialog("open");
         },
-		 clearhub: ko.observable(false),
-   clearPillar: ko.observable(false),
-   clearHubValue: function() {       
-          this.center('');   
-       this.clearhub(true);
-    },
-	clearPillarValue: function() {       
-          this.pillar('');   
-       this.clearPillar(true);
-    }
+        clearhub: ko.observable(false),
+        clearPillar: ko.observable(false),
+        clearHubValue: function () {
+          this.center('');
+          this.clearhub(true);
+        },
+        clearPillarValue: function () {
+          this.pillar('');
+          this.clearPillar(true);
+        }
 
       });
 
 
       self.getFilters = function () {
+        self.listofhubs([]);
+        self.listofpillars([]);
         $.getJSON(baseurl + "ListValues/SOLUTION_HUBS").
           then(function (hubs) {
             $.each(hubs.items, function () {
@@ -241,6 +245,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profile().flatinterests(interests_string);
             self.profile().flatachivements(achivement_string);
             self.profile().flatlinks(link_string);
+            self.profilelink=self.profilelink.split('#')[0]+'#'+self.uuid;
             console.log("profile created");
             debuglog(ko.toJSON(self.profile()));
             hidedialog();
@@ -264,9 +269,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           });
       }
 
-
+      // http://localhost:8000/?root=profiledetails#angsen
 
       self.handleAttached = function (info) {
+        if (window.location.hash) {
+          self.uuid = window.location.hash.replace('#', '');
+          localStorage.setItem('uuid', self.uuid);
+        }
+
         loadpage();
       };
 
@@ -293,7 +303,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       // ALL EDIT EVENTS ARE HANDLED DOWN
       self.resetValues = function () {
         self.customers([]);
-        self.personalphotoslist([]);
+        // self.personalphotoslist([]);
         self.achivements([]);
         self.links([]);
         self.skills_interests([]);
@@ -309,7 +319,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           var location = {
             employee_key: self.profile().employee_key(),
             pillar: self.pillar(),
-            center: self.center()
+            center: self.center(),
+            profile_summary: self.profile().profile_summary()
+
           };
           debuglog(ko.toJSON(location));
           $.ajax({
@@ -368,6 +380,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
       }
 
+      resetprofilesummary = function () {
+        self.getProfile(self.uuid);
+      }
+
       //-----  SAVE SKILL LIST FOR USER -----
       saveSkills = function () {
 
@@ -382,7 +398,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         updatedSkillList.push({
           employee_profile_key: '',
           value: self.newSkill(),
-          rating: self.ratting()
+          scale: self.ratting(),
+          category: 'Skills',
         });
 
         requestdata = ({
@@ -404,7 +421,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.getProfile(self.uuid);
             alert("Information saved successfully!");
             self.newSkill("");
-            self.rating(1);
+            self.ratting(1);
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
@@ -470,7 +487,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
         updatedSkillList.push({
           employee_profile_key: '',
-          value: self.newSkill()
+          value: self.newSkill(),
+          category: 'Learning',
         });
 
         requestdata = ({
@@ -560,6 +578,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
         updatedSkillList.push({
           employee_profile_key: '',
+          category: 'Interests',
           value: self.newSkill()
         });
 
@@ -830,6 +849,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         }
         updatedSkillList.push({
           employee_profile_key: '',
+          category: 'Links',
           value: self.newSkill(),
           url: self.linkurl()
         });
@@ -915,6 +935,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         }
         updatedSkillList.push({
           employee_profile_key: '',
+          category: 'Achievements',
           value: self.newSkill()
         });
 
@@ -986,11 +1007,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         });
       }
 
+      shareprofile=function(){
+        window.location.href = "mailto:?subject=Sharing%20"+self.profile().name()+"%20Profile&body=Check profile "+self.profilelink;
+      }
 
-
-      editclose = function () {
-        self.center(self.profile().center());
-        self.pillar(self.profile().pillar());
+      editcancel = function () {
+        self.getProfile(self.uuid);
       }
 
       clearhubfld = function () {

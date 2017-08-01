@@ -89,18 +89,15 @@ self.addActive = function(routername, pid){
 
 
       // Footer
-      function footerLink(name, id, linkTarget, linkTarget1) {
+      function footerLink(name, id, linkTarget) {
         this.name = name;
         this.linkId = id;
         this.linkTarget = linkTarget;
-		this.linkTarget1 = linkTarget1;
       }
       self.footerLinks = ko.observableArray([
-        new footerLink('Home', 'home', '?root=home'),
-        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/',  '_blank'),
-        new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/',  '_blank'),
-		new footerLink('Internal Privacy Statement', 'internalprivacy', '?root=terms'),
-		new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:oraclecloudhubs_us@oracle.com'),
+        new footerLink('Sitemap', 'sitemap', '?root=sitemap'),
+        new footerLink('Terms of Use & Privacy', 'terms', '?root=terms'),
+        new footerLink('Cookie Preferences', 'cookie', '?root=cookies'),
         new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
 
       ]);
