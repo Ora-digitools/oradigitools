@@ -304,32 +304,36 @@
 </div>
 <!-- Location Edit -->
 <div class="modal fade" id="editlocation" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button data-bind="click:editclose" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Hub and Pillar</h4>
       </div>
-      <div class="modal-body" >
-        <!-- data-bind="with:profile" -->
+      <div class="modal-body" data-bind="with:profile">
         <form action="#">
           <div class="form-group">
             <label>Hub:</label>
-            <input class="form-control" type="text" list="listohub" data-bind="value:center"><a style="cursor: pointer" data-bind="click:clearhubfld">clear</a>
-            <h6 class="hint">*Type or select Hub from the dropdown</h6>
-            <datalist id="listohub" data-bind="foreach:profile().hublist">
-              <option data-bind="text:$data">
-            </datalist>
+            <div class="input-group">
+              <input class="form-control" type="text" list="listohub" data-bind="value:center; hasFocus: clearHub">
+              <span class="input-group-addon">
+              <button  data-bind="click: clearHubValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button>
+              </span>
+              <datalist id="listohub" data-bind="foreach:hublist">
+                <option data-bind="text:$data"> 
+              </datalist>
+            </div>
           </div>
           <div class="form-group">
             <label>Pillar:</label>
-            
-            <input class="form-control" type="text" list="listopillar" data-bind="value:pillar"><a style="cursor: pointer" data-bind="click:clearpillarfld">clear</a>
-            <h6 class="hint">*Type or select Pillar from the dropdown</h6>
-            <datalist id="listopillar" data-bind="foreach:profile().pillarlist">
-              <option data-bind="text:$data">
-            </datalist>
+            <div class="input-group">
+               <input class="form-control" type="text" list="listopillar" data-bind="value:pillar; hasFocus: clearPillar">
+              <span class="input-group-addon"> <button  data-bind="click: clearPillarValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button></span>
+              <datalist id="listopillar" data-bind="foreach:pillarlist">
+                <option data-bind="text:$data"> 
+              </datalist>
+            </div>
           </div>
           <button data-bind="click:saveprofilepillarinfo" data-dismiss="modal">Save</button>
         </form>

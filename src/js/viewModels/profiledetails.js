@@ -101,7 +101,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         projects: self.customers,
         openmodal: function () {
           $("#editimage1").ojDialog("open");
-        }
+        },
+		 clearhub: ko.observable(false),
+   clearPillar: ko.observable(false),
+   clearHubValue: function() {       
+          this.center('');   
+       this.clearhub(true);
+    },
+	clearPillarValue: function() {       
+          this.pillar('');   
+       this.clearPillar(true);
+    }
 
       });
 
