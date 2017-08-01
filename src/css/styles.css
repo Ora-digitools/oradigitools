@@ -12,8 +12,6 @@
 a, button, a:focus, button:focus {
 	outline: none;
 }
-
-
 body {
 	font-family: 'ArialMT';
 	font-size: 14px;
@@ -80,21 +78,25 @@ body {
 }
 .mainNav li {
 	list-style: none;
-	padding-top:15px;
-	padding-bottom:15px;
-	padding-left:20px;
-	border-bottom:3px solid #3e5869;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	border-bottom: 3px solid #3e5869;
 }
-.mainNav li:hover{
-	background:#f29111
-	}
+.mainNav li:hover {
+	background: #f29111
+}
+
+.mainNav li.active {
+	background: #f29111
+
 .mainNav li a:link, .mainNav li a:visited {
 	color: #fff;
-	text-decoration:none
+	text-decoration: none
 }
 .mainNav li a:hover, .mainNav li a:visited:hover {
 	color: #fff;
-	text-decoration:none
+	text-decoration: none
 }
 .togglemenu {
 	padding-top: 25px;
@@ -146,6 +148,7 @@ body {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	padding-left: 0px;
+	max-width: 470px
 }
 .mainNav {
 	padding-top: 2px;
@@ -379,7 +382,7 @@ footer {
 .mainImage img:hover {
 	opacity: 0.6;
 }
-.hinttext{
+.hinttext {
 	color: darkolivegreen;
 	font-weight: bold
 }
@@ -795,7 +798,6 @@ li.oj-selected .oj-tabs-gen-div {
 .footer-social li a:hover, .footer-social li a:visited:hover {
 	color: #7f8081;
 }
-
 #editlocation .input-group button {
 	background: transparent;
 	border: none;
@@ -813,7 +815,6 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-top: 20px;
 }
 .logo img {
-	max-width: 182px;
 	display: inline-block;
 }
 .contactLink {
@@ -828,7 +829,6 @@ li.oj-selected .oj-tabs-gen-div {
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
-
 .navbar-left, .navbar-right {
 	float: none !important;
 }
@@ -890,7 +890,7 @@ li.oj-selected .oj-tabs-gen-div {
 	min-width: auto;
 }
 #slider {
-top: 0%;
+	top: 0%;
 }
 .searchTitle {
 	text-align: right;
@@ -930,6 +930,13 @@ top: 0%;
 @media (max-width: 991px) {
 .face {
 	border-right: none;
+}
+}
+
+@media (max-width: 768px) {
+.logo {
+	padding-right: 0px;
+	float: right
 }
 }
 
@@ -1042,7 +1049,6 @@ ul#profiletabs {
 
 @media (max-width: 320px) {
 .logo img {
-	max-width: 146px;
 }
 .contact-link {
 	font-size: 12px
@@ -1058,7 +1064,6 @@ ul#profiletabs {
 	border: 5px solid #c8c8c8;
 	height: 100px;
 }
-
 .blueBg {
 	padding: 0px;
 }
