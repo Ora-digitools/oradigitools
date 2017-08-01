@@ -86,11 +86,9 @@ body {
 .mainNav li:hover {
 	background: #f29111
 }
-
 .mainNav li.active {
 	background: #f29111
 }
-
 .mainNav li a:link, .mainNav li a:visited {
 	color: #fff;
 	text-decoration: none
@@ -736,6 +734,7 @@ li.oj-selected .oj-tabs-gen-div {
 .footerheading {
 	color: #fff;
 	font-size: 21px;
+	font-weight:bold;
 }
 .footermenu ul {
 	margin: 0px;
@@ -802,6 +801,112 @@ li.oj-selected .oj-tabs-gen-div {
 #editlocation .input-group button {
 	background: transparent;
 	border: none;
+}
+.cloudhubs {
+	background: #f9f8f8;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	min-height: 625px;
+	border: 1px solid #d2d2d2
+}
+.hubName_austin {
+	color: #fff;
+	font-size: 22px;
+	display: block;
+	width: 100%;
+	height: 92px;
+	background: url(images/austin-hub-bg.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 20px;
+	padding-left: 15px;
+	font-weight: bold;
+}
+.hubName_blore {
+	color: #fff;
+	font-size: 22px;
+	display: block;
+	width: 100%;
+	height: 92px;
+	background: url(images/bangalore-hub-bg.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 20px;
+	padding-left: 15px;
+	font-weight: bold;
+}
+.hubName_reston {
+	color: #fff;
+	font-size: 22px;
+	display: block;
+	width: 100%;
+	height: 92px;
+	background: url(images/reston-hub-bg.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 20px;
+	padding-left: 15px;
+	font-weight: bold;
+}
+.hubdesc {
+	font-size: 16px;
+	padding-top: 10px;
+	font-weight: bold;
+}
+.watchvdo {
+	background: rgb(147, 150, 153) none repeat scroll 0 0;
+	border: medium none;
+	border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	line-height: 36px;
+	margin-top: 30px;
+	padding: 6px 15px;
+	text-align: left;
+	vertical-align: middle;
+	width: 100%;
+	font-weight: bold;
+	display: block
+}
+a.watchvdo:link, a.watchvdo:visited {
+	color: #fff;
+	text-decotation: none;
+}
+a.watchvdo:hover, a.watchvdo:visited:hover {
+	color: #555;
+	text-decotation: none;
+}
+.watchvdo .fa-chevron-circle-right {
+	font-size: 36px;
+	color: #d6d7d8
+}
+.hubNameicon {
+	margin-right: 10px;
+}
+.Hborder {
+	border-bottom: 1px solid #939699;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.imgcenter {
+	text-decoration: underline;
+}
+.imgcenter img {
+	display: inline-block
+}
+.darkgraybg {
+	background: #939699;
+	color: #fff;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+.teamdetails {
+	font-size: 14px;
+}
+.red {
+	color: #ff0000
 }
 
 @media (max-width: 1199px) {
@@ -926,11 +1031,38 @@ li.oj-selected .oj-tabs-gen-div {
 .profileDetails {
 	top: 10%;
 }
+.hubName_austin {
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 10px;
+	font-size: 18px;
+}
+.hubName_blore {
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 10px;
+	font-size: 18px;
+}
+.hubName_reston {
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 10px;
+	font-size: 18px;
+}
 }
 
 @media (max-width: 991px) {
 .face {
 	border-right: none;
+}
+}
+
+@media (min-width: 415px) and (max-width:768px) {
+.cloudhubs {
+	max-width: 362px;
+	margin: 0 auto;
+	float: none;
+	margin-bottom: 20px;
 }
 }
 
@@ -1046,6 +1178,9 @@ ul#profiletabs {
 .darkblue {
 	min-height: 350px;
 }
+.watchvdo .fa-chevron-circle-right {
+	font-size: 35px;
+}
 }
 
 @media (max-width: 320px) {
@@ -1070,6 +1205,13 @@ ul#profiletabs {
 }
 #slider {
 	top: 0%;
+}
+.watchvdo .fa-chevron-circle-right {
+	font-size: 24px;
+}
+.watchvdo {
+	line-height: 24px;
+	padding: 6px 8px;
 }
 }
 

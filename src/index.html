@@ -103,7 +103,7 @@
                   <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11 navbar-header logo ">
 
                     <!-- Logo -->
-                    <a class="" href="?root=home"><img src="css/images/cloud-hubs.svg" class=""></a>
+                    <a class="" href="?root=home"><img src="css/images/logo.svg" class=""></a>
                     
                   </div>
                 </div>
@@ -121,21 +121,12 @@
       <div class="row">
         <footer>
           <div class="container">
-            <div class="footerheading">Cloud Hubs</div>
-            <div class="footer-social">
-              <ul>
-                <li><a href="#" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                <li><a href="#" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                <li><a href="#" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                <li><a href="#" title="Google Plus"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-                <li><a href="#" title="YouTube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
-                <li><a href="#" title="Facebook"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
+            <div class="footerheading">Oracle Cloud Solution Hubs</div>
+            
             <div class="footermenu">
               <ul>
                 <!-- ko foreach: footerLinks -->
-                <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
+                <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget,target: linkTarget1}"></a></li>
                 <!-- /ko -->
               </ul>
             </div>
