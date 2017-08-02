@@ -16,6 +16,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
       /* fadein animations effect for tab content */
       self.effect = ko.observable('fadeIn');
+      self.enlargephotourl = ko.observable('');
       self.ratting = ko.observable(1);
       self.newSkill = ko.observable('');
       self.linkurl = ko.observable('');
@@ -101,7 +102,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         flatachivements: ko.observable(),
         flatlinks: ko.observable(),
         projects: self.customers,
-        openmodal: function () {
+        openmodalforicon: function () {
           $("#editimage1").ojDialog("open");
         },
         clearhub: ko.observable(false),
@@ -245,7 +246,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profile().flatinterests(interests_string);
             self.profile().flatachivements(achivement_string);
             self.profile().flatlinks(link_string);
-            self.profilelink=self.profilelink.split('#')[0]+'#'+self.uuid;
+            self.profilelink = self.profilelink.split('#')[0] + '#' + self.uuid;
             console.log("profile created");
             debuglog(ko.toJSON(self.profile()));
             hidedialog();
@@ -318,8 +319,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           showdialog();
           var location = {
             employee_key: self.profile().employee_key(),
-            pillar: self.pillar(),
-            center: self.center(),
+            pillar: self.profile().pillar(),
+            center: self.profile().center(),
             profile_summary: self.profile().profile_summary()
 
           };
@@ -331,7 +332,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             contentType: 'application/json; charset=utf-8',
             data: ko.toJSON(location),
             success: function (data) {
-              alert("Information saved successfully!");
+              //alert("Information saved successfully!");
               loadpage();
               hidedialog();
             }
@@ -364,7 +365,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             contentType: 'application/json; charset=utf-8',
             data: ko.toJSON(summary),
             success: function (data) {
-              alert("Information saved successfully!");
+              //alert("Information saved successfully!");
               self.getProfile(self.uuid);
 
               hidedialog();
@@ -419,7 +420,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             self.ratting(1);
             hidedialog();
@@ -461,7 +462,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             self.rating(1);
             hidedialog();
@@ -508,7 +509,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             self.rating(1);
             hidedialog();
@@ -550,7 +551,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             self.rating(1);
             hidedialog();
@@ -599,7 +600,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             hidedialog();
           }
@@ -640,7 +641,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             hidedialog();
           }
@@ -663,7 +664,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             type: 'DELETE',
             success: function (data) {
               self.getpersonalphotos();
-              alert("Deleted successfully!");
+              // alert("Deleted successfully!");
               hidedialog();
             }
           }).fail(function (xhr, textStatus, err) {
@@ -675,7 +676,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       }
 
       updateicon = function (event) {
-        $("#editimage1").ojDialog("close");
+        closeIconuploder();
         showdialog();
         var reader = new FileReader();
         var mimetype = event.target.files[0].type;
@@ -698,7 +699,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             data: imagedata,
             success: function (data) {
               self.getProfile(self.uuid);
-              alert("Information saved successfully!");
+              //alert("Information saved successfully!");
               hidedialog();
 
             }
@@ -712,10 +713,29 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         // console.log(event.target.files[0]);
       };
 
+      openIconuploder = function () {
+        // alert('click');
+        document.getElementById('uploadicondialog').style.display = 'block';
+      }
+      closeIconuploder = function () {
+        // alert('click');
+        document.getElementById('uploadicondialog').style.display = 'none';
+      }
+
+
+      openpersonalimageuploder = function () {
+        // alert('click');
+        document.getElementById('uploadpersonalphotodialog').style.display = 'block';
+      }
+      closepersonalimageuploder = function () {
+        // alert('click');
+        document.getElementById('uploadpersonalphotodialog').style.display = 'none';
+      }
 
 
 
       uploadpersonalphoto = function (event) {
+        closepersonalimageuploder();
         showdialog();
         var reader = new FileReader();
         var mimetype = event.target.files[0].type;
@@ -740,7 +760,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             data: imagedata,
             success: function (data) {
               self.getpersonalphotos();
-              alert("Information saved successfully!");
+              //alert("Information saved successfully!");
               hidedialog();
 
             }
@@ -805,7 +825,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(project),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
@@ -871,7 +891,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             hidedialog();
           }
@@ -911,7 +931,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             hidedialog();
           }
@@ -956,7 +976,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             hidedialog();
           }
@@ -996,7 +1016,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            alert("Information saved successfully!");
+            //alert("Information saved successfully!");
             self.newSkill("");
             hidedialog();
           }
@@ -1007,8 +1027,15 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         });
       }
 
-      shareprofile=function(){
-        window.location.href = "mailto:?subject=Sharing%20"+self.profile().name()+"%20Profile&body=Check profile "+self.profilelink;
+      enlargephoto = function (event, ui) {
+        // alert('photo');
+        var url = event.currentTarget.currentSrc;
+        self.enlargephotourl(url);
+        document.getElementById('enlargephoto').style.display = 'block';
+      }
+
+      shareprofile = function () {
+        window.location.href = "mailto:?subject=Sharing%20" + self.profile().name() + "%20Profile&body=Check profile " + self.profilelink;
       }
 
       editcancel = function () {
