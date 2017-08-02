@@ -2,23 +2,13 @@
  Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
-<style>
-  .hint {
-    color: darkslateblue;
-    font-weight: bold;
-  }
-</style>
 
 <div class="row blueBg" data-bind="with:profile">
   <div class="container ">
     <div id="dialog" class="oj-flex" style="display: none;text-align:center">
-      <div class="oj-sm-12">
-
-        <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-        <span class="sr-only">Loading...</span>
-      </div>
+      <div class="oj-sm-12"> <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> <span class="sr-only">Loading...</span> </div>
     </div>
-    <div class="col-sm-5 col-md-6 profileleft nopadding">
+    <div class="col-sm-5 col-md-6 profileleft nopadding"> 
       <!-- Image -->
       <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay">
@@ -27,11 +17,11 @@
           </div>
         </div>
       </div>
-      <!-- Image -->
+      <!-- Image --> 
       <!-- Name -->
       <div class="col-xs-7 col-sm-6 profileDetails nopadding"><span class="profileName" data-bind="text:name"></span><br>
         <span class="profileTitle" data-bind="text:title"></span></div>
-      <!-- Name -->
+      <!-- Name --> 
     </div>
     <!-- Contact -->
     <div class="col-sm-4 col-md-3 profilePhone">
@@ -39,7 +29,7 @@
       <p data-bind="if: mobile_phone"><img src="css/images/mobile_icon.png">&nbsp;Mobile: <span data-bind="text:mobile_phone"></span></p>
       <p data-bind="if: work_email"><img src="css/images/email_icon_pink.png">&nbsp;<span data-bind="text:work_email"></span></p>
     </div>
-    <!-- Contact -->
+    <!-- Contact --> 
     <!-- Hub -->
     <div class="col-sm-3 col-md-3 profileAddress">
       <div>
@@ -50,49 +40,41 @@
       <p>Pillar: <br>
         <span data-bind="text:pillar"></span></p>
     </div>
-    <!-- Hub -->
+    <!-- Hub --> 
   </div>
 </div>
 <div class="row margintop30">
   <div class="container nopaddingmd">
     <div id="tabs-container">
-      <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}">
+      <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}"> 
         <!-- tab bar -->
         <ul class="col-sm-12 nopadding">
-          <li class="col-xs-4 active nopaddingxs" data-bind="click: tabClick1">
-            About
+          <li class="col-xs-4 active nopaddingxs" data-bind="click: tabClick1"> About
             <div class="yellowtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-
           </li>
-          <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick2">
-            Projects
+          <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick2"> Projects
             <div class="bluetab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-
           </li>
-          <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick3">
-            Outside Interests
+          <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick3"> Outside Interests
             <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
-
           </li>
-
         </ul>
-
+        
         <!-- tab contents -->
-        <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs" data-bind="with:profile">
+        <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs" data-bind="with:profile"> 
           <!-- about -->
           <div id="about">
-            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
+            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
               <!-- Profile summary -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Profile summary
                   <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editsummary">Edit</button>
-
                 </div>
                 <div class="profileSummary">
-                  <p data-bind="text:profile_summary"></p>
+                  <p data-bind="html:profile_summary"></p>
                 </div>
               </div>
-              <!-- Profile summary -->
+              <!-- Profile summary --> 
               <!-- Skills -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Skills
@@ -100,7 +82,7 @@
                 </div>
                 <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
               </div>
-              <!-- Skills -->
+              <!-- Skills --> 
               <!-- Learning Interests -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Learning Interests
@@ -108,9 +90,9 @@
                 </div>
                 <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
               </div>
-              <!-- Learning Interests -->
+              <!-- Learning Interests --> 
             </div>
-            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
+            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
               <!-- Share Profile -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Share <span data-bind="text:name"></span>’s Profile</div>
@@ -118,7 +100,7 @@
                   <button class="shareprofile" data-bind="click:shareprofile">Share Profile</button>
                 </div>
               </div>
-              <!-- Share Profile -->
+              <!-- Share Profile --> 
               <!-- Organization -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Organization</div>
@@ -131,11 +113,11 @@
                   </ul>
                 </div>
               </div>
-              <!-- Organization -->
+              <!-- Organization --> 
             </div>
           </div>
-          <!-- about Ends -->
-
+          <!-- about Ends --> 
+          
         </div>
         <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn" data-bind="with:profile">
           <div id="projects">
@@ -143,15 +125,14 @@
               <button class="btn  btn-info btn-xs " data-toggle="modal" data-bind="click:newproject">+ Add new Projects</button>
             </div>
             <div class="col-sm-12 nopaddingmd nopaddingxs nopaddingsm">
-              <div class="panel-group" id="accordion" data-bind="foreach:projects">
+              <div class="panel-group" id="accordion" data-bind="foreach:projects"> 
                 <!-- Project 1 -->
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span data-bind="text:customer_name"></span>&nbsp;-&nbsp;<span data-bind="text:customer_division"></span></a>
-                      <button class="btn  btn-info btn-xs pull-right" style="margin-left: 10px" data-toggle="modal" data-bind="click:editproject">Edit</button>
-                      <span class="oj-sm-2"></span>
-                      <button class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-bind="click:deleteproject.bind($data)">delete</button>
-                    </h4>
+                      <button title="Delete" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-bind="click:deleteproject.bind($data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      <button title="Edit" class="btn  btn-info btn-xs pull-right" style="margin-right: 5px" data-toggle="modal" data-bind="click:editproject">Edit</button>
+                      <span class="oj-sm-2"></span> </h4>
                   </div>
                   <div id="collapse1" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -165,83 +146,79 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
-
-        <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in">
+        <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
           <!-- Outside -->
           <div id="outside">
-            <div class="col-sm-12 nopadding">
+            <div class="col-sm-12 nopadding"> 
               <!-- Uploads -->
               <div class="profileSection">
-                <div class="greyBg profileSummaryh">Recent Uploads<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#uploadpersonalimage">Upload</button></div>
+                <div class="greyBg profileSummaryh">Recent Uploads
+                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#uploadpersonalimage">Upload</button>
+                </div>
                 <div class="profileSummary ">
                   <div id="conveyorbelt-horizontal-example">
-
-                    <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}">
+                    <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}"> 
                       <!-- ko foreach: personalphotoslist -->
                       <div class="demo-conveyor-item">
                         <p data-bind="click:removeimage" style="cursor: pointer">X</p>
-                        <img data-bind="attr:{src:photo_url}" style="height: 200px;margin: 0px 0px 0px 10px">
-                      </div>
-                      <!-- /ko -->
+                        <img data-bind="attr:{src:photo_url}" style="height: 200px;margin: 0px 0px 0px 10px"> </div>
+                      <!-- /ko --> 
                     </div>
-
                   </div>
-
                 </div>
               </div>
-              <!-- Uploads -->
+              <!-- Uploads --> 
             </div>
-            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
+            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
               <!-- Outside Interests -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Outside Interests and hobbies
                   <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
                 </div>
-                <div class="profileSummary" data-bind="foreach:interests">
-                  <span class="grayTags" data-bind="text:value"></span>
-                </div>
+                <div class="profileSummary" data-bind="foreach:interests"> <span class="grayTags" data-bind="text:value"></span> </div>
               </div>
-              <!-- Outside Interests -->
+              <!-- Outside Interests --> 
             </div>
-            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
+            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Outside Achievements<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideachievements">Edit</button></div>
+                <div class="greyBg profileSummaryh">Outside Achievements
+                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideachievements">Edit</button>
+                </div>
                 <div class="profileSummary" data-bind="foreach:achivements">
                   <ul>
                     <li data-bind="text:value"></li>
                   </ul>
                 </div>
               </div>
-              <!-- Outside Achievements -->
+              <!-- Outside Achievements --> 
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Links<button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlinks">Edit</button></div>
+                <div class="greyBg profileSummaryh">Links
+                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlinks">Edit</button>
+                </div>
                 <div class="profileSummary" data-bind="foreach:links">
                   <ul>
                     <li><a target="_blank" data-bind="text:value,attr:{href:url}"></a></li>
                   </ul>
                 </div>
               </div>
-              <!-- Links -->
+              <!-- Links --> 
             </div>
           </div>
-          <!-- Outside -->
+          <!-- Outside --> 
         </div>
-
       </div>
     </div>
   </div>
 </div>
 <!-- Summary Edit -->
 <div class="modal fade" id="editsummary" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -254,7 +231,7 @@
             <textarea class="form-control" data-bind="value:profile_summary">
             </textarea>
           </div>
-          <button data-bind="click:saveSummary" class="btn btn-default" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveSummary" class="btn btn-default apply" data-dismiss="modal">Save</button>
         </form>
       </div>
     </div>
@@ -262,49 +239,48 @@
 </div>
 <!-- Skills Edit -->
 <div class="modal fade" id="editskills" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Skills</h4>
+        <h4 class="modal-title">Add and Edit Skills</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body"> 
         <!-- data-bind="with:profile" -->
-        <form action="#">
-          <div class="form-group oj-flex">
-            <div>
-              <tr><input type="text" placeholder="skill . . ." data-bind="value:newSkill"></tr>
-              </br>
-              </br>
-              <tr><input id="slider-id" list="tickmarks" type="range" min="1" max="5" step="1" data-bind="value:ratting" />
-                <datalist id="tickmarks">
-                  <option value="1" label="1">
-                    <option value="2" label="2">
-                      <option value="3" label="3">
-                        <option value="4" label="4">
-                          <option value="5" label="5">
-                </datalist>
-              </tr>
-              <tr>Rating: <span data-bind="text:ratting"></span></tr>
-            </div>&nbsp;&nbsp;
-            <div><button class="apply" data-bind="click:saveSkills">Add</button></div>
-            <br></div>
-          <div class="profileSummary oj-flex" data-bind="foreach:profile().skills">
-            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
-              <spna data-bind="click:deleteskill,attr:{id:employee_profile_key}">X</span>
-                <span class="orangeTags" data-bind="text:value"></span>
-            </div>
+        
+        <div class="oj-flex" data-bind="foreach:profile().skills">
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteskill,attr:{id:employee_profile_key}"> X</span> </div>
+        </div>
+        <br>
+        <br>
+        <form>
+          <div class="form-group">
+            <label for="email">Add Skills:&nbsp;</label>
+            <input type="text" placeholder="Skills" data-bind="value:newSkill">
           </div>
+          <div class="form-group">
+            <label for="pwd">Add Rating:&nbsp; </label>
+            <input id="slider-id" list="tickmarks" type="range" min="1" max="5" step="1" data-bind="value:ratting" />
+            <div data-bind="text:ratting" class="rating"></div>
+            <datalist id="tickmarks">
+              <option value="1" label="1">
+              <option value="2" label="2">
+              <option value="3" label="3">
+              <option value="4" label="4">
+              <option value="5" label="5"> 
+            </datalist>
+          </div>
+          <button class="btn btn-default apply" data-bind="click:saveSkills">Add</button>
+        </form>
       </div>
-      </form>
     </div>
   </div>
 </div>
 </div>
 <!-- Location Edit -->
 <div class="modal fade" id="editlocation" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -321,7 +297,7 @@
               <button  data-bind="click: clearHubValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button>
               </span>
               <datalist id="listohub" data-bind="foreach:hublist">
-                <option data-bind="text:$data">
+                <option data-bind="text:$data"> 
               </datalist>
             </div>
           </div>
@@ -329,13 +305,15 @@
             <label>Pillar:</label>
             <div class="input-group">
               <input class="form-control" type="text" list="listopillar" data-bind="value:pillar; hasFocus: clearPillar">
-              <span class="input-group-addon"> <button  data-bind="click: clearPillarValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button></span>
+              <span class="input-group-addon">
+              <button  data-bind="click: clearPillarValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button>
+              </span>
               <datalist id="listopillar" data-bind="foreach:pillarlist">
-                <option data-bind="text:$data">
+                <option data-bind="text:$data"> 
               </datalist>
             </div>
           </div>
-          <button data-bind="click:saveprofilepillarinfo" data-dismiss="modal">Save</button>
+          <button data-bind="click:saveprofilepillarinfo" data-dismiss="modal" class="btn btn-default apply">Save</button>
         </form>
       </div>
     </div>
@@ -353,15 +331,12 @@
         <!-- <button data-bind="click:updateIcon" class="btn btn-default">Save</button> -->
       </form>
     </div>
-
   </div>
-
-
 </div>
 
 <!-- upload personal image -->
 <div class="modal fade" id="uploadpersonalimage" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -382,29 +357,27 @@
 </div>
 <!-- Learning Interests Edit -->
 <div class="modal fade" id="learninginterests" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Learning Interests</h4>
+        <h4 class="modal-title">Add and Edit Learning Interests</h4>
       </div>
       <div class="modal-body">
-        <form action="#">
-          <div class="form-group oj-flex">
-            <div>
-              <input type="text" placeholder="learning interests . . ." data-bind="value:newSkill">&nbsp;&nbsp;<button class="apply"
-                data-bind="click:saveLearning">Add</button>
-            </div>
-            <br></div>
-          <div class="profileSummary oj-flex" data-bind="foreach:profile().learnings">
-            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
-              <spna data-bind="click:deletelearning,attr:{id:employee_profile_key}">X</span>
-                <span class="orangeTags" data-bind="text:value"></span>
-            </div>
+        <div class=" oj-flex" data-bind="foreach:profile().learnings">
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span data-bind="click:deletelearning,attr:{id:employee_profile_key}"> X</span> </div>
+        </div>
+        <br>
+        <br>
+        <form>
+          <div class="form-group">
+            <label for="email">Enter new learning interests:&nbsp;</label>
+            <input type="text" class="form-control" data-bind="value:newSkill">
           </div>
+          <button type="submit" class="btn btn-default apply" data-bind="click:saveLearning">Add</button>
+        </form>
       </div>
-      </form>
     </div>
   </div>
 </div>
@@ -447,21 +420,19 @@
     <div class="form-group">
       <input type="hidden" data-bind="value:project_employee_customer_profile_key">
     </div>
-
-
     <div class="oj-flex">
-      <button class="btn btn-default oj-sm-5" data-dismiss="modal" data-bind="click:saveproject">Save</button>
+      <button class="btn btn-default apply oj-sm-5" data-dismiss="modal" data-bind="click:saveproject">Save</button>
       <p class="oj-sm-2"></p>
       <!-- ko if: project_employee_customer_profile_key -->
-      <button class="btn btn-default oj-sm-5" data-dismiss="modal" data-bind="click:deleteproject">Delete</button>
-      <!-- /ko -->
-
+      <button class="btn btn-default apply oj-sm-5" data-dismiss="modal" data-bind="click:deleteproject">Delete</button>
+      <!-- /ko --> 
+      
     </div>
   </div>
 </div>
 <!-- Project 2 Edit -->
 <div class="modal fade" id="editproject2" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -485,7 +456,7 @@
     </div>
   </div>
 </div>
-<!-- Project 2 Edit -->
+<!-- Project 2 Edit --> 
 <!-- <div class="modal fade" id="editproject2" role="dialog">
   <div class="modal-dialog">
      Modal content
@@ -510,10 +481,10 @@
       </div>
     </div>
   </div>
-</div> -->
+</div> --> 
 <!-- Past Projects Edit -->
 <div class="modal fade" id="editpastprojects" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -544,7 +515,7 @@
 </div>
 <!-- Add New Projects -->
 <div class="modal fade" id="addnewprojects" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -569,7 +540,7 @@
 </div>
 <!-- Add Past Projects  -->
 <div class="modal fade" id="addpastprojects" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -590,91 +561,85 @@
 </div>
 <!-- Outside Interests and hobbies Edit -->
 <div class="modal fade" id="editoutsideinterests" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Outside Interests and hobbies</h4>
+        <h4 class="modal-title">Add and Edit Outside Interests and Hobbies</h4>
       </div>
       <div class="modal-body">
-        <form action="#">
-          <div class="form-group oj-flex">
-            <div>
-              <input type="text" placeholder="outside interests . . ." data-bind="value:newSkill">&nbsp;&nbsp;<button class="apply"
-                data-bind="click:saveInterest">Add</button>
-            </div>
-            <br></div>
-          <div class="profileSummary oj-flex" data-bind="foreach:profile().interests">
-            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
-              <spna data-bind="click:deleteInterest,attr:{id:employee_profile_key}">X</span>
-                <span class="orangeTags" data-bind="text:value"></span>
-            </div>
+        <div class=" oj-flex" data-bind="foreach:profile().interests">
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteInterest,attr:{id:employee_profile_key}"> X</span> </div>
+        </div><br><br>
+        <form>
+          <div class="form-group">
+            <label>Enter outside interests and hobbies:</label>
+            <input class="form-control" type="text" placeholder="outside interests . . ." data-bind="value:newSkill">
           </div>
+          <button class="btn btn-default apply" data-bind="click:saveInterest">Add</button>
+        </form>
       </div>
-      </form>
     </div>
   </div>
 </div>
 </div>
 <!-- Outside Achievements -->
 <div class="modal fade" id="editoutsideachievements" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Outside Achievements</h4>
+        <h4 class="modal-title">Add and Edit Outside Achievements</h4>
       </div>
+     
       <div class="modal-body">
-        <form action="#">
-          <div class="form-group oj-flex">
-            <div>
-              <input type="text" placeholder="achievements . . ." data-bind="value:newSkill">&nbsp;&nbsp;<button class="apply"
-                data-bind="click:saveAchievements">Add</button>
-            </div>
-            <br></div>
-          <div class="profileSummary oj-flex" data-bind="foreach:profile().achivements">
-            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
-              <spna data-bind="click:deleteAchievements,attr:{id:employee_profile_key}">X</span>
-                <span class="orangeTags" data-bind="text:value"></span>
-            </div>
+        <div class="oj-flex" data-bind="foreach:profile().achivements">
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteAchievements,attr:{id:employee_profile_key}"> X</span> </div>
+        </div> <br><br>
+        <form>
+          <div class="form-group">
+            <label for="email">Add new achievements:</label>
+            <input type="text" class="form-control" placeholder="" data-bind="value:newSkill">
           </div>
+          <button class="btn btn-default apply" data-bind="click:saveAchievements">Add</button>
+        </form>
       </div>
-      </form>
     </div>
   </div>
 </div>
 </div>
 <!-- Links -->
 <div class="modal fade" id="editlinks" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog"> 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Links</h4>
+        <h4 class="modal-title">Add and Edit Links</h4>
       </div>
       <div class="modal-body">
-        <form action="#">
-          <div class="form-group oj-flex">
-            <div>
-              <tr><input type="text" placeholder="name . . ." data-bind="value:newSkill"></tr>
-              </br>
-              </br>
-              <tr><input type="text" placeholder="url . . ." data-bind="value:linkurl"></tr>
-              <h6 class="hint">Please append prefix as http/https for a link</h6>
-            </div>
-            <div>&nbsp;&nbsp;<button class="apply" data-bind="click:saveLinks">Add</button></div>
-            <br></div>
-          <div class="profileSummary oj-flex" data-bind="foreach:profile().links">
-            <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
-              <spna data-bind="click:deleteLinks,attr:{id:employee_profile_key}">X</span>
-                <span class="orangeTags" data-bind="text:value"></span>
-            </div>
-          </div>
-      </div>
-      </form>
+      
+        <div class=" oj-flex" data-bind="foreach:profile().links">
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
+            <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteLinks,attr:{id:employee_profile_key}">
+            X</span>  </div>
+        </div><br><br>
+        <form>
+  <div class="form-group">
+    <label for="email">Enter link name:</label>
+    <input type="text" class="form-control" data-bind="value:newSkill">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Enter link url:</label>
+  <input type="text"  class="form-control" data-bind="value:linkurl">
+  </div>
+  <h6 class="hint">Please append prefix as http/https for a link</h6>
+  <button class="btn btn-default apply" data-bind="click:saveLinks">Add</button>
+</form>
+        </div>
+     
     </div>
   </div>
 </div>
