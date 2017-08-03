@@ -42,8 +42,8 @@
 
   <!-- This is where you would add any app specific styling -->
   <link rel="stylesheet" href="css/override.css" type="text/css" />
-<!-- w3 css -->
-<link rel="stylesheet" href="css/w3.css">
+  <!-- w3 css -->
+  <link rel="stylesheet" href="css/w3.css">
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  
+
   <script src="css/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="css/bootstrap.min.js"></script>
@@ -89,9 +89,15 @@
           <div class="col-md-12 orangeBg nopaddingxs">
 
             <!-- SearchBox -->
-            <div class="container">
+            <div class="container oj-flex">
               <!-- Contact Us -->
-              <div class="col-xs-12 text-right contactLink"><a href="mailto:oraclecloudhubs_us@oracle.com" title="oraclecloudhubs_us@oracle.com" class="navbar-link">Contact Us</a></div>
+              <div class="col-xs-11 text-right contactLink">
+                <a href="mailto:oraclecloudhubs_us@oracle.com" title="oraclecloudhubs_us@oracle.com" class="navbar-link">Contact Us</a>
+              </div>
+
+              <div>
+                <button id="loginbutton" onclick="initsso()" style="background-color: transparent;padding-left:20px;padding-right:20px;color: white;border: 2px solid white;">Login</button>
+              </div>
             </div>
           </div>
           <div class="col-md-12 nopadding">
@@ -107,7 +113,7 @@
 
                     <!-- Logo -->
                     <a class="" href="?root=home"><img src="css/images/logo.svg" class=""></a>
-                    
+
                   </div>
                 </div>
                 <!-- Toggle for Mobile -->
@@ -125,7 +131,7 @@
         <footer>
           <div class="container">
             <div class="footerheading">Oracle Cloud Solution Hubs</div>
-            
+
             <div class="footermenu">
               <ul>
                 <!-- ko foreach: footerLinks -->
