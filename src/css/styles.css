@@ -175,7 +175,7 @@ body {
 	background: rgba(0, 0, 0, 0) url("images/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
 	font-size: 18px;
 	font-style: italic;
-	padding-bottom:20px;
+	padding-bottom: 20px;
 }
 .carousel-indicators .active {
 	background-color: #aabcc2;
@@ -390,17 +390,16 @@ ul.whatwedolist {
 	font-size: 14px;
 }
 .deliverimg {
-	padding-top:50px;
+	padding-top: 50px;
 }
-
-.deliverimg img{
-	display:inline-block;}
+.deliverimg img {
+	display: inline-block;
+}
 .deliver h2 {
 	font-size: 18px;
 	font-weight: bold;
 	margin-top: 0;
 }
-
 footer {
 	font-size: 12px;
 	margin-top: 60px;
@@ -946,6 +945,15 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-top: 10px;
 	font-weight: bold;
 }
+.hubdesc a:link,.hubdesc a:visited{
+	color:#000;
+	font-weight:bold;
+	}
+
+.hubdesc a:hover,.hubdesc a:visited:hover{
+	color:#F29111;
+	font-weight:bold;
+	}	
 .watchvdo {
 	background: rgb(147, 150, 153) none repeat scroll 0 0;
 	border: medium none;
@@ -961,6 +969,15 @@ li.oj-selected .oj-tabs-gen-div {
 	font-weight: bold;
 	display: block
 }
+.hubdesc a.watchvdo:link, .hubdesc a.watchvdo:visited{
+	text-decoration: none;
+	color:#fff;
+}
+
+.hubdesc .watchvdo:hover {
+	background: #324b5c
+}
+
 .sliderButtons .watchvdo {
 	background: #6d8c9e;
 	border: medium none;
@@ -985,12 +1002,12 @@ li.oj-selected .oj-tabs-gen-div {
 	font-size: 36px;
 	color: #d6d7d8
 }
-
-.sliderButtons .watchvdo{
-	text-decoration:none}
-.sliderButtons .watchvdo:hover{
-	background:#324b5c
-	}
+.sliderButtons .watchvdo {
+	text-decoration: none
+}
+.sliderButtons .watchvdo:hover {
+	background: #324b5c
+}
 .watchvdo .fa-chevron-circle-right {
 	font-size: 36px;
 	color: #d6d7d8
@@ -1037,6 +1054,9 @@ li.oj-selected .oj-tabs-gen-div {
 .leftImage img {
 	display: inline-block;
 }
+
+
+
 
 @media (min-width: 1500px) {
 .container {
@@ -1122,7 +1142,6 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-
 .deliver img {
 	min-height: auto;
 }
@@ -1201,6 +1220,7 @@ li.oj-selected .oj-tabs-gen-div {
 	float: none;
 	margin-bottom: 20px;
 }
+
 }
 
 @media (max-width: 768px) {
@@ -1208,6 +1228,8 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-right: 0px;
 	float: right
 }
+.togglemenu{
+	padding-left:0px;}
 }
 
 @media (max-width: 767px) {
@@ -1251,6 +1273,10 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .watchvdo {
 	text-align: center;
+}
+#text-carousel {
+	padding-left: 20px;
+	padding-right: 20px;
 }
 }
 
@@ -1377,6 +1403,8 @@ ul#profiletabs {
 	line-height: 24px;
 	padding: 6px 8px;
 }
+.sliderButtons .watchvdo{
+	font-size:14px;}
 }
 
 @media (min-width: 1025px) {

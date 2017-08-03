@@ -184,8 +184,6 @@
                 <div class="profileSummary" data-bind="foreach:interests"> <span class="grayTags" data-bind="text:value"></span> </div>
               </div>
               <!-- Outside Interests -->
-            </div>
-            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Outside Achievements
@@ -198,6 +196,9 @@
                 </div>
               </div>
               <!-- Outside Achievements -->
+            </div>
+            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
+              
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Links
@@ -639,8 +640,8 @@
     </div>
   </div>
 </div>
-<div id="enlargephoto" class=" w3-display-middle w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'">
+<div id="enlargephoto" class="w3-modal w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'">
   <!-- ko if: enlargephotourl -->
-  <img class="w3-modal-content "  data-bind="attr:{src:enlargephotourl}">
+  <img class="w3-modal-content"  data-bind="attr:{src:enlargephotourl}">
   <!-- /ko -->
 </div>

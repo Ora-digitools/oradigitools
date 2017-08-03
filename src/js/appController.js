@@ -51,7 +51,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our People', 'profileslist', '?root=profileslist'),
 		new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
-        new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/tab_website/', '_blank')
+        new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/', '_blank')
 
       ]);
 	
