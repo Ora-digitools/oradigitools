@@ -945,15 +945,14 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-top: 10px;
 	font-weight: bold;
 }
-.hubdesc a:link,.hubdesc a:visited{
-	color:#000;
-	font-weight:bold;
-	}
-
-.hubdesc a:hover,.hubdesc a:visited:hover{
-	color:#F29111;
-	font-weight:bold;
-	}	
+.hubdesc a:link, .hubdesc a:visited {
+	color: #000;
+	font-weight: bold;
+}
+.hubdesc a:hover, .hubdesc a:visited:hover {
+	color: #F29111;
+	font-weight: bold;
+}
 .watchvdo {
 	background: rgb(147, 150, 153) none repeat scroll 0 0;
 	border: medium none;
@@ -969,15 +968,13 @@ li.oj-selected .oj-tabs-gen-div {
 	font-weight: bold;
 	display: block
 }
-.hubdesc a.watchvdo:link, .hubdesc a.watchvdo:visited{
+.hubdesc a.watchvdo:link, .hubdesc a.watchvdo:visited {
 	text-decoration: none;
-	color:#fff;
+	color: #fff;
 }
-
 .hubdesc .watchvdo:hover {
 	background: #324b5c
 }
-
 .sliderButtons .watchvdo {
 	background: #6d8c9e;
 	border: medium none;
@@ -1054,9 +1051,6 @@ li.oj-selected .oj-tabs-gen-div {
 .leftImage img {
 	display: inline-block;
 }
-
-
-
 
 @media (min-width: 1500px) {
 .container {
@@ -1220,7 +1214,6 @@ li.oj-selected .oj-tabs-gen-div {
 	float: none;
 	margin-bottom: 20px;
 }
-
 }
 
 @media (max-width: 768px) {
@@ -1228,8 +1221,9 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-right: 0px;
 	float: right
 }
-.togglemenu{
-	padding-left:0px;}
+.togglemenu {
+	padding-left: 0px;
+}
 }
 
 @media (max-width: 767px) {
@@ -1403,8 +1397,9 @@ ul#profiletabs {
 	line-height: 24px;
 	padding: 6px 8px;
 }
-.sliderButtons .watchvdo{
-	font-size:14px;}
+.sliderButtons .watchvdo {
+	font-size: 14px;
+}
 }
 
 @media (min-width: 1025px) {
