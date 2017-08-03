@@ -158,3 +158,20 @@ html:not([dir="rtl"]) .oj-navigationlist-vertical:not(.oj-navigationlist-icon-on
 .oj-navigationlist-vertical:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
 	border: none;
 }
+
+.oj-listview-item.oj-selected{
+	border:none !important}
+	
+/* Styling on list item hover */
+.oj-listview-item.oj-hover, ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-hover + li.oj-listview-item,.oj-listview.oj-focus-ancestor .oj-listview-item.oj-selected, .oj-listview.oj-focus-ancestor ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-selected + li.oj-listview-item,.oj-listview-item.oj-selected, .oj-hicontrast .oj-listview-item.oj-selected,
+.oj-hicontrast .oj-listview-group-item.oj-selected,.oj-hicontrast .oj-listview-item.oj-focus-highlight,
+.oj-hicontrast .oj-listview-group-item.oj-focus-highlight   {
+  
+  border-top: none !important
+  }
+  
+  /* Styling on focused list item */
+.oj-listview.oj-focus-ancestor ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-focus,
+.oj-listview.oj-focus-ancestor ul.oj-listview-element:not(.oj-listview-card-layout) .oj-listview-item.oj-focus + li.oj-listview-item {
+  border-top: none !important;
+  background-size: 0; }

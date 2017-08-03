@@ -49,6 +49,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.headerLinks = ko.observableArray([
         new headerLink('Home', 'home', '?root=home'),
         new headerLink('Our People', 'profileslist', '?root=profileslist'),
+		new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
         new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/tab_website/', '_blank')
 

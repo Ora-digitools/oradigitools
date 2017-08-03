@@ -50,15 +50,15 @@
 
 <button class="fixedButton" id="fixb" data-bind="click:openthefilterpanel"><img src="css/images/FILTER1.svg" class="img-responsive"></button>
 <div id="slider" class="transition">
-  <div id="sliderContent"> <a class="text-right" id="close" data-bind="click:closethefilterpanel">X</a> <br>
+  <div id="sliderContent"> <a class="text-right close" id="close" data-bind="click:closethefilterpanel">X</a> <br>
     <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
     <input id="inputSearch" placeholder="skills, names..." data-bind="ojComponent: {
             component: 'ojInputSearch',
             update: searchhandler,
             value:searchtext,
-            rootAttributes: {class:'form-control'}}">
+            rootAttributes: {class:'form-control slidersearch'}}">
   </div>
-  <br>
+  
   <p style="font-weight: bolder">Filter by Location</p>
   <div data-bind="foreach: hubslist">
     <div class="checkbox">

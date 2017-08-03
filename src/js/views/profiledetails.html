@@ -255,7 +255,6 @@
           <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteskill,attr:{id:employee_profile_key}"> X</span>            </div>
         </div>
         <br>
-        <br>
         <form>
           <div class="form-group">
             <label for="email">Add Skills:&nbsp;</label>
@@ -366,8 +365,7 @@
         <div class=" oj-flex" data-bind="foreach:profile().learnings">
           <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span data-bind="click:deletelearning,attr:{id:employee_profile_key}"> X</span>            </div>
         </div>
-        <br>
-        <br>
+       <br>
         <form>
           <div class="form-group">
             <label for="email">Enter new learning interests:&nbsp;</label>
@@ -379,7 +377,7 @@
     </div>
   </div>
 </div>
-</div>
+
 <!-- Project 1 Edit -->
 <div style="display:none" id="editprojectwindow" title="Edit Project" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
   <div class="oj-dialog-body">
@@ -569,7 +567,7 @@
       <div class="modal-body">
         <div class=" oj-flex" data-bind="foreach:profile().interests">
           <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteInterest,attr:{id:employee_profile_key}"> X</span>            </div>
-        </div><br><br>
+        </div><br>
         <form>
           <div class="form-group">
             <label>Enter outside interests and hobbies:</label>
@@ -581,7 +579,7 @@
     </div>
   </div>
 </div>
-</div>
+
 <!-- Outside Achievements -->
 <div class="modal fade" id="editoutsideachievements" role="dialog">
   <div class="modal-dialog">
@@ -595,7 +593,7 @@
       <div class="modal-body">
         <div class="oj-flex" data-bind="foreach:profile().achivements">
           <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteAchievements,attr:{id:employee_profile_key}"> X</span>            </div>
-        </div> <br><br>
+        </div> <br>
         <form>
           <div class="form-group">
             <label for="email">Add new achievements:</label>
@@ -607,7 +605,7 @@
     </div>
   </div>
 </div>
-</div>
+
 <!-- Links -->
 <div class="modal fade" id="editlinks" role="dialog">
   <div class="modal-dialog">
@@ -623,7 +621,7 @@
           <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px">
             <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteLinks,attr:{id:employee_profile_key}">
             X</span> </div>
-        </div><br><br>
+        </div><br>
         <form>
           <div class="form-group">
             <label for="email">Enter link name:</label>

@@ -12,6 +12,9 @@
 a, button, a:focus, button:focus {
 	outline: none;
 }
+img[src*=".svg"] {
+	width: 100%;
+}
 body {
 	font-family: 'ArialMT';
 	font-size: 14px;
@@ -22,7 +25,7 @@ body {
 }
 .container {
 	/*width: 1366px;*/
-	width: 1200px;
+	width: 1411px;
 }
 .icon-container {
 	width: 755px;
@@ -172,6 +175,7 @@ body {
 	background: rgba(0, 0, 0, 0) url("images/clouds_bg.jpg") no-repeat scroll 0 0 / cover;
 	font-size: 18px;
 	font-style: italic;
+	padding-bottom:20px;
 }
 .carousel-indicators .active {
 	background-color: #aabcc2;
@@ -207,7 +211,8 @@ body {
 	font-family: ArialMT;
 }
 .icons img {
-	display: inline-block
+	display: inline-block;
+	margin-bottom: 5px;
 }
 .icons a:link, .icons a:visited {
 	color: #444444;
@@ -216,16 +221,50 @@ body {
 	color: #f29111;
 }
 .darkblue {
-	background: #324b5c;
 	color: #fff;
 	margin-bottom: 30px;
-	padding: 15px;
-	min-height: 220px;
+	background: #324b5c;
+	overflow: hidden;
+}
+.darkblueleft {
+	background: #324b5c url(images/who_we_are_left.jpg) no-repeat scroll 0 0;
+	background-size: cover;
+}
+.whoweare {
+	padding-left: 12px;
+	padding-right: 9px;
+}
+.whatwedo {
+	background: #f29111;
+	color: #fff;
+	padding-bottom: 15px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.whatwedo h2 {
+	margin-bottom: 15px;
+	font-size: 22px;
+	margin-top: 15px;
+}
+.whatwedolist {
+	margin-left: 0px;
+	padding: 0px;
+}
+ul.whatwedolist {
+	margin-top: 10px;
+}
+.whatwedolist li {
+	margin-bottom: 15px;
+	list-style: none;
+}
+.whatwedolist li i {
+	font-size: 12px;
+	margin-right: 5px;
 }
 .darkblue h2 {
-	margin-top: 0px;
+	margin-bottom: 5px;
 	font-size: 22px;
-	margin-bottom: 20px;
+	margin-top: 15px;
 }
 .glyphicon-chevron-right {
 	color: #f29111;
@@ -257,7 +296,7 @@ body {
 }
 .how_to_engage {
 	background: url(images/how_to_engage.jpg) no-repeat;
-	height: 515px;
+	height: 469px;
 	color: #fff;
 	background-size: cover;
 	background-position: 50%;
@@ -267,6 +306,22 @@ body {
 	background: rgba(0, 0, 0, 0.76) none repeat scroll 0 0;
 	height: 100%;
 	padding: 15px;
+}
+.pinkBg {
+	background: #942645;
+	height: 100%;
+	padding: 15px;
+}
+.cloud_hubs ul {
+	padding-left: 0px;
+}
+.cloud_hubs li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+.cloud_hubs li i {
+	font-size: 12px;
+	margin-right: 5px;
 }
 .how_to_engage h2 {
 	margin-top: 0px;
@@ -282,18 +337,28 @@ body {
 	text-decoration: underline
 }
 .cloud_hubs {
-	background: url(images/cloud_hubs.jpg) no-repeat;
-	height: 263px;
+	background: rgba(0, 0, 0, 0.76) url(images/cloud_hubs.jpg) no-repeat;
 	color: #fff;
 	margin-bottom: 30px;
-	font-size: 16px;
+	font-size: 14px;
 	background-size: cover;
-	line-height: 32px;
 	background-position: 50%;
+}
+.cloud_hubs:before {
+	content: ' ';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.76);
+}
+.cloud_hubs_left {
+	padding-top: 15px;
 }
 .cloud_hubs h2 {
 	margin-top: 0px;
-	font-size: 28px;
+	font-size: 18px;
 	font-weight: bold;
 }
 .cloud_hubs a:link, .cloud_hubs a:visited {
@@ -316,23 +381,26 @@ body {
 	text-decoration: none
 }
 .deliver {
-	background: #f29111;
+	background: #00758F;
 	color: rgb(255, 255, 255);
-	height: 221px;
+	min-height: 215px;
 	text-align: center;
-	background-image: url(images/orange_bg_2.png);
-	background-position: top;
-	padding: 10px;
+	padding: 10px 0px;
 	text-align: left;
-	font-size: 19px;
-	background-repeat: repeat-x;
-	position: relative;
+	font-size: 14px;
 }
-.orangetext {
-	position: absolute;
-	bottom: 10px;
-	width: 100%;
+.deliverimg {
+	padding-top:50px;
 }
+
+.deliverimg img{
+	display:inline-block;}
+.deliver h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0;
+}
+
 footer {
 	font-size: 12px;
 	margin-top: 60px;
@@ -442,7 +510,24 @@ footer {
 	top: 10%;
 	border-radius: 0px 10px 10px 0px;
 	color: #fff;
-	font-size: 16px;
+	font-size: 14px;
+}
+#slider .checkbox {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+#slider .checkbox label {
+	min-height: 15px;
+}
+#slider p {
+	margin-bottom: 5px;
+}
+.slidersearch {
+	margin-bottom: 20px !important;
+	margin-top: 12px;
+}
+.img-rounded {
+	border-radius: 50%;
 }
 #close {
 	color: #fff;
@@ -464,6 +549,14 @@ footer {
 #drawerToggleButton {
 	border: none;
 	cursor: pointer;
+}
+#slider .apply {
+	background: #dfe4e7;
+	color: #324c5d;
+	text-transform: uppercase;
+	border: none;
+	padding: 5px 20px;
+	margin-top: 20px;
 }
 .apply {
 	background: #dfe4e7;
@@ -814,7 +907,7 @@ li.oj-selected .oj-tabs-gen-div {
 	font-size: 22px;
 	display: block;
 	width: 100%;
-	height: 92px;
+	height: 109px;
 	background: url(images/austin-hub-bg.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -827,7 +920,7 @@ li.oj-selected .oj-tabs-gen-div {
 	font-size: 22px;
 	display: block;
 	width: 100%;
-	height: 92px;
+	height: 109px;
 	background: url(images/bangalore-hub-bg.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -840,7 +933,7 @@ li.oj-selected .oj-tabs-gen-div {
 	font-size: 22px;
 	display: block;
 	width: 100%;
-	height: 92px;
+	height: 109px;
 	background: url(images/reston-hub-bg.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -868,14 +961,36 @@ li.oj-selected .oj-tabs-gen-div {
 	font-weight: bold;
 	display: block
 }
-a.watchvdo:link, a.watchvdo:visited {
-	color: #fff;
-	text-decotation: none;
+.sliderButtons .watchvdo {
+	background: #6d8c9e;
+	border: medium none;
+	border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+	line-height: 36px;
+	margin-top: 30px;
+	padding: 6px 15px;
+	text-align: left;
+	vertical-align: middle;
+	width: 100%;
+	font-weight: bold;
+	display: block;
+	font-style: normal;
 }
-a.watchvdo:hover, a.watchvdo:visited:hover {
-	color: #555;
-	text-decotation: none;
+.sliderButtons .watchvdo .fa-play-circle {
+	font-size: 36px;
+	color: #d6d7d8
 }
+.sliderButtons .watchvdo .fa-download {
+	font-size: 36px;
+	color: #d6d7d8
+}
+
+.sliderButtons .watchvdo{
+	text-decoration:none}
+.sliderButtons .watchvdo:hover{
+	background:#324b5c
+	}
 .watchvdo .fa-chevron-circle-right {
 	font-size: 36px;
 	color: #d6d7d8
@@ -915,6 +1030,24 @@ a.watchvdo:hover, a.watchvdo:visited:hover {
 	font-size: 21px;
 	font-weight: bold;
 	text-align: center;
+}
+.leftImage {
+	font-size: 14px;
+}
+.leftImage img {
+	display: inline-block;
+}
+
+@media (min-width: 1500px) {
+.container {
+	width: 1411px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+.container {
+	width: 1200px;
+}
 }
 
 @media (max-width: 1199px) {
@@ -989,11 +1122,7 @@ a.watchvdo:hover, a.watchvdo:visited:hover {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-#text-carousel {
-	background-position: bottom;
-	background-color: #ddeff9;
-	padding: 50px 10px;
-}
+
 .deliver img {
 	min-height: auto;
 }
@@ -1105,14 +1234,23 @@ a.watchvdo:hover, a.watchvdo:visited:hover {
 .get_to_know, .how_to_engage, .cloud_hubs, .darkblue {
 	margin-bottom: 10px;
 }
-.darkblue {
-	min-height: 280px;
-}
 .nopaddingipd {
 	padding: 0px;
 }
 .icon-container {
 	width: auto;
+}
+}
+
+@media (max-width: 736px) {
+.icon {
+	margin-bottom: 10px;
+}
+.watchvdo .fa-chevron-circle-right {
+	display: none
+}
+.watchvdo {
+	text-align: center;
 }
 }
 
@@ -1134,6 +1272,9 @@ a.watchvdo:hover, a.watchvdo:visited:hover {
 }
 .oj-listview-item:nth-child(3n) .face {
 	border-right: none;
+}
+.how_to_engage {
+	height: 528px;
 }
 }
 
@@ -1182,12 +1323,27 @@ ul#profiletabs {
 }
 }
 
+@media (max-width: 375px) {
+.profileImage img {
+	width: 100px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border: 5px solid #c8c8c8;
+	height: 100px;
+}
+.cloud_hubs {
+	position: relative;
+}
+.pinkBg {
+	position: absolute;
+	right: 0px;
+}
+}
+
 @media (max-width: 360px) {
 .darkblue {
 	min-height: 350px;
-}
-.watchvdo .fa-chevron-circle-right {
-	font-size: 35px;
 }
 }
 
@@ -1223,17 +1379,6 @@ ul#profiletabs {
 }
 }
 
-@media (max-width: 375px) {
-.profileImage img {
-	width: 100px;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border: 5px solid #c8c8c8;
-	height: 100px;
-}
-}
-
 @media (min-width: 1025px) {
 .col-md-0 {
 	display: none
@@ -1261,5 +1406,11 @@ ul#profiletabs {
 }
 .oj-listview-item:nth-child(4n) .face {
 	border-right: none;
+}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+.mainContent {
+	margin-top: 40px;
 }
 }
