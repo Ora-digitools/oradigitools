@@ -225,7 +225,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profile().employee_key(profiles.items[0].employee_key);
             self.profile().title(profiles.items[0].title);
             self.profile().name(profiles.items[0].display_name);
-            self.profile().work_email(profiles.items[0].work_email);
+            self.profile().work_email(profiles.items[0].u);
             self.profile().work_phone(profiles.items[0].work_phone != undefined ? profiles.items[0].work_phone : profiles.items[0].mobile_phone);
             self.profile().mobile_phone(profiles.items[0].mobile_phone != undefined ? profiles.items[0].mobile_phone : profiles.items[0].work_phone);
             self.profile().city(profiles.items[0].city);
@@ -249,6 +249,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profilelink = self.profilelink.split('#')[0] + '#' + self.uuid;
             console.log("profile created");
             debuglog(ko.toJSON(self.profile()));
+            self.iseditpermitted();
             hidedialog();
 
           });
@@ -270,9 +271,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           });
       }
 
-      // http://localhost:8000/?root=profiledetails#angsen
-
       self.handleAttached = function (info) {
+        self.iseditpermitted();
         if (window.location.hash) {
           self.uuid = window.location.hash.replace('#', '');
           localStorage.setItem('uuid', self.uuid);
@@ -280,6 +280,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
         loadpage();
       };
+
+      self.iseditpermitted = function () {
+        if (self.profile().work_email() === ssoemail) {
+          setssostatus('.ssoenabled', 'block');
+        } else {
+          setssostatus('.ssoenabled', 'none');
+        }
+      }
+
+      setInterval(function () {
+        self.iseditpermitted();
+      }, 1000);
 
       loadpage = function () {
         showdialog();
@@ -1026,6 +1038,22 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
 
         });
       }
+
+      setssostatus = function (selector, visibility) {
+        var nodes = document.querySelectorAll(selector),
+          node,
+          styleProperty = function (a, b) {
+            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+          };
+
+        [].forEach.call(nodes, function (a, b) {
+          node = a;
+
+          node.style.display = visibility;
+        });
+      }
+
+
 
       enlargephoto = function (event, ui) {
         // alert('photo');

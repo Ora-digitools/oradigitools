@@ -35,7 +35,7 @@
     <!-- Hub -->
     <div class="col-sm-3 col-md-3 profileAddress">
       <div>
-        <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlocation">Edit</button>
+        <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editlocation">Edit</button>
       </div>
       <p>Hub: <br>
         <span data-bind="text:center"></span></p>
@@ -70,7 +70,7 @@
               <!-- Profile summary -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Profile summary
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editsummary">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editsummary">Edit</button>
                 </div>
                 <div class="profileSummary">
                   <p data-bind="html:profile_summary"></p>
@@ -80,7 +80,7 @@
               <!-- Skills -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Skills
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editskills">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editskills">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
               </div>
@@ -88,7 +88,7 @@
               <!-- Learning Interests -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Learning Interests
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#learninginterests">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#learninginterests">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
               </div>
@@ -132,8 +132,8 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span data-bind="text:customer_name"></span>&nbsp;-&nbsp;<span data-bind="text:customer_division"></span></a>
-                      <button title="Delete" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-bind="click:deleteproject.bind($data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                      <button title="Edit" class="btn  btn-info btn-xs pull-right" style="margin-right: 5px" data-toggle="modal" data-bind="click:editproject">Edit</button>
+                      <button name="ssoenabled" title="Delete" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:deleteproject.bind($data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      <button name="ssoenabled" title="Edit" class="btn  btn-info btn-xs pull-right ssoenabled" style="margin-right: 5px" data-toggle="modal" data-bind="click:editproject">Edit</button>
                       <span class="oj-sm-2"></span> </h4>
                   </div>
                   <div id="collapse1" class="panel-collapse collapse in">
@@ -179,7 +179,7 @@
               <!-- Outside Interests -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Outside Interests and hobbies
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:interests"> <span class="grayTags" data-bind="text:value"></span> </div>
               </div>
@@ -187,7 +187,7 @@
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Outside Achievements
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editoutsideachievements">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editoutsideachievements">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:achivements">
                   <ul>
@@ -202,7 +202,7 @@
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Links
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-target="#editlinks">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editlinks">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:links">
                   <ul>

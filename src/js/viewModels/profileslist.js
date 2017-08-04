@@ -141,7 +141,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 icon: imageurl,
                 name: this.display_name,
                 title: this.title,
-                work_email: this.work_email,
+                work_email: this.u,
                 work_phone: this.work_phone,
                 mobile_phone: this.mobile_phone,
                 city: this.city,

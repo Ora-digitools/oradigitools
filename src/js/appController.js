@@ -49,20 +49,70 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.headerLinks = ko.observableArray([
         new headerLink('Home', 'home', '?root=home'),
         new headerLink('Our People', 'profileslist', '?root=profileslist'),
-		new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
+        new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
         new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/', '_blank')
 
       ]);
-	
-self.addActive = function(routername, pid){
-	
-			 if(routername===pid){
-				
-				 return 'active';
-				 }
-				 
-			}
+
+      isloggedin = function () {
+        if (ssoemail.length > 0) {
+          document.getElementById('loginbutton').style.display = 'none';
+        } else {
+          document.getElementById('loginbutton').style.display = 'block';
+
+        }
+      }
+
+
+      // SSO RELATED ACTIVITY CODE HERE
+      initsso = function () {
+        if (ssoemail.length == 0) {
+          window.open("http://solutionengineering.us.oracle.com");
+        }
+        enableedit();
+      }
+
+      enableedit = function () {
+        self.iseditpermitted();
+      }
+
+      getemailfromcookie = function () {
+        // get user email
+        var user = document.cookie.split(';').map(function (x) {
+          return x.trim().split('=');
+        }).reduce(
+          function (a, b) {
+            a[b[0]] = b[1];
+            return a;
+          }, {})["ORA_UCM_INFO"];
+        user = typeof user !== "undefined" ? user : "";
+        var n = user.lastIndexOf("~");
+
+        email = user.substr(n + 1, user.length);
+        if (email) {
+          ssoemail = email;
+        } else {
+          ssoemail = "";
+        }
+      }
+
+      setInterval(function () {
+        getemailfromcookie();
+        isloggedin();
+      }, 1000);
+
+
+      // END OF SSO RELATED CODE
+
+      self.addActive = function (routername, pid) {
+
+        if (routername === pid) {
+
+          return 'active';
+        }
+
+      }
 
 
       // Drawer
@@ -94,14 +144,14 @@ self.addActive = function(routername, pid){
         this.name = name;
         this.linkId = id;
         this.linkTarget = linkTarget;
-		this.linkTarget1 = linkTarget1;
+        this.linkTarget1 = linkTarget1;
       }
       self.footerLinks = ko.observableArray([
         new footerLink('Home', 'home', '?root=home'),
-        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/',  '_blank'),
-        new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/',  '_blank'),
-		new footerLink('Internal Privacy Statement', 'internalprivacy', '?root=terms'),
-		new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:oraclecloudhubs_us@oracle.com'),
+        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
+        new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/', '_blank'),
+        new footerLink('Internal Privacy Statement', 'internalprivacy', '?root=terms'),
+        new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:oraclecloudhubs_us@oracle.com'),
         new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
 
       ]);

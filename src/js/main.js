@@ -4,6 +4,7 @@
  */
 'use strict';
 var debug=true;
+var ssoemail="";
 /**
  * Example of Require.js boostrap javascript
  */
