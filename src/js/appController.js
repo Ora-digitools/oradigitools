@@ -51,15 +51,17 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our People', 'profileslist', '?root=profileslist'),
         new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
-        new headerLink('Our Assets', 'assets', 'http://innovate.us.oracle.com/', '_blank')
+        new headerLink('Our Assets', 'assets', '?root=assets')
 
       ]);
 
       isloggedin = function () {
-        if (ssoemail.length > 0) {
+        if (ssoemail.length > 0) {			
           document.getElementById('loginbutton').style.display = 'none';
+		  document.getElementById('ssoenabledbar').style.display = 'none';
         } else {
           document.getElementById('loginbutton').style.display = 'inline-block';
+		  document.getElementById('ssoenabledbar').style.display = 'inline-block';
 
         }
       }

@@ -1121,6 +1121,10 @@ li.oj-selected .oj-tabs-gen-div {
 	height: auto;
 	height: 60px
 }
+.servicesblocks2 .servicesblocksinner {
+	height: 60px;
+	background: #b3ada5;
+}
 .seserviceblock {
 	background: #324b5c;
 	color: #fff;
@@ -1165,7 +1169,7 @@ li.oj-selected .oj-tabs-gen-div {
 	top: 5px;
 	vertical-align: middle;
 	width: 30px;
-	border:none;
+	border: none;
 	z-index: 1000;
 }
 .founddesc {
@@ -1190,6 +1194,19 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .seservice h4 {
 	font-weight: bold
+}
+.assetsrow {
+	margin-top: 20px;
+	padding: 60px;
+	background: #f1f1f1;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+.row-centered {
+	margin: 0 auto;
+	width: 75%
 }
 
 @media (min-width: 1500px) {
@@ -1426,6 +1443,9 @@ li.oj-selected .oj-tabs-gen-div {
 	text-align: left;
 	font-size: 13px;
 }
+.row-centered div {
+	margin-bottom: 20px;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1543,7 +1563,13 @@ ul#profiletabs {
 }
 #slider {
 	top: 0%;
+	font-size:12px;
+	
 }
+#slider .checkbox{
+	margin-top:0px;
+	margin-bottom:0px;
+	}
 .watchvdo .fa-chevron-circle-right {
 	font-size: 24px;
 }
