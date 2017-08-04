@@ -59,7 +59,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         if (ssoemail.length > 0) {
           document.getElementById('loginbutton').style.display = 'none';
         } else {
-          document.getElementById('loginbutton').style.display = 'block';
+          document.getElementById('loginbutton').style.display = 'inline-block';
 
         }
       }

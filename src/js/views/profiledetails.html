@@ -13,9 +13,9 @@
     <div class="col-sm-5 col-md-6 profileleft nopadding">
       <!-- Image -->
       <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
-        <div class="overlay">
+        <div class="overlay ssoenabled">
           <div class="text">
-            <button type="button" data-bind="click: openIconuploder"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
+            <button type="button" data-bind="click: openIconuploder" class="ssoenabled" name="ssoenabled"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@
         <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn" data-bind="with:profile">
           <div id="projects">
             <div class="col-sm-12 addnew nopaddingxs nopaddingsm">
-              <button class="btn  btn-info btn-xs " data-toggle="modal" data-bind="click:newproject">+ Add new Projects</button>
+              <button class="btn  btn-info btn-xs ssoenabled" data-toggle="modal" data-bind="click:newproject" name="ssoenabled">+ Add new Projects</button>
             </div>
             <div class="col-sm-12 nopaddingmd nopaddingxs nopaddingsm">
               <div class="panel-group" id="accordion" data-bind="foreach:projects">
@@ -159,15 +159,15 @@
               <!-- Uploads -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Recent Uploads
-                  <button type="button" class="btn  btn-info btn-xs pull-right" data-toggle="modal" data-bind="click:openpersonalimageuploder">Upload</button>
+                  <button type="button" name="ssoenabled" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openpersonalimageuploder">Upload</button>
                 </div>
                 <div class="profileSummary ">
                   <div id="conveyorbelt-horizontal-example">
                     <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}">
                       <!-- ko foreach: personalphotoslist -->
-                      <div class="demo-conveyor-item">
-                        <p data-bind="click:removeimage" style="cursor: pointer">X</p>
-                        <img data-bind="attr:{src:photo_url}" onclick="enlargephoto(event)" style="height: 200px;margin: 0px 0px 0px 10px">                        </div>
+                      <div class="demo-conveyor-item" style="position:relative;">
+                        <button name="ssoenabled" data-bind="click:removeimage" class="removeimage ssoenabled">X</button>
+                        <img data-bind="attr:{src:photo_url}" onclick="enlargephoto(event)" style="height: 200px;margin: 0px 0px 0px 10px;cursor:zoom-in" class="w3-hover-opacity">                        </div>
                       <!-- /ko -->
                     </div>
                   </div>
@@ -641,7 +641,10 @@
   </div>
 </div>
 <div id="enlargephoto" class="w3-modal w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'">
+<span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+ <div class="w3-modal-content w3-animate-zoom">
   <!-- ko if: enlargephotourl -->
-  <img class="w3-modal-content"  data-bind="attr:{src:enlargephotourl}">
+  <img class="w3-modal-content img-responsive"  data-bind="attr:{src:enlargephotourl}" style="cursor:zoom-out">
   <!-- /ko -->
+  </div>
 </div>

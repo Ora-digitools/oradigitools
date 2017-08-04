@@ -1051,10 +1051,153 @@ li.oj-selected .oj-tabs-gen-div {
 .leftImage img {
 	display: inline-block;
 }
+.servicesdesc {
+	background: #f9f9f9;
+	border: 1px solid #ccd4d7;
+	padding: 20px;
+	font-weight: bold;
+}
+.servicestitle {
+	background: #f29111;
+	color: #fff;
+	padding: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+.servicessection {
+	margin-top: 20px;
+}
+.servicestitle2 {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+}
+.servicesgrey {
+	padding: 10px;
+	color: #fff;
+	background: #c2c2c2
+}
+.servicesicons {
+	padding: 15px;
+	border: 3px solid #ccd4d7;
+	margin-top: 20px;
+}
+.servicesblocks1, .servicesblocks2 {
+	margin-top: 20px;
+}
+.servicesblocksinner {
+	background: #00758f;
+	color: #fff;
+	height: 150px;
+	border: 1px solid #fff;
+	font-weight: bold;
+	position: relative;
+}
+.servicesblocksinner:nth-child(4n-7) {  /* or 4n+1 */
+	background: #00758f
+}
+.servicesblocksinner:nth-child(4n+2) {  /* or 4n+1 */
+	background: #3a913f
+}
+.servicesblocksinner:nth-child(4n+3) {  /* or 4n+1 */
+	background: #942645
+}
+.servicesblocksinner:nth-child(4n+4) {  /* or 4n+1 */
+	background: #f29111
+}
+.centerelement {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+.servicesicons {
+	text-align: center;
+	font-weight: bold
+}
+.servicesblocks2 .servicesblocksinner {
+	height: auto;
+	height: 60px
+}
+.seserviceblock {
+	background: #324b5c;
+	color: #fff;
+	font-weight: bold;
+	padding: 14px;
+	border: 1px solid #fff;
+	text-align: center;
+	font-size: 14px;
+	height: 144px;
+}
+.seservice {
+	margin-top: 20px;
+}
+.seserviceblock.greybg {
+	color: #fff;
+	background: #b3ada5
+}
+.largetick {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.colorsspecs {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.ca {
+	color: #324b5c
+}
+.ia {
+	color: #b3ada5
+}
+.removeimage {
+	background: rgb(255, 255, 255) none repeat scroll 0 0;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 30px;
+	position: absolute;
+	right: 5px;
+	text-align: center;
+	top: 5px;
+	vertical-align: middle;
+	width: 30px;
+	border:none;
+	z-index: 1000;
+}
+.founddesc {
+	margin-top: 20px;
+	background: #f29111;
+	color: #fff;
+	overflow: hidden;
+}
+.founddescright {
+	padding: 30px;
+}
+.howengaged {
+	margin-top: 20px;
+}
+.howengagedtitle {
+	background: #324B5C;
+	color: #fff;
+	padding: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+.seservice h4 {
+	font-weight: bold
+}
 
 @media (min-width: 1500px) {
 .container {
 	width: 1411px;
+}
+.container_services {
+	width: 1131px
 }
 }
 
@@ -1062,11 +1205,17 @@ li.oj-selected .oj-tabs-gen-div {
 .container {
 	width: 1200px;
 }
+.container_services {
+	width: 900px
+}
 }
 
 @media (max-width: 1199px) {
 .container {
 	width: auto;
+}
+.container_services {
+	width: auto
 }
 }
 
@@ -1271,6 +1420,11 @@ li.oj-selected .oj-tabs-gen-div {
 #text-carousel {
 	padding-left: 20px;
 	padding-right: 20px;
+}
+.servicesicons div {
+	min-height: 50px;
+	text-align: left;
+	font-size: 13px;
 }
 }
 
