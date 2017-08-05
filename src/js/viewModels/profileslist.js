@@ -47,7 +47,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         }
       }
 
-      this.searchhandler = function (context, ui) {
+      this.searchhandler = function () {
         showdialog();
         self.closethefilterpanel();
         var searchkey = self.searchtext() != "" ? self.searchtext()[0] : "";//;
@@ -75,7 +75,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 icon: imageurl,
                 name: this.display_name,
                 title: this.title,
-                work_email: this.work_email,
+                work_email: this.u,
                 work_phone: this.work_phone,
                 mobile_phone: this.mobile_phone,
                 city: this.city,
@@ -163,10 +163,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
           });
       }
 
-      self.handleActivated = function (info) {
-        console.log('loading profile list. . .');
-      };
-
 
       filteredhubs = function (desc) {
 
@@ -251,10 +247,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       }
 
       self.handleAttached = function (info) {
-
+        console.log('loading profile list. . .');
         self.getFilters();
-        self.getUserList();
-
+        self.router = oj.Router.rootInstance;
+        var retrievedobject = self.router.retrieve();
+        if (retrievedobject != undefined && retrievedobject.length > 0) {
+          selectedLocations=retrievedobject;
+          self.searchhandler();
+        } else {
+          self.getUserList();
+        }
       }
 
       self.dataSource = new oj.ArrayTableDataSource(self.renderData, { idAttribute: "uuid" });

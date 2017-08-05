@@ -91,13 +91,16 @@
             <!-- SearchBox -->
             <div class="container oj-flex">
               <!-- Contact Us -->
-              <div class="col-xs-12 text-right contactLink">
-              <a href="#" title="oraclecloudhubs_us@oracle.com" class="ssoenabled" id="loginbutton" onclick="initsso()">Login</a><span id="ssoenabledbar">&nbsp;|&nbsp;</span><a href="mailto:oraclecloudhubs_us@oracle.com" title="oraclecloudhubs_us@oracle.com" class="navbar-link">Contact Us</a>
-            
+              <div class="col-xs-12 text-right contactLink oj-flex-bar">
+                <span class="oj-flex-bar-end"><a href="#" title="oraclecloudhubs_us@oracle.com" id="loginbutton" onclick="initsso()">Login</a></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span><a href="mailto:oraclecloudhubs_us@oracle.com" title="oraclecloudhubs_us@oracle.com"
+                  class="navbar-link">Contact Us</a></span>
+
               </div>
 
               <div>
-                
+
               </div>
             </div>
           </div>
@@ -145,6 +148,14 @@
       </div>
     </div>
   </div>
+  <!-- <div id="ssodialog" class="w3-modal w3-animate-opacity" style="z-index: 9999;">
+    <header class="w3-container w3-red">
+      <span onclick="document.getElementById('ssodialog').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+    </header>
+    <div class="w3-modal-content w3-animate-zoom" style="width: 50%;height: 100%">
+      <iframe class="w3-modal-content" src="https://oim.oraclecorp.com" style="width: 100%;height: 100%"></iframe>
+    </div>
+  </div> -->
   <script type="text/javascript" src="js/libs/require/require.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>

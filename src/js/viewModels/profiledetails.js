@@ -20,8 +20,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       self.ratting = ko.observable(1);
       self.newSkill = ko.observable('');
       self.linkurl = ko.observable('');
+      self.achievementurl = ko.observable('');
       self.center = ko.observable('');
       self.pillar = ko.observable('');
+      self.mobile = ko.observable('');
       self.uuid = "";
       self.profilelink = 'http://solutionengineering.us.oracle.com:7777/site/?root=profiledetails#';
       self.effectOptions = {};
@@ -85,6 +87,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         cost_center: ko.observable(),
         pillar: ko.observable(),
         center: ko.observable(),
+        mobile: ko.observable(),
         mgr_email: ko.observable(),
         mgr_display_name: ko.observable(),
         profile_summary: ko.observable(),
@@ -107,6 +110,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         },
         clearhub: ko.observable(false),
         clearPillar: ko.observable(false),
+        clearMobile: ko.observable(false),
         clearHubValue: function () {
           this.center('');
           this.clearhub(true);
@@ -114,6 +118,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         clearPillarValue: function () {
           this.pillar('');
           this.clearPillar(true);
+        },
+        clearMobileValue: function () {
+          this.mobile('');
+          this.clearMobile(true);
         }
 
       });
@@ -235,8 +243,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profile().ou(profiles.items[0].ou);
             self.profile().cost_center(profiles.items[0].cost_center);
             self.profile().pillar(profiles.items[0].pillar);
+            self.profile().mobile(profiles.items[0].mobile);
             self.center(profiles.items[0].center);
             self.pillar(profiles.items[0].pillar);
+            self.mobile(profiles.items[0].mobile);
             self.profile().center(profiles.items[0].center);
             self.profile().mgr_email(profiles.items[0].mgr_email);
             self.profile().mgr_display_name(profiles.items[0].mgr_display_name);
@@ -333,6 +343,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             employee_key: self.profile().employee_key(),
             pillar: self.profile().pillar(),
             center: self.profile().center(),
+            mobile: self.profile().mobile(),
             profile_summary: self.profile().profile_summary()
 
           };
@@ -367,6 +378,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             employee_key: self.profile().employee_key(),
             pillar: self.profile().pillar(),
             center: self.profile().center(),
+            mobile: self.profile().mobile(),
             profile_summary: self.profile().profile_summary()
           };
           debuglog(ko.toJSON(summary));
@@ -476,7 +488,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
             self.newSkill("");
-            self.rating(1);
+            self.ratting(1);
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
@@ -523,7 +535,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
             self.newSkill("");
-            self.rating(1);
+            self.ratting(1);
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
@@ -565,7 +577,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
             self.newSkill("");
-            self.rating(1);
+            self.ratting(1);
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
@@ -905,6 +917,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
             self.newSkill("");
+            self.linkurl('');
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
@@ -968,7 +981,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         updatedSkillList.push({
           employee_profile_key: '',
           category: 'Achievements',
-          value: self.newSkill()
+          value: self.newSkill(),
+          url: self.achievementurl()
         });
 
         requestdata = ({
@@ -990,6 +1004,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
             self.newSkill("");
+            self.achievementurl('');
             hidedialog();
           }
         }).fail(function (xhr, textStatus, err) {
