@@ -139,12 +139,12 @@
                   </div>
                   <div id="collapse1" class="panel-collapse collapse in">
                     <div class="panel-body">
-                      <p>Industry: <span data-bind="text:industry"></span></p>
-                      <p>Type: <span data-bind="text:type_of_work"></span></p>
-                      <p>URL: <span data-bind="text:artifacts_url"></span></p>
-                      <p>Summary: <span data-bind="text:summary"></span></p>
-                      <p>Description: <span data-bind="text:description"></span></p>
-                      <p>Outcome: <span data-bind="text:outcome"></span></p>
+                      <p>Customer Industry: <span data-bind="text:industry"></span></p>
+                      <p>Project Pillar: <span data-bind="text:type_of_work"></span></p>
+                      <p>Project Artifacts URL: <span data-bind="text:artifacts_url"></span></p>
+                      <p>Summary of Project and Business Value: <span data-bind="text:summary"></span></p>
+                      <p>Key Technology utilized in solution: <span data-bind="text:description"></span></p>
+                      <p>Result of the Project: <span data-bind="text:outcome"></span></p>
                       <input type="hidden" data-bind="value:employee_customer_profile_key">
                     </div>
                   </div>
@@ -392,38 +392,38 @@
 </div>
 
 <!-- Project 1 Edit -->
-<div style="display:none" id="editprojectwindow" title="Edit Project" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+<div style="display:none" id="editprojectwindow" title="Add or Edit Project" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
   <div class="oj-dialog-body">
     <div class="form-group">
       <label>Customer Name:</label>
       <input type="text" class="form-control" data-bind="value:project_customer_name">
     </div>
     <div class="form-group">
-      <label>Division:</label>
+      <label>Project Name (e.g. Fraud Analytics, Retail Innovations etc.):</label>
       <input type="text" class="form-control" data-bind="value:project_customer_division">
     </div>
     <div class="form-group">
-      <label>Industry:</label>
+      <label>Customer Industry (e.g. Financial, Retail,  Utilities, Public Sector etc.):</label>
       <input type="text" class="form-control" data-bind="value:project_industry">
     </div>
     <div class="form-group">
-      <label>Type:</label>
+      <label>Project Pillar (e.g. Information Management, Security, Cross-Pillar etc.):</label>
       <input type="text" class="form-control" data-bind="value:project_type_of_work">
     </div>
     <div class="form-group">
-      <label>URL:</label>
+      <label>Project Artifacts URL:</label>
       <input type="text" class="form-control" data-bind="value:project_artifacts_url">
     </div>
     <div class="form-group">
-      <label>Summary:</label>
+      <label>Summary of Project and Business Value:</label>
       <textarea class="form-control" data-bind="value:project_summary"></textarea>
     </div>
     <div class="form-group">
-      <label>Description:</label>
+      <label>Key Technology utilized in solution:</label>
       <textarea class="form-control" data-bind="value:project_description"></textarea>
     </div>
     <div class="form-group">
-      <label>Outcome:</label>
+      <label>Result of the Project:</label>
       <input type="text" class="form-control" data-bind="value:project_outcome">
     </div>
     <div class="form-group">
