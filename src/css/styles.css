@@ -1208,6 +1208,18 @@ li.oj-selected .oj-tabs-gen-div {
 	margin: 0 auto;
 	width: 75%
 }
+.meetteam a {
+	cursor: pointer;
+	
+}
+.meetteam a:link, .meetteam a:visited {
+	color: rgb(51, 51, 51)
+}
+
+.meetteam a:hover, .meetteam a:visited:hover {
+	color:#939699
+}
+
 
 @media (min-width: 1500px) {
 .container {
@@ -1563,13 +1575,12 @@ ul#profiletabs {
 }
 #slider {
 	top: 0%;
-	font-size:12px;
-	
+	font-size: 12px;
 }
-#slider .checkbox{
-	margin-top:0px;
-	margin-bottom:0px;
-	}
+#slider .checkbox {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 .watchvdo .fa-chevron-circle-right {
 	font-size: 24px;
 }
