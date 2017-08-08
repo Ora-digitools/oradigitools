@@ -56,14 +56,14 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       ]);
 
       isloggedin = function () {
-        if (ssoemail.length > 0) {
+		          if (ssoemail.length > 0) {
           document.getElementById('loginbutton').style.display = 'none';
           if (self.ssowindow != undefined) {
             console.log('closing sso window');
             self.ssowindow.close();
           }
-        } else {
-          document.getElementById('loginbutton').style.display = 'block';
+        } else { 
+          document.getElementById('loginbutton').style.display = 'inline-block';
         }
       }
 
@@ -72,11 +72,15 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       initsso = function () {
         if (ssoemail.length == 0) {
           // document.getElementById('ssodialog').style.display = 'block';
-          self.ssowindow = window.open("https://oim.oraclecorp.com");
+          self.ssowindow = window.open("http://solutionengineering.us.oracle.com/seaas/");
         }
       }
 
       getemailfromcookie = function () {
+
+        console.log('~~~~~~~~~~~~~~~  COOKIE  ~~~~~~~~~~~~~');
+        console.log(document.cookie);
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
         // get user email
         var user = document.cookie.split(';').map(function (x) {
           return x.trim().split('=');
@@ -99,7 +103,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       setInterval(function () {
         getemailfromcookie();
         isloggedin();
-      }, 1000);
+      }, 3000);
 
 
       // END OF SSO RELATED CODE

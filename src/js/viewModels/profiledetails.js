@@ -23,7 +23,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       self.achievementurl = ko.observable('');
       self.center = ko.observable('');
       self.pillar = ko.observable('');
-      self.mobile = ko.observable('');
+      self.mobile_phone = ko.observable('');
       self.uuid = "";
       self.profilelink = 'http://solutionengineering.us.oracle.com:7777/site/?root=profiledetails#';
       self.effectOptions = {};
@@ -87,7 +87,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
         cost_center: ko.observable(),
         pillar: ko.observable(),
         center: ko.observable(),
-        mobile: ko.observable(),
+        type: ko.observable(),
         mgr_email: ko.observable(),
         mgr_display_name: ko.observable(),
         profile_summary: ko.observable(),
@@ -235,18 +235,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profile().name(profiles.items[0].display_name);
             self.profile().work_email(profiles.items[0].u);
             self.profile().work_phone(profiles.items[0].work_phone != undefined ? profiles.items[0].work_phone : profiles.items[0].mobile_phone);
-            self.profile().mobile_phone(profiles.items[0].mobile_phone != undefined ? profiles.items[0].mobile_phone : profiles.items[0].work_phone);
+            self.profile().mobile_phone(profiles.items[0].mobile_phone);
+            self.mobile_phone(profiles.items[0].mobile_phone);
             self.profile().city(profiles.items[0].city);
             self.profile().state(profiles.items[0].state);
             self.profile().country(profiles.items[0].country);
             self.profile().uuid(profiles.items[0].uuid);
             self.profile().ou(profiles.items[0].ou);
+            self.profile().type(profiles.items[0].type);
             self.profile().cost_center(profiles.items[0].cost_center);
             self.profile().pillar(profiles.items[0].pillar);
-            self.profile().mobile(profiles.items[0].mobile);
             self.center(profiles.items[0].center);
             self.pillar(profiles.items[0].pillar);
-            self.mobile(profiles.items[0].mobile);
             self.profile().center(profiles.items[0].center);
             self.profile().mgr_email(profiles.items[0].mgr_email);
             self.profile().mgr_display_name(profiles.items[0].mgr_display_name);
@@ -292,7 +292,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       };
 
       self.iseditpermitted = function () {
-        if (self.profile().work_email() === ssoemail) {
+        if (self.profile().work_email() === ssoemail || (self.profile().work_email() === ssoemail && self.profile().type() == 'ADMIN')) {
           setssostatus('.ssoenabled', 'block');
         } else {
           setssostatus('.ssoenabled', 'none');
@@ -343,7 +343,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             employee_key: self.profile().employee_key(),
             pillar: self.profile().pillar(),
             center: self.profile().center(),
-            mobile: self.profile().mobile(),
+            mobile_phone: self.profile().mobile_phone(),
             profile_summary: self.profile().profile_summary()
 
           };
@@ -378,7 +378,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             employee_key: self.profile().employee_key(),
             pillar: self.profile().pillar(),
             center: self.profile().center(),
-            mobile: self.profile().mobile(),
+            mobile_phone: self.profile().mobile_phone(),
             profile_summary: self.profile().profile_summary()
           };
           debuglog(ko.toJSON(summary));
@@ -738,22 +738,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       };
 
       openIconuploder = function () {
-        // alert('click');
-        document.getElementById('uploadicondialog').style.display = 'block';
+        $("#uploadicondialog").ojDialog("open");
+
       }
       closeIconuploder = function () {
-        // alert('click');
-        document.getElementById('uploadicondialog').style.display = 'none';
+        $("#uploadicondialog").ojDialog("close");
       }
 
 
       openpersonalimageuploder = function () {
         // alert('click');
-        document.getElementById('uploadpersonalphotodialog').style.display = 'block';
+        // document.getElementById('uploadpersonalphotodialog').style.display = 'block';
+        $("#uploadpersonalphotodialog").ojDialog("open");
       }
       closepersonalimageuploder = function () {
         // alert('click');
-        document.getElementById('uploadpersonalphotodialog').style.display = 'none';
+        // document.getElementById('uploadpersonalphotodialog').style.display = 'none';
+        $("#uploadpersonalphotodialog").ojDialog("close");
       }
 
 

@@ -1056,7 +1056,7 @@ li.oj-selected .oj-tabs-gen-div {
 	border: 1px solid #ccd4d7;
 	padding: 20px;
 	font-weight: bold;
-	margin-top:20px;
+	margin-top: 20px;
 }
 .servicestitle {
 	background: #f29111;
@@ -1218,6 +1218,58 @@ li.oj-selected .oj-tabs-gen-div {
 .meetteam a:hover, .meetteam a:visited:hover {
 	color: #939699
 }
+.mentors{
+	height:310px;
+	overflow-y:scroll}
+.mentors img {
+	border: 2px solid rgb(239, 239, 239);
+	height: 80px;
+	width: 80px;
+}
+.selectedmentor img{
+	width:125px;
+	height:125px;
+	display:inline-block;
+	margin-bottom:10px;
+	border: 2px solid rgb(239, 239, 239);}
+	
+
+.mentors h4, .selectedmentor h4{
+	margin-bottom:0px;}	
+.mentorrow {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border-bottom: 1px solid rgb(239, 239, 239);
+	min-height: 90px;
+	padding-bottom: 10px;
+}
+
+.mentees img{
+	width:90px;
+	height:90px;
+	display:inline-block;
+	margin-bottom:10px;
+	border: 2px solid rgb(239, 239, 239);
+	}
+	
+#loginbutton{
+	display:none;
+	}	
+	
+.modal-header{
+	padding-top:5px;
+	padding-bottom:5px;
+	background:#F0F0F0}	
+	
+.modal-header h4{
+	font-size: 1.42857rem}	
+	
+.modal-content{
+	background:#f9f9f9;
+	border-radius:none;}	
+	
+#editskills .inputborder input{
+	border:1px solid rgb(200, 200, 200)}	
 
 @media (min-width: 1500px) {
 .container {
@@ -1590,11 +1642,10 @@ ul#profiletabs {
 	font-size: 14px;
 }
 .servicesicons div {
-	font-size:14px;
-	text-align:center;
-	min-height:50px;
+	font-size: 14px;
+	text-align: center;
+	min-height: 50px;
 }
-
 }
 
 @media (min-width: 1025px) {
