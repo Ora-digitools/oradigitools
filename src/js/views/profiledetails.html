@@ -92,7 +92,58 @@
                 </div>
                 <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
               </div>
+               
               <!-- Learning Interests -->
+               <div class="row">
+                <div class="col-sm-5"> 
+                  <!-- Mentors -->
+                  <div class="profileSection">
+                    <div class="greyBg profileSummaryh">Mentors </div>
+                    <div class="profileSummary selectedmentor">
+                      <div class="row">
+                        <div class="col-xs-6 text-center">
+                        
+                        <img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name<span class="">&nbsp;<button title="Remove Mentor" name="" data-bind="click:removementor" class="removementor">X</button></span></h4>
+                        </div>
+                        <div class="col-xs-6 text-center" style="position:relative">
+                       
+                        <img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name<span class="">&nbsp;<button title="Remove Mentor" name="" data-bind="click:removementor" class="removementor">X</button></span></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Mentors --> 
+                </div>
+                <div class="col-sm-7"> 
+                  <!-- Mentees -->
+                  <div class="profileSection">
+                    <div class="greyBg profileSummaryh">Mentees </div>
+                    <div class="profileSummary mentees">
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-2 text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Mentees --> 
+                </div>
+              </div>
+              
             </div>
             <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
               <!-- Share Profile -->
@@ -115,6 +166,73 @@
                 </div>
               </div>
               <!-- Organization -->
+               <!-- Mentors -->
+              <div class="profileSection">
+                <div class="greyBg profileSummaryh">Suggested Mentors</div>
+                <div class="profileSummary mentors"> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                        <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                         <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                        <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                         <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                         <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                </div>
+              </div>
+              <!-- Mentors --> 
             </div>
           </div>
           <!-- about Ends -->
@@ -700,6 +818,33 @@
 
     </div>
   </div>
+</div>
+<div id="dialogWrapper">
+  <div style="display:none" id="deletementor" title="Reason to delete the mentor?" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body">
+     <form id="form1">
+  <label for="basicSelect">Please select your reason to delete the mentor  </label>
+  <select id="basicSelect" data-bind="ojComponent: {component: 'ojSelect',
+                                                    value: val,
+                                                    rootAttributes: {style:'max-width:20em'}}">
+    <option value="tc">Training Completed</option>
+    <option value="ni">Not Interested</option>
+  </select>
+
+  <div>
+    <br/>
+   
+  </div>
+</form>
+     </div>
+     <div class="oj-dialog-footer">
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'OK'}"> </button>
+      </div>
+      
+  </div>
+  
+
 </div>
 <div id="enlargephoto" class="w3-modal w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'">
   <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>

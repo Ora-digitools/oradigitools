@@ -770,6 +770,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       closeIconuploder = function () {
         $("#uploadicondialog").ojDialog("close");
       }
+	  
+	  removementor = function() {
+                if (confirm('Delete Mentor?')) {
+                    $("#deletementor").ojDialog("open");
+                    self.handleOpen = $("#okButton").click(function() {
+                        $("#deletementor").ojDialog("close");
+                    });
+                    showdialog();
+
+                }
+            }
 
 
       openpersonalimageuploder = function () {
