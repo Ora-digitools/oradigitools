@@ -80,7 +80,7 @@
               <!-- Skills -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Skills
-                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openskilldialog">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled1" data-toggle="modal" data-bind="click:openskilldialog">Edit</button>
                 </div>
                 <div class="profileSummary skilltags" data-bind="foreach:skills"><div class="tags" data-bind="text:value,css:className"></div></div>
               </div>
@@ -413,15 +413,23 @@
       </div>
       <div class="form-group">
         <label for="pwd">Add Rating:&nbsp; </label>
-        <input id="slider-id" list="tickmarks" type="range" min="1" max="5" step="1" data-bind="value:ratting" />
+        
         <div data-bind="text:ratting" class="rating"></div>
-        <datalist id="tickmarks">
-          <option value="1" label="1">
-            <option value="2" label="2">
-              <option value="3" label="3">
-                <option value="4" label="4">
-                  <option value="5" label="5">
-        </datalist>
+        <div class="stars" id="starVin">
+  <form action="">
+    <input class="star star-5" id="star-5" type="radio" name="star" value="5">
+    <label class="star star-5" for="star-5"></label>
+    <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+    <label class="star star-4" for="star-4"></label>
+    <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+    <label class="star star-3" for="star-3"></label>
+    <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+    <label class="star star-2" for="star-2"></label>
+    <input class="star star-1" id="star-1" type="radio" name="star" value="1"/> 
+    <label class="star star-1" for="star-1"></label>
+  </form>
+  
+</div>
       </div>
       <button class="btn btn-default apply" data-bind="click:saveSkills">Add</button>
     </form>
