@@ -1362,6 +1362,7 @@ label.star:before {
 
 .skilltags{
 	word-wrap:break-word;
+	text-align:center;
 	}
 
 @media (min-width: 1500px) {
