@@ -294,7 +294,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
           setssostatus('.ssoenabled', 'block');
         } else {
-          setssostatus('.ssoenabled', 'block');
+          setssostatus('.ssoenabled', 'none');
         }
       }
 
