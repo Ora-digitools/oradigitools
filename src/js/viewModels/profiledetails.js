@@ -73,6 +73,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       self.profile({
         profileicon: ko.observable('https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png'), //'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png',
         employee_key: ko.observable(),
+	   className: ko.observable(),
         name: ko.observable(),
         title: ko.observable(),
         work_email: ko.observable(),
@@ -160,12 +161,38 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
 
             for (var i = 0; i < profiles.items[0].list_values.length; i++) {
               var skill = profiles.items[0].list_values[i];
+			  
               if (skill.category === 'Skills') {
+				  if (skill.scale === 5) {
+                                skill.className = 'size5';
+
+                            }
+
+                            if (skill.scale === 4) {
+                                skill.className = 'size4';
+
+                            }
+
+                            if (skill.scale === 3) {
+                                skill.className = 'size3';
+
+                            }
+
+                            if (skill.scale === 2) {
+                                skill.className = 'size2';
+
+                            }
+
+                            if (skill.scale === 1 || skill.scale == null) {
+                                skill.className = 'size1';
+
+                            }
                 self.skills_skills.push({
                   employee_profile_key: ko.observable(skill.employee_profile_key),
                   category: ko.observable(skill.category),
                   value: ko.observable(skill.value),
-                  desc_text: ko.observable(skill.desc_text)
+                  desc_text: ko.observable(skill.desc_text),
+				  className: skill.className, //edited by ash
                 });
                 skills_string = skills_string != undefined || skills_string.length > 0 ? skills_string + ";" + skill.value : skill.value;
               } else if (skill.category === 'Learning') {

@@ -82,7 +82,7 @@
                 <div class="greyBg profileSummaryh">Skills
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openskilldialog">Edit</button>
                 </div>
-                <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
+                <div class="profileSummary skilltags" data-bind="foreach:skills"><div class="tags" data-bind="text:value,css:className"></div></div>
               </div>
               <!-- Skills -->
               <!-- Learning Interests -->
