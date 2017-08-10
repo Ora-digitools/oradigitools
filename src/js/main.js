@@ -5,6 +5,10 @@
 'use strict';
 var debug=true;
 var ssoemail="";
+var usertype="";
+var dorefresh=true;
+var uuid="";
+var profilelink = 'http://solutionengineering.us.oracle.com/site/?root=profiledetails#';
 /**
  * Example of Require.js boostrap javascript
  */

@@ -57,7 +57,7 @@
           <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick2"> Top Projects
             <div class="bluetab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
           </li>
-          <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick3"> Outside Interests
+          <li class="col-xs-4 nopaddingxs" data-bind="click: tabClick3"> Interests & Hobbies
             <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
           </li>
         </ul>
@@ -80,7 +80,7 @@
               <!-- Skills -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">Skills
-                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editskills">Edit</button>
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openskilldialog">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:skills"><span class="orangeTags" data-bind="text:value"></span></div>
               </div>
@@ -158,7 +158,7 @@
             <div class="col-sm-12 nopadding">
               <!-- Uploads -->
               <div class="profileSection">
-                <div class="greyBg profileSummaryh">Recent Uploads
+                <div class="greyBg profileSummaryh">Personal Gallery
                   <button type="button" name="ssoenabled" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openpersonalimageuploder">Upload</button>
                 </div>
                 <div class="profileSummary ">
@@ -179,7 +179,7 @@
             <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
               <!-- Outside Interests -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Outside Interests and hobbies
+                <div class="greyBg profileSummaryh">Hobbies
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:interests"> <span class="grayTags" data-bind="text:value"></span> </div>
@@ -187,7 +187,7 @@
               <!-- Outside Interests -->
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Outside Achievements
+                <div class="greyBg profileSummaryh">Achievements
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editoutsideachievements">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:achivements">
@@ -280,6 +280,34 @@
     </div>
   </div>
 </div>
+<div style="display:none" id="skilldialog" title="Add Skills" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
+  <div class="oj-dialog-body">
+    <form>
+      <div class="oj-flex" data-bind="foreach:profile().skills">
+        <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteskill,attr:{id:employee_profile_key}"> X</span>          </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Add Skills:&nbsp;</label>
+        <input id="combobox2" data-bind="ojComponent: {component: 'ojCombobox', 
+                                  options: groupData, 
+                                  rootAttributes: {style:'max-width:20em'}}" />
+        <input type="text" placeholder="Skills" data-bind="value:newSkill" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Add Rating:&nbsp; </label>
+        <input id="slider-id" list="tickmarks" type="range" min="1" max="5" step="1" data-bind="value:ratting" />
+        <div data-bind="text:ratting" class="rating"></div>
+        <datalist id="tickmarks">
+          <option value="1" label="1">
+            <option value="2" label="2">
+              <option value="3" label="3">
+                <option value="4" label="4">
+                  <option value="5" label="5">
+        </datalist>
+      </div>
+      <button class="btn btn-default apply" data-bind="click:saveSkills">Add</button>
+    </form>
+  </div>
 </div>
 <!-- Location Edit -->
 <div class="modal fade" id="editlocation" role="dialog">
@@ -450,7 +478,7 @@
     <div class="oj-flex">
       <button class="btn btn-default apply oj-sm-5" data-dismiss="modal" data-bind="click:saveproject">Save</button>
       <p class="oj-sm-2"></p>
-      
+
 
     </div>
   </div>

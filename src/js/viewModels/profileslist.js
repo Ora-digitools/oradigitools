@@ -15,7 +15,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.url = baseurl + "GetUserProfiles";
       self.next = ko.observable();
       self.prev = ko.observable();
-      // self.data = ko.observableArray();
+      self.data = ko.observableArray();
       self.renderData = ko.observableArray();
       self.currentItemId = ko.observable();
 
@@ -58,38 +58,39 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         console.log(url);
         $.getJSON(url).
           then(function (profiles) {
+            dorefresh = false;
             console.log(">> " + profiles.items.length);
-            // self.data([]);
-            self.renderData([]);
+            self.data([]);
             var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
             var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
             self.next = (nxturl);
             self.prev = (prevurl);
-            $.each(profiles.items, function () {
-
+            for (var i = 0; i < profiles.items.length; i++) {
+              var obj = profiles.items[i];
               var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
-              if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-                imageurl = this.profile_photo_url;
+              if (!obj.profile_photo_url.endsWith("GetPhoto/")) {
+                imageurl = obj.profile_photo_url;
               }
               var profile = {
                 icon: imageurl,
-                name: this.display_name,
-                title: this.title,
-                work_email: this.u,
-                work_phone: this.work_phone,
-                mobile_phone: this.mobile_phone,
-                city: this.city,
-                state: this.state,
-                country: this.country,
-                uuid: this.uuid
+                name: obj.display_name,
+                title: obj.title,
+                work_email: obj.u,
+                work_phone: obj.work_phone,
+                mobile_phone: obj.mobile_phone,
+                city: obj.city,
+                state: obj.state,
+                country: obj.country,
+                uuid: obj.uuid
               };
-              // self.data.push(profile);
-              self.renderData.push(profile);
-              hidedialog();
-              debuglog(ko.toJSON(self.renderData()));
-              console.log("Parse completed");
-            });
+              self.data.push(profile);
+            }
 
+            console.log("Parse completed");
+
+            self.renderData(self.data.slice());
+            debuglog(ko.toJSON(self.renderData()));
+            hidedialog();
 
           }).fail(function (xhr, textStatus, err) {
             alert(err);
@@ -130,39 +131,59 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             self.next = (nxturl);
             self.prev = (prevurl);
             checkvisible();
-            $.each(profiles.items, function () {
 
+            for (var i = 0; i < profiles.items.length; i++) {
+              var obj = profiles.items[i];
               var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
-              if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-                imageurl = this.profile_photo_url;
+              if (!obj.profile_photo_url.endsWith("GetPhoto/")) {
+                imageurl = obj.profile_photo_url;
               }
-              // var profilejson = stripkeys(JSON.stringify(this));
               var profile = {
                 icon: imageurl,
-                name: this.display_name,
-                title: this.title,
-                work_email: this.u,
-                work_phone: this.work_phone,
-                mobile_phone: this.mobile_phone,
-                city: this.city,
-                state: this.state,
-                country: this.country,
-                uuid: this.uuid
+                name: obj.display_name,
+                title: obj.title,
+                work_email: obj.u,
+                work_phone: obj.work_phone,
+                mobile_phone: obj.mobile_phone,
+                city: obj.city,
+                state: obj.state,
+                country: obj.country,
+                uuid: obj.uuid
               };
-              // self.data.push(profile);
-              self.renderData.push(profile);
+              self.data.push(profile);
+            }
 
-              console.log("Parse completed");
-              debuglog(ko.toJSON(self.renderData()));
-              hidedialog();
-            });
+            self.renderData(self.data.slice());
+            console.log("Parse completed");
+            debuglog(ko.toJSON(self.renderData()));
+            hidedialog();
+            // $.each(profiles.items, function () {
+
+            //   var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
+            //   if (!this.profile_photo_url.endsWith("GetPhoto/")) {
+            //     imageurl = this.profile_photo_url;
+            //   }
+            //   // var profilejson = stripkeys(JSON.stringify(this));
+            //   var profile = {
+            //     icon: imageurl,
+            //     name: this.display_name,
+            //     title: this.title,
+            //     work_email: this.u,
+            //     work_phone: this.work_phone,
+            //     mobile_phone: this.mobile_phone,
+            //     city: this.city,
+            //     state: this.state,
+            //     country: this.country,
+            //     uuid: this.uuid
+            //   };
+            //   // self.data.push(profile);
+            //   self.renderData.push(profile);
 
           }).fail(function (xhr, textStatus, err) {
             alert(err);
             hidedialog();
           });
       }
-
 
       filteredhubs = function (desc) {
 
@@ -248,14 +269,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
       self.handleAttached = function (info) {
         console.log('loading profile list. . .');
-        self.getFilters();
+
         self.router = oj.Router.rootInstance;
         var retrievedobject = self.router.retrieve();
         if (retrievedobject != undefined && retrievedobject.length > 0) {
-          selectedLocations=retrievedobject;
+          selectedLocations = retrievedobject;
+          // self.getFilters();
           self.searchhandler();
         } else {
-          self.getUserList();
+          if (dorefresh) {
+            self.getFilters();
+            self.getUserList();
+          }
         }
       }
 

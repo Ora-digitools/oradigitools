@@ -6,7 +6,7 @@
  * Your dashboard ViewModel code goes here
  * 
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'ojs/ojtabs', 'ojs/ojconveyorbelt', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojbutton', 'ojs/ojdialog', 'ojs/ojmoduleanimations', 'ojs/ojanimation', 'ojs/ojselectcombobox'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombobox', 'ojs/ojtabs', 'ojs/ojconveyorbelt', 'ojs/ojdialog'],
   function (oj, ko, $) {
 
     function DashboardViewModel() {
@@ -25,7 +25,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       self.pillar = ko.observable('');
       self.mobile_phone = ko.observable('');
       self.uuid = "";
-      self.profilelink = 'http://solutionengineering.us.oracle.com:7777/site/?root=profiledetails#';
       self.effectOptions = {};
       self.tabClick1 = function (data, event) {
         // Invoke the animation effect method with options
@@ -256,7 +255,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
             self.profile().flatinterests(interests_string);
             self.profile().flatachivements(achivement_string);
             self.profile().flatlinks(link_string);
-            self.profilelink = self.profilelink.split('#')[0] + '#' + self.uuid;
+            profilelink = profilelink.split('#')[0] + '#' + self.uuid;
             console.log("profile created");
             debuglog(ko.toJSON(self.profile()));
             self.iseditpermitted();
@@ -292,10 +291,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       };
 
       self.iseditpermitted = function () {
-        if (self.profile().work_email() === ssoemail || (self.profile().work_email() === ssoemail && self.profile().type() == 'ADMIN')) {
+        if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
           setssostatus('.ssoenabled', 'block');
         } else {
-          setssostatus('.ssoenabled', 'none');
+          setssostatus('.ssoenabled', 'block');
         }
       }
 
@@ -1079,7 +1078,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
       }
 
       shareprofile = function () {
-        window.location.href = "mailto:?subject=Sharing%20" + self.profile().name() + "%20Profile&body=Check profile " + self.profilelink;
+        window.location.href = "mailto:?subject=Sharing%20" + self.profile().name() + "%20Profile&body=Check profile " + profilelink;
       }
 
       editcancel = function () {
@@ -1110,6 +1109,55 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojslider', 'ojs/ojknockout', 'o
           console.log('-------------------------');
         }
       };
+
+      //------------  END OF 1ST PHASE IMPLEMENTATION -------------//
+
+
+      //--------------- Mentor and mentee -------------------//
+
+      //~~~~~~~~~~~  Get Skill List ~~~~~~~~~~~~//
+      self.getSkills = function () {
+        self.categoryskillmap = new Map();
+        self.groupData = ko.observableArray([]);
+        $.getJSON(baseurl + "GetEmployeeSkill").
+          then(function (skills) {
+            for (var i = 0; i < skills.items.length; i++) {
+              var skill = skills.items[i];
+              var entry = self.categoryskillmap.get(skill.category);
+              if (entry != undefined) {
+                entry.push(skill.skill);
+              } else {
+                var subskill = ko.observableArray([]);
+                subskill.push(skill.skill);
+                self.categoryskillmap.set(skill.category, subskill);
+              }
+            }
+
+            self.categoryskillmap.forEach(function (skills, category) {
+              alert(data());
+              var skillarray = observableArray([]);
+              for (skillname in skills) {
+                var skillobj = {
+                  skill: skillname
+                };
+                skillarray.push
+              }
+            });
+          });
+      }
+
+      openskilldialog = function () {
+        $("#skilldialog").ojDialog("open");
+
+      }
+      closeskilldialog = function () {
+        $("#skilldialog").ojDialog("close");
+      }
+
+
+      // GET THE SKILLS
+      self.getSkills();
+
     }
 
     return new DashboardViewModel();
