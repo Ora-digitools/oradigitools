@@ -79,15 +79,15 @@
               <!-- Profile summary -->
               <!-- Skills -->
               <div class="profileSection">
-                <div class="greyBg profileSummaryh">Skills
-                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled1" data-toggle="modal" data-bind="click:openskilldialog">Edit</button>
+                <div class="greyBg profileSummaryh">My Skills
+                  <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openskilldialog">Edit</button>
                 </div>
                 <div class="profileSummary skilltags" data-bind="foreach:skills"><div class="tags" data-bind="text:value,css:className"></div></div>
               </div>
               <!-- Skills -->
               <!-- Learning Interests -->
               <div class="profileSection">
-                <div class="greyBg profileSummaryh">Learning Interests
+                <div class="greyBg profileSummaryh">My Learning Interests
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#learninginterests">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
@@ -98,7 +98,7 @@
                 <div class="col-sm-5"> 
                   <!-- Mentors -->
                   <div class="profileSection">
-                    <div class="greyBg profileSummaryh">Mentors </div>
+                    <div class="greyBg profileSummaryh">My Mentors </div>
                     <div class="profileSummary selectedmentor">
                       <div class="row">
                         <div class="col-xs-6 text-center">
@@ -119,7 +119,7 @@
                 <div class="col-sm-7"> 
                   <!-- Mentees -->
                   <div class="profileSection">
-                    <div class="greyBg profileSummaryh">Mentees </div>
+                    <div class="greyBg profileSummaryh">My Mentees </div>
                     <div class="profileSummary mentees">
                       <div class="row">
                         <div class="col-xs-6 col-sm-4 col-lg-2 text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
@@ -276,7 +276,7 @@
             <div class="col-sm-12 nopadding">
               <!-- Uploads -->
               <div class="profileSection">
-                <div class="greyBg profileSummaryh">Personal Gallery
+                <div class="greyBg profileSummaryh">My Personal Gallery
                   <button type="button" name="ssoenabled" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openpersonalimageuploder">Upload</button>
                 </div>
                 <div class="profileSummary ">
@@ -297,7 +297,7 @@
             <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
               <!-- Outside Interests -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Hobbies
+                <div class="greyBg profileSummaryh">My Hobbies
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editoutsideinterests">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:interests"> <span class="grayTags" data-bind="text:value"></span> </div>
@@ -305,7 +305,7 @@
               <!-- Outside Interests -->
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Achievements
+                <div class="greyBg profileSummaryh">My Achievements
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editoutsideachievements">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:achivements">
@@ -320,7 +320,7 @@
 
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">Links
+                <div class="greyBg profileSummaryh">Outside Links
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editlinks">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:links">
@@ -412,7 +412,7 @@
         <input type="text" placeholder="Skills" data-bind="value:newSkill" class="form-control">
       </div>
       <div class="form-group">
-        <label for="pwd">Add Rating:&nbsp; </label>
+        
         
         <div data-bind="text:ratting" class="rating"></div>
         <div class="stars" id="starVin">
