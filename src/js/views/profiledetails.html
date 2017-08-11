@@ -69,7 +69,7 @@
             <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
               <!-- Profile summary -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">My Profile summary
+                <div class="greyBg profileSummaryh">Profile summary
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editsummary">Edit</button>
                 </div>
                 <div class="profileSummary">
@@ -77,6 +77,8 @@
                 </div>
               </div>
               <!-- Profile summary -->
+              <div class="row">
+                <div class="col-sm-5">
               <!-- Skills -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">My Skills
@@ -86,12 +88,14 @@
                         component: 'ojTagCloud',
                                 layout: 'cloud',
                                 items: tags
-                        }" style="max-width:800px;height:50px;margin-left:auto;margin-right:auto;">
+                        }" style="max-width:800px;height:250px;margin-left:auto;margin-right:auto;">
                 </div>
                 <!-- <div class="profileSummary" data-bind="foreach:skills">
                   <span class="orangeTags" data-bind="text:value">
                     </span></div> -->
               </div>
+              </div>
+              <div class="col-sm-7">
               <!-- Skills -->
               <!-- Learning Interests -->
               <div class="profileSection" data-bind="with:profile">
@@ -100,7 +104,58 @@
                 </div>
                 <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
               </div>
+              </div>
+              </div>
               <!-- Learning Interests -->
+              <div class="row">
+                <div class="col-sm-5"> 
+                  <!-- Mentors -->
+                  <div class="profileSection">
+                    <div class="greyBg profileSummaryh">My Mentors </div>
+                    <div class="profileSummary selectedmentor">
+                      <div class="row">
+                        <div class="col-xs-6 text-center">
+                        
+                        <img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name<span class="">&nbsp;<button title="Remove Mentor" name="" data-bind="click:removementor" class="removementor">X</button></span></h4>
+                        </div>
+                        <div class="col-xs-6 text-center" style="position:relative">
+                       
+                        <img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name<span class="">&nbsp;<button title="Remove Mentor" name="" data-bind="click:removementor" class="removementor">X</button></span></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Mentors --> 
+                </div>
+                <div class="col-sm-7"> 
+                  <!-- Mentees -->
+                  <div class="profileSection">
+                    <div class="greyBg profileSummaryh">My Mentees </div>
+                    <div class="profileSummary mentees">
+                      <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-2 text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2  text-center menteeblock"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive">
+                          <h4>Name</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Mentees --> 
+                </div>
+              </div>
             </div>
             <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
               <!-- Share Profile -->
@@ -123,6 +178,73 @@
                 </div>
               </div>
               <!-- Organization -->
+                <!-- Mentors -->
+              <div class="profileSection">
+                <div class="greyBg profileSummaryh">Suggested Mentors</div>
+                <div class="profileSummary mentors"> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                        <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                         <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                        <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                         <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                  <!-- row -->
+                  <div class="col-xs-12 mentorrow nopadding">
+                    <div class="col-xs-4 nopadding"><img src="css/images/seservce_img.jpg" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h4>Name</h4>
+                      (skills)
+                      <div class="col-xs-12 nopadding">
+                         <button>+ ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row --> 
+                </div>
+              </div>
+              <!-- Mentors -->
             </div>
           </div>
           <!-- about Ends -->
@@ -210,7 +332,7 @@
 
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
-                <div class="greyBg profileSummaryh">My Links
+                <div class="greyBg profileSummaryh">Outside Links
                   <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-target="#editlinks">Edit</button>
                 </div>
                 <div class="profileSummary" data-bind="foreach:links">

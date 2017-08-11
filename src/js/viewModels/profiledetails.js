@@ -782,6 +782,17 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojtagcloud', 'ojs/ojknockout', '
       }
 
 
+removementor = function() {
+                if (confirm('Delete Mentor?')) {
+                    $("#deletementor").ojDialog("open");
+                    self.handleOpen = $("#okButton").click(function() {
+                        $("#deletementor").ojDialog("close");
+                    });
+                    showdialog();
+
+                }
+            }
+
       openpersonalimageuploder = function () {
         // alert('click');
         // document.getElementById('uploadpersonalphotodialog').style.display = 'block';
