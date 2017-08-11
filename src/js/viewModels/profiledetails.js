@@ -6,7 +6,7 @@
  * Your dashboard ViewModel code goes here
  * 
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombobox', 'ojs/ojtabs', 'ojs/ojconveyorbelt', 'ojs/ojdialog'],
+define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojtagcloud', 'ojs/ojknockout', 'ojs/ojgauge', 'ojs/ojselectcombobox', 'ojs/ojtabs', 'ojs/ojconveyorbelt', 'ojs/ojdialog'],
   function (oj, ko, $) {
 
     function DashboardViewModel() {
@@ -69,11 +69,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       self.project_outcome = ko.observable();
       // END OF PROKJECT VARIABLE
 
+      // TAG CLOUD
+      self.tags = ko.observableArray([]);
+      //---- END ----//
+
+      // MENTOR AND MENTEE variable
+      self.skillarray = ko.observableArray([]);
+      this.thresholdValues = [{ max: 1, shortDesc: 'Familier' },
+      { max: 2, shortDesc: 'Needs Improvement' },
+      { max: 3, shortDesc: 'Proficient' },
+      { max: 4, shortDesc: 'Expert' },
+      { max: 5, shortDesc: 'Outstanding' }];
+      //----- END -----//
+
 
       self.profile({
         profileicon: ko.observable('https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png'), //'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png',
         employee_key: ko.observable(),
-	   className: ko.observable(),
         name: ko.observable(),
         title: ko.observable(),
         work_email: ko.observable(),
@@ -161,38 +173,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
 
             for (var i = 0; i < profiles.items[0].list_values.length; i++) {
               var skill = profiles.items[0].list_values[i];
-			  
               if (skill.category === 'Skills') {
-				  if (skill.scale === 5) {
-                                skill.className = 'size5';
-
-                            }
-
-                            if (skill.scale === 4) {
-                                skill.className = 'size4';
-
-                            }
-
-                            if (skill.scale === 3) {
-                                skill.className = 'size3';
-
-                            }
-
-                            if (skill.scale === 2) {
-                                skill.className = 'size2';
-
-                            }
-
-                            if (skill.scale === 1 || skill.scale == null) {
-                                skill.className = 'size1';
-
-                            }
                 self.skills_skills.push({
                   employee_profile_key: ko.observable(skill.employee_profile_key),
                   category: ko.observable(skill.category),
                   value: ko.observable(skill.value),
-                  desc_text: ko.observable(skill.desc_text),
-				  className: skill.className, //edited by ash
+                  scale: ko.observable(skill.scale)
                 });
                 skills_string = skills_string != undefined || skills_string.length > 0 ? skills_string + ";" + skill.value : skill.value;
               } else if (skill.category === 'Learning') {
@@ -271,8 +257,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
             self.profile().type(profiles.items[0].type);
             self.profile().cost_center(profiles.items[0].cost_center);
             self.profile().pillar(profiles.items[0].pillar);
-            self.center(profiles.items[0].center);
-            self.pillar(profiles.items[0].pillar);
+            self.center().push(profiles.items[0].center);
+            self.pillar().push(profiles.items[0].pillar);
             self.profile().center(profiles.items[0].center);
             self.profile().mgr_email(profiles.items[0].mgr_email);
             self.profile().mgr_display_name(profiles.items[0].mgr_display_name);
@@ -286,10 +272,26 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
             console.log("profile created");
             debuglog(ko.toJSON(self.profile()));
             self.iseditpermitted();
+            self.settagcloud();
             hidedialog();
+
 
           });
       }
+
+      // SETTING UP TAG CLOUDS FOR SKILLS
+      self.settagcloud = function () {
+        self.tags([]);
+        for (var i = 0; i < self.skills_skills().length; i++) {
+          var network = self.skills_skills()[i];
+          self.tags.push({
+            id: network.value(),
+            label: network.value(),
+            value: network.scale()
+          });
+        }
+      }
+
 
       self.getpersonalphotos = function () {
         showdialog();
@@ -308,6 +310,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       }
 
       self.handleAttached = function (info) {
+        
         self.iseditpermitted();
         if (window.location.hash) {
           self.uuid = window.location.hash.replace('#', '');
@@ -361,14 +364,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       }
 
 
+
+
+
       //------- SAVE PROFILE LOCATION INFORMATION ------------
       saveprofilepillarinfo = function () {
-        if (self.profile().pillar().length > 0 && self.profile().center().length > 0) {
+        closeeditprofiledialog();
+        if (self.pillar()[0].length > 0 && self.center()[0].length > 0) {
           showdialog();
           var location = {
             employee_key: self.profile().employee_key(),
-            pillar: self.profile().pillar(),
-            center: self.profile().center(),
+            pillar: self.pillar()[0],
+            center: self.center()[0],
             mobile_phone: self.profile().mobile_phone(),
             profile_summary: self.profile().profile_summary()
 
@@ -448,7 +455,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
 
         updatedSkillList.push({
           employee_profile_key: '',
-          value: self.newSkill(),
+          value: self.newSkill()[0],
           scale: self.ratting(),
           category: 'Skills',
         });
@@ -459,7 +466,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
           profileUpdates: updatedSkillList
         });
 
-        debuglog(ko.toJSON(requestdata));
+        console.log(ko.toJSON(requestdata));
 
         //     // SEND TO SERVER
         $.ajax({
@@ -471,7 +478,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
           success: function (data) {
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
-            self.newSkill("");
+            self.newSkill([]);
             self.ratting(1);
             hidedialog();
           }
@@ -513,7 +520,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
           success: function (data) {
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
-            self.newSkill("");
+            self.newSkill([]);
             self.ratting(1);
             hidedialog();
           }
@@ -530,45 +537,48 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
 
         var updatedSkillList = ko.observableArray([]);
         var requestdata = ko.observable();
-
-        for (var i = 0; i < self.skills_learning().length; i++) {
-          updatedSkillList.push(self.skills_learning()[i]);
-        }
-
-
-        updatedSkillList.push({
-          employee_profile_key: '',
-          value: self.newSkill(),
-          category: 'Learning',
-        });
-
-        requestdata = ({
-          employee_key: self.profile().employee_key(),
-          category: 'Learning',
-          profileUpdates: updatedSkillList
-        });
-
-        debuglog(ko.toJSON(requestdata));
-
-        //     // SEND TO SERVER
-        $.ajax({
-          url: baseurl + 'UpdateProfile',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(requestdata),
-          success: function (data) {
-            self.getProfile(self.uuid);
-            //alert("Information saved successfully!");
-            self.newSkill("");
-            self.ratting(1);
-            hidedialog();
+        if (self.skills_learning().length < 3) {
+          for (var i = 0; i < self.skills_learning().length; i++) {
+            updatedSkillList.push(self.skills_learning()[i]);
           }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-          self.getProfile(self.uuid);
 
-        });
+
+          updatedSkillList.push({
+            employee_profile_key: '',
+            value: self.newSkill()[0],
+            category: 'Learning',
+          });
+
+          requestdata = ({
+            employee_key: self.profile().employee_key(),
+            category: 'Learning',
+            profileUpdates: updatedSkillList
+          });
+
+          debuglog(ko.toJSON(requestdata));
+
+          //     // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'UpdateProfile',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(requestdata),
+            success: function (data) {
+              self.getProfile(self.uuid);
+              //alert("Information saved successfully!");
+              self.newSkill([]);
+              self.ratting(1);
+              hidedialog();
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+            self.getProfile(self.uuid);
+
+          });
+        } else {
+          alert("At max you can add upto three learning exterests");
+        }
       }
 
       deletelearning = function (event, ui) {
@@ -770,17 +780,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       closeIconuploder = function () {
         $("#uploadicondialog").ojDialog("close");
       }
-	  
-	  removementor = function() {
-                if (confirm('Delete Mentor?')) {
-                    $("#deletementor").ojDialog("open");
-                    self.handleOpen = $("#okButton").click(function() {
-                        $("#deletementor").ojDialog("close");
-                    });
-                    showdialog();
-
-                }
-            }
 
 
       openpersonalimageuploder = function () {
@@ -1157,6 +1156,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       self.getSkills = function () {
         self.categoryskillmap = new Map();
         self.groupData = ko.observableArray([]);
+        self.selectedOption = ko.observable();
         $.getJSON(baseurl + "GetEmployeeSkill").
           then(function (skills) {
             for (var i = 0; i < skills.items.length; i++) {
@@ -1172,18 +1172,27 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
             }
 
             self.categoryskillmap.forEach(function (skills, category) {
-              alert(data());
-              var skillarray = observableArray([]);
-              for (skillname in skills) {
+              var categoryObj = ko.observable();
+              var categoryskillarray = ko.observableArray([]);
+              categoryObj = {
+                label: category,
+                children: categoryskillarray
+              };
+
+              for (var i = 0; i < skills().length; i++) {
                 var skillobj = {
-                  skill: skillname
+                  value: skills()[i]
                 };
-                skillarray.push
+                categoryskillarray.push(skillobj);
               }
+              self.skillarray.push(categoryObj);
             });
+
+            // console.log(ko.toJSON(self.skillarray));
           });
       }
 
+      // --------------- EDIT DIALOG FOR SKILLS -----------------//
       openskilldialog = function () {
         $("#skilldialog").ojDialog("open");
 
@@ -1191,7 +1200,26 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
       closeskilldialog = function () {
         $("#skilldialog").ojDialog("close");
       }
+      //------------------------------  END  ------------------------------// 
+      // --------------- EDIT DIALOG FOR LEARNING SKILLS -----------------//
+      openlearningskilldialog = function () {
+        $("#learningskilldialog").ojDialog("open");
 
+      }
+      closelearningskilldialog = function () {
+        $("#learningskilldialog").ojDialog("close");
+      }
+      //------------------------------  END  ------------------------------//
+      // --------------- EDIT DIALOG FOR PROFILE LOCATION -----------------//
+      openeditprofiledialog = function () {
+        $("#editprofiledialog").ojDialog("open");
+
+      }
+      closeeditprofiledialog = function () {
+        $("#editprofiledialog").ojDialog("close");
+      }
+
+      //------------------------------  END  ------------------------------//
 
       // GET THE SKILLS
       self.getSkills();

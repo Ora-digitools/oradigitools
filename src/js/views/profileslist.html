@@ -8,7 +8,7 @@
 
 <!-- Start Faces -->
 <div class="row faces">
-  <div class="container">
+  <div class="container" id="view">
   <div id="dialog" class="oj-flex" style="display: none;text-align:center">
                       <div class="oj-sm-12">
                                             
@@ -16,7 +16,7 @@
 <span class="sr-only">Loading...</span>
                       </div>
                     </div>
-    <ul id="listview" aria-label="list using array" data-bind="ojComponent: { 
+    <ul class="oj-flex" id="listview" aria-label="list using array"   data-bind="ojComponent: { 
             component: 'ojListView', data: dataSource, selection: currentItemId,
             item: {template: 'server_template'}, 
             selectionMode: 'single',
@@ -25,7 +25,7 @@
     </ul>
   </div>
   <div id="page">
-    <button class="apply" data-bind="click:loadFirstPage">FIRST</button>
+    <button class="apply" name="navbtn" id="FIRST" data-bind="click:loadFirstPage">FIRST</button>
     <button class="apply" name="navbtn" id='PREV' data-bind="click:loadPrevPage">PREV</button>
     <button class="apply" name="navbtn" id='NEXT' data-bind="click:loadNextPage">NEXT</button>
   </div>
@@ -33,20 +33,19 @@
 
 <!-- Filter -->
 <script type="text/html" id="server_template">
-  <li data-bind="attr: {id: $data['uuid']}">
-    <div class="col-sm-4 col-md-3 col-lg-2 face">
-
-      <div class="col-sm-12 nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}"></img>
+  <li data-bind="attr: {id: $data['uuid']}" class="oj-sm-12 oj-md-4 oj-lg-3 oj-xl-2 oj-col">
+   <div class=" face">
+      <div class="nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}"></img>
       </div>
-      <div class="col-sm-12 nopadding name"><span class="header bold" data-bind="text:name"></span></div>
-      <div class="col-sm-12 nopadding title"><span data-bind="text: title"></span></div>
-      <div class="col-sm-12 nopadding social"><span data-bind="if: work_phone"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a></span>
+                  <div class="nopadding name"><span class="header bold" data-bind="text:name"></span></div>
+                  <div class="nopadding title"><span data-bind="text: title"></span></div>
+      <div class="nopadding social"><span data-bind="if: work_phone"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a></span>
         <span data-bind="if: work_email"><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></span>
       </div>
-    </div>
   </li>
 
 </script>
+
 
 <button class="fixedButton" id="fixb" data-bind="click:openthefilterpanel"><img src="css/images/FILTER1.svg" class="img-responsive"></button>
 <div id="slider" class="transition">

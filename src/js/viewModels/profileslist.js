@@ -55,12 +55,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         selectedPillars = selectedPillars.length > 0 ? selectedPillars : 'All';
         searchkey = searchkey.length > 0 ? searchkey : 'All';
         var url = baseurl + 'SearchProfiles?hub=' + selectedLocations + '&pillar=' + selectedPillars + '&search=' + searchkey;
+        self.data([]);
         console.log(url);
         $.getJSON(url).
           then(function (profiles) {
             dorefresh = false;
             console.log(">> " + profiles.items.length);
-            self.data([]);
             var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
             var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
             self.next = (nxturl);
@@ -87,7 +87,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             }
 
             console.log("Parse completed");
-
+            self.renderData([]);
             self.renderData(self.data.slice());
             debuglog(ko.toJSON(self.renderData()));
             hidedialog();
@@ -123,9 +123,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
         showdialog();
         $.getJSON(self.url).
           then(function (profiles) {
-            console.log(">> " + profiles.items.length);
-            // self.data([]);
-            self.renderData([]);
+            debuglog(">> " + self.url);
+            self.data([]);
+
             var nxturl = profiles.next != undefined ? profiles.next.$ref : null;
             var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
             self.next = (nxturl);
@@ -152,34 +152,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
               };
               self.data.push(profile);
             }
-
+            self.renderData([]);
             self.renderData(self.data.slice());
-            console.log("Parse completed");
+            debuglog("Parse completed");
             debuglog(ko.toJSON(self.renderData()));
             hidedialog();
-            // $.each(profiles.items, function () {
-
-            //   var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
-            //   if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-            //     imageurl = this.profile_photo_url;
-            //   }
-            //   // var profilejson = stripkeys(JSON.stringify(this));
-            //   var profile = {
-            //     icon: imageurl,
-            //     name: this.display_name,
-            //     title: this.title,
-            //     work_email: this.u,
-            //     work_phone: this.work_phone,
-            //     mobile_phone: this.mobile_phone,
-            //     city: this.city,
-            //     state: this.state,
-            //     country: this.country,
-            //     uuid: this.uuid
-            //   };
-            //   // self.data.push(profile);
-            //   self.renderData.push(profile);
 
           }).fail(function (xhr, textStatus, err) {
+            err=err.length==0?"Could not reach server, try again later":err;
             alert(err);
             hidedialog();
           });
@@ -208,15 +188,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       }
       setpaginationbutton = function () {
         if (self.prev != null && self.prev.length > 0) {
-          $("prevbtn").show();
+          $("PREV").show();
+          $("FIRST").show();
+
         } else {
-          $("prevbtn").hide();
+          $("PREV").hide();
+          $("FIRST").hide();
         }
 
         if (self.next != null && self.next.length > 0) {
-          $("nextbtn").show();
+          $("NEXT").show();
         } else {
-          $("nextbtn").hide();
+          $("NEXT").hide();
         }
       }
 
@@ -238,6 +221,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
         for (var i = 0; i < elms.length; i++) {
           if (elms[i].id === 'PREV') {
+            if (self.prev != null && self.prev.length > 0) {
+              elms[i].style.visibility = 'visible';
+            } else {
+              elms[i].style.visibility = 'hidden';
+            }
+          }
+          if (elms[i].id === 'FIRST') {
             if (self.prev != null && self.prev.length > 0) {
               elms[i].style.visibility = 'visible';
             } else {

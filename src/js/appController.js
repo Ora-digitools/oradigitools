@@ -55,12 +55,22 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
       ]);
 
+      // GET THE DOMAIN URL FOR PROFILE LINK
+      getprofilebaseurl=function(){
+        var url=window.location.href;
+        url=url.split('?')[0];
+        profilelink=url+'?root=profiledetails#';
+
+      }
+
+      getprofilebaseurl();
+
       isloggedin = function () {
         if (ssoemail.length > 0) {
           document.getElementById('loginbutton').style.display = 'none';
           document.getElementById('myprofile').style.display = 'inline-block';
           if (self.ssowindow != undefined) {
-            console.log('closing sso window');
+            debuglog('closing sso window');
             self.ssowindow.close();
           }
         } else {
@@ -77,15 +87,15 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
           self.ssowindow = window.open("http://solutionengineering.us.oracle.com/seaas/");
         }
       }
-      gotomyprofile=function(){
-        self.ssowindow = window.open(profilelink+uuid,"_self");
+      gotomyprofile = function () {
+        self.ssowindow = window.open(profilelink + uuid, "_self");
       }
 
       getemailfromcookie = function () {
 
-        console.log('~~~~~~~~~~~~~~~  COOKIE  ~~~~~~~~~~~~~');
-        console.log(document.cookie);
-        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+        // debuglog('~~~~~~~~~~~~~~~  COOKIE  ~~~~~~~~~~~~~');
+        // debuglog(document.cookie);
+        // debuglog('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
         // get user email
         var user = document.cookie.split(';').map(function (x) {
           return x.trim().split('=');
@@ -108,12 +118,12 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       }
 
       getusertype = function () {
-        $.getJSON(baseurl + "GetEmployeeType/"+ssoemail).
+        $.getJSON(baseurl + "GetEmployeeType/" + ssoemail).
           then(function (hubs) {
             $.each(hubs.items, function () {
-              console.log(this.type);
-              usertype=this.type;
-              uuid=this.uuid;
+              debuglog(this.type);
+              usertype = this.type;
+              uuid = this.uuid;
             })
           });
       }
@@ -134,7 +144,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         }
 
       }
-
+      debuglog = function (msg) {
+        if (debug) {
+          console.log('-------------------------');
+          console.log(msg);
+          console.log('-------------------------');
+        }
+      };
 
       // Drawer
       // Close offcanvas on medium and larger screens

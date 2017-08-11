@@ -8,7 +8,7 @@ var ssoemail="";
 var usertype="";
 var dorefresh=true;
 var uuid="";
-var profilelink = 'http://solutionengineering.us.oracle.com/site/?root=profiledetails#';
+var profilelink = '';
 /**
  * Example of Require.js boostrap javascript
  */
