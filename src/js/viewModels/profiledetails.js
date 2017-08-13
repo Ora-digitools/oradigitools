@@ -1311,7 +1311,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               var mentor = {
                 employee_key: this.employee_key,
                 profile_photo_url: imageurl,
-                name: this.u.split('@')[0]
+               /* name: this.u.split('@')[0]*/
+			    name: this.display_name,
+				skill: this.skill
               }
               self.recommendedMentors.push(mentor);
             });
@@ -1363,7 +1365,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
                 var mentor = {
                   mentor: this.mentor,
                   profile_photo_url: imageurl,
-                  name: this.u.split('@')[0]
+                  /*name: this.u.split('@')[0]*/
+				   name: this.display_name
                 }
                 self.associatedmentors.push(mentor);
                 count++;
@@ -1377,6 +1380,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       //~~~~~~~~~~~~~~~ GET ASSOCIATED MENTEES ~~~~~~~~~~~~~~~// 
       getAssociatedMentees = function () {
         var url = baseurl + "GetMenteeList/" + self.profile().employee_key();
+		
         console.log(url);
         $.getJSON(url).
           then(function (mentors) {
@@ -1389,7 +1393,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               var mentor = {
                 mentor: this.mentor,
                 profile_photo_url: imageurl,
-                name: this.u.split('@')[0]
+                /*name: this.u.split('@')[0]*/
+				   name: this.display_name
               }
               self.associatedmentees.push(mentor);
             });
