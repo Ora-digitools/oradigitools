@@ -3,9 +3,10 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 'use strict';
-var debug=true;
+var debug=false;
 var ssoemail="";
 var usertype="";
+
 var dorefresh=true;
 var uuid="";
 var profilelink = '';

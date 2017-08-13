@@ -11,6 +11,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
     function DashboardViewModel() {
       var self = this;
+      self.defaultimage = 'css/images/avatar_24px_2x.png';
       var selectedLocations = "", selectedPillars = "";
       self.url = baseurl + "GetUserProfiles";
       self.next = ko.observable();
@@ -67,7 +68,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             self.prev = (prevurl);
             for (var i = 0; i < profiles.items.length; i++) {
               var obj = profiles.items[i];
-              var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
+              var imageurl = self.defaultimage;
               if (!obj.profile_photo_url.endsWith("GetPhoto/")) {
                 imageurl = obj.profile_photo_url;
               }
@@ -134,7 +135,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
             for (var i = 0; i < profiles.items.length; i++) {
               var obj = profiles.items[i];
-              var imageurl = 'https://raw.githubusercontent.com/Ora-digitools/oradigitools/master/UI_Assets/Profile-list-page/default-user-icon.png';
+              var imageurl = self.defaultimage;
               if (!obj.profile_photo_url.endsWith("GetPhoto/")) {
                 imageurl = obj.profile_photo_url;
               }
@@ -159,7 +160,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             hidedialog();
 
           }).fail(function (xhr, textStatus, err) {
-            err=err.length==0?"Could not reach server, try again later":err;
+            err = err.length == 0 ? "Could not reach server, try again later" : err;
             alert(err);
             hidedialog();
           });

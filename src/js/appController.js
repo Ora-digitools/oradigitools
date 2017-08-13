@@ -17,6 +17,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       var mdQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.MD_UP);
       self.mdScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
       self.ssowindow;
+      self.isMentorRequestPending = false;
+      self.mentoringinterest=false;
       // Router setup
       self.router = oj.Router.rootInstance;
       self.router.configure({
@@ -56,10 +58,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       ]);
 
       // GET THE DOMAIN URL FOR PROFILE LINK
-      getprofilebaseurl=function(){
-        var url=window.location.href;
-        url=url.split('?')[0];
-        profilelink=url+'?root=profiledetails#';
+      getprofilebaseurl = function () {
+        var url = window.location.href;
+        url = url.split('?')[0];
+        profilelink = url + '?root=profiledetails#';
 
       }
 
@@ -67,8 +69,17 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
       isloggedin = function () {
         if (ssoemail.length > 0) {
+          if (self.registerMentor) {
+            registerMentor();
+            self.registerMentor = false;
+          }
           document.getElementById('loginbutton').style.display = 'none';
-          document.getElementById('myprofile').style.display = 'inline-block';
+          if (uuid.length > 0) {
+            document.getElementById('myprofile').style.display = 'inline-block';
+          }
+          if(self.mentoringinterest){
+             document.getElementById('regmentor').style.display = 'none';
+          }
           if (self.ssowindow != undefined) {
             debuglog('closing sso window');
             self.ssowindow.close();
@@ -118,12 +129,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       }
 
       getusertype = function () {
-        $.getJSON(baseurl + "GetEmployeeType/" + ssoemail).
+        $.getJSON(baseurl + "GetEmployeeType/angan.sen@gmail.com").
           then(function (hubs) {
             $.each(hubs.items, function () {
-              debuglog(this.type);
+              //debuglog(this.type);
               usertype = this.type;
               uuid = this.uuid;
+              mentoringinterest=this.mentoring_interest.toLowercase()==='yes'?true:false;
             })
           });
       }
@@ -135,6 +147,36 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
 
       // END OF SSO RELATED CODE
+
+      //---------------   MENTOR & MENTEE   ----------------//
+      // INITIATE SSO TO GET EMAIL 
+      initmentorregister = function () {
+        if (ssoemail.length == 0) {
+          self.registerMentor = true;
+          initsso();
+        } else {
+          registerMentor();
+        }
+      }
+
+      // INITIATE REQUEST TO REGISTER AS MENTOR
+      registerMentor = function () {
+        var targeturl = baseurl + 'INS_EXTERNAL_PROFILE/' + ssoemail;
+        console.log(targeturl);
+        $.ajax({
+          url: targeturl,
+          cache: false,
+          type: 'POST',
+          success: function (data) {
+            console.log("Mentor registration request submitted successfully.");
+          }
+        }).fail(function (xhr, textStatus, err) {
+          alert(err);
+        });
+      }
+
+      //------ END OF MENTOR MENTEE CODE
+
 
       self.addActive = function (routername, pid) {
 
