@@ -18,7 +18,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       self.mdScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
       self.ssowindow;
       self.isMentorRequestPending = false;
-      self.mentoringinterest=false;
+      self.mentoringinterest = false;
       // Router setup
       self.router = oj.Router.rootInstance;
       self.router.configure({
@@ -77,9 +77,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
           if (uuid.length > 0) {
             document.getElementById('myprofile').style.display = 'inline-block';
           }
-          if(self.mentoringinterest){
-             document.getElementById('regmentor').style.display = 'none';
-          }
+
           if (self.ssowindow != undefined) {
             debuglog('closing sso window');
             self.ssowindow.close();
@@ -99,7 +97,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         }
       }
       gotomyprofile = function () {
-        self.ssowindow = window.open(profilelink + uuid, "_self");
+        window.open(profilelink.split('#')[0]+'#'+ uuid, "_self");
       }
 
       getemailfromcookie = function () {
@@ -121,32 +119,61 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         email = user.substr(n + 1, user.length);
         if (email) {
           ssoemail = email;
-          getusertype()
-
         } else {
           ssoemail = "";
         }
       }
 
       getusertype = function () {
-        $.getJSON(baseurl + "GetEmployeeType/angan.sen@gmail.com").
-          then(function (hubs) {
-            $.each(hubs.items, function () {
-              //debuglog(this.type);
-              usertype = this.type;
-              uuid = this.uuid;
-              mentoringinterest=this.mentoring_interest.toLowercase()==='yes'?true:false;
-            })
-          });
+        if (ssoemail.length > 0) {
+          $.getJSON(baseurl + "GetEmployeeType/" + ssoemail).
+            then(function (hubs) {
+              $.each(hubs.items, function () {
+                //debuglog(this.type);
+                usertype = this.type;
+                uuid = this.uuid;
+                self.mentoringinterest = this.mentoring_interest.toLowerCase() === 'yes' ? true : false;
+              })
+            });
+        }
       }
 
       setInterval(function () {
         getemailfromcookie();
         isloggedin();
+        setMentorStatus();
+        getusertype();
       }, 500);
-
-
       // END OF SSO RELATED CODE
+
+      //~~~~~~~~~~~~ SET MENTORSHIP STATUS ~~~~~~~~~~~~~//
+      setMentorStatus = function () {
+        if (self.mentoringinterest) {//menteelist
+          document.getElementById('regmentor').style.display = 'none';
+          document.getElementById('dementor').style.display = 'inline-block';
+        } else {
+          document.getElementById('regmentor').style.display = 'inline-block';
+          document.getElementById('dementor').style.display = 'none';
+        }
+      }
+      //~~~~~~~~~~~~  MENTORSHIP CODE ~~~~~~~~~~~~~//
+
+      //~~~~~~~~~~~~ Resign as Mentor code ~~~~~~~~//
+      initmentorderegister = function () {
+        if (uuid.length) {
+          $.ajax({
+            url: baseurl + 'Update_Mentor_Preference/'+uuid,
+            cache: false,
+            type: 'PUT',
+            success: function (data) {
+              debuglog("Mentor deregistered success");
+            }
+          }).fail(function (xhr, textStatus, err) {
+            alert(err);
+          });
+        }
+      }
+      // ~~~~~~~~~~~~~~   END OF METHOD   ~~~~~~~~~~~~~~~~//
 
       //---------------   MENTOR & MENTEE   ----------------//
       // INITIATE SSO TO GET EMAIL 

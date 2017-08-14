@@ -15,7 +15,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
 
       /* fadein animations effect for tab content */
-      self.removementorreason = ko.observable('');
+      self.profileHistory = ko.observableArray([]);
+      self.removementorreason = ko.observableArray([]);
       self.defaultimage = 'css/images/avatar_24px_2x.png';
       self.effect = ko.observable('fadeIn');
       self.enlargephotourl = ko.observable('');
@@ -167,149 +168,143 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
 
       self.getProfile = function (uuid) {
-        showdialog();
-        self.resetValues();
-        $.getJSON(baseurl + "GetFullUserProfile/" + uuid).
-          then(function (profiles) {
-            // SKILLS GOOD AT
-            var skills_string = "";
-            var interests_string = "";
-            var learnings_string = "";
-            var achivement_string = "";
-            var link_string = "";
+        if (uuid.length != 0) {
+          showdialog();
+          self.resetValues();
+          $.getJSON(baseurl + "GetFullUserProfile/" + uuid).
+            then(function (profiles) {
+              // SKILLS GOOD AT
+              var skills_string = "";
+              var interests_string = "";
+              var learnings_string = "";
+              var achivement_string = "";
+              var link_string = "";
 
-            for (var i = 0; i < profiles.items[0].list_values.length; i++) {
-              var skill = profiles.items[0].list_values[i];
-              if (skill.category === 'Skills') {
-                self.skills_skills.push({
-                  employee_profile_key: ko.observable(skill.employee_profile_key),
-                  category: ko.observable(skill.category),
-                  value: ko.observable(skill.value),
-                  scale: ko.observable(skill.scale)
-                });
-                skills_string = skills_string != undefined || skills_string.length > 0 ? skills_string + ";" + skill.value : skill.value;
-              } else if (skill.category === 'Learning') {
-                self.skills_learning.push({
-                  employee_profile_key: ko.observable(skill.employee_profile_key),
-                  category: ko.observable(skill.category),
-                  value: ko.observable(skill.value)
-                });
-                learnings_string = learnings_string != undefined || learnings_string.length > 0 ? learnings_string + ";" + skill.value : skill.value;
+              for (var i = 0; i < profiles.items[0].list_values.length; i++) {
+                var skill = profiles.items[0].list_values[i];
+                if (skill.category === 'Skills') {
+                  self.skills_skills.push({
+                    employee_profile_key: ko.observable(skill.employee_profile_key),
+                    category: ko.observable(skill.category),
+                    value: ko.observable(skill.value),
+                    scale: ko.observable(skill.scale)
+                  });
+                  skills_string = skills_string != undefined || skills_string.length > 0 ? skills_string + ";" + skill.value : skill.value;
+                } else if (skill.category === 'Learning') {
+                  self.skills_learning.push({
+                    employee_profile_key: ko.observable(skill.employee_profile_key),
+                    category: ko.observable(skill.category),
+                    value: ko.observable(skill.value)
+                  });
+                  learnings_string = learnings_string != undefined || learnings_string.length > 0 ? learnings_string + ";" + skill.value : skill.value;
 
-              } else if (skill.category === 'Interests') {
+                } else if (skill.category === 'Interests') {
 
-                self.skills_interests.push({
-                  employee_profile_key: ko.observable(skill.employee_profile_key),
-                  category: ko.observable(skill.category),
-                  value: ko.observable(skill.value)
-                });
-                interests_string = interests_string != undefined || interests_string.length > 0 ? interests_string + ";" + skill.value : skill.value;
+                  self.skills_interests.push({
+                    employee_profile_key: ko.observable(skill.employee_profile_key),
+                    category: ko.observable(skill.category),
+                    value: ko.observable(skill.value)
+                  });
+                  interests_string = interests_string != undefined || interests_string.length > 0 ? interests_string + ";" + skill.value : skill.value;
 
-              } else if (skill.category === 'Links') {
-                self.links.push({
-                  employee_profile_key: ko.observable(skill.employee_profile_key),
-                  category: ko.observable(skill.category),
-                  value: ko.observable(skill.value),
-                  url: ko.observable(skill.url)
-                });
-                link_string = link_string != undefined || link_string.length > 0 ? link_string + ";" + skill.value + "(" + skill.url + ")" : skill.value + "(" + skill.url + ")";
+                } else if (skill.category === 'Links') {
+                  self.links.push({
+                    employee_profile_key: ko.observable(skill.employee_profile_key),
+                    category: ko.observable(skill.category),
+                    value: ko.observable(skill.value),
+                    url: ko.observable(skill.url)
+                  });
+                  link_string = link_string != undefined || link_string.length > 0 ? link_string + ";" + skill.value + "(" + skill.url + ")" : skill.value + "(" + skill.url + ")";
 
-              } else if (skill.category === 'Achievements') {
-                self.achivements.push({
-                  employee_profile_key: ko.observable(skill.employee_profile_key),
-                  category: ko.observable(skill.category),
-                  value: ko.observable(skill.value),
-                  url: ko.observable(skill.url)
-                });
-                achivement_string = achivement_string != undefined || achivement_string.length > 0 ? achivement_string + ";" + skill.value : skill.value;
+                } else if (skill.category === 'Achievements') {
+                  self.achivements.push({
+                    employee_profile_key: ko.observable(skill.employee_profile_key),
+                    category: ko.observable(skill.category),
+                    value: ko.observable(skill.value),
+                    url: ko.observable(skill.url)
+                  });
+                  achivement_string = achivement_string != undefined || achivement_string.length > 0 ? achivement_string + ";" + skill.value : skill.value;
+                }
               }
-            }
 
-            for (var i = 0; i < profiles.items[0].customers.length; i++) {
-              var customer = profiles.items[0].customers[i];
-              //self.customers.push(customer);
-              self.customers.push({
-                employee_customer_profile_key: ko.observable(customer.employee_customer_profile_key),
-                industry: ko.observable(customer.industry),
-                customer_name: ko.observable(customer.customer_name),
-                customer_division: ko.observable(customer.customer_division),
-                type_of_work: ko.observable(customer.type_of_work),
-                artifacts_url: ko.observable(customer.artifacts_url),
-                summary: ko.observable(customer.summary),
-                description: ko.observable(customer.description),
-                outcome: ko.observable(customer.outcome)
-              });
-            }
-            // console.log("--- >>> " + ko.toJSON(self.customers()));
-
-
-            var imageurl = self.defaultimage;
-            if (!profiles.items[0].profile_photo_url.endsWith("GetPhoto/")) {
-              imageurl = profiles.items[0].profile_photo_url;
-            }
-
-            self.profile().profileicon(imageurl);
-            self.profile().employee_key(profiles.items[0].employee_key);
-            self.profile().title(profiles.items[0].title);
-            self.profile().name(profiles.items[0].display_name);
-            self.profile().work_email(profiles.items[0].u);
-            self.profile().work_phone(profiles.items[0].work_phone != undefined ? profiles.items[0].work_phone : profiles.items[0].mobile_phone);
-            self.profile().mobile_phone(profiles.items[0].mobile_phone);
-            self.mobile_phone(profiles.items[0].mobile_phone);
-            self.profile().city(profiles.items[0].city);
-            self.profile().state(profiles.items[0].state);
-            self.profile().country(profiles.items[0].country);
-            self.profile().uuid(profiles.items[0].uuid);
-            self.profile().ou(profiles.items[0].ou);
-            self.profile().Mentoring_Interest(profiles.items[0].Mentoring_Interest);
-            self.profile().type(profiles.items[0].type);
-            self.profile().cost_center(profiles.items[0].cost_center);
-            self.profile().pillar(profiles.items[0].pillar);
-            self.center().push(profiles.items[0].center);
-            self.pillar().push(profiles.items[0].pillar);
-            self.profile().center(profiles.items[0].center);
-            self.profile().mgr_email(profiles.items[0].mgr_email);
-            self.profile().mgr_display_name(profiles.items[0].mgr_display_name);
-            self.profile().profile_summary(profiles.items[0].profile_summary);
-            self.profile().flatSkills(skills_string);
-            self.profile().flatlearnings(learnings_string);
-            self.profile().flatinterests(interests_string);
-            self.profile().flatachivements(achivement_string);
-            self.profile().flatlinks(link_string);
-            profilelink = profilelink.split('#')[0] + '#' + self.uuid;
-            console.log("profile created");
-            debuglog(ko.toJSON(self.profile()));
-
-            // get recommended mentors
-            getRecommendedMentors();
-
-            // get associated mentors
-            getAssociatedMentors();
-
-            // get associated mentees
-            getAssociatedMentees();
-
-            // check for edit permission on the profile
-            self.iseditpermitted();
-
-            // Form a tag cloud
-            self.settagcloud();
-
-            // Evaluate to show deregister of mentorship button
-            self.setderegmentorbutton();
-
-            // Hide progress dialog
-            hidedialog();
+              for (var i = 0; i < profiles.items[0].customers.length; i++) {
+                var customer = profiles.items[0].customers[i];
+                //self.customers.push(customer);
+                self.customers.push({
+                  employee_customer_profile_key: ko.observable(customer.employee_customer_profile_key),
+                  industry: ko.observable(customer.industry),
+                  customer_name: ko.observable(customer.customer_name),
+                  customer_division: ko.observable(customer.customer_division),
+                  type_of_work: ko.observable(customer.type_of_work),
+                  artifacts_url: ko.observable(customer.artifacts_url),
+                  summary: ko.observable(customer.summary),
+                  description: ko.observable(customer.description),
+                  outcome: ko.observable(customer.outcome)
+                });
+              }
+              // console.log("--- >>> " + ko.toJSON(self.customers()));
 
 
-          });
-      }
+              var imageurl = self.defaultimage;
+              if (!profiles.items[0].profile_photo_url.endsWith("GetPhoto/")) {
+                imageurl = profiles.items[0].profile_photo_url;
+              }
 
-      self.setderegmentorbutton = function () {
-        if (self.profile().Mentoring_Interest() === undefined) {
-          document.getElementById('deregmentor').style.display = 'none';
+              self.profile().profileicon(imageurl);
+              self.profile().employee_key(profiles.items[0].employee_key);
+              self.profile().title(profiles.items[0].title);
+              self.profile().name(profiles.items[0].display_name);
+              self.profile().work_email(profiles.items[0].u);
+              self.profile().work_phone(profiles.items[0].work_phone != undefined ? profiles.items[0].work_phone : profiles.items[0].mobile_phone);
+              self.profile().mobile_phone(profiles.items[0].mobile_phone);
+              self.mobile_phone(profiles.items[0].mobile_phone);
+              self.profile().city(profiles.items[0].city);
+              self.profile().state(profiles.items[0].state);
+              self.profile().country(profiles.items[0].country);
+              self.profile().uuid(profiles.items[0].uuid);
+              self.profile().ou(profiles.items[0].ou);
+              self.profile().Mentoring_Interest(profiles.items[0].Mentoring_Interest);
+              self.profile().type(profiles.items[0].type);
+              self.profile().cost_center(profiles.items[0].cost_center);
+              self.profile().pillar(profiles.items[0].pillar);
+              self.center().push(profiles.items[0].center);
+              self.pillar().push(profiles.items[0].pillar);
+              self.profile().center(profiles.items[0].center);
+              self.profile().mgr_email(profiles.items[0].mgr_email);
+              self.profile().mgr_display_name(profiles.items[0].mgr_display_name);
+              self.profile().profile_summary(profiles.items[0].profile_summary);
+              self.profile().flatSkills(skills_string);
+              self.profile().flatlearnings(learnings_string);
+              self.profile().flatinterests(interests_string);
+              self.profile().flatachivements(achivement_string);
+              self.profile().flatlinks(link_string);
+              profilelink = profilelink.split('#')[0] + '#' + self.uuid;
+              console.log("profile created");
+              debuglog(ko.toJSON(self.profile()));
+
+              // get recommended mentors
+              getRecommendedMentors();
+
+              // get associated mentors
+              getAssociatedMentors();
+
+              // get associated mentees
+              getAssociatedMentees();
+
+              // check for edit permission on the profile
+              self.iseditpermitted();
+
+              // Form a tag cloud
+              self.settagcloud();
+
+              // Hide progress dialog
+              hidedialog();
+
+
+            });
         } else {
-          document.getElementById('deregmentor').style.display = 'block';
+          self.router = oj.Router.rootInstance;
+          self.router.go('profileslist');
         }
       }
 
@@ -359,7 +354,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
           setssostatus('.ssoenabled', 'block');
         } else {
-          setssostatus('.ssoenabled', 'block');
+          setssostatus('.ssoenabled', 'none');
         }
       }
 
@@ -370,9 +365,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       loadpage = function () {
         showdialog();
         self.uuid = localStorage.getItem('uuid');
-        self.getFilters();
-        self.getProfile(self.uuid);
-        self.getpersonalphotos();
+        if (self.uuid != undefined) {
+          self.getFilters();
+          self.getProfile(self.uuid);
+          self.getpersonalphotos();
+        }
+
+
         hidedialog();
       }
       self.updateProject = function () {
@@ -473,30 +472,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       }
 
-      initmentorderegister = function () {
-        if (self.uuid.length) {
-          var deregmentor = {
-            employee_key: self.profile().employee_key(),
-            Mentoring_Interest: '',
-          };
-          debuglog(deregmentor);
-          $.ajax({
-            url: baseurl + 'UpdateProfile',
-            cache: false,
-            type: 'POST',
-            contentType: 'application/json; charset=utf-8',
-            data: ko.toJSON(deregmentor),
-            success: function (data) {
-              self.getProfile(self.uuid);
-              hidedialog();
-            }
-          }).fail(function (xhr, textStatus, err) {
-            alert(err);
-            self.getProfile(self.uuid);
-
-          });
-        }
-      }
 
       resetprofilesummary = function () {
         self.getProfile(self.uuid);
@@ -579,7 +554,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            //alert("Information saved successfully!");
             self.newSkill([]);
             self.ratting(1);
             hidedialog();
@@ -626,7 +600,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             data: ko.toJSON(requestdata),
             success: function (data) {
               self.getProfile(self.uuid);
-              //alert("Information saved successfully!");
+              getRecommendedMentors();
               self.newSkill([]);
               self.ratting(1);
               hidedialog();
@@ -671,7 +645,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           data: ko.toJSON(requestdata),
           success: function (data) {
             self.getProfile(self.uuid);
-            //alert("Information saved successfully!");
+            getRecommendedMentors();
             self.newSkill("");
             self.ratting(1);
             hidedialog();
@@ -848,16 +822,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           self.handleOpen = $("#submitfeedbackbutton").click(function () {
             $("#deletementor").ojDialog("close");
             //showdialog();
-            if (self.removementorreason()[0] != undefined) {
+            if (self.removementorreason().length > 0) {
               var mentordata = {
-                emp_key: self.profile().employee_key(),
-                ml_key: mentor.mentor,
+                ml_key: mentor.ml_key,
                 reason: self.removementorreason()[0],
                 status: 'removed'
               }
               console.log(ko.toJSON(mentordata));
-              self.removementorreason([]);
-              var url = baseurl+'MentorUpdate';
+              var url = baseurl + 'MentorUpdate';
               $.ajax({
                 url: url,
                 cache: false,
@@ -1290,6 +1262,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       //~~~~~~~~~~   GET RECOMMENDED MENTOR LIST   ~~~~~~~~~~~//
       getRecommendedMentors = function () {
+        showdialog();
         var learningskills = self.profile().learnings();
         var commasepskills = '';
 
@@ -1298,63 +1271,78 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             commasepskills += commasepskills.length > 0 ? ',' + learningskills[i].value() : learningskills[i].value();
           }
         }
-        var url = baseurl + "GetMentorListsSkill/" + commasepskills;
-
+        var url = baseurl + "GetMentorListsSkill/" + commasepskills + "/" + self.profile().employee_key();
+        console.log(url)
         $.getJSON(url).
           then(function (mentors) {
             self.recommendedMentors([]);
             $.each(mentors.items, function (data) {
-              var imageurl = self.defaultimage;
-              if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-                imageurl = this.profile_photo_url;
+              if (this.employee_key != self.profile().employee_key()) {
+                var imageurl = self.defaultimage;
+                if (!this.profile_photo_url.endsWith("GetPhoto/")) {
+                  imageurl = this.profile_photo_url;
+                }
+                var mentor = {
+                  employee_key: this.employee_key,
+                  profile_photo_url: imageurl,
+                  name: this.display_name,
+                  skill: this.skill,
+                  uuid: this.uuid
+                }
+                self.recommendedMentors.push(mentor);
               }
-              var mentor = {
-                employee_key: this.employee_key,
-                profile_photo_url: imageurl,
-               /* name: this.u.split('@')[0]*/
-			    name: this.display_name,
-				skill: this.skill
-              }
-              self.recommendedMentors.push(mentor);
+
             });
-            console.log(self.recommendedMentors().length + " recommended mentors fetched");
+            hidedialog();
+            debuglog(self.recommendedMentors().length + " recommended mentors fetched");
           });
       }
       //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
 
       //~~~~~~~~~~~~~~~  SELECT MENTOR METHOD  ~~~~~~~~~~~~~~~// 
       selectMentor = function (data, elem) {
-        var mentor = {
-          employee_key: self.profile().employee_key(),
-          mentor: data.employee_key,
-          primary: 'Y',
-          skill: ''
-        }
-        debuglog(ko.toJSON(mentor));
-        // SEND TO SERVER
-        $.ajax({
-          url: baseurl + 'MentorUpdate',
-          cache: false,
-          type: 'POST',
-          contentType: 'application/json; charset=utf-8',
-          data: ko.toJSON(mentor),
-          success: function (data) {
-            self.getProfile(self.uuid);
-            hidedialog();
+        if (self.associatedmentors().length < 2) {
+          showdialog();
+          var mentor = {
+            employee_key: self.profile().employee_key(),
+            mentor: data.employee_key,
+            primary: 'Y',
+            skill: ''
           }
-        }).fail(function (xhr, textStatus, err) {
-          alert(err);
-        });
+          debuglog(ko.toJSON(mentor));
+          // SEND TO SERVER
+          $.ajax({
+            url: baseurl + 'MentorUpdate',
+            cache: false,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: ko.toJSON(mentor),
+            success: function (data) {
+              getAssociatedMentors();
+              getRecommendedMentors();
+              hidedialog();
+            }
+          }).fail(function (xhr, textStatus, err) {
+            getAssociatedMentors();
+            getRecommendedMentors();
+            hidedialog();
+            alert(err);
+          });
+        } else {
+          alert("You can select upto 2 mentors");
+        }
       }
       //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
 
       //~~~~~~~~~~~~~~~ GET ASSOCIATED MENTORS ~~~~~~~~~~~~~~~// 
       getAssociatedMentors = function () {
+        showdialog();
         var url = baseurl + "GetMentorList/" + self.profile().employee_key();
         console.log(url);
         $.getJSON(url).
           then(function (mentors) {
             self.associatedmentors([]);
+            self.removementorreason([]);
             var count = 0;
             $.each(mentors.items, function (data) {
               if (count < 2) {
@@ -1363,24 +1351,26 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
                   imageurl = this.profile_photo_url;
                 }
                 var mentor = {
+                  ml_key: this.ml_key,
                   mentor: this.mentor,
                   profile_photo_url: imageurl,
-                  /*name: this.u.split('@')[0]*/
-				   name: this.display_name
+                  name: this.display_name,
+                  uuid: this.uuid
                 }
                 self.associatedmentors.push(mentor);
                 count++;
               }
             });
-            console.log(self.associatedmentors().length + " mentors fetched");
+            hidedialog();
+            debuglog(self.associatedmentors().length + " mentors fetched");
           });
       }
       //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
 
       //~~~~~~~~~~~~~~~ GET ASSOCIATED MENTEES ~~~~~~~~~~~~~~~// 
       getAssociatedMentees = function () {
+        showdialog();
         var url = baseurl + "GetMenteeList/" + self.profile().employee_key();
-		
         console.log(url);
         $.getJSON(url).
           then(function (mentors) {
@@ -1393,18 +1383,50 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               var mentor = {
                 mentor: this.mentor,
                 profile_photo_url: imageurl,
-                /*name: this.u.split('@')[0]*/
-				   name: this.display_name
+                name: this.display_name,
+                uuid: this.uuid
               }
               self.associatedmentees.push(mentor);
             });
-            console.log(self.associatedmentees().length + " mentees fetched");
+            hidedialog();
+            debuglog(self.associatedmentees().length + " mentees fetched");
           });
       }
       //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
 
+      //~~~~~~~~~~~~~~~~~~~~ GO TO PROFILE   ~~~~~~~~~~~~~~~~~//
+      gotoprofile = function (data, elem) {
+
+        // alert(ko.toJSON(data));
+        var link = window.location.href.split('#')[0] + "#" + data.uuid;
+        pushscreen(link);
+
+      }
+      //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
+
+      popscreen = function () {
+        self.profileHistory().pop();
+        loadscreen();
+      }
+
+      pushscreen = function (link) {
+        self.profileHistory().push(link);
+        loadscreen();
+      }
+
+      // ON BACK BUTTON PRESS
+      window.addEventListener('popstate', function (event) {
+        popscreen();
+      }, false);
 
 
+      loadscreen = function () {
+        var length = self.profileHistory().length;
+        var link = self.profileHistory()[length - 1];
+        console.log('loading screen ::: ' + link);
+        window.open(link, "_self");
+        window.location.reload();
+      }
 
       // --------------- EDIT DIALOG FOR SKILLS -----------------//
       openskilldialog = function () {

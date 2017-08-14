@@ -1185,19 +1185,19 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .removementor {
 	background: rgb(237, 28, 36) none repeat scroll 0 0;
-	border: medium none;
+	border: 1px lightgray solid;
 	border-radius: 50%;
 	color: rgb(255, 255, 255);
 	cursor: pointer;
 	font-size: 15px;
-	height: 30px;
+	height: 25px;
 	position: absolute;
 	text-align: center;
 	top: 0;
 	vertical-align: middle;
-	width: 30px;
+	align-items: center;
+	width: 25px;
 	z-index: 1000;
-	line-height: 30px;
 }
 .founddesc {
 	margin-top: 20px;
@@ -1250,7 +1250,7 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .mentors img {
 	border: 2px solid rgb(239, 239, 239);
-	height: auto;
+	height: 80px;
 	width: 80px;
 }
 .mentors button {
@@ -1269,7 +1269,7 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .selectedmentor img {
 	width: 125px;
-	height: auto;
+	height: 125px;
 	display: inline-block;
 	margin-bottom: 10px;
 	border: 2px solid rgb(239, 239, 239);
@@ -1284,12 +1284,9 @@ li.oj-selected .oj-tabs-gen-div {
 	min-height: 90px;
 	padding-bottom: 10px;
 }
-.menteeblock {
-	margin-bottom: 10px;
-}
 .mentees img {
 	width: 90px;
-	height: auto;
+	height: 90px;
 	display: inline-block;
 	margin-bottom: 10px;
 	border: 2px solid rgb(239, 239, 239);
@@ -1371,8 +1368,6 @@ label.star:before {
 	word-wrap: break-word;
 	text-align: center;
 }
-.rembutton {
-}
 
 @media (min-width: 1500px) {
 .container {
@@ -1382,6 +1377,10 @@ label.star:before {
 	width: 1131px
 }
 .menteeblock {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 }
 
@@ -1643,9 +1642,11 @@ label.star:before {
 }
 .mentorrow img {
 	width: 50px;
-	height: auto;
+	height: 50px;
 }
-
+.removementor {
+	right: 10px;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1777,15 +1778,6 @@ ul#profiletabs {
 }
 }
 
-@media (min-width: 1281px) {
-.menteeblock {
-	margin-left: 9px;
-	margin-right: 9px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-}
-
 @media (min-width: 1200px) {
 .col-lg-0 {
 	display: none
@@ -1801,7 +1793,7 @@ ul#profiletabs {
 }
 .mentees img {
 	width: 60px;
-	height: auto;
+	height: 60px;
 }
 }
 

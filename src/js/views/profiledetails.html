@@ -4,12 +4,13 @@
  -->
 <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
+
 <div class="row blueBg" data-bind="with:profile">
   <div class="container ">
     <div id="dialog" class="oj-flex" style="display: none;text-align:center">
       <div class="oj-sm-12"> <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> <span class="sr-only">Loading...</span> </div>
     </div>
-    <div class="col-sm-5 col-md-6 profileleft nopadding"> 
+    <div class="col-sm-5 col-md-6 profileleft nopadding">
       <!-- Image -->
       <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay ssoenabled">
@@ -18,22 +19,20 @@
           </div>
         </div>
       </div>
-      <!-- Image --> 
+      <!-- Image -->
       <!-- Name -->
       <div class="col-xs-7 col-sm-6 profileDetails nopadding"><span class="profileName" data-bind="text:name"></span><br>
         <span class="profileTitle" data-bind="text:title"></span></div>
-      <!-- Name --> 
+      <!-- Name -->
     </div>
     <!-- Contact -->
     <div class="col-sm-4 col-md-3 profilePhone">
       <p data-bind="if: work_phone"><img src="css/images/phone_icon.png">&nbsp;Work Phone: <span data-bind="text:work_phone"></span></p>
       <p data-bind="if: mobile_phone"><img src="css/images/mobile_icon.png">&nbsp;Mobile: <span data-bind="text:mobile_phone"></span></p>
       <p data-bind="if: work_email"><img src="css/images/email_icon_pink.png">&nbsp;<span data-bind="text:work_email"></span></p>
-      <p style="display: none" id="deregmentor">
-        <button class="w3-button w3-round-xxlarge w3-orange w3-wide" onclick="initmentorderegister()"> Resign As Mentor </button>
-      </p>
+      <!-- <p style="display: none" id="deregmentor"><button class="w3-button w3-round-xxlarge w3-orange w3-wide" onclick="initmentorderegister()">   Resign As Mentor   </button></p> -->
     </div>
-    <!-- Contact --> 
+    <!-- Contact -->
     <!-- Hub -->
     <div class="col-sm-3 col-md-3 profileAddress">
       <div>
@@ -44,13 +43,13 @@
       <p>Pillar: <br>
         <span data-bind="text:pillar"></span></p>
     </div>
-    <!-- Hub --> 
+    <!-- Hub -->
   </div>
 </div>
 <div class="row margintop30">
   <div class="container nopaddingmd">
     <div id="tabs-container">
-      <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}"> 
+      <div id="tabs" data-bind="ojComponent:{component: 'ojTabs', disabledTabs: [3]}">
         <!-- tab bar -->
         <ul class="col-sm-12 nopadding">
           <li class="col-xs-4 active nopaddingxs" data-bind="click: tabClick1"> About
@@ -63,12 +62,12 @@
             <div class="greentab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div>
           </li>
         </ul>
-        
+
         <!-- tab contents -->
-        <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs"> 
+        <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs">
           <!-- about -->
           <div id="about">
-            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
+            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
               <!-- Profile summary -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Profile summary
@@ -80,7 +79,7 @@
               </div>
               <!-- Profile summary -->
               <div class="row">
-                <div class="col-sm-5"> 
+                <div class="col-sm-8">
                   <!-- Skills -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Skills
@@ -88,16 +87,17 @@
                     </div>
                     <div id='tagcloud1' data-bind="ojComponent:{
                         component: 'ojTagCloud',
-                                layout: 'cloud',
+                                layout: 'rectangle',
                                 items: tags
-                        }" style="max-width:800px;height:250px;margin-left:auto;margin-right:auto;padding:5px;"> </div>
+                        }" style="max-width:800px;height:250px;margin-left:auto;margin-right:auto;">
+                    </div>
                     <!-- <div class="profileSummary" data-bind="foreach:skills">
                   <span class="orangeTags" data-bind="text:value">
-                    </span></div> --> 
+                    </span></div> -->
                   </div>
                 </div>
-                <div class="col-sm-7"> 
-                  <!-- Skills --> 
+                <div class="col-sm-4">
+                  <!-- Skills -->
                   <!-- Learning Interests -->
                   <div class="profileSection" data-bind="with:profile">
                     <div class="greyBg profileSummaryh">My Learning Interests
@@ -108,36 +108,40 @@
                 </div>
               </div>
               <!-- Learning Interests -->
-              <div class="row">
-                <div class="col-sm-5"> 
+              <div class="row ">
+                <div class="col-sm-4">
                   <!-- Mentors -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Mentors </div>
-                    <div class="profileSummary selectedmentor">
+                    <div class="profileSummary mentees">
                       <div class="row" data-bind="foreach:associatedmentors">
-                        <div class="col-xs-6 text-center"> <span class=" w3-badge w3-large w3-red removementor" data-bind="click:removementor"><i class="fa fa-close"></i></span> <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
-                          <div data-bind="text:name" class="bold"></div>
+                        <div class="col-xs-6">
+                          <!-- <span style="border: 2px red solid;border-radius: 50px;background-color: red;color: white" data-bind="click:removementor">X</span>  -->
+                          <span class="w3-large w3-white removementor ssoenabled" data-bind="click:removementor"><i class="fa fa-close"></i></span>                          
+                          <img data-bind="attr:{src:profile_photo_url},click:gotoprofile" style="cursor: pointer" class="img-rounded img-responsive">
+                          <h5 data-bind="text:name"></h5>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- Mentors --> 
+                  <!-- Mentors -->
                 </div>
-                <div class="col-sm-7"> 
+                <div class="col-sm-8 ">
                   <!-- Mentees -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Mentees </div>
                     <div class="profileSummary mentees oj-flex" data-bind="foreach:associatedmentees">
-                      <div class="oj-sm-6 oj-md-4 oj-lg-4 oj-xl-2 text-center menteeblock"> <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
-                        <div data-bind="text:name" class="bold"></div>
+                      <div class="oj-sm-4" style="cursor: pointer" data-bind="click:gotoprofile">
+                        <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
+                        <h5 data-bind="text:name"></h5>
                       </div>
                     </div>
                   </div>
-                  <!-- Mentees --> 
+                  <!-- Mentees -->
                 </div>
               </div>
             </div>
-            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
+            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
               <!-- Share Profile -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Share <span data-bind="text:name"></span>’s Profile</div>
@@ -145,7 +149,7 @@
                   <button class="shareprofile" data-bind="click:shareprofile">Share My Profile</button>
                 </div>
               </div>
-              <!-- Share Profile --> 
+              <!-- Share Profile -->
               <!-- Organization -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Organization</div>
@@ -157,30 +161,29 @@
                   </ul>
                 </div>
               </div>
-              <!-- Organization --> 
+              <!-- Organization -->
               <!-- Mentors -->
-              <div class="profileSection">
+              <div class="profileSection ssoenabled">
                 <div class="greyBg profileSummaryh">Suggested Mentors</div>
-                <div class="profileSummary mentors" data-bind="foreach:recommendedMentors"> 
+                <div class="profileSummary mentors" data-bind="foreach:recommendedMentors">
                   <!-- row -->
                   <div class="col-xs-12 mentorrow nopadding">
-                    <div class="col-xs-2 col-sm-4 nopadding"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
-                    <div class="col-xs-10 col-sm-8">
-                      <h4 data-bind="text:name"></h4>
-                      (<span data-bind="text:skill"></span>)
+                    <div class="col-xs-4 nopadding" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-8">
+                      <h5 data-bind="text:name" class="nopadding"></h5>
                       <div class="col-xs-12 nopadding">
-                        <button data-bind="click:selectMentor">+ ADD</button>
+                        <button class="w3-badge w3-round-large " data-bind="click:selectMentor">+</button>
                       </div>
                     </div>
                   </div>
-                  <!-- row --> 
+                  <!-- row -->
                 </div>
               </div>
-              <!-- Mentors --> 
+              <!-- Mentors -->
             </div>
           </div>
-          <!-- about Ends --> 
-          
+          <!-- about Ends -->
+
         </div>
         <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn" data-bind="with:profile">
           <div id="projects">
@@ -188,7 +191,7 @@
               <button class="btn  btn-info btn-xs ssoenabled" data-toggle="modal" data-bind="click:newproject" name="ssoenabled">+ Add new Projects</button>
             </div>
             <div class="col-sm-12 nopaddingmd nopaddingxs nopaddingsm">
-              <div class="panel-group" id="accordion" data-bind="foreach:projects"> 
+              <div class="panel-group" id="accordion" data-bind="foreach:projects">
                 <!-- Project 1 -->
                 <div class="panel panel-default">
                   <div class="panel-heading">
@@ -202,7 +205,7 @@
                     <div class="panel-body">
                       <p>Customer Industry: <span data-bind="text:industry"></span></p>
                       <p>Project Pillar: <span data-bind="text:type_of_work"></span></p>
-                      <p>Project Artifacts URL: <span data-bind="text:artifacts_url"></span></p>
+                      <p>Project Artifacts URL: <a data-bind="attr:{href:artifacts_url}"><span data-bind="text:artifacts_url"></span></a></p>
                       <p>Summary of Project and Business Value: <span data-bind="text:summary"></span></p>
                       <p>Key Technology utilized in solution: <span data-bind="text:description"></span></p>
                       <p>Result of the Project: <span data-bind="text:outcome"></span></p>
@@ -214,10 +217,10 @@
             </div>
           </div>
         </div>
-        <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
+        <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in">
           <!-- Outside -->
           <div id="outside">
-            <div class="col-sm-12 nopadding"> 
+            <div class="col-sm-12 nopadding">
               <!-- Uploads -->
               <div class="profileSection">
                 <div class="greyBg profileSummaryh">My Personal Gallery
@@ -225,20 +228,20 @@
                 </div>
                 <div class="profileSummary ">
                   <div id="conveyorbelt-horizontal-example">
-                    <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}"> 
+                    <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}">
                       <!-- ko foreach: personalphotoslist -->
                       <div class="demo-conveyor-item" style="position:relative;">
                         <button name="ssoenabled" data-bind="click:removeimage" class="removeimage ssoenabled">X</button>
                         <img data-bind="attr:{src:photo_url}" onclick="enlargephoto(event)" style="height: 200px;margin: 0px 0px 0px 10px;cursor:zoom-in"
                           class="w3-hover-opacity"> </div>
-                      <!-- /ko --> 
+                      <!-- /ko -->
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- Uploads --> 
+              <!-- Uploads -->
             </div>
-            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm"> 
+            <div class="col-sm-9 nopaddingmd nopaddingxs nopaddingsm">
               <!-- Outside Interests -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">My Hobbies
@@ -246,7 +249,7 @@
                 </div>
                 <div class="profileSummary" data-bind="foreach:interests"> <span class="grayTags" data-bind="text:value"></span> </div>
               </div>
-              <!-- Outside Interests --> 
+              <!-- Outside Interests -->
               <!-- Outside Achievements -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">My Achievements
@@ -258,10 +261,10 @@
                   </ul>
                 </div>
               </div>
-              <!-- Outside Achievements --> 
+              <!-- Outside Achievements -->
             </div>
-            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm"> 
-              
+            <div class="col-sm-3 nopaddingrightmd nopaddingxs nopaddingrightsm">
+
               <!-- Links -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Outside Links
@@ -273,10 +276,10 @@
                   </ul>
                 </div>
               </div>
-              <!-- Links --> 
+              <!-- Links -->
             </div>
           </div>
-          <!-- Outside --> 
+          <!-- Outside -->
         </div>
       </div>
     </div>
@@ -284,7 +287,7 @@
 </div>
 <!-- Summary Edit -->
 <div class="modal fade" id="editsummary" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -308,7 +311,7 @@
   <div class="oj-dialog-body">
     <form>
       <div class="oj-flex" data-bind="foreach:profile().skills">
-        <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteskill,attr:{id:employee_profile_key}"> X</span> </div>
+        <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteskill,attr:{id:employee_profile_key}"> X</span>          </div>
       </div>
       <hr style="margin: 5px;margin-bottom: 10px">
       <div class="form-group">
@@ -317,22 +320,24 @@
                                                   rootAttributes: {style:'max-width:30em'}}">
           <option data-bind="value:'', text:'Select'"></option>
           <!-- ko foreach: skillarray -->
-          <optgroup data-bind="attr:{label: label}"> 
-          <!-- ko foreach: children -->
-          <option data-bind="value: value, text:value"></option>
-          <!-- /ko --> 
-          </optgroup>
+              <optgroup data-bind="attr:{label: label}">
+                  <!-- ko foreach: children -->
+                      <option data-bind="value: value, text:value"></option>
+                  <!-- /ko -->
+              </optgroup>
           <!-- /ko -->
-        </select>
-        <!-- <input type="text" placeholder="Skills" data-bind="value:newSkill" class="form-control">  --> 
+      </select>
+        <!-- <input type="text" placeholder="Skills" data-bind="value:newSkill" class="form-control">  -->
       </div>
       <div class="form-group">
         <label for="pwd">Add Rating:&nbsp; </label>
+
         <div id="gauge2" data-bind="ojComponent: {
 		  component: 'ojRatingGauge', 
 		  value:ratting, 
 		  readOnly: false,thresholds: thresholdValues
-		 }" style="width:120px;height:25px"> </div>
+		 }" style="width:120px;height:25px">
+        </div>
         <!-- <input id="slider-id" list="tickmarks" type="range" min="1" max="5" step="1" data-bind="value:ratting" />
         <div data-bind="text:ratting" class="rating"></div>
         <datalist id="tickmarks">
@@ -341,13 +346,13 @@
               <option value="3" label="3">
                 <option value="4" label="4">
                   <option value="5" label="5">
-        </datalist> --> 
+        </datalist> -->
       </div>
       <button class="btn btn-default apply" data-bind="click:saveSkills">Add</button>
     </form>
   </div>
 </div>
-<!-- Location Edit --> 
+<!-- Location Edit -->
 <!-- <div style="display:none" id="editprofiledialog" title="Update Profile Info" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
   <div class="oj-dialog-body" data-bind="with:profile">
         <div class="form-group">
@@ -388,18 +393,18 @@
   </div>
 </div> -->
 <div style="display:none" id="editprofiledialog" title="Update Profile Info" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
-  <div class="oj-dialog-body"> 
+  <div class="oj-dialog-body">
     <!-- data-bind="with:profile" -->
     <div class="form-group">
       <label>Hub:</label>
       <div class="input-group">
         <select class="form-control" id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',value:center,
                                                   rootAttributes: {style:'width:300px'}}">
-          <option data-bind="value:'', text:'Select'"></option>
-          <!-- ko foreach: profile().hublist -->
-          <option data-bind="value: $data, text:$data"></option>
-          <!-- /ko -->
-        </select>
+                        <option data-bind="value:'', text:'Select'"></option>
+                  <!-- ko foreach: profile().hublist -->
+                      <option data-bind="value: $data, text:$data"></option>
+                  <!-- /ko -->
+            </select>
       </div>
     </div>
     <div class="form-group">
@@ -407,24 +412,28 @@
       <div class="input-group">
         <select class="form-control" id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',value:pillar,
                                                   rootAttributes: {style:'width:300px'}}">
-          <option data-bind="value:'', text:'Select'"></option>
-          <!-- ko foreach: profile().pillarlist -->
-          <option data-bind="value: $data, text:$data"></option>
-          <!-- /ko -->
-        </select>
+                        <option data-bind="value:'', text:'Select'"></option>
+                  <!-- ko foreach: profile().pillarlist -->
+                      <option data-bind="value: $data, text:$data"></option>
+                  <!-- /ko -->
+            </select>
       </div>
-      <div class="form-group"> <br>
+      <div class="form-group">
+        <br>
         <label>Mobile:</label>
         <div class="input-group" data-bind="with:profile">
           <input class="form-control" type="text" data-bind="value:mobile_phone; hasFocus: clearMobileF">
           <span class="input-group-addon">
-          <button  data-bind="click: clearMobileValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </span> </div>
+               <button  data-bind="click: clearMobileValue" value="clear"><i class="fa fa-times" aria-hidden="true"></i></button> 
+              </span>
+        </div>
       </div>
     </div>
     <button data-bind="click:saveprofilepillarinfo" data-dismiss="modal" class="btn btn-default apply">Save</button>
   </div>
 </div>
+
+
 
 <!-- Profile Icon Edit -->
 <div style="display:none" id="uploadicondialog" title="Update Profile Icon" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
@@ -435,6 +444,8 @@
     </div>
   </div>
 </div>
+
+
 
 <!-- upload personal photo dialog -->
 
@@ -452,7 +463,7 @@
   <div class="oj-dialog-body">
     <form>
       <div class=" oj-flex" data-bind="foreach:profile().learnings">
-        <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span data-bind="click:deletelearning,attr:{id:employee_profile_key}"> X</span> </div>
+        <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span data-bind="click:deletelearning,attr:{id:employee_profile_key}"> X</span>          </div>
       </div>
       <hr style="margin: 5px;margin-bottom: 10px">
       <div class="form-group">
@@ -461,15 +472,16 @@
                                                   rootAttributes: {style:'max-width:30em'}}">
           <option data-bind="value:'', text:'Select'"></option>
           <!-- ko foreach: skillarray -->
-          <optgroup data-bind="attr:{label: label}"> 
-          <!-- ko foreach: children -->
-          <option data-bind="value: value, text:value"></option>
-          <!-- /ko --> 
-          </optgroup>
+              <optgroup data-bind="attr:{label: label}">
+                  <!-- ko foreach: children -->
+                      <option data-bind="value: value, text:value"></option>
+                  <!-- /ko -->
+              </optgroup>
           <!-- /ko -->
-        </select>
+      </select>
         <!-- <input type="text" placeholder="Skills" data-bind="value:newSkill" class="form-control">  -->
         <h6 class="hinttext">maximum you can add upto 3 learning interests</h6>
+
       </div>
       <button type="submit" class="btn btn-default apply" data-bind="click:saveLearning">Add</button>
     </form>
@@ -517,12 +529,14 @@
     <div class="oj-flex">
       <button class="btn btn-default apply oj-sm-5" data-dismiss="modal" data-bind="click:saveproject">Save</button>
       <p class="oj-sm-2"></p>
+
+
     </div>
   </div>
 </div>
 <!-- Project 2 Edit -->
 <div class="modal fade" id="editproject2" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -548,7 +562,7 @@
 </div>
 <!-- Past Projects Edit -->
 <div class="modal fade" id="editpastprojects" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -579,7 +593,7 @@
 </div>
 <!-- Add New Projects -->
 <div class="modal fade" id="addnewprojects" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -604,7 +618,7 @@
 </div>
 <!-- Add Past Projects  -->
 <div class="modal fade" id="addpastprojects" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -625,7 +639,7 @@
 </div>
 <!-- Outside Interests and hobbies Edit -->
 <div class="modal fade" id="editoutsideinterests" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -634,9 +648,8 @@
       </div>
       <div class="modal-body">
         <div class=" oj-flex" data-bind="foreach:profile().interests">
-          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteInterest,attr:{id:employee_profile_key}"> X</span> </div>
-        </div>
-        <br>
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteInterest,attr:{id:employee_profile_key}"> X</span>            </div>
+        </div><br>
         <form>
           <div class="form-group">
             <label>Enter outside interests and hobbies:</label>
@@ -651,18 +664,18 @@
 
 <!-- Outside Achievements -->
 <div class="modal fade" id="editoutsideachievements" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Add and Edit Outside Achievements</h4>
       </div>
+
       <div class="modal-body">
         <div class="oj-flex" data-bind="foreach:profile().achivements">
-          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff;"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteAchievements,attr:{id:employee_profile_key}"> X</span> </div>
-        </div>
-        <br>
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff;"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteAchievements,attr:{id:employee_profile_key}"> X</span>            </div>
+        </div> <br>
         <form>
           <div class="form-group">
             <label for="email">Add new achievements:</label>
@@ -682,7 +695,7 @@
 
 <!-- Links -->
 <div class="modal fade" id="editlinks" role="dialog">
-  <div class="modal-dialog"> 
+  <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -690,10 +703,12 @@
         <h4 class="modal-title">Add and Edit Links</h4>
       </div>
       <div class="modal-body">
+
         <div class=" oj-flex" data-bind="foreach:profile().links">
-          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff;"> <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteLinks,attr:{id:employee_profile_key}"> X</span> </div>
-        </div>
-        <br>
+          <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff;">
+            <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteLinks,attr:{id:employee_profile_key}">
+            X</span> </div>
+        </div><br>
         <form>
           <div class="form-group">
             <label for="email">Enter link name:</label>
@@ -707,30 +722,34 @@
           <button class="btn btn-default apply" data-bind="click:saveLinks">Add</button>
         </form>
       </div>
+
     </div>
   </div>
 </div>
+
 <div style="display:none" id="deletementor" title="Mentor Feedback" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
   <div class="oj-dialog-body">
     <div class="form-group">
       <label>Reason for removing the Mentor</label>
       <select id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',value:removementorreason,
                                                   rootAttributes: {style:'max-width:30em'}}">
-        <option value="My mentoring activities completed - Gained skill">My mentoring activities completed - Gained skill</option>
-        <option value="Mentor was selected by mistake">Mentor was selected by mistake</option>
-        <option value="Mentor do not have enough time to coach">Mentor do not have enough time to coach</option>
-        <option value="Mentor do not have skills which I expected to learn">Mentor do not have skills which I expected to learn</option>
-      </select>
+          <option value="My mentoring activities completed - Gained skill">My mentoring activities completed - Gained skill</option>
+          <option value="Mentor was selected by mistake">Mentor was selected by mistake</option>
+          <option value="Mentor do not have enough time to coach">Mentor do not have enough time to coach</option>
+          <option value="Mentor do not have skills which I expected to learn">Mentor do not have skills which I expected to learn</option>
+        </select>
     </div>
     <div class="w3-center">
       <button id="submitfeedbackbutton" class="w3-btn w3-round-large w3-gray">Submit</button>
     </div>
   </div>
 </div>
-<div id="enlargephoto" class="w3-modal w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'"> <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
-  <div class="w3-modal-content w3-animate-zoom"> 
-    <!-- ko if: enlargephotourl --> 
-    <img class="w3-modal-content img-responsive" data-bind="attr:{src:enlargephotourl}" style="cursor:zoom-out"> 
-    <!-- /ko --> 
+
+<div id="enlargephoto" class="w3-modal w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'">
+  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom">
+    <!-- ko if: enlargephotourl -->
+    <img class="w3-modal-content img-responsive" data-bind="attr:{src:enlargephotourl}" style="cursor:zoom-out">
+    <!-- /ko -->
   </div>
 </div>

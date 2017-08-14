@@ -10,6 +10,7 @@ var usertype="";
 var dorefresh=true;
 var uuid="";
 var profilelink = '';
+var ismentor=false;
 /**
  * Example of Require.js boostrap javascript
  */
