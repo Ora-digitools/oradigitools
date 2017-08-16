@@ -10,9 +10,9 @@
     <div id="dialog" class="oj-flex" style="display: none;text-align:center">
       <div class="oj-sm-12"> <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> <span class="sr-only">Loading...</span> </div>
     </div>
-    <div class="col-sm-5 col-md-6 profileleft nopadding">
+    <div class="col-sm-6 col-md-6 profileleft nopadding">
       <!-- Image -->
-      <div class="col-xs-5 col-sm-6 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
+      <div class="col-xs-5 col-sm-5 col-md-4 col-lg-3  profileImage nopadding"><img data-bind="attr:{src:profileicon,alt:'icon'}" class="profileThumb">
         <div class="overlay ssoenabled">
           <div class="text">
             <button type="button" data-bind="click: openIconuploder" class="ssoenabled" name="ssoenabled"><span class="glyphicon glyphicon-camera"></span>Change Picture</button>
@@ -34,7 +34,7 @@
     </div>
     <!-- Contact -->
     <!-- Hub -->
-    <div class="col-sm-3 col-md-3 profileAddress">
+    <div class="col-sm-2 col-md-3 profileAddress">
       <div>
         <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openeditprofiledialog">Edit</button>
       </div>
@@ -165,14 +165,17 @@
                 <div class="greyBg profileSummaryh">Suggested Mentors</div>
                 <div class="profileSummary mentors" data-bind="foreach:recommendedMentors">
                   <!-- row -->
-                  <div class="col-xs-12 mentorrow nopadding">
-                    <div class="col-xs-4 nopadding" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
-                    <div class="col-xs-8">
-                      <h5 data-bind="text:name" class="nopadding"></h5>
-                      <div class="col-xs-12 nopadding">
-                        <button class="w3-badge w3-round-large " data-bind="click:selectMentor">+</button>
+                  <div class="col-xs-12 mentorrow nopadding ">
+                    <div class="col-xs-2 col-md-4 nopadding leftcenterelement" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
+                    <div class="col-xs-10 col-md-8 suggestedm">
+					<div class="col-xs-12   col-md-12 col-lg-9  nopadding leftcenterelement">
+                      <div data-bind="text:name" class="nopadding bold"></div>
+					  </div>
+                      <div class="col-xs-12   col-md-12 col-lg-3 nopadding leftcenterelement">
+                        <button class="w3-badge w3-round-large " data-bind="click:selectMentor" title="Add Mentor">+</button>
                       </div>
                     </div>
+					
                   </div>
                   <!-- row -->
                 </div>

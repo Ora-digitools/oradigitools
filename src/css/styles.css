@@ -1124,16 +1124,7 @@ li.oj-selected .oj-tabs-gen-div {
 	-moz-transform: translateY(-50%);
 	text-align: center;
 }
-.leftcenterelement {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	
-}
+
 .servicesicons {
 	text-align: center;
 	font-weight: bold
@@ -1261,17 +1252,23 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .mentors img {
 	border: 2px solid rgb(239, 239, 239);
-	height: 80px;
+	height: auto;
 	width: 80px;
+	max-height:80px;
+	min-height: 80px;
 }
 .mentors button {
 	background: rgb(242, 145, 17) none repeat scroll 0 0;
-	border: medium none;
-	border-radius: 5px;
-	color: rgb(255, 255, 255);
-	font-size: 14px;
-	margin-top: 10px;
-	padding: 5px 10px;
+border: medium none;
+border-radius: 50%;
+color: rgb(255, 255, 255);
+font-size: 25px;
+height: 30px;
+line-height: 30px;
+margin-top: 10px;
+padding: 0;
+vertical-align: middle;
+width: 30px;
 }
 .mentors button img {
 	height: 100%;
@@ -1285,6 +1282,7 @@ height: auto;
 margin-bottom: 10px;
 max-height: 90px;
 width: 90px;
+min-height: 90px;
 }
 .mentors h4, .selectedmentor h4 {
 	margin-bottom: 0px;
@@ -1295,8 +1293,9 @@ width: 90px;
 	border-bottom: 1px solid rgb(239, 239, 239);
 	min-height: 90px;
 	padding-bottom: 10px;
-	height:90px;
+	
 }
+
 
 .menteeblock {
 	margin-bottom: 10px;
@@ -1308,6 +1307,7 @@ width: 90px;
 	margin-bottom: 10px;
 	border: 2px solid rgb(239, 239, 239);
 	max-height: 90px;
+	min-height: 90px;
 }
 #loginbutton {
 	display: none;
@@ -1400,6 +1400,7 @@ label.star:before {
 	padding-left: 0px;
 	padding-right: 0px;
 }
+
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
@@ -1658,11 +1659,13 @@ label.star:before {
 	width: 50px;
 	height: auto;
 	max-height:50px;
+	min-height: 50px;
 }
 .mentorrow img {
 	width: 50px;
 	height: auto;
 	max-height:50px;
+	min-height: 50px;
 }
 
 }
@@ -1800,6 +1803,25 @@ ul#profiletabs {
 .col-lg-0 {
 	display: none
 }
+.leftcenterelement {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	
+}
+.suggestedm{
+	height:90px;
+	padding-right:0px;
+	padding-left:5px;
+}
+
+.mentorrow{
+	height:90px;
+}
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
@@ -1813,6 +1835,7 @@ ul#profiletabs {
 	width: 60px;
 	height: auto;
 	max-height: 60px;
+	min-height: 60px;
 }
 }
 
