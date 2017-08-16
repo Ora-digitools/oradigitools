@@ -9,36 +9,37 @@
 <!-- Start Faces -->
 <div class="row faces">
   <div class="container" id="view">
-  <div id="dialog" class="oj-flex" style="display: none;text-align:center">
-                      <div class="oj-sm-12">
-                                            
-<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-<span class="sr-only">Loading...</span>
-                      </div>
-                    </div>
-    <ul class="oj-flex" id="listview" aria-label="list using array"   data-bind="ojComponent: { 
+    <div id="dialog" class="oj-flex" style="display: none;text-align:center">
+      <div class="oj-sm-12">
+
+        <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <ul class="oj-flex" id="listview" aria-label="list using array" data-bind="ojComponent: { 
             component: 'ojListView', data: dataSource, selection: currentItemId,
             item: {template: 'server_template'}, 
             selectionMode: 'single',
             optionChange: logSelected
         }">
-    </ul>
-  </div>
-  <div id="page">
-    <button class="apply" name="navbtn" id="FIRST" data-bind="click:loadFirstPage">FIRST</button>
-    <button class="apply" name="navbtn" id='PREV' data-bind="click:loadPrevPage">PREV</button>
-    <button class="apply" name="navbtn" id='NEXT' data-bind="click:loadNextPage">NEXT</button>
-  </div>
+  </ul>
+</div>
+<div id="page">
+  <button class="apply" name="navbtn" id="FIRST" data-bind="click:loadFirstPage">FIRST</button>
+  <button class="apply" name="navbtn" id='PREV' data-bind="click:loadPrevPage">PREV</button>
+  <button class="apply" name="navbtn" id='NEXT' data-bind="click:loadNextPage">NEXT</button>
+</div>
 </div>
 
 <!-- Filter -->
 <script type="text/html" id="server_template">
   <li data-bind="attr: {id: $data['uuid']}" class="oj-sm-12 oj-md-4 oj-lg-3 oj-xl-2 oj-col">
-   <div class=" face">
+    <div class=" face">
       <div class="nopadding mainImage"> <img data-bind="attr: {src: icon, alt: name}"></img>
       </div>
-                  <div class="nopadding name"><span class="header bold" data-bind="text:name"></span></div>
-                  <div class="nopadding title"><span data-bind="text: title"></span></div>
+      <div class="nopadding name"><span class="header bold" data-bind="text:name"></span></div>
+      <div class="nopadding title"><span data-bind="text: title"></span></div>
       <div class="nopadding social"><span data-bind="if: work_phone"><a data-bind="attr:{href:'tel:'+work_phone, title:work_phone}"><img src="css/images/phone_icon_orange.png"></a></span>
         <span data-bind="if: work_email"><a data-bind="attr:{href:'mailto:'+work_email,title:work_email}"><img src="css/images/email_icon.png"></a></span>
       </div>
@@ -57,7 +58,7 @@
             value:searchtext,
             rootAttributes: {class:'form-control slidersearch'}}">
   </div>
-  
+
   <p style="font-weight: bolder">Filter by Location</p>
   <div data-bind="foreach: hubslist">
     <div class="checkbox">

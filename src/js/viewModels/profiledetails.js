@@ -314,37 +314,37 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         for (var i = 0; i < self.skills_skills().length; i++) {
           var network = self.skills_skills()[i];
           var value = network.scale();
-		  var className = '';
-		   var color = '';
-		  if (network.scale() == '5') {
-			   className = 'rating5';
-			   color = '#942645';
-		  }
-		 if (network.scale() == '4') {
-			   className = 'rating4';
-			   color = '#F29111';
-		  }
-		  if (network.scale() == '3') {
-			   className = 'rating3';
-			   color = '#2A4455';
-		  }
-		  if (network.scale() == '2') {
-			   className = 'rating2';
-			   color = '#3A913F';
-		  }
-		  if (network.scale() == '1') {
-			   className = 'rating1';
-			   color = '#942645';
-		  }
-		  
+          var className = '';
+          var color = '';
+          if (network.scale() == '5') {
+            className = 'rating5';
+            color = '#942645';
+          }
+          if (network.scale() == '4') {
+            className = 'rating4';
+            color = '#F29111';
+          }
+          if (network.scale() == '3') {
+            className = 'rating3';
+            color = '#2A4455';
+          }
+          if (network.scale() == '2') {
+            className = 'rating2';
+            color = '#3A913F';
+          }
+          if (network.scale() == '1') {
+            className = 'rating1';
+            color = '#942645';
+          }
+
           self.tags.push({
             id: network.value(),
             label: network.value(),
             value: value,
-			className: className,
-			color: color
+            className: className,
+            color: color
           });
-		  
+
         }
       }
 
@@ -1291,37 +1291,41 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         showdialog();
         var learningskills = self.profile().learnings();
         var commasepskills = '';
-
-        for (var i = 0; i < learningskills.length; i++) {
-          if (learningskills[i].value().length > 0) {
-            commasepskills += commasepskills.length > 0 ? ',' + learningskills[i].value() : learningskills[i].value();
+        try {
+          for (var i = 0; i < learningskills.length; i++) {
+            if (learningskills[i].value().length > 0) {
+              commasepskills += commasepskills.length > 0 ? ',' + learningskills[i].value() : learningskills[i].value();
+            }
           }
-        }
-        var url = baseurl + "GetMentorListsSkill/" + commasepskills + "/" + self.profile().employee_key();
-        console.log(url)
-        $.getJSON(url).
-          then(function (mentors) {
-            self.recommendedMentors([]);
-            $.each(mentors.items, function (data) {
-              if (this.employee_key != self.profile().employee_key()) {
-                var imageurl = self.defaultimage;
-                if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-                  imageurl = this.profile_photo_url;
+          var url = baseurl + "GetMentorListsSkill/" + commasepskills + "/" + self.profile().employee_key();
+          console.log(url)
+          $.getJSON(url).
+            then(function (mentors) {
+              self.recommendedMentors([]);
+              $.each(mentors.items, function (data) {
+                if (this.employee_key != self.profile().employee_key()) {
+                  var imageurl = self.defaultimage;
+                  if (!this.profile_photo_url.endsWith("GetPhoto/")) {
+                    imageurl = this.profile_photo_url;
+                  }
+                  var mentor = {
+                    employee_key: this.employee_key,
+                    profile_photo_url: imageurl,
+                    name: this.display_name,
+                    skill: this.skill,
+                    uuid: this.uuid
+                  }
+                  self.recommendedMentors.push(mentor);
                 }
-                var mentor = {
-                  employee_key: this.employee_key,
-                  profile_photo_url: imageurl,
-                  name: this.display_name,
-                  skill: this.skill,
-                  uuid: this.uuid
-                }
-                self.recommendedMentors.push(mentor);
-              }
 
+              });
+
+              hidedialog();
+              debuglog(self.recommendedMentors().length + " recommended mentors fetched");
             });
-            hidedialog();
-            debuglog(self.recommendedMentors().length + " recommended mentors fetched");
-          });
+        } catch (err) {
+          hidedialog();
+        }
       }
       //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
 
