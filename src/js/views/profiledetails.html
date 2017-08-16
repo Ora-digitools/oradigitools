@@ -104,40 +104,38 @@
                       <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openlearningskilldialog">Edit</button>
                     </div>
                     <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Learning Interests -->
-              <div class="row ">
-                <div class="col-sm-4">
-                  <!-- Mentors -->
+                  </div> 
+				  <!-- Learning Interests -->
+				  
+				   <!-- Mentors -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Mentors </div>
-                    <div class="profileSummary mentees">
+                    <div class="profileSummary selectedmentor">
                       <div class="row" data-bind="foreach:associatedmentors">
-                        <div class="col-xs-6">
-                          <!-- <span style="border: 2px red solid;border-radius: 50px;background-color: red;color: white" data-bind="click:removementor">X</span>  -->
-                          <span class="w3-large w3-white removementor ssoenabled" data-bind="click:removementor"><i class="fa fa-close"></i></span>                          
-                          <img data-bind="attr:{src:profile_photo_url},click:gotoprofile" style="cursor: pointer" class="img-rounded img-responsive">
-                          <h5 data-bind="text:name"></h5>
+                        <div class="col-xs-6 text-center"> <span class=" w3-badge w3-large w3-white removementor ssoenabled" data-bind="click:removementor"><i class="fa fa-close"></i></span> <img data-bind="attr:{src:profile_photo_url},click:gotoprofile" style="cursor: pointer" class="img-rounded img-responsive" title="View Profile">
+                          <div data-bind="text:name,click:gotoprofile" tyle="cursor: pointer" class="bold" title="View Profile"></div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- Mentors -->
+                  <!-- Mentors --> 
                 </div>
-                <div class="col-sm-8 ">
-                  <!-- Mentees -->
+              </div>
+             
+              <div class="row ">
+                
+                <div class="col-sm-12 ">
+                  
+				  <!-- Mentees -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Mentees </div>
                     <div class="profileSummary mentees oj-flex" data-bind="foreach:associatedmentees">
-                      <div class="oj-sm-4" style="cursor: pointer" data-bind="click:gotoprofile">
-                        <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
-                        <h5 data-bind="text:name"></h5>
+                      <div class="oj-sm-6 oj-md-4 oj-lg-3 oj-xl-2 text-center menteeblock" style="cursor: pointer" data-bind="click:gotoprofile" title="View Profile"> <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
+                        <div data-bind="text:name" class="bold"></div>
                       </div>
                     </div>
                   </div>
-                  <!-- Mentees -->
+                  <!-- Mentees --> 
                 </div>
               </div>
             </div>
