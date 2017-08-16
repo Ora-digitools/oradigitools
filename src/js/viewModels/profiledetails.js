@@ -314,11 +314,37 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         for (var i = 0; i < self.skills_skills().length; i++) {
           var network = self.skills_skills()[i];
           var value = network.scale();
+		  var className = '';
+		   var color = '';
+		  if (network.scale() == '5') {
+			   className = 'rating5';
+			   color = '#942645';
+		  }
+		 if (network.scale() == '4') {
+			   className = 'rating4';
+			   color = '#F29111';
+		  }
+		  if (network.scale() == '3') {
+			   className = 'rating3';
+			   color = '#2A4455';
+		  }
+		  if (network.scale() == '2') {
+			   className = 'rating2';
+			   color = '#3A913F';
+		  }
+		  if (network.scale() == '1') {
+			   className = 'rating1';
+			   color = '#942645';
+		  }
+		  
           self.tags.push({
             id: network.value(),
             label: network.value(),
-            value: value
+            value: value,
+			className: className,
+			color: color
           });
+		  
         }
       }
 

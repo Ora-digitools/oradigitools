@@ -1334,20 +1334,9 @@ min-height: 90px;
 	margin: 0px 10px;
 	display: inline-block
 }
-.size5 {
-	font-size: 36px;
-}
-.size4 {
-	font-size: 28px;
-}
-.size3 {
-	font-size: 24px;
-}
-.size2 {
-	font-size: 20px;
-}
-.size1 {
-	font-size: 16px;
+
+#tagcloud1{
+	padding:5px;
 }
 /*rating*/
 div.stars {
