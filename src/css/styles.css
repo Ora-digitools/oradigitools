@@ -1124,7 +1124,6 @@ li.oj-selected .oj-tabs-gen-div {
 	-moz-transform: translateY(-50%);
 	text-align: center;
 }
-
 .servicesicons {
 	text-align: center;
 	font-weight: bold
@@ -1199,7 +1198,7 @@ li.oj-selected .oj-tabs-gen-div {
 	width: 25px;
 	z-index: 1000;
 	line-height: 25px;
-	padding:0px;
+	padding: 0px;
 }
 .founddesc {
 	margin-top: 20px;
@@ -1254,21 +1253,21 @@ li.oj-selected .oj-tabs-gen-div {
 	border: 2px solid rgb(239, 239, 239);
 	height: auto;
 	width: 80px;
-	max-height:80px;
+	max-height: 80px;
 	min-height: 80px;
 }
 .mentors button {
 	background: rgb(242, 145, 17) none repeat scroll 0 0;
-border: medium none;
-border-radius: 50%;
-color: rgb(255, 255, 255);
-font-size: 25px;
-height: 30px;
-line-height: 30px;
-margin-top: 10px;
-padding: 0;
-vertical-align: middle;
-width: 30px;
+	border: medium none;
+	border-radius: 50%;
+	color: rgb(255, 255, 255);
+	font-size: 25px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+	padding: 0;
+	vertical-align: middle;
+	width: 30px;
 }
 .mentors button img {
 	height: 100%;
@@ -1277,12 +1276,12 @@ width: 30px;
 }
 .selectedmentor img {
 	border: 2px solid rgb(239, 239, 239);
-display: inline-block;
-height: auto;
-margin-bottom: 10px;
-max-height: 90px;
-width: 90px;
-min-height: 90px;
+	display: inline-block;
+	height: auto;
+	margin-bottom: 10px;
+	max-height: 90px;
+	width: 90px;
+	min-height: 90px;
 }
 .mentors h4, .selectedmentor h4 {
 	margin-bottom: 0px;
@@ -1293,10 +1292,7 @@ min-height: 90px;
 	border-bottom: 1px solid rgb(239, 239, 239);
 	min-height: 90px;
 	padding-bottom: 10px;
-	
 }
-
-
 .menteeblock {
 	margin-bottom: 10px;
 }
@@ -1334,9 +1330,8 @@ min-height: 90px;
 	margin: 0px 10px;
 	display: inline-block
 }
-
-#tagcloud1{
-	padding:5px;
+#tagcloud1 {
+	padding: 5px;
 }
 /*rating*/
 div.stars {
@@ -1375,6 +1370,9 @@ label.star:before {
 	word-wrap: break-word;
 	text-align: center;
 }
+.fa-close {
+	cursor: pointer
+}
 
 @media (min-width: 1500px) {
 .container {
@@ -1389,7 +1387,6 @@ label.star:before {
 	padding-left: 0px;
 	padding-right: 0px;
 }
-
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
@@ -1647,16 +1644,15 @@ label.star:before {
 .selectedmentor img {
 	width: 50px;
 	height: auto;
-	max-height:50px;
+	max-height: 50px;
 	min-height: 50px;
 }
 .mentorrow img {
 	width: 50px;
 	height: auto;
-	max-height:50px;
+	max-height: 50px;
 	min-height: 50px;
 }
-
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1771,6 +1767,9 @@ ul#profiletabs {
 	text-align: center;
 	min-height: 50px;
 }
+.orangeBg {
+	font-size: 14px;
+}
 }
 
 @media (min-width: 1025px) {
@@ -1800,25 +1799,26 @@ ul#profiletabs {
 	-webkit-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
-	
 }
-.suggestedm{
-	height:90px;
-	padding-right:0px;
-	padding-left:5px;
+.suggestedm {
+	height: 90px;
+	padding-right: 0px;
+	padding-left: 5px;
+}
+.mentorrow {
+	height: 90px;
+}
 }
 
-.mentorrow{
-	height:90px;
+@media (min-width: 1200px) and (max-width: 1500px) {
+.cloud_hubs li {
+	font-size: 12px;
 }
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
 .sliderButtons .watchvdo .fa-download {
 	font-size: 32px;
-}
-.cloud_hubs li {
-	font-size: 12px;
 }
 .mentees img {
 	width: 60px;
@@ -1828,7 +1828,7 @@ ul#profiletabs {
 }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1280px) {
 .oj-listview-item:nth-child(6n) .face {
 	border-right: 1px solid #d3d3d3;
 }
@@ -1836,12 +1836,18 @@ ul#profiletabs {
 	border-right: none;
 }
 }
-
+/*IE ONLY*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 .mainContent {
 	margin-top: 40px;
 }
 }
+
+/*SAFARI ONLY*/
  _::-webkit-full-page-media, .logo img {
 width:100%;
+}
+ _::-webkit-full-page-media, .sliderButtons .watchvdo {
+font-size:15px;
+
 }

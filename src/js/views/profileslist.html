@@ -2,7 +2,15 @@
 <!-- Start Heading -->
 <div class="row text-center team"><img src="css/images/meettheteam.png" class="img-responsive">
   <h1><span class="borderBottom">Our People</span></h1>
-
+<div class="col-sm-4 text-center col-sm-offset-4">
+    <div class="right-inner-addon"> <i class="glyphicon glyphicon-search"></i> </div>
+    <input id="inputSearch" placeholder="skills, names..." data-bind="ojComponent: {
+            component: 'ojInputSearch',
+            update: searchhandler,
+            value:searchtext,
+            rootAttributes: {class:'form-control slidersearch'}}">
+    
+  </div>
 </div>
 <!-- End Heading -->
 
@@ -16,7 +24,7 @@
         <span class="sr-only">Loading...</span>
       </div>
     </div>
-  </div>
+  
   <ul class="oj-flex" id="listview" aria-label="list using array" data-bind="ojComponent: { 
             component: 'ojListView', data: dataSource, selection: currentItemId,
             item: {template: 'server_template'}, 

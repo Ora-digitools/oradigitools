@@ -23,6 +23,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.hubslist = ko.observableArray([]);
       self.listofpillers = ko.observableArray([]);
       self.searchtext = ko.observable('');
+	  
+	  			//  Checks that string ends with the specific string...
+if (typeof String.prototype.endsWith != 'function') {
+    String.prototype.endsWith = function (str) {
+        return this.slice(-str.length) == str;
+    };
+}
 
       self.openthefilterpanel = function () {
         $('#slider').addClass('open');
@@ -66,6 +73,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             var prevurl = profiles.previous != undefined ? profiles.previous.$ref : null;
             self.next = (nxturl);
             self.prev = (prevurl);
+
+
             for (var i = 0; i < profiles.items.length; i++) {
               var obj = profiles.items[i];
               var imageurl = self.defaultimage;

@@ -46,6 +46,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       self.profile = ko.observableArray([]);
       // self.photograph = ko.observableArray([]);
       self.skills_skills = ko.observableArray([]);
+	  
+	  //  Checks that string ends with the specific string...
+if (typeof String.prototype.endsWith != 'function') {
+    String.prototype.endsWith = function (str) {
+        return this.slice(-str.length) == str;
+    };
+}
+
 
       self.skills_learning = ko.observableArray([]);
       self.skills_interests = ko.observableArray([]);
@@ -1204,7 +1212,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       enlargephoto = function (event, ui) {
         // alert('photo');
-        var url = event.currentTarget.currentSrc;
+        var url = event.currentTarget.src;
         self.enlargephotourl(url);
         document.getElementById('enlargephoto').style.display = 'block';
       }
