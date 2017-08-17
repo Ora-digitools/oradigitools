@@ -23,13 +23,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
       self.hubslist = ko.observableArray([]);
       self.listofpillers = ko.observableArray([]);
       self.searchtext = ko.observable('');
-	  
-	  			//  Checks that string ends with the specific string...
-if (typeof String.prototype.endsWith != 'function') {
-    String.prototype.endsWith = function (str) {
-        return this.slice(-str.length) == str;
-    };
-}
+
+      //  Checks that string ends with the specific string...
+      if (typeof String.prototype.endsWith != 'function') {
+        String.prototype.endsWith = function (str) {
+          return this.slice(-str.length) == str;
+        };
+      }
 
       self.openthefilterpanel = function () {
         $('#slider').addClass('open');
@@ -277,7 +277,7 @@ if (typeof String.prototype.endsWith != 'function') {
           // self.getFilters();
           self.searchhandler();
         } else {
-          if (dorefresh) {
+          if (self.renderData().length == 0 || dorefresh) {
             self.getFilters();
             self.getUserList();
           }

@@ -382,6 +382,7 @@ if (typeof String.prototype.endsWith != 'function') {
         }
 
         loadpage();
+        dorefresh=false;
       };
 
       self.iseditpermitted = function () {
@@ -1451,11 +1452,6 @@ if (typeof String.prototype.endsWith != 'function') {
         self.profileHistory().push(link);
         loadscreen();
       }
-
-      // ON BACK BUTTON PRESS
-      window.addEventListener('popstate', function (event) {
-        popscreen();
-      }, false);
 
 
       loadscreen = function () {
