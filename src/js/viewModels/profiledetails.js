@@ -387,7 +387,7 @@ if (typeof String.prototype.endsWith != 'function') {
 
       self.iseditpermitted = function () {
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
-          setssostatus('.ssoenabled', 'block');
+          setssostatus('.ssoenabled', 'inline-block');
         } else {
           setssostatus('.ssoenabled', 'none');
         }

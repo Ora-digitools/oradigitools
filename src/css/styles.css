@@ -1770,6 +1770,27 @@ ul#profiletabs {
 .orangeBg {
 	font-size: 14px;
 }
+.mentors img {
+	max-height: 45px;
+	min-height: 45px;
+	width: 45px;
+}
+}
+
+@media (min-width: 321px) and (max-width: 439px) {
+.mentors img {
+	max-height: 45px;
+	min-height: 45px;
+	width: 45px;
+}
+}
+
+@media (min-width: 440px) and (max-width: 578px) {
+.mentors img {
+	max-height: 60px;
+	min-height: 60px;
+	width: 60px;
+}
 }
 
 @media (min-width: 1025px) {
@@ -1836,6 +1857,7 @@ ul#profiletabs {
 	border-right: none;
 }
 }
+
 /*IE ONLY*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 .mainContent {
@@ -1849,5 +1871,4 @@ width:100%;
 }
  _::-webkit-full-page-media, .sliderButtons .watchvdo {
 font-size:15px;
-
 }
