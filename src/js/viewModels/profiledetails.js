@@ -46,13 +46,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       self.profile = ko.observableArray([]);
       // self.photograph = ko.observableArray([]);
       self.skills_skills = ko.observableArray([]);
-	  
-	  //  Checks that string ends with the specific string...
-if (typeof String.prototype.endsWith != 'function') {
-    String.prototype.endsWith = function (str) {
-        return this.slice(-str.length) == str;
-    };
-}
+
+      //  Checks that string ends with the specific string...
+      if (typeof String.prototype.endsWith != 'function') {
+        String.prototype.endsWith = function (str) {
+          return this.slice(-str.length) == str;
+        };
+      }
 
 
       self.skills_learning = ko.observableArray([]);
@@ -382,7 +382,7 @@ if (typeof String.prototype.endsWith != 'function') {
         }
 
         loadpage();
-        dorefresh=false;
+        dorefresh = false;
       };
 
       self.iseditpermitted = function () {
@@ -431,9 +431,6 @@ if (typeof String.prototype.endsWith != 'function') {
         self.skills_learning([]);
         self.skills_skills([]);
       }
-
-
-
 
 
       //------- SAVE PROFILE LOCATION INFORMATION ------------
@@ -519,9 +516,14 @@ if (typeof String.prototype.endsWith != 'function') {
         var requestdata = ko.observable();
 
         for (var i = 0; i < self.skills_skills().length; i++) {
-          updatedSkillList.push(self.skills_skills()[i]);
-        }
+          var skill = self.skills_skills()[i];
+          if (skill.value() == self.newSkill()[0]) {
+              alert(self.newSkill()[0]+" already exist in your profile.");
+              return;
+          }
+          updatedSkillList.push(skill);
 
+        }
 
         updatedSkillList.push({
           employee_profile_key: '',
@@ -529,6 +531,7 @@ if (typeof String.prototype.endsWith != 'function') {
           scale: self.ratting(),
           category: 'Skills',
         });
+
 
         requestdata = ({
           employee_key: self.profile().employee_key(),
@@ -608,6 +611,11 @@ if (typeof String.prototype.endsWith != 'function') {
         var requestdata = ko.observable();
         if (self.skills_learning().length < 3) {
           for (var i = 0; i < self.skills_learning().length; i++) {
+            var skill = self.skills_learning()[i];
+            if (skill.value() == self.newSkill()[0]) {
+                alert(self.newSkill()[0]+" already exist in your Learning Interest.");
+                return;
+            }
             updatedSkillList.push(self.skills_learning()[i]);
           }
 
@@ -636,7 +644,7 @@ if (typeof String.prototype.endsWith != 'function') {
             success: function (data) {
               self.getProfile(self.uuid);
               getRecommendedMentors();
-              self.newSkill([]);
+              self.newSkill('select');
               self.ratting(1);
               hidedialog();
             }
