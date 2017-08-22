@@ -21,7 +21,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       self.effect = ko.observable('fadeIn');
       self.enlargephotourl = ko.observable('');
       self.ratting = ko.observable(1);
-      self.newSkill = ko.observable('');
+      self.newSkill = ko.observableArray([]);
       self.linkurl = ko.observable('');
       self.achievementurl = ko.observable('');
       self.center = ko.observable('');
@@ -517,12 +517,20 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
         for (var i = 0; i < self.skills_skills().length; i++) {
           var skill = self.skills_skills()[i];
-          if (skill.value() == self.newSkill()[0]) {
-              alert(self.newSkill()[0]+" already exist in your profile.");
+          if (self.newSkill().length > 0) {
+            if (skill.value() == self.newSkill()[0]) {
+              alert(self.newSkill()[0] + " already exist in your Learning Interest.");
               return;
+            }
+          }else{
+            return;
           }
           updatedSkillList.push(skill);
 
+        }
+
+        if(self.newSkill()[0].toLowerCase()=='select'){
+          return;
         }
 
         updatedSkillList.push({
@@ -612,11 +620,19 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         if (self.skills_learning().length < 3) {
           for (var i = 0; i < self.skills_learning().length; i++) {
             var skill = self.skills_learning()[i];
-            if (skill.value() == self.newSkill()[0]) {
-                alert(self.newSkill()[0]+" already exist in your Learning Interest.");
+            if (self.newSkill().length >0){
+              if (skill.value() == self.newSkill()[0]) {
+                alert(self.newSkill()[0] + " already exist in your Learning Interest.");
                 return;
+              }
+            }else{
+              return;
             }
             updatedSkillList.push(self.skills_learning()[i]);
+          }
+
+          if(self.newSkill()[0].toLowerCase()=='select'){
+            return;
           }
 
 
@@ -862,6 +878,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       removementor = function (mentor, elem) {
         if (confirm('Delete Mentor?')) {
           $("#deletementor").ojDialog("open");
+          //My mentoring activities completed - Gained skill
+          self.removementorreason('My mentoring activities completed - Gained skill');
           self.handleOpen = $("#submitfeedbackbutton").click(function () {
             $("#deletementor").ojDialog("close");
             //showdialog();
@@ -1316,30 +1334,34 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           }
           var url = baseurl + "GetMentorListsSkill/" + commasepskills + "/" + self.profile().employee_key();
           console.log(url)
-          $.getJSON(url).
-            then(function (mentors) {
-              self.recommendedMentors([]);
-              $.each(mentors.items, function (data) {
-                if (this.employee_key != self.profile().employee_key()) {
-                  var imageurl = self.defaultimage;
-                  if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-                    imageurl = this.profile_photo_url;
+          if (commasepskills.length > 0) {
+            $.getJSON(url).
+              then(function (mentors) {
+                self.recommendedMentors([]);
+                $.each(mentors.items, function (data) {
+                  if (this.employee_key != self.profile().employee_key()) {
+                    var imageurl = self.defaultimage;
+                    if (!this.profile_photo_url.endsWith("GetPhoto/")) {
+                      imageurl = this.profile_photo_url;
+                    }
+                    var mentor = {
+                      employee_key: this.employee_key,
+                      profile_photo_url: imageurl,
+                      name: this.display_name,
+                      skill: this.skill,
+                      uuid: this.uuid
+                    }
+                    self.recommendedMentors.push(mentor);
                   }
-                  var mentor = {
-                    employee_key: this.employee_key,
-                    profile_photo_url: imageurl,
-                    name: this.display_name,
-                    skill: this.skill,
-                    uuid: this.uuid
-                  }
-                  self.recommendedMentors.push(mentor);
-                }
 
+                });
+
+                hidedialog();
+                debuglog(self.recommendedMentors().length + " recommended mentors fetched");
               });
-
-              hidedialog();
-              debuglog(self.recommendedMentors().length + " recommended mentors fetched");
-            });
+          } else {
+            self.recommendedMentors([]);
+          }
         } catch (err) {
           hidedialog();
         }
@@ -1473,7 +1495,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       // --------------- EDIT DIALOG FOR SKILLS -----------------//
       openskilldialog = function () {
         $("#skilldialog").ojDialog("open");
-
+        self.newSkill([]);
+        self.newSkill().push('Select');
       }
       closeskilldialog = function () {
         $("#skilldialog").ojDialog("close");
@@ -1482,7 +1505,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       // --------------- EDIT DIALOG FOR LEARNING SKILLS -----------------//
       openlearningskilldialog = function () {
         $("#learningskilldialog").ojDialog("open");
-
+        self.newSkill([]);
+        self.newSkill().push('Select');
       }
       closelearningskilldialog = function () {
         $("#learningskilldialog").ojDialog("close");
