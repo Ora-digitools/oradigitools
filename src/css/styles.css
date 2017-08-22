@@ -1374,6 +1374,9 @@ label.star:before {
 	cursor: pointer
 }
 
+.suggestedcolumn{
+	width:100%}
+
 @media (min-width: 1500px) {
 .container {
 	width: 1411px;
