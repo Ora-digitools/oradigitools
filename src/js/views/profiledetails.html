@@ -48,14 +48,15 @@
     <!-- Hub -->
   </div>
 </div>
-<div class="row">
+<div class="row" id="mentorregembedalert" style="display: none">
   <div class="container nopaddingmd">
-    <div class="alert alert-success fade in alert-dismissable margintop30" >
-    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
-    <strong>Thank you! You have successfully registered as a mentor</strong><br>Please update your skills and ratings to complete the mentor registration process.
+    <div class="alert alert-success fade in alert-dismissable margintop30">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+      <strong>Thank you! You have successfully registered as a mentor</strong><br>Please update your skills and ratings to
+      complete the mentor registration process.
+    </div>
+  </div>
 </div>
-  </div>
-  </div>
 <div class="row margintop30">
   <div class="container nopaddingmd">
     <div id="tabs-container">
@@ -114,38 +115,40 @@
                       <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openlearningskilldialog">Edit</button>
                     </div>
                     <div class="profileSummary" data-bind="foreach:learnings"><span class="grayTags" data-bind="text:value"></span> </div>
-                  </div> 
-				  <!-- Learning Interests -->
-				  
-				   <!-- Mentors -->
+                  </div>
+                  <!-- Learning Interests -->
+
+                  <!-- Mentors -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Mentors </div>
                     <div class="profileSummary selectedmentor">
                       <div class="row" data-bind="foreach:associatedmentors">
-                        <div class="col-xs-6 text-center"> <span class=" w3-badge w3-large w3-white removementor ssoenabled" data-bind="click:removementor"><i class="fa fa-close"></i></span> <img data-bind="attr:{src:profile_photo_url},click:gotoprofile" style="cursor: pointer" class="img-rounded img-responsive" title="View Profile">
+                        <div class="col-xs-6 text-center"> <span class=" w3-badge w3-large w3-white removementor ssoenabled" data-bind="click:removementor"><i class="fa fa-close"></i></span>                          <img data-bind="attr:{src:profile_photo_url},click:gotoprofile" style="cursor: pointer" class="img-rounded img-responsive"
+                            title="View Profile">
                           <div data-bind="text:name,click:gotoprofile" tyle="cursor: pointer" class="bold" title="View Profile"></div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- Mentors --> 
+                  <!-- Mentors -->
                 </div>
               </div>
-             
+
               <div class="row ">
-                
+
                 <div class="col-sm-12 ">
-                  
-				  <!-- Mentees -->
+
+                  <!-- Mentees -->
                   <div class="profileSection">
                     <div class="greyBg profileSummaryh">My Mentees </div>
                     <div class="profileSummary mentees oj-flex" data-bind="foreach:associatedmentees">
-                      <div class="oj-sm-6 oj-md-4 oj-lg-3 oj-xl-2 text-center menteeblock" style="cursor: pointer" data-bind="click:gotoprofile" title="View Profile"> <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
+                      <div class="oj-sm-6 oj-md-4 oj-lg-3 oj-xl-2 text-center menteeblock" style="cursor: pointer" data-bind="click:gotoprofile"
+                        title="View Profile"> <img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive">
                         <div data-bind="text:name" class="bold"></div>
                       </div>
                     </div>
                   </div>
-                  <!-- Mentees --> 
+                  <!-- Mentees -->
                 </div>
               </div>
             </div>
@@ -171,22 +174,21 @@
               </div>
               <!-- Organization -->
               <!-- Mentors -->
-              <div class="profileSection ssoenabled suggestedcolumn"> 
+              <div class="profileSection ssoenabled suggestedcolumn">
                 <div class="greyBg profileSummaryh">Suggested Mentors</div>
                 <div class="profileSummary mentors" data-bind="foreach:recommendedMentors">
                   <!-- row -->
                   <div class="col-xs-12 mentorrow nopadding ">
                     <div class="col-xs-2 col-sm-4 col-md-4 nopadding leftcenterelement" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
                     <div class="col-xs-10 col-sm-8 col-md-8 suggestedm">
-					<div class="col-xs-12   col-md-12 col-lg-9  nopadding leftcenterelement">
-                      <div data-bind="text:name" class="nopadding bold"></div>
-                      (<span data-bind="text:skill"></span>)
-					  </div>
+                      <div class="col-xs-12   col-md-12 col-lg-9  nopadding leftcenterelement">
+                        <div data-bind="text:name" class="nopadding bold"></div>
+                      </div>
                       <div class="col-xs-12   col-md-12 col-lg-3 nopadding leftcenterelement">
                         <button class="w3-badge w3-round-large " data-bind="click:selectMentor" title="Add Mentor">+</button>
                       </div>
                     </div>
-					
+
                   </div>
                   <!-- row -->
                 </div>
@@ -243,7 +245,7 @@
                     <div class="" data-bind="ojComponent: {component: 'ojConveyorBelt'}">
                       <!-- ko foreach: personalphotoslist -->
                       <div class="demo-conveyor-item" style="position:relative;">
-                        
+
                         <button name="ssoenabled" data-bind="click:removeimage" class="removeimage ssoenabled"><i class="fa fa-close"></i></button>
                         <img data-bind="attr:{src:photo_url}" onclick="enlargephoto(event)" style="height: 200px;margin: 0px 0px 0px 10px;cursor:zoom-in"
                           class="w3-hover-opacity"> </div>
@@ -719,7 +721,7 @@
 
         <div class=" oj-flex" data-bind="foreach:profile().links">
           <div style="border: 1px solid lightgray; border-radius: 10px;margin: 5px;padding: 5px;background:#fff;">
-            <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteLinks,attr:{id:employee_profile_key}"><i class="fa fa-close"></i></span> </div>
+            <span class="orangeTags" data-bind="text:value"></span><span class="popupclose" data-bind="click:deleteLinks,attr:{id:employee_profile_key}"><i class="fa fa-close"></i></span>            </div>
         </div><br>
         <form>
           <div class="form-group">
@@ -747,8 +749,8 @@
                                                   rootAttributes: {style:'max-width:30em'}}">
           <option value="My mentoring activities completed - Gained skill">My mentoring activities completed - Gained skill</option>
           <option value="Mentor was selected by mistake">Mentor was selected by mistake</option>
-          <option value="Mentor do not have enough time to coach">Mentor do not have enough time to coach</option>
-          <option value="Mentor do not have skills which I expected to learn">Mentor do not have skills which I expected to learn</option>
+          <option value="Mentor do not have enough time to coach">Mentor does not have enough time to coach</option>
+          <option value="Mentor do not have skills which I expected to learn">Need more depth on specialized skill area</option>
         </select>
     </div>
     <div class="w3-center">

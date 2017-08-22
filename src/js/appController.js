@@ -17,7 +17,6 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       var mdQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.MD_UP);
       self.mdScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
       self.ssowindow;
-      self.isMentorRequestPending = false;
       self.mentoringinterest = false;
       // Router setup
       self.router = oj.Router.rootInstance;
@@ -97,7 +96,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         }
       }
       gotomyprofile = function () {
-        window.open(profilelink.split('#')[0]+'#'+ uuid, "_self");
+        window.open(profilelink.split('#')[0] + '#' + uuid, "_self");
       }
 
       getemailfromcookie = function () {
@@ -151,6 +150,10 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         if (self.mentoringinterest) {//menteelist
           document.getElementById('regmentor').style.display = 'none';
           document.getElementById('dementor').style.display = 'inline-block';
+          var newmentor = localStorage.getItem('newmentor')
+          if (newmentor != undefined && newmentor == 'true') {
+            gotomyprofile();
+          }
         } else {
           document.getElementById('regmentor').style.display = 'inline-block';
           document.getElementById('dementor').style.display = 'none';
@@ -162,7 +165,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       initmentorderegister = function () {
         if (uuid.length) {
           $.ajax({
-            url: baseurl + 'Update_Mentor_Preference/'+uuid,
+            url: baseurl + 'Update_Mentor_Preference/' + uuid,
             cache: false,
             type: 'PUT',
             success: function (data) {
@@ -195,6 +198,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
           cache: false,
           type: 'POST',
           success: function (data) {
+            requestregistermentor = true;
+            localStorage.setItem('newmentor', 'true');
             console.log("Mentor registration request submitted successfully.");
           }
         }).fail(function (xhr, textStatus, err) {

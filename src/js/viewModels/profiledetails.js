@@ -404,6 +404,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           self.getFilters();
           self.getProfile(self.uuid);
           self.getpersonalphotos();
+          var newmentor = localStorage.getItem('newmentor');
+
+          if (newmentor != undefined && newmentor == 'true') {
+            showMentorRegAlert();
+            localStorage.setItem('newmentor', 'false');
+          }
         }
 
 
@@ -522,14 +528,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               alert(self.newSkill()[0] + " already exist in your Learning Interest.");
               return;
             }
-          }else{
+          } else {
             return;
           }
           updatedSkillList.push(skill);
 
         }
 
-        if(self.newSkill()[0].toLowerCase()=='select'){
+        if (self.newSkill()[0].toLowerCase() == 'select') {
           return;
         }
 
@@ -620,18 +626,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         if (self.skills_learning().length < 3) {
           for (var i = 0; i < self.skills_learning().length; i++) {
             var skill = self.skills_learning()[i];
-            if (self.newSkill().length >0){
+            if (self.newSkill().length > 0) {
               if (skill.value() == self.newSkill()[0]) {
                 alert(self.newSkill()[0] + " already exist in your Learning Interest.");
                 return;
               }
-            }else{
+            } else {
               return;
             }
             updatedSkillList.push(self.skills_learning()[i]);
           }
 
-          if(self.newSkill()[0].toLowerCase()=='select'){
+          if (self.newSkill()[0].toLowerCase() == 'select') {
             return;
           }
 
@@ -1466,7 +1472,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       //~~~~~~~~~~~~~~~~~~~~ GO TO PROFILE   ~~~~~~~~~~~~~~~~~//
       gotoprofile = function (data, elem) {
 
-        // alert(ko.toJSON(data));
         var link = window.location.href.split('#')[0] + "#" + data.uuid;
         pushscreen(link);
 
@@ -1482,7 +1487,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         self.profileHistory().push(link);
         loadscreen();
       }
-
 
       loadscreen = function () {
         var length = self.profileHistory().length;
@@ -1521,6 +1525,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         $("#editprofiledialog").ojDialog("close");
       }
 
+      //------------------------------  END  ------------------------------//
+
+      //------------------   MENTOR REGISTRATION ALERT  -------------------//
+      showMentorRegAlert = function () {
+        document.getElementById('mentorregembedalert').style.display = 'block';
+      }
       //------------------------------  END  ------------------------------//
 
       // GET THE SKILLS
