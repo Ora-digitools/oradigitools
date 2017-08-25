@@ -262,7 +262,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/', '_blank'),
         new footerLink('Internal Privacy Statement', 'internalprivacy', '?root=terms'),
-        new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:oraclecloudhubs_us@oracle.com'),
+        new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
         new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
 
       ]);

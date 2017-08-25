@@ -539,12 +539,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           return;
         }
 
-        updatedSkillList.push({
-          employee_profile_key: '',
-          value: self.newSkill()[0],
-          scale: self.ratting(),
-          category: 'Skills',
-        });
+        if (self.newSkill()[0].length > 0) {
+          var selectedskill = self.newSkill()[0];
+          selectedskill = selectedskill.replace('/', '$');
+          updatedSkillList.push({
+            employee_profile_key: '',
+            value: selectedskill,
+            scale: self.ratting(),
+            category: 'Skills',
+          });
+        }
 
 
         requestdata = ({
@@ -566,6 +570,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             self.getProfile(self.uuid);
             //alert("Information saved successfully!");
             self.newSkill([]);
+            self.newSkill().push('Select');
             self.ratting(1);
             hidedialog();
           }
@@ -642,11 +647,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           }
 
 
-          updatedSkillList.push({
-            employee_profile_key: '',
-            value: self.newSkill()[0],
-            category: 'Learning',
-          });
+          if (self.newSkill()[0].length > 0) {
+            var selectedskill = self.newSkill()[0];
+
+            while (selectedskill.indexOf('/') != -1) {
+              selectedskill = selectedskill.replace('/', '$');
+            }
+            updatedSkillList.push({
+              employee_profile_key: '',
+              value: selectedskill,
+              category: 'Learning',
+            });
+          }
 
           requestdata = ({
             employee_key: self.profile().employee_key(),
@@ -666,7 +678,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             success: function (data) {
               self.getProfile(self.uuid);
               getRecommendedMentors();
-              self.newSkill('select');
+              self.newSkill([]);
+              self.newSkill().push('Select');
               self.ratting(1);
               hidedialog();
             }
@@ -1338,6 +1351,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               commasepskills += commasepskills.length > 0 ? ',' + learningskills[i].value() : learningskills[i].value();
             }
           }
+
+          while (commasepskills.indexOf('/') != -1) {
+            commasepskills = commasepskills.replace('/', '$');
+          }
+
+
           var url = baseurl + "GetMentorListsSkill/" + commasepskills + "/" + self.profile().employee_key();
           console.log(url)
           if (commasepskills.length > 0) {
