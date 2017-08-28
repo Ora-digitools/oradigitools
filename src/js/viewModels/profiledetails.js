@@ -86,7 +86,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       // MENTOR AND MENTEE variable
       self.skillarray = ko.observableArray([]);
-      this.thresholdValues = [{ max: 1, shortDesc: 'Familier' },
+      this.thresholdValues = [{ max: 1, shortDesc: 'Familiar' },
       { max: 2, shortDesc: 'Needs Improvement' },
       { max: 3, shortDesc: 'Proficient' },
       { max: 4, shortDesc: 'Expert' },
