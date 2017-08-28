@@ -210,13 +210,13 @@
                 <!-- Project 1 -->
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span data-bind="text:customer_name"></span>&nbsp;-&nbsp;<span data-bind="text:customer_division"></span></a>
+                    <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" data-bind="attr: { href: '#'+employee_customer_profile_key()}"><span data-bind="text:customer_name"></span>&nbsp;-&nbsp;<span data-bind="text:customer_division"></span></a>
                       <button name="ssoenabled" title="Delete" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:deleteproject.bind($data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                       <button name="ssoenabled" title="Edit" class="btn  btn-info btn-xs pull-right ssoenabled" style="margin-right: 5px" data-toggle="modal"
                         data-bind="click:editproject">Edit</button>
                       <span class="oj-sm-2"></span> </h4>
                   </div>
-                  <div id="collapse1" class="panel-collapse collapse in">
+                  <div data-bind="attr: { id: employee_customer_profile_key }" class="panel-collapse collapse">
                     <div class="panel-body">
                       <p>Customer Industry: <span data-bind="text:industry"></span></p>
                       <p>Project Pillar: <span data-bind="text:type_of_work"></span></p>
