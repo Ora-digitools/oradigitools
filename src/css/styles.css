@@ -1373,9 +1373,13 @@ label.star:before {
 .fa-close {
 	cursor: pointer
 }
-
-.suggestedcolumn{
-	width:100%}
+.suggestedcolumn {
+	width: 100%
+}
+#menteereqalert a {
+	font-weight: bold;
+	color: rgb(138, 109, 59)
+}
 
 @media (min-width: 1500px) {
 .container {

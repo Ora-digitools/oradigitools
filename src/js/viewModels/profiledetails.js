@@ -387,9 +387,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       self.iseditpermitted = function () {
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
-          setssostatus('.ssoenabled', 'inline-block');
-        } else {
           setssostatus('.ssoenabled', 'none');
+        } else {
+          setssostatus('.ssoenabled', 'inline-block');
         }
       }
 
@@ -930,12 +930,17 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           });
         }
       }
+	  
+	    menteepopup = function () {        
+        $("#menteereq").ojDialog("open");
+      }
 
       openpersonalimageuploder = function () {
         // alert('click');
         // document.getElementById('uploadpersonalphotodialog').style.display = 'block';
         $("#uploadpersonalphotodialog").ojDialog("open");
       }
+	   
       closepersonalimageuploder = function () {
         // alert('click');
         // document.getElementById('uploadpersonalphotodialog').style.display = 'none';
