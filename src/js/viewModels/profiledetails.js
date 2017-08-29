@@ -17,6 +17,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       /* fadein animations effect for tab content */
       self.profileHistory = ko.observableArray([]);
       self.removementorreason = ko.observableArray([]);
+      self.denymentorshipreason = ko.observableArray([]);
+      self.delmentorshipreq = ko.observable();
       self.defaultimage = 'css/images/avatar_24px_2x.png';
       self.effect = ko.observable('fadeIn');
       self.enlargephotourl = ko.observable('');
@@ -90,11 +92,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       { max: 2, shortDesc: 'Needs Improvement' },
       { max: 3, shortDesc: 'Proficient' },
       { max: 4, shortDesc: 'Expert' },
-      { max: 5, shortDesc: 'Outstanding' }];
+      { max: 5, shortDesc: 'Master' }];
 
       self.recommendedMentors = ko.observableArray([]);
       self.associatedmentors = ko.observableArray([]);
       self.associatedmentees = ko.observableArray([]);
+      self.pendingmentorrequest = ko.observableArray([]);
+      self.pendingmenteesrequest = ko.observableArray([]);
       //----- END -----//
 
 
@@ -387,9 +391,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       self.iseditpermitted = function () {
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
-          setssostatus('.ssoenabled', 'none');
+          setssostatus('.ssoenabled', 'inline-block');          
         } else {
-          setssostatus('.ssoenabled', 'inline-block');
+          setssostatus('.ssoenabled', 'none');
         }
       }
 
@@ -689,7 +693,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
           });
         } else {
-          alert("At max you can add upto three learning exterests");
+          alert("At max you can add upto three learning Interests");
         }
       }
 
@@ -930,8 +934,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           });
         }
       }
-	  
-	    menteepopup = function () {        
+
+      menteepopup = function () {
         $("#menteereq").ojDialog("open");
       }
 
@@ -940,7 +944,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         // document.getElementById('uploadpersonalphotodialog').style.display = 'block';
         $("#uploadpersonalphotodialog").ojDialog("open");
       }
-	   
+
       closepersonalimageuploder = function () {
         // alert('click');
         // document.getElementById('uploadpersonalphotodialog').style.display = 'none';
@@ -1442,6 +1446,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
           then(function (mentors) {
             self.associatedmentors([]);
             self.removementorreason([]);
+            self.pendingmentorrequest([]);
             var count = 0;
             $.each(mentors.items, function (data) {
               if (count < 2) {
@@ -1454,9 +1459,15 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
                   mentor: this.mentor,
                   profile_photo_url: imageurl,
                   name: this.display_name,
-                  uuid: this.uuid
+                  uuid: this.uuid,
+                  status:this.status
                 }
-                self.associatedmentors.push(mentor);
+                var status = this.status;
+                // if (status == 'Pending' || status == 'Denied') {
+                //   self.associatedmentors.push();
+                // } else {
+                  self.associatedmentors.push(mentor);
+                // }
                 count++;
               }
             });
@@ -1474,22 +1485,119 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         $.getJSON(url).
           then(function (mentors) {
             self.associatedmentees([]);
-            $.each(mentors.items, function (data) {
+            self.pendingmenteesrequest([]);
+            var mentees = mentors.items;
+
+            for (var i = 0; i < mentees.length; i++) {
               var imageurl = self.defaultimage;
-              if (!this.profile_photo_url.endsWith("GetPhoto/")) {
-                imageurl = this.profile_photo_url;
+              var menteeobj=mentees[i];
+              if (!menteeobj.profile_photo_url.endsWith("GetPhoto/")) {
+                imageurl = menteeobj.profile_photo_url;
               }
-              var mentor = {
-                mentor: this.mentor,
+              var mentee = {
+                ml_key: menteeobj.ml_key,
                 profile_photo_url: imageurl,
-                name: this.display_name,
-                uuid: this.uuid
+                name: menteeobj.display_name,
+                uuid: menteeobj.uuid,
+                status: menteeobj.status
               }
-              self.associatedmentees.push(mentor);
-            });
+              if (menteeobj.status == 'Pending' || menteeobj.status == 'Denied') {
+                self.pendingmenteesrequest.push(mentee);
+              } else {
+                self.associatedmentees.push(mentee);
+              }
+            }
+
+            if (self.pendingmenteesrequest().length == 0) {
+              document.getElementById('menteereqalert').style.display = 'none';
+              $("#menteereq").ojDialog("close");
+            } else {
+              document.getElementById('menteereqalert').style.display = 'inline-block';
+            }
+
             hidedialog();
             debuglog(self.associatedmentees().length + " mentees fetched");
           });
+      }
+      //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
+
+      //~~~~~~~~~~~~~  ACCEPT MENTORSHIP REQUEST  ~~~~~~~~~~~~//
+      acceptMentee = function (data, elem) {
+        var mentordata = {
+          ml_key: data.ml_key,
+          status: 'Accepted'
+        }
+        console.log(ko.toJSON(mentordata));
+        var url = baseurl + 'MentorUpdate';
+        $.ajax({
+          url: url,
+          cache: false,
+          type: 'PUT',
+          data: ko.toJSON(mentordata),
+          contentType: 'application/json; charset=utf-8',
+          success: function (data) {
+            getAssociatedMentees();
+            if (self.pendingmenteesrequest().length == 0) {
+              $("#menteereq").ojDialog("close");
+            }
+            hidedialog();
+          }
+        }).fail(function (xhr, textStatus, err) {
+          getAssociatedMentors();
+          getRecommendedMentors();
+          alert(err);
+        });
+
+
+      }
+      //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
+
+      //~~~~~~~~~~~~~  DENY MENTORSHIP REQUEST  ~~~~~~~~~~~~~~//
+
+      showdeletementeereqdialog = function (data, elem) {
+        $("#denymentorshipreq").ojDialog("open");
+        self.delmentorshipreq(null);
+        self.delmentorshipreq(data);
+      }
+
+      deleteMentee = function () {
+
+        $("#denymentorshipreq").ojDialog("close");
+        //showdialog();
+        if (self.denymentorshipreason().length > 0) {
+          var mentordata = {
+            ml_key: self.delmentorshipreq().ml_key,
+            reason: self.denymentorshipreason()[0],
+            status: 'Denied'
+          }
+        }
+        console.log(ko.toJSON(mentordata));
+        var url = baseurl + 'MentorUpdate';
+        $.ajax({
+          url: url,
+          cache: false,
+          type: 'PUT',
+          data: ko.toJSON(mentordata),
+          contentType: 'application/json; charset=utf-8',
+          success: function (data) {
+            getAssociatedMentees();
+            if (self.pendingmenteesrequest().length == 0) {
+              $("#menteereq").ojDialog("close");
+            }
+            hidedialog();
+          }
+        }).fail(function (xhr, textStatus, err) {
+          getAssociatedMentors();
+          getRecommendedMentors();
+          alert(err);
+        });
+
+
+      }
+
+      refreshmentorship=function(){
+        getAssociatedMentors();
+        getRecommendedMentors();
       }
       //~~~~~~~~~~~~~~~~   END OF THE METHOD   ~~~~~~~~~~~~~~~//
 

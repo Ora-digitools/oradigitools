@@ -149,14 +149,14 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       setMentorStatus = function () {
         if (self.mentoringinterest) {//menteelist
           document.getElementById('regmentor').style.display = 'none';
-          document.getElementById('dementor').style.display = 'inline-block';
           var newmentor = localStorage.getItem('newmentor')
           if (newmentor != undefined && newmentor == 'true') {
             gotomyprofile();
           }
         } else {
-          document.getElementById('regmentor').style.display = 'inline-block';
-          document.getElementById('dementor').style.display = 'none';
+          if (ssoemail.length > 0) {
+            document.getElementById('regmentor').style.display = 'inline-block';
+          }
         }
       }
       //~~~~~~~~~~~~  MENTORSHIP CODE ~~~~~~~~~~~~~//
@@ -261,7 +261,6 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new footerLink('Home', 'home', '?root=home'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/', '_blank'),
-        new footerLink('Internal Privacy Statement', 'internalprivacy', '?root=terms'),
         new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
         new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
 

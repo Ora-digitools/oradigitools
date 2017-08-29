@@ -40,10 +40,8 @@
       <div>
         <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openeditprofiledialog">Edit</button>
       </div>
-      <p>Hub: <br>
-        <span data-bind="text:center"></span></p>
-      <p>Pillar: <br>
-        <span data-bind="text:pillar"></span></p>
+      <p>Hub :     &nbsp;&nbsp; <span data-bind="text:center"></span></p>
+      <p>Pillar :   &nbsp;&nbsp; <span data-bind="text:pillar"></span></p>
     </div>
     <!-- Hub -->
   </div>
@@ -57,7 +55,7 @@
     </div>
   </div>
 </div>
-<div class="row" id="menteereqalert" style="">
+<div style="display: none" class="row" id="menteereqalert">
   <div class="container nopaddingmd">
     <div class="alert alert-warning fade in alert-dismissable margintop30">
     
@@ -129,13 +127,19 @@
 
                   <!-- Mentors -->
                   <div class="profileSection">
-                    <div class="greyBg profileSummaryh">My Mentors </div>
+                    <div class="greyBg profileSummaryh">My Mentors 
+                      <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:refreshmentorship">Refresh</button>                      
+                    </div>
                     <div class="profileSummary selectedmentor">
                       <div class="row" data-bind="foreach:associatedmentors">
                         <div class="col-xs-6 text-center"> <span class=" w3-badge w3-large w3-white removementor ssoenabled" data-bind="click:removementor"><i class="fa fa-close"></i></span>                          <img data-bind="attr:{src:profile_photo_url},click:gotoprofile" style="cursor: pointer" class="img-rounded img-responsive"
                             title="View Profile">
-                          <div data-bind="text:name,click:gotoprofile" tyle="cursor: pointer" class="bold" title="View Profile"></div>
+                          <div data-bind="text:name,click:gotoprofile" style="cursor: pointer" class="bold" title="View Profile"></div>
+                          <!-- ko if: status == 'Pending' -->
+                          <p style="color:green">(Pending)</p>
+                          <!-- /ko -->
                         </div>
+                        
                       </div>
                     </div>
                   </div>
@@ -769,30 +773,44 @@
   </div>
 </div>
 
+<div style="display:none" id="denymentorshipreq" title="Reason to deny Mentorship" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
+  <div class="oj-dialog-body">
+    <div class="form-group">
+      <label>Reason for denying Mentoring request</label>
+      <select id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',value:denymentorshipreason,
+                                                  rootAttributes: {style:'max-width:30em'}}">
+          <option value="Not enough time">Not enough time</option>
+          <option value="Mismatch">Mismatch</option>
+          <option value="Other">Other</option>
+        </select>
+    </div>
+    <div class="w3-center">
+      <button id="submitdenyreqbutton" data-bind="click:deleteMentee" class="w3-btn w3-round-large w3-gray">Submit</button>
+    </div>
+  </div>
+</div>
+
 <div style="display:none" id="menteereq" title="Mentee Requests" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
   <div class="oj-dialog-body">
     <div class="form-group">
-    <div class="profileSummary mentors" data-bind="foreach:recommendedMentors">
+    <div class="profileSummary mentors" data-bind="foreach:pendingmenteesrequest">
                   <!-- row -->
                   <div class="col-xs-12 mentorrow nopadding ">
                     <div class="col-xs-2 col-sm-4 col-md-4 nopadding leftcenterelement" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
                     <div class="col-xs-10 col-sm-8 col-md-8 suggestedm">
                       <div class="col-xs-12   col-md-12 col-lg-8  nopadding leftcenterelement">
                         <div data-bind="text:name" class="nopadding bold"></div>
-                        (<span class="small" data-bind="text:skill"></span>)
                       </div>
                       <div class="col-xs-12   col-md-12 col-lg-4 nopadding leftcenterelement">
                         <button class="w3-badge w3-round-large w3-green" data-bind="click:acceptMentee" title="Accept Mentee"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <button class="w3-badge w3-round-large  w3-red" data-bind="click:deleteMentee" title="Delete Mentee"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        <button class="w3-badge w3-round-large  w3-red" data-bind="click:showdeletementeereqdialog" title="Delete Mentee"><i class="fa fa-times" aria-hidden="true"></i></button>
                       </div>
                     </div>
 
                   </div>
                   <!-- row -->
                 </div>
-      
     </div>
-    
   </div>
 </div>
 
