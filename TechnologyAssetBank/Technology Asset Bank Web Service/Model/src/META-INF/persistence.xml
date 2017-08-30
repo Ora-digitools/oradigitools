@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+  <persistence-unit name="Model">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/tabDS</jta-data-source>
+    <class>model.Action</class>
+    <class>model.Asset</class>
+    <class>model.AssetCategories</class>
+    <class>model.Category</class>
+    <class>model.Log</class>
+    <class>model.AssetAtRel</class>
+    <class>model.AssetType</class>
+    <properties>
+      <property name="javax.persistence.jtaDataSource" value="java:/app/jdbc/jdbc/tabDS"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.password" value="77F1E414DB8A533F871BED15D37EA361"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@innovate.us.oracle.com:1521:orcl"/>
+      <property name="javax.persistence.jdbc.user" value="tab"/>
+      <property name="eclipselink.query-results-cache" value="false"/>
+      <property name="eclipselink.cache.shared.default" value="false"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="Model-1" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>model.Asset</class>
+    <class>model.Category</class>
+    <class>model.Log</class>
+    <class>model.Action</class>
+    <class>model.AssetCategories</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@innovate.us.oracle.com:1521:orcl"/>
+      <property name="javax.persistence.jdbc.user" value="tab"/>
+      <property name="javax.persistence.jdbc.password" value="77F1E414DB8A533F871BED15D37EA361"/>
+      <property name="eclipselink.logging.level" value="FINER"/>
+      <property name="eclipselink.query-results-cache" value="false"/>
+      <property name="eclipselink.cache.shared.default" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>

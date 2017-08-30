@@ -1,0 +1,22 @@
+[ "assetTypes" : 
+    {
+        "id" : "2217F63690B70B71E0530100007FF59E",
+        "name" : "Demo"
+    },
+    {
+        "id" : "2217F63690B80B71E0530100007FF59E",
+        "name" : "Hands-on Workshop"
+    },
+    {
+        "id" : "2217F63690B90B71E0530100007FF59E",
+        "name" : "Architecture Workshop"
+    },
+    {
+        "id" : "2217F63690BA0B71E0530100007FF59E",
+        "name" : "Utility"
+    },
+    {
+        "id" : "2217F63690BB0B71E0530100007FF59E",
+        "name" : "Tech Sales Content"
+    }
+]

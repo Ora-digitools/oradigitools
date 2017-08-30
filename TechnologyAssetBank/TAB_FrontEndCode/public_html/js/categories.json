@@ -1,0 +1,64 @@
+{
+    "categories" : [
+        {
+            "categoryName" : "Mobile and IoT",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+            "id" : "1DACE787D35676B2E0530100007FA9CB"
+        },
+        {
+            "categoryName" : "Information Architecture and Big Data",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+            "id" : "1DACE787D35776B2E0530100007FA9CB"
+        },
+        {
+            "categoryName" : "Data Management",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/datamanagement.png",
+            "id" : "1DACE787D35876B2E0530100007FA9CB"
+        },
+        {
+            "categoryName" : "Private Cloud (Oracle on Oracle)",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+            "id" : "1DACE787D35976B2E0530100007FA9CB"
+        },
+        {
+            "categoryName" : "Storage",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/storage.png",
+            "id" : "1DACE787D35A76B2E0530100007FA9CB"
+        },
+        {
+            "categoryName" : "Information Integration",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/info_integrate.png",
+            "id" : "1E3BC3B0265E5480E0530100007F14F6"
+        },
+        {
+            "categoryName" : "Security",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+            "id" : "1D971613F70428EDE0530100007FA216"
+        },
+        {
+            "categoryName" : "Cloud",
+            "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+            "id" : "1E60FFB1357A4869E0530100007F39C6",
+            "subcategoryList" : [
+                {
+                    "categoryName" : "IaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1ECA6397B02C0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "SaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1ECA6397B02E0AC3E0530100007FBE2A"
+                }
+            ]
+        }
+    ]
+}

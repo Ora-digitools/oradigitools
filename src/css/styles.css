@@ -1269,6 +1269,9 @@ li.oj-selected .oj-tabs-gen-div {
 	vertical-align: middle;
 	width: 30px;
 }
+#menteereq .mentors button {
+	font-size: 17px;
+}
 .mentors button img {
 	height: 100%;
 	width: 100%;

@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="databaseType" v="Oracle Database"/>
+      <value n="databaseVersion" v="120"/>
+   </hash>
+   <value n="id" v="c5fd27bd-bb51-44dc-a37a-911b30e1e358"/>
+   <value n="name" v="innovate db"/>
+</ProviderSettings>

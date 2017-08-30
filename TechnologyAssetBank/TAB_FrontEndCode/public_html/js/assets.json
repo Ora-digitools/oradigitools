@@ -1,0 +1,2014 @@
+{
+    "assets" : [
+        {
+            "assetUrl" : "https://unit5208.oracleads.com:7777/store#/index/5578557c080c78bd0f0fb4a9",
+            "contact" : "stefan.krantz@oracle.com",
+            "createdBy" : "Steven Davelaar, Ricardo Yi",
+            "description" : "This demo showcases a tablet application for nurses in a hospital. The application uses beacon technology to automatically switch the floor plan when the nurse enters a new floor. All data is coming from Mobile Cloud Service. Push notification is sent when a new patient fall risk is identified. MCS analytics are used to keep track of the floor changes by nurses.",
+            "enteredBy" : "jairam.panickssery@oracle.com",
+            "id" : "1EDC1F2C12AC4D89E0530100007FA1EB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EDC1F2C12AC4D89E0530100007FA1EB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Stryker – Bed Manufacturing (iOS)",
+            "postedOn" : "Sep 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Mobile and IoT",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+                    "id" : "1DACE787D35676B2E0530100007FA9CB"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1691302729647107::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:57433,4384491",
+            "contact" : "mark.dixon@oracle.com",
+            "createdBy" : "mark.dixon@oracle.com",
+            "description" : "Supporting assets for the Security Readiness Assessment - successful methodology for determining what customers need and getting them to buy it.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5EE2670590FAEE0530100007FC1AA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5EE2670590FAEE0530100007FC1AA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Security Readiness Assessment",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1691302729647107::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:74753,4384503",
+            "contact" : "josh.hammer@oracle.com",
+            "createdBy" : "josh.hammer@oracle.com",
+            "description" : "This presentation offers reference architecture diagrams for a comprehensive API Management Architecture leveraging the following Oracle technologies: WebLogic Server SOA Suite BPM Suite API Manager, API Catalog, API Gateway WebCenter Web Tier Enterprise Manager SOA Suite Management Pack Enterprise Manager WebLogic Management Pack",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5EE2670570FAEE0530100007FC1AA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5EE2670570FAEE0530100007FC1AA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Oracle API Management Reference Architecture",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:3061823908558830::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:75596,4411360",
+            "contact" : "waymon.whiting@oracle.com",
+            "createdBy" : "John.walsh@oracle.com",
+            "description" : "New training and enablement demo image for global security Sales Consultants based on latest FY16 11g R2 PS3 identity and access management release.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "221656A6E70E0B32E0530100007FFA26",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d221656A6E70E0B32E0530100007FFA26",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "IDM Security Training Demo Image",
+            "postedOn" : "Oct 14, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "14 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1691302729647107::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:56324,4384491",
+            "contact" : "paul.j.sullivan@oracle.com",
+            "createdBy" : "paul.j.sullivan@oracle.com",
+            "description" : "Enterprise User Security Presentation and Demo. Contains VMWare Image, presentation, demonstration script and whitepaper. Requires VMWare Workstation.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F60481E7B30FA8E0530100007FAF8F",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F60481E7B30FA8E0530100007FAF8F",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "EUS Workshop ",
+            "postedOn" : "Oct 13, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "13 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://database.us.oracle.com/pls/htmldb/Z?p_cat\u003d124671\u0026p_id\u003d46\u0026p_company\u003d501318803116695\u0026p_url\u003dhttps://stbeehive.oracle.com/content/dav/st/Database%20Product%20Management/Public%20Documents/12c/OracleDatabase12c_30Sept2015_PA.pptx",
+            "contact" : "penny.avril@oracle.com",
+            "createdBy" : "Database Product Management",
+            "description" : "Oracle12 Overview Presentation.  This slide deck as provided has the key slides unhidden, but there are a number of hidden slides which allow SCs to drill into the technical details as needed.",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "21E9E8EBCDB462A5E0530100007F7809",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21E9E8EBCDB462A5E0530100007F7809",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Oracle12c CVC Presentation",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Data Management",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/datamanagement.png",
+                    "id" : "1DACE787D35876B2E0530100007FA9CB"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?bicsdemo",
+            "contact" : "owen.figher@oracle.com",
+            "createdBy" : "Owen Fighter",
+            "description" : "BICS Business Demo showcases our ablility to enable organizations that collect data at unprecedented rates to enable all users to tap into the most pertinent data, whenever and wherever they need it. \r\n",
+            "enteredBy" : "marta.flores@oracle.com",
+            "id" : "1EB1D645876536CCE0530100007F1CED",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EB1D645876536CCE0530100007F1CED",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "BICS Business Demo",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003dGO:PAGE:0:DSD:NO:1:ID:19666",
+            "contact" : "patti.brase@oracle.com",
+            "createdBy" : "Patti Brase and Product Management Team",
+            "description" : "This demo script is designed to provide a prospect with an overview of our Enterprise Planning solution capabilities and value.\r\n",
+            "enteredBy" : "marta.flores@oracle.com",
+            "id" : "1EB1C904398F3566E0530100007F3A1C",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EB1C904398F3566E0530100007F3A1C",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Vision Planning Demo (VisPlan Application)",
+            "postedOn" : "Sep 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/content/dav/st/Private%20Database%20Cloud/Public%20Documents/SF%20OOW%202014/OOW%202014%20CON%208177%20DBaaS%20Service%20Catalog%20v2.pptx",
+            "contact" : "wendy.delmolino@oracle.com",
+            "createdBy" : "Wendy.delmolino@oracle.com",
+            "description" : "High Level overview of a BSC\r\n",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "1EB5373F02B84183E0530100007F308A",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EB5373F02B84183E0530100007F308A",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Business Service Catalog Presentation",
+            "postedOn" : "Sep 18, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "18 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com",
+            "contact" : "lionel.dubreuil@oracle.com",
+            "createdBy" : "Public Cloud Platform Development",
+            "description" : "TechCo is a global e-commerce company focused delivering a full range of office supplies to technology companies: hardware  (laptops, monitors, printers, disk drives, routers, and so on) ;desktop software; and office stationery. The company’s e-commerce site provides its users with the usual mechanisms for buying, selling, paying, collecting, generating leads and comparing listings via e-commerce transactions. TechCo has  many backend suppliers .  For order fulfillment it is integrated with supplier’s backend Systems.",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "1E9D4D61E82A77C4E0530100007F0F19",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9D4D61E82A77C4E0530100007F0F19",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "TechCo Ecommerce Company PaaS Demo",
+            "postedOn" : "Apr 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 April 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://socialnetwork.oracle.com/osn/web/#folder:77010667",
+            "contact" : "mark.dixon@oracle.com",
+            "createdBy" : "mark.dixon@oracle.com",
+            "description" : "Architectural review engagement focused on aligning organization\u0027s enterprise directory services architecture with business objectives.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5FFA79FC40FB6E0530100007FDD78",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5FFA79FC40FB6E0530100007FDD78",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Directory Assessment",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:3061823908558830::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:64037,4411360",
+            "contact" : "waymon.whiting@oracle.com",
+            "createdBy" : "John.walsh@oracle.com",
+            "description" : "The Secure Oracle Demonstration Platform is the next generation demonstration environment highlighting Oracle\u0027s Identity Management suite of products.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "221656A6E70B0B32E0530100007FFA26",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d221656A6E70B0B32E0530100007FFA26",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Secure Oracle",
+            "postedOn" : "Oct 14, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "14 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://socialnetwork.oracle.com/osn/web/#ExtensionPlace:id\u003d14366167\u0026m\u003dRELATED_CONVERSATIONS\u0026eid\u003d10111",
+            "contact" : "mark.dixon@oracle.com",
+            "createdBy" : "mark.dixon@oracle.com",
+            "description" : "Security Enterprise Reference Architectures",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5FFA79FC60FB6E0530100007FDD78",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5FFA79FC60FB6E0530100007FDD78",
+            "inDevelopment" : "Y",
+            "isVisible" : "Y",
+            "name" : "Security Enterprise Reference Architectures",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://socialnetwork.oracle.com/osn/web/#conversation:id\u003d74665823\u0026m\u003dNOT_SET",
+            "contact" : "gregory.bycoff@oracle.com",
+            "createdBy" : "gregory.bycoff@oracle.com",
+            "description" : "Efficient completion of RFP for IDM",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5FFA79FBD0FB6E0530100007FDD78",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5FFA79FBD0FB6E0530100007FDD78",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Security RFP Questions/Reponses",
+            "postedOn" : "Oct 13, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "13 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:3052878118475369::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:72121,4371789",
+            "contact" : "advait.deodhar@oracle.com",
+            "createdBy" : "advait.deodhar@oracle.com",
+            "description" : "Assets to enable the non-security sales team to present the business value of Oracle\u0027s security solutions, by specific industries. Assets include presentations with speaker notes, data sheets, and cheat sheets.  Industries currently covered are Financial Services, Communications, and Health Sciences.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5EE26705B0FAEE0530100007FC1AA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5EE26705B0FAEE0530100007FC1AA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Industry specific security solutions",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://socialnetwork.oracle.com/osn/fc/Client?conversation\u003d86935515\u0026window\u003dstandalone",
+            "contact" : "michael.terra@oracle.com",
+            "createdBy" : "michael.terra@oracle.com",
+            "description" : "Partner Deployment of IAM on Oracle public cloud.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5FFA79FC10FB6E0530100007FDD78",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5FFA79FC10FB6E0530100007FDD78",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Running IAM on PaaS",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1691302729647107::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:75540,4384502",
+            "contact" : "michael.terra@oracle.com",
+            "createdBy" : "carl.potvin@oracle.com",
+            "description" : "Supporting assets for the IAM Program Assessment - a Strategic program review focused on implementing a successful IAM Shared Services Model within your customer organization",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5FFA79FBF0FB6E0530100007FDD78",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5FFA79FBF0FB6E0530100007FDD78",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "IAM Program Assessment",
+            "postedOn" : "Oct 13, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "13 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://unit5208.oracleads.com:7777/store#/index/55c665fe3fadd2b775d847c6",
+            "contact" : "stefan.krantz@oracle.com",
+            "createdBy" : "Martin Deh, Jeevan Joseph",
+            "description" : "MCS, IoT, and PCS form a state-of-the-art process management system aimed at improving the efficiency of retail store operations. PCS defines the processes, and IoT\u0027s stream explorer uses a real-time data stream analysis to kick off processes. The mobile channel is used by store employees to receive information about their task assignment and to interface with the process system. The mobile app leverages beacon technology to accurately position the user (store employees) inside the store and alert them of nearby tasks that need to be fulfilled.",
+            "enteredBy" : "jairam.panickssery@oracle.com",
+            "id" : "1EDC27DFFEB34D92E0530100007FC5F5",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EDC27DFFEB34D92E0530100007FC5F5",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Retail Store Task Management (Android)",
+            "postedOn" : "Sep 15, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "15 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Mobile and IoT",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+                    "id" : "1DACE787D35676B2E0530100007FA9CB"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/wiki/Cloud+Computing+Case+Studies:Home",
+            "contact" : "rex.wang@oracle.com",
+            "createdBy" : "Rex Wang, Vice President, Product Marketing ",
+            "description" : "This wiki contains a list of Cloud Computing Customer References categorized by Customer Name, Industry, Region, Service Model, Software \u0026 Hardware Products. The customer reference can be a presentation, case study, link to Oracle/Profit Magazine, video or press release.",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "1DACE787D35576B2E0530100007FA9CB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1DACE787D35576B2E0530100007FA9CB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Customer Case Studies",
+            "postedOn" : "Jul 24, 2014 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "24 July 2014",
+            "categories" : [
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/wiki/Tech+Public+Cloud+%28IaaS%2C+PaaS%29",
+            "contact" : "pat.davies@oracle.com",
+            "createdBy" : "PAT.DAVIES@ORACLE.COM",
+            "description" : "Internal forums, wiki pages, FAQs and document library",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "223BB7F376B1124BE0530100007F96BF",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d223BB7F376B1124BE0530100007F96BF",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "OPC (IaaS and PaaS) Product Management Workspace",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "IaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/iaas.png",
+                    "id" : "1ECA6397B02C0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/wiki/Integration+Success+Workshops:Home",
+            "contact" : "dave.berry@oracle.com",
+            "createdBy" : "SOA Product Management",
+            "description" : "The Integration Success Workshops (ISW) program is designed to enable the field and customers to learn and use key features of Oracle SOA Suite. The ISWs consist of bite-sized individual modules on different components of SOA. This allows SCs to focus on their areas of interest and come up to speed in a short time. The SCs can use the collateral available as part of ISWs to demo and highlight product capabilities to customers. Each module contains short presentations, demos and videos. There is also a ready-to-go Virtual Image (VBox) that is available to run live demos.\r\n",
+            "enteredBy" : "edward.p.lee@oracle.com",
+            "id" : "1E9DFCED9AB679F8E0530100007FA48E",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9DFCED9AB679F8E0530100007FA48E",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Integration Success Workshop",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Integration",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/info_integrate.png",
+                    "id" : "1E3BC3B0265E5480E0530100007F14F6"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?opcworkshops_dbcs",
+            "contact" : "pat.davies@oracle.com",
+            "createdBy" : "NAS Innovation and Shared Services",
+            "description" : "This is a one day customer workshop that provides a set of hands-on labs which give an overview of Oracle’s Database Cloud Service. Customers run the workshop from within a Virtual Box image that contains all the tools and utilities to connect to the Cloud environment and successfully complete the labs. The workshop can be delivered with GSE cloud accounts or inside a customers Public Cloud Account.",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "1DACE787D35376B2E0530100007FA9CB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1DACE787D35376B2E0530100007FA9CB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Database Cloud Service Workshop",
+            "postedOn" : "Sep 18, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "18 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Hands-on Workshop"
+        },
+        {
+            "assetUrl" : "https://youtu.be/O7nk2zE3eOk",
+            "contact" : "francisco.brito@oracle.com",
+            "createdBy" : "Public Sector Advanced Engineering Group",
+            "description" : "This integrated Cloud demonstration showcases the full life cycle of a permit application in a modern UI created for the City of Los Angeles. The demonstration begins with an inspector evaluating the current status of haulers and scheduling a new inspection through a online portal. When it is time to conduct the inspection a mobile application is leveraged to enter the required information into a tablet on-site. The application can work online or offline in a seamless manner for the inspector. Enable the capture and submission of pictures, while monitoring the process through detail audit reports from start to finish. \r\n\u003cbr\u003e\u003cbr\u003e\r\nFor more information or a live demonstration please contact Francisco Brita by pressing the contact button below. ",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "229D66C11C797622E0530100007FADE9",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d229D66C11C797622E0530100007FADE9",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "LA Bureau of Sanitation",
+            "postedOn" : "Aug 15, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "15 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?integratedpaasdemo",
+            "contact" : "frank.baber@oracle.com",
+            "createdBy" : "NAS Innovation and Shared Services",
+            "description" : "Have you ever wished you could demonstrate how powerful Oracle PAAS is holistically? Today we are working to build a integrated PAAS demonstration that will showcase DBCS, JCS, MCS, ICS, PCS and DOCs ... This demonstration will highlight the true power of Oracle Public Cloud",
+            "enteredBy" : "edward.p.lee@oracle.com",
+            "id" : "1E289AAB044C1C5FE0530100007FCD98",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E289AAB044C1C5FE0530100007FCD98",
+            "inDevelopment" : "Y",
+            "isVisible" : "Y",
+            "name" : "Integrated PAAS Demonstration",
+            "postedOn" : "Aug 25, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "25 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Information Integration",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/info_integrate.png",
+                    "id" : "1E3BC3B0265E5480E0530100007F14F6"
+                },
+                {
+                    "categoryName" : "Mobile and IoT",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+                    "id" : "1DACE787D35676B2E0530100007FA9CB"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003dGO:PAGE:0:DSD:NO:1:ID:16885",
+            "contact" : "petraas.bhathena@oracle.com",
+            "createdBy" : "GSE",
+            "description" : "This demonstration illustrates how a marketing team would use Oracle Documents Cloud Service to easily and efficiently collaborate with a 3rd-party digital marketing agency to develop digital assets, and then publish those assets to internal and external users. It shows how organizations can drive efficiencies via the seamless collaboration and content management capabilities of Oracle Documents Cloud Service for Secure External Agency Collaboration , Sales and Partner Enablement , Anywhere, Any Device Mobile Support.",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "2288EF024C852B6FE0530100007FA9F0",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d2288EF024C852B6FE0530100007FA9F0",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Digital Workspace Collaboration",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/library/st/NASC+Sales/DB+Security+SC+-+Public/Public+Documents/Golden_Pitch",
+            "contact" : "russ.lowenthal@oracle.com",
+            "createdBy" : "russ.lowenthal@oracle.com",
+            "description" : "Database Security golden pitch powerpoint decks for reps and SC\u0027s use with customer audiences.  Two versions of \"Anatomy of a Breach\" are provided to highlight Oracle\u0027s \"Security DNA\" for either technical or executive audiences.",
+            "enteredBy" : "richard.wark@oracle.com",
+            "id" : "220434DF1DFF4816E0530100007FB348",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d220434DF1DFF4816E0530100007FB348",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Database Security Golden Pitch",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "categories" : [
+                {
+                    "categoryName" : "DB Security",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/db_sec.png",
+                    "id" : "21EF4A1CBA08672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1913074487847650::NO:RP:P22_CONTAINER_ID:76233",
+            "contact" : "VALENTIN.TABACARU@ORACLE.COM",
+            "createdBy" : "EMEA Pre-Sales",
+            "description" : "Ever wonder how OPC compares to on premise in the real world? Well now you can find out through SQL Performance Analyzer. In this demonstration we will  execute a real world workload test on a On Premise Oracle 11gR2 Database and Oracle Public Cloud 12c Pluggable Database Service. Once completed we will generate reports and compare the results. \r\n\u003cbr\u003e\u003cbr\u003e\r\nIf you like this demonstration you may also like our four other performance and management demonstrations also available on this page. ",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "227A5758C14C73F7E0530100007FBB8A",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d227A5758C14C73F7E0530100007FBB8A",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "On-Prem verse OPC Workload Testing Demonstration",
+            "postedOn" : "Oct 19, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "19 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003d100:10:34015449550097::NO:RP:P10_INDUSTRY%2CP10_RELEASE%2CP10_CONTENT%2CP10_REGION%2CP10_SOLUTION%2CP10_PRODUCT%2CP10_SECURITY%2CP10_LANGUAGE%2CF_SEARCH:%2C%2C%2C%2C%2C%2C%2C%2CBig+Data",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are the Big Data demos that were created and made available by GSE.",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228C581DF6FA3722E0530100007FCDAA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228C581DF6FA3722E0530100007FCDAA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE Demo Store Big Data Demos - GSE Contributed",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://rubygems.org/profiles/mcdaryn1",
+            "contact" : "daryn.mccool@oracle.com",
+            "createdBy" : "daryn.mccool@oracle.com",
+            "description" : "\u003cb\u003eOPC:\u003c/b\u003e This is an API Gem, this translates all of the REST calls published by OPC to Ruby methods.  This Gem is a dependency for the other two Gems, it also allows customers that have a Ruby development practice to write their own code and leverage our cloud.\u003cbr\u003e\u003cb\u003eknife-oracle_public_cloud:\u003c/b\u003eThis Gem integrates with Chef, knife is the base command line tool for Chef.  This Gem allows users to leverage the out of the box Chef knife command with options to create, list  DBC, JCS, and storage containers in OPC.  It also registers the DBCS and JCS instance to the users Chef Organization, it does not for storage as it not a VM.  The command also automatically installs the Chef-client on the server during the creation process, allowing users to fully configure a server in OPC from a single command..\u003cbr\u003e\u003cb\u003eoracle_public_cloud_client:\u003c/b\u003eThis is a command line utility for both Linux and Windows to manage OPC.  This removes the need for CURL completely.  For storage it removes the need to run Curl twice and having to copy and paste the Authorization Key into the second CURL command.  It allows users to manage their OPC Domain via command line like they would any other shell command, i.e  to create a new storage container it would be storagecreate –u username –p password –i ID Domain –c Container to be created",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "221353C9AA287D29E0530100007FC7D7",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d221353C9AA287D29E0530100007FC7D7",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Cloud Gems - REST to Ruby / Chef knife commands / OPC Command Line ",
+            "postedOn" : "Oct 14, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "14 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "IaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/iaas.png",
+                    "id" : "1ECA6397B02C0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1691302729647107::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:60151,4496066",
+            "contact" : "brad.diggs@oracle.com",
+            "createdBy" : "brad.diggs@oracle.com",
+            "description" : "This is the Oracle Directory Services Plus (ODS+) Demonstration Kit version 11gR2PS3. This kit is for Sales Consultant use ONLY for the purpose of equipping SCs to deliver simple demonstrations and Proofs of Concept (PoC) of all the products in the ODS+ suite.",
+            "enteredBy" : "waymon.whiting@oracle.com",
+            "id" : "21F5EE2670530FAEE0530100007FC1AA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21F5EE2670530FAEE0530100007FC1AA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Oracle Directory Services Plus (ODS+) Demonstration Kit",
+            "postedOn" : "Oct 13, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "13 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Identity Management",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/idm.png",
+                    "id" : "21EF4A1CBA07672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?liftandshift",
+            "contact" : "pat.davies@oracle.com",
+            "createdBy" : "NAS Innovation and Shared Services with the Product Ambassadors",
+            "description" : "The Lift \u0026 Shift demonstration showcases Oracle Enterprise Manager 12c and the Hybrid Cloud Gateway to move a 9GB 12c Pluggable Database and a J2EE from on-premise into the Database Cloud Service and the Java Cloud Service in about 15 minutes. The demonstration is preceeded by a short stoyline introducing Howard, an IT Manager trying to meet a tight deadline while meeting the needs of the VP of Development, the VP of Operations and the CIO. It is a tall task for Howard, but with Enteprise Manager 12c and the Oracle Public Cloud, success is easier than ever before. ",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "1FDC63B7CB2D779FE0530100007FA70A",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1FDC63B7CB2D779FE0530100007FA70A",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Lift \u0026 Shift Demonstration",
+            "postedOn" : "Sep 16, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "16 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:4526824367427670::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:75936,112",
+            "contact" : "wendy.delmolino@oracle.com",
+            "createdBy" : "Anita Adoba, Susan Story, Ansar Abrahim-Ali",
+            "description" : "Discovery workshop to socialize and develop a customer roadmap to private cloud DBaaS. \r\n",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "1EB5373F02B64183E0530100007F308A",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EB5373F02B64183E0530100007F308A",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "DBaaS Discovery Workshop",
+            "postedOn" : "Sep 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://sizing.oraclecorp.com",
+            "contact" : "ras_help_ww_grp@oracle.com",
+            "createdBy" : "NAS Innovation and Shared Services",
+            "description" : "Developing initial sizing will help you and your team understand the potential deal size, as well as developing high level estimates as to the number of service instances and their configuration to support the customer solution architectures.  What are the different Database or Java Cloud compute shapes, how many unique instances, or variations of services are required?  How many users or transactions are to be supported by non-metered services?  Begin to develop your customer’s Cloud Service Portfolio, and your Bill of Materials.",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "1E9D4D61E82C77C4E0530100007F0F19",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9D4D61E82C77C4E0530100007F0F19",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Cloud Sizing Calculator",
+            "postedOn" : "Sep 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "IaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/iaas.png",
+                    "id" : "1ECA6397B02C0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "SaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/saas.png",
+                    "id" : "1ECA6397B02E0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:2772038422020490::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:69649,112",
+            "contact" : "john.vansant@oracle.com",
+            "createdBy" : "NATO SOA / BPM Team",
+            "description" : "This 1-day workshop will walk the participants through the installation, setup, configuration, and operation of a production configuration of WebLogic Server 12c. This workshop is primarily focused on labs with a few supplementary presentations to go along with it. The goal is for participants to quickly become familiar with WebLogic Server and understand some of its most important capabilities.\r\n",
+            "enteredBy" : "edward.p.lee@oracle.com",
+            "id" : "1E9E3192BAE579FAE0530100007FCDDB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9E3192BAE579FAE0530100007FCDDB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "WebLogic 12c 1-day Hands On Workshop for Operators",
+            "postedOn" : "Aug 30, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "30 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Integration",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/info_integrate.png",
+                    "id" : "1E3BC3B0265E5480E0530100007F14F6"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com",
+            "contact" : "mg.raghavan@oracle.com",
+            "createdBy" : "GSE",
+            "description" : "GSE hosted Demonstration \r\n",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "1EB542FA6D98418EE0530100007FDE36",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EB542FA6D98418EE0530100007FDE36",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE DBaaS Demo",
+            "postedOn" : "Aug 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003d100:10:111159194007680::NO:RP:P10_INDUSTRY%2CP10_RELEASE%2CP10_CONTENT%2CP10_REGION%2CP10_SOLUTION%2CP10_PRODUCT%2CP10_SECURITY%2CP10_LANGUAGE%2CF_SEARCH:%2CODBBDA211D01%3BENDBDDPOCD01%3BENDVINOD01%2C110%2C%2C%2C2956%2C%2C%2Cbig+data",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are the big data demos contributed by the field.",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228D0290F4BC3B01E0530100007FBA56",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228D0290F4BC3B01E0530100007FBA56",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE Demo Store Big Data Demos - Field Contributed",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://www.oracle.com/technetwork/database/availability/maximum-availability-wp-12c-1896116.pdf",
+            "contact" : "wendy.delmolino@oracle.com",
+            "createdBy" : "WENDY.DELMOLINO@ORACLE.COM",
+            "description" : "White paper: Maximum Availability with Oracle Database 12c ",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "21E9A606E35A60F1E0530100007FCCBB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21E9A606E35A60F1E0530100007FCCBB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "White paper: Maximum Availability with Oracle Database 12c ",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Data Management",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/datamanagement.png",
+                    "id" : "1DACE787D35876B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?bidemostore",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are all the BICS demos, examples, and design tips for BICS solutions.",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228E3999EC803DF8E0530100007FADCA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228E3999EC803DF8E0530100007FADCA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Oracle Cloud Services Sample Demos",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003d100:10:111159194007680::NO:RP:P10_INDUSTRY%2CP10_RELEASE%2CP10_CONTENT%2CP10_REGION%2CP10_SOLUTION%2CP10_PRODUCT%2CP10_SECURITY%2CP10_LANGUAGE%2CF_SEARCH:%2C%2C110%2C%2C%2C%2C%2C%2Cobiee",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are all the BI Demos available in the GSE Demo Store.",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228E3999EC843DF8E0530100007FADCA",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228E3999EC843DF8E0530100007FADCA",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE Demo Store BI Demos",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:1433143563179116::NO:115:P22_CONTAINER_ID,P22_APPLIES_TO_WORKFLOW:42273,",
+            "contact" : "john.vansant@oracle.com",
+            "createdBy" : "NATO BPM/SOA Team",
+            "description" : "Many of the Oracle workshops come with the VMs pre-built with the software already installed and configured. These are prequel workshops that step the participant through the downloading, installation, and configuration of the products that backend other workshops. These workshops can be used together or standalone. They can also be used as supplements or pre-work for other Oracle workshops.",
+            "enteredBy" : "edward.p.lee@oracle.com",
+            "id" : "1E9E3192BAE779FAE0530100007FCDDB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9E3192BAE779FAE0530100007FCDDB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "WLS, SOA, OSB and BPM Suite Installation and Configuration Workshops",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Integration",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/info_integrate.png",
+                    "id" : "1E3BC3B0265E5480E0530100007F14F6"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003dGO:PAGE:0:DSD:NO:1:ID:26167",
+            "contact" : "william.smart@oracle.com",
+            "createdBy" : "APAC Sales Consulting",
+            "description" : "This demo set is designed to provide a method that will allow Solution Consultants to show customers that Oracle Service Cloud can integrate with 3rd Party SMS gateway vendors to send SMS messages.",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "228DF316FC173DEAE0530100007F833E",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228DF316FC173DEAE0530100007F833E",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Integrating SMS with the Service Cloud",
+            "postedOn" : "Oct 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "SaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/saas.png",
+                    "id" : "1ECA6397B02E0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "http://mobility.sofbang.com/",
+            "contact" : "francisco.brito@oracle.com",
+            "createdBy" : "NAS Public Sector",
+            "description" : "The Public Sector Mobile Showcase demonstrates the power of the Oracle Mobile Application Framework (MAF) development environment. More importantly, they show the value of utilizing mobility in government, healthcare, and higher education enterprises. All of the showcase applications include integrated Oracle mobile messaging and high level integration story arcs. \u003cbr\u003e\u003cbr\u003e\r\nThe solutions were a joint development project with a partner Softbang and many of the applications can be downloaded directly to your Android or iOS device. ",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "228D76C3CCC53C4DE0530100007F2415",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228D76C3CCC53C4DE0530100007F2415",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Public Sector Mobility",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Mobile and IoT",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+                    "id" : "1DACE787D35676B2E0530100007FA9CB"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/library/st/DBaaS+Workshop+-+Engineered+Systems+Proof+Team/Public+Documents",
+            "contact" : "wendy.delmolino@oracle.com",
+            "createdBy" : "Anita Adoba, Matt Scott",
+            "description" : "This is a hands-on workshop designed to highlight the key features of Exadata as a cloud platform, using the Enterprise Manager Cloud provisioning, management and monitoring capabilities.\r\n",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "1EB1C90439913566E0530100007F3A1C",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1EB1C90439913566E0530100007F3A1C",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Exadata DBaaS Workshop",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:2:4419162574589864::::P2_FILE_ID:160338",
+            "contact" : "valentin.tabacaru@oracle.com",
+            "createdBy" : "EMEA Pre-Sales ",
+            "description" : "This simple example opens the door for infinite possibilities, enabling connections from OPC Compute Storage to On Premise environments via Reverse SSH Tunneling through NFS. \r\n\r\n\r\n",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "227A14A01A8573C5E0530100007FE9E0",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d227A14A01A8573C5E0530100007FE9E0",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "How to Connect On-Prem Storage to Compute Node",
+            "postedOn" : "Oct 19, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "19 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "IaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/iaas.png",
+                    "id" : "1ECA6397B02C0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://apex.oraclecorp.com/pls/apex/f?p\u003d21618:link:::::P_LINK:2582",
+            "contact" : "firstname.lastname@oracle.com",
+            "createdBy" : "FS Product Management   ",
+            "description" : "A detailed technical look at Oracle All-flash FS Storage System.",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "1FDFE9B5B3B90679E0530100007F490A",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1FDFE9B5B3B90679E0530100007F490A",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "All Flash Deep Dive",
+            "postedOn" : "Sep 9, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "09 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Storage",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/storage.png",
+                    "id" : "1DACE787D35A76B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:3545441453616166::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:76767,4513293",
+            "contact" : "manjunath.krishnamurthy@oracle.com",
+            "createdBy" : "APAC SC",
+            "description" : "The purpose of this demo is to showcase capability of BICS to help federal state governments manage refugees. The demo provides insights into refugee inflow and accommodation per location. The Apex applications are leveraged to search and edit refugee/location details. The demo provides an option to assign a refugee to a different location to maintain optimum capacity. There are some advanced analytics reports which include liner regression, moving average etc.",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "2289AD548DCC2E25E0530100007F8CAC",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d2289AD548DCC2E25E0530100007F8CAC",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "BICS Refuge Use Case Demo",
+            "postedOn" : "Oct 13, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "13 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?DBSRA",
+            "contact" : "russ.lowenthal@oracle.com",
+            "createdBy" : "NATO Database Security Sales Consulting",
+            "description" : "Practical review focused on identifying areas of risk and recommending strategies to mitigate those risks. The assessment focuses on the database but also reviews surrounding system components including storage, network, and application. This service provides an in-depth look into your customer data, processes and policies to provide actionable recommendations for risk avoidance.\r\n",
+            "enteredBy" : "richard.wark@oracle.com",
+            "id" : "1E9D4D61E82F77C4E0530100007F0F19",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9D4D61E82F77C4E0530100007F0F19",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Database Security Risk Assessment ",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "DB Security",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/db_sec.png",
+                    "id" : "21EF4A1CBA08672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "This is the SampleApp VM that provides a comprehensive set of BI Examples, including Big Data.",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228DF316FC1E3DEAE0530100007F833E",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228DF316FC1E3DEAE0530100007F833E",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "SampleApp Demo Platform",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:369639643110788::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:72373,4411411",
+            "contact" : "richard.wark@oracle.com",
+            "createdBy" : "NAS Innovation and Shared Services",
+            "description" : "The Oracle Database Security Workshop is a one-day hands-on session for IT Managers, IT Security Architects and Oracle DBAs who are looking for solutions to address their information protection, privacy, and accountability challenges within their Oracle database environment. \r\n",
+            "enteredBy" : "richard.wark@oracle.com",
+            "id" : "1E9DFCED9AB379F8E0530100007FA48E",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1E9DFCED9AB379F8E0530100007FA48E",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Database Security 12c Workshop",
+            "postedOn" : "Aug 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "DB Security",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/db_sec.png",
+                    "id" : "21EF4A1CBA08672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/library/st/NASC+Sales/DB+Security+SC+-+Public/Public+Documents",
+            "contact" : "russ.lowenthal@oracle.com",
+            "createdBy" : "russ.lowenthal@oracle.com",
+            "description" : "Maintained Collection of Database Security Collateral geared towards the field sale team to include POC Templates, Workshop materials/invites and viewlets showing security products in action.",
+            "enteredBy" : "richard.wark@oracle.com",
+            "id" : "220472765A914820E0530100007F1D72",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d220472765A914820E0530100007F1D72",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Database Security Collateral Library",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "categories" : [
+                {
+                    "categoryName" : "DB Security",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/db_sec.png",
+                    "id" : "21EF4A1CBA08672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/teamcollab/library/st/NASC+Sales/DB+Security+SC+-+Public/Public+Documents/Reference_Architectures",
+            "contact" : "russ.lowenthal@oracle.com",
+            "createdBy" : "russ.lowenthal@oracle.com",
+            "description" : "Sample reference architectures to share with your customers subdivided into:  General, Exadata, PublicCloud, SAP and Healthcare. ",
+            "enteredBy" : "richard.wark@oracle.com",
+            "id" : "220472765A8E4820E0530100007F1D72",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d220472765A8E4820E0530100007F1D72",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Database Security Reference Architecture",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "categories" : [
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                },
+                {
+                    "categoryName" : "DB Security",
+                    "parentCategoryId" : "1D971613F70428EDE0530100007FA216",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/db_sec.png",
+                    "id" : "21EF4A1CBA08672AE0530100007F41C3"
+                },
+                {
+                    "categoryName" : "Security",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/security.png",
+                    "id" : "1D971613F70428EDE0530100007FA216"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:2350025399606857::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:76126,112",
+            "contact" : "rachael.wang@oracle.com",
+            "createdBy" : "NAS Public Sector",
+            "description" : "This demonstration leverages Oracle ICS, JCS and optionally PCS and MCS to showcase a fully integrated parking application. The solution is part of the Focus for Growth FY16 Process4Gov initiative and development is through a strategic partner Softbang.",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "228C5E8ABCE43720E0530100007FBB31",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228C5E8ABCE43720E0530100007FBB31",
+            "inDevelopment" : "Y",
+            "isVisible" : "Y",
+            "name" : "Metro Parking Demonstration",
+            "postedOn" : "Dec 31, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "31 December 2015",
+            "categories" : [
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "https://youtu.be/zzwr1L-o8Hs",
+            "contact" : "francisco.brito@oracle.com",
+            "createdBy" : "Public Sector NAS Advanced Engineering Group",
+            "description" : "This cross pillar demonstration begins with a fully developed Portal in Oracle Webcenter using a custom template. Inside the portal citizens can view available services, register, check eligibility for benefits and manage/monitor the benefits process. Over time if circumstances change, the citizen can update his or her information and receive immediate guidance on new eligibility. \r\n\u003cbr\u003e\u003cbr\u003e\r\nFor more information or a live demonstration please contact Francisco Brita by pressing the contact button below.\r\n\r\n",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "229D37F3CA0E74B1E0530100007FBF5D",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d229D37F3CA0E74B1E0530100007FBF5D",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Oklahoma DHS",
+            "postedOn" : "Aug 15, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "15 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Information Integration",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/info_integrate.png",
+                    "id" : "1E3BC3B0265E5480E0530100007F14F6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com",
+            "contact" : "ken.cottrell@oracle.com",
+            "createdBy" : "NAS Public Sector",
+            "description" : "This demo image is based on the OEP / SX virtual image produced by the OEP/SX team. For the Remote Patient Monitor use case, Ken added a JDeveloper test message generator patient data to simulate:\r\n\r\n    Heart Rate\r\n    White Blood Cell Count\r\n    Respiratory Rate\r\n    Body Temperature.\r\n\r\nThe test data is forwarded to  OEP, and Stream Explorer is then used to correlate these 4 streams and generate an Alert Exploration when 2 or more vital signs indicate a heightened risk of SIRS (Systemic Inflammatory Response Syndrome) which is a common and serious condition for acute-care patients and outpatients at risk of readmission. Refer to this Wikipedia article for an overview of the business rules used by Stream Explorer to correlate and query these data streams",
+            "enteredBy" : "frank.baber@oracle.com",
+            "id" : "228D31570B203B09E0530100007FA89E",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228D31570B203B09E0530100007FA89E",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "OEP/SX Remote Patient Monitor Demo",
+            "postedOn" : "Sep 17, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "17 September 2015",
+            "categories" : [
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Mobile and IoT",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+                    "id" : "1DACE787D35676B2E0530100007FA9CB"
+                }
+            ],
+            "assetType" : "Demo"
+        },
+        {
+            "assetUrl" : "https://confluence.oraclecorp.com/confluence/display/COPMP/Cloud+Ops+Strategy+Portal",
+            "contact" : "pat.davies@oracle.com",
+            "createdBy" : "PAT.DAVIES@ORACLE.COM",
+            "description" : "Provides transparency into Oracle Cloud Operations. The Portal provides information into the categories of: Cloud Service Business Operations, Cloud Operations Field Support and Cloud Operations Strategy. ",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "223BB7F376B5124BE0530100007F96BF",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d223BB7F376B5124BE0530100007F96BF",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Cloud Operations Strategy Portal",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "IaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/iaas.png",
+                    "id" : "1ECA6397B02C0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "SaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/saas.png",
+                    "id" : "1ECA6397B02E0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "unknown"
+        },
+        {
+            "assetUrl" : "http://retriever.us.oracle.com/apex/f?p\u003d121:22:56161723763299::NO:RP:P22_CONTAINER_ID,P22_PREV_PAGE:76276,112",
+            "contact" : "wendy.delmolino@oracle.com",
+            "createdBy" : "Oracle Applications on Engineered Systems Team and the Oracle Solution Cent",
+            "description" : "This demo series is hosted in the OSC and showcases the value of Oracle on Oracle through detailed performance demonstrations. The demonstration series showcases how Exadata can improve performance and operations for EBS, PSFT and JDE.",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "1FE0036482D90675E0530100007F0CF8",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1FE0036482D90675E0530100007F0CF8",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Seeing is Believing Demos",
+            "postedOn" : "Aug 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Private Cloud (Oracle on Oracle)",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/privatecloud.png",
+                    "id" : "1DACE787D35976B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?opcworkshops_mcs",
+            "contact" : "frank.baber@oracle.com",
+            "createdBy" : "NAS Solution Engineering",
+            "description" : "This one day hands on workshop will provide students a detailed understanding of the Mobile Cloud Service and how it can benefit their organization. ",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "210D54CFFDF84265E0530100007F6D25",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d210D54CFFDF84265E0530100007F6D25",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Mobile Cloud Service Workshop",
+            "postedOn" : "Nov 16, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "16 November 2015",
+            "categories" : [
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "Mobile and IoT",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/mobile.png",
+                    "id" : "1DACE787D35676B2E0530100007FA9CB"
+                }
+            ],
+            "assetType" : "Hands-on Workshop"
+        },
+        {
+            "assetUrl" : "https://stbeehive.oracle.com/content/dav/st/OLTPPM/Public%20Documents/Collateral/12cR1/HA/Oracle%20MAA%20Quick%20Reference%20Guide.pdf",
+            "contact" : "wendy.delmolino@oracle.com",
+            "createdBy" : "Database Product Management",
+            "description" : "Overview of the the solutions customer to achieve Maximum Availability including RAC, DG and Golden Gate.",
+            "enteredBy" : "wendy.delmolino@oracle.com",
+            "id" : "21E99EE303D460A2E0530100007F1FCB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d21E99EE303D460A2E0530100007F1FCB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "MAA Quick Reference Guide",
+            "postedOn" : "Oct 12, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "12 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Data Management",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/datamanagement.png",
+                    "id" : "1DACE787D35876B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003d100:10:34015449550097::NO:RP:P10_INDUSTRY%2CP10_RELEASE%2CP10_CONTENT%2CP10_REGION%2CP10_SOLUTION%2CP10_PRODUCT%2CP10_SECURITY%2CP10_LANGUAGE%2CF_SEARCH:%2C%2C110%2C%2C%2C%2C%2C%2Cepm",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are the EPM demos with demo scripts that were produced and made available in the GSE demostore from field SCs",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228C3D8C7DD33716E0530100007FDCE7",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228C3D8C7DD33716E0530100007FDCE7",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE Demo Store EPM Demos - Field Contributed",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003d100:10:34015449550097::NO:RP:P10_INDUSTRY%2CP10_RELEASE%2CP10_CONTENT%2CP10_REGION%2CP10_SOLUTION%2CP10_PRODUCT%2CP10_SECURITY%2CP10_LANGUAGE%2CF_SEARCH:%2C%2C110%2C%2C%2C%2C%2C%2Cepm",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are the EPM demos with demo scripts that were produced and made available in the GSE demostore from GSE.",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228C523B811237B8E0530100007F156F",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228C523B811237B8E0530100007F156F",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE Demo Store EPM Demos - GSE Contributed",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "https://demo.oracle.com/apex/f?p\u003d100:10:111159194007680::NO:RP:P10_INDUSTRY%2CP10_RELEASE%2CP10_CONTENT%2CP10_REGION%2CP10_SOLUTION%2CP10_PRODUCT%2CP10_SECURITY%2CP10_LANGUAGE%2CF_SEARCH:%2C%2C110%2C%2C%2C%2C%2C%2Cobia",
+            "contact" : "derrick.cameron@oracle.com",
+            "createdBy" : "DERRICK.CAMERON@ORACLE.COM",
+            "description" : "These are the BI Applications Demos available in the GSE Demo Store",
+            "enteredBy" : "derrick.cameron@oracle.com",
+            "id" : "228E5B11DB3B3DF4E0530100007F313E",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d228E5B11DB3B3DF4E0530100007F313E",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "GSE Demo Store BI Applications Demos",
+            "postedOn" : "Oct 20, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "20 October 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Information Architecture and Big Data",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/bigdata.png",
+                    "id" : "1DACE787D35776B2E0530100007FA9CB"
+                }
+            ]
+        },
+        {
+            "assetUrl" : "http://launch.oracle.com/?opcworkshops_jcs",
+            "contact" : "pat.davies@oracle.com",
+            "createdBy" : "NAS Innovation and Shared Services",
+            "description" : "This workshop will provide your customers with an overview of Cloud Services and Public Cloud options. During the workshop your end user will create and explore the Java Cloud Service, check code out off and back into a Developer Cloud Service, and then deploy the application to the JCS. During the labs the customer will also connect the JCS to a companion Database Service. After the labs are done, the end user will have a working mobile application that access the JCS they created.",
+            "enteredBy" : "pat.davies@oracle.com",
+            "id" : "1DACE787D35276B2E0530100007FA9CB",
+            "imageUrl" : "http://innovate.us.oracle.com:81/pls/apex/get_image?p_id\u003d1DACE787D35276B2E0530100007FA9CB",
+            "inDevelopment" : "N",
+            "isVisible" : "Y",
+            "name" : "Java Cloud Service Workshop",
+            "postedOn" : "Aug 1, 2015 12:00:00 AM",
+            "imageMethod" : "Upload",
+            "deletedInd" : "N",
+            "postedOnFmt" : "01 August 2015",
+            "categories" : [
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                },
+                {
+                    "categoryName" : "PaaS",
+                    "parentCategoryId" : "1E60FFB1357A4869E0530100007F39C6",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/paas.png",
+                    "id" : "1ECA6397B02D0AC3E0530100007FBE2A"
+                },
+                {
+                    "categoryName" : "Cloud",
+                    "iconUrl" : "http://innovate.us.oracle.com:81/tab/cat_icons/cloud.png",
+                    "id" : "1E60FFB1357A4869E0530100007F39C6"
+                }
+            ],
+            "assetType" : "Hands-on Workshop"
+        }
+    ]
+}

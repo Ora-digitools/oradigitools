@@ -1,0 +1,30 @@
+body {
+  background-image: url("../images/bg-sunset-road.jpg");
+   background-repeat: no-repeat;
+
+  background-color:Black;
+  color:  White;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#error{
+ float: left;
+ position: relative;
+ background-color: black;
+ padding: 30px;
+ width: 80%;
+ text-align: center;
+}
+#error p{
+ color: white;
+ font-size: 200.0%;
+
+}
+
+#error a{
+ color: Red;
+
+}
+
+

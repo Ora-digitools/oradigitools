@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lte IE 10]>
+<script type="text/javascript">
+window.location = "bg/error.html";
+ </script>
+<![endif]-->
+<html>
+    <head>
+        <title>Technology Asset Bank</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/tab.css"/>
+        <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="js/tab2.js" type="text/javascript"></script> 
+            <link href="images/favicon/favicon.ico?v=1.0" rel="shortcut icon">
+            <link href="images/favicon/favicon.ico?v=1.0" sizes="16x16 32x32 64x64" rel="icon">
+            <link href="images/favicon/favicon-96x96.png?v=1.0" sizes="196x196" type="image/png" rel="icon">
+            <link href="images/favicon/apple-touch-icon-57x57.png?v=1.0" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-60x60.png?v=1.0" sizes="114x114" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-72x72.png?v=1.0" sizes="72x72" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-76x76.png?v=1.0" sizes="144x144" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-114x114.png?v=1.0" sizes="60x60" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-120x120.png?v=1.0" sizes="120x120" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-144x144.png?v=1.0" sizes="76x76" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-152x152.png?v=1.0" sizes="152x152" rel="apple-touch-icon">
+            <link href="images/favicon/apple-touch-180x180.png?v=1.0" sizes="180x180" rel="apple-touch-icon">
+            <meta content="#FFFFFF" name="msapplication-TileColor">
+            <meta content="images/favicon/mstile-70x70.png?v=1.0" name="msapplication-TileImage">
+            <meta content="images/favicon/mstile-144x144.png?v=1.0" name="msapplication-TileImage">
+            <meta content="images/favicon/mstile-150x150.png?v=1.0" name="msapplication-TileImage">
+            <meta content="images/favicon/mstile-310x150.png?v=1.0" name="msapplication-TileImage">
+            <meta content="images/favicon/mstile-310x310.png?v=1.0" name="msapplication-TileImage">
+            <meta content="images/favicon/browserconfig.xml" name="msapplication-config">       
+    </head>
+    
+    <body>
+        <div id="mobileheader">
+          <img id="mobileicon" src="images/logo-new-mobile.png"/>
+          <img id="hamburger" src="images/hamburger.png"/>
+          <img id="hamburger_close" src="images/hamburger_close.png"/>
+        </div>
+        <header>
+            <div id="menuItem">
+                <h3>
+                    <a id="stats" href="https://apex.oraclecorp.com/pls/apex/f?p=29024:4:112082708438347" target="_blank">Stats</a>
+                </h3>
+            </div>
+            
+                <div id="modeme">
+                
+                <select id="contentType" class="green-arrow">
+                
+                </select>
+            </div>
+        </header>
+        <!--holder code for JSON Menu Build-->
+        
+       <ul id="nav_menu"></ul>
+       
+        
+        <!--holder code for JSON Asset Build-->
+        <div id="asset_holder">
+            <input id="filter" placeholder="Filter Results"/>
+            <ul id="display" class="grid cs-style-1">
+             <div class="sk-circle">
+                  <div class="sk-circle1 sk-child"></div>
+                  <div class="sk-circle2 sk-child"></div>
+                  <div class="sk-circle3 sk-child"></div>
+                  <div class="sk-circle4 sk-child"></div>
+                  <div class="sk-circle5 sk-child"></div>
+                  <div class="sk-circle6 sk-child"></div>
+                  <div class="sk-circle7 sk-child"></div>
+                  <div class="sk-circle8 sk-child"></div>
+                  <div class="sk-circle9 sk-child"></div>
+                  <div class="sk-circle10 sk-child"></div>
+                  <div class="sk-circle11 sk-child"></div>
+                  <div class="sk-circle12 sk-child"></div>
+                   <h1><br><br>Loading</h1>
+             </div> 
+            </ul>
+            <span id="filtertext"></span>
+        </div>
+        
+        <div id="min-menu">
+        <span><</span>
+        </div>
+        
+        <!-- Show the Asset Details when clicked. -->
+        <div id="asset_details" class="available_asset_bg">
+            <div id="showasset">
+            
+            </div>
+          </div>
+          
+        <!-- Overlay for How or Request -->
+        <div id="blackout">
+    
+       <div id="howdetails">
+          <div id="c_video" class="close-btn">
+             <a href="#" >X</a>
+           </div>
+           <video id="video_holder" controls poster="http://innovate.us.oracle.com:81/tab/video/how_it_works_poster.jpg">
+                <source type="video/mp4" src="http://innovate.us.oracle.com:81/tab/video/how_it_works.mp4"></source>
+            </video>
+           <span>
+           <br><br>
+The Technology Asset Bank is HTML5 based application running on Oracle Weblogic 12c. It is designed to quickly route you to the Top technical 
+assets across NAS. Our goal is provide you visibility into the highest quality, highest value technical assets with relative ease. By presenting
+only the highest value assets in a curated manner we will save you time locating the right solutions and in many cases eliminate the duplication
+of effort in regards to asset creation.  
+           </span>
+        </div>
+      
+        <div id="assetrequest">
+           <div id="c_video" class="close-btn">
+             <a href="#" >X</a>
+           </div>
+        <h1>Feedback</h1>
+        <span><br><br>Is there an asset you were hoping to find? or hoping to have developed? If so enter your email address and a brief message below
+        and one of our curators will review and get back to you shortly. 
+        </span>
+        
+        <form id="sendEmail" action="javascript:alert('Your Request has been Submitted.');" name="contactusform">
+        <input id="from" class="contactusTextField" type="text" onclick="this.value='';" value="firstname.lastname@oracle.com" name="from">
+         
+        <textarea id="assetRequestMessage" class="contactusTextArea"  name="body">Enter Your Text.</textarea>
+        <span><br><br></span>
+        <input id="gobutton" type="submit" value="Submit" />
+         </form>
+        </div>
+        
+
+        
+        
+       </div>
+        
+        
+        <!--Form to collect a persons email address if no SSO id. -->
+        <div id="getEmail">
+        <div id="email_container">
+        <form id="enterEmail" action="javascript:alert( 'success!' );" autocomplete="on">
+          <span>SSO Integration is coming soon. In the meantime
+          please enter your <stronger>e-mail address</stronger> below.
+          </span>
+          <input id="myAddress" type="email" name="email" autocomplete="off" value="firstname.lastname@oracle.com">
+          <input  type="submit" value="Submit">
+        </form>
+        </div>
+        </div>
+        <!---->  
+        <div id="mediatester" style="display:none;">
+        <a href="#"></a>
+        </div>
+        
+    </body>
+</html>
