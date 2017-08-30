@@ -1421,6 +1421,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             contentType: 'application/json; charset=utf-8',
             data: ko.toJSON(mentor),
             success: function (data) {
+				$("#menteedialog").ojDialog("open");
               getAssociatedMentors();
               getRecommendedMentors();
               hidedialog();
@@ -1512,7 +1513,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               document.getElementById('menteereqalert').style.display = 'none';
               $("#menteereq").ojDialog("close");
             } else {
-              document.getElementById('menteereqalert').style.display = 'inline-block';
+              document.getElementById('menteereqalert').style.display = 'block';
             }
 
             hidedialog();

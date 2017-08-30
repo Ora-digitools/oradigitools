@@ -28,7 +28,7 @@ body {
 	width: 1411px;
 }
 .icon-container {
-	width: 755px;
+	width: 900px;
 	margin: 0 auto;
 }
 .orangeBg {
@@ -1225,7 +1225,7 @@ li.oj-selected .oj-tabs-gen-div {
 }
 .assetsrow {
 	margin-top: 20px;
-	padding: 60px;
+	padding: 20px;
 	background: #f1f1f1;
 	margin-bottom: 30px;
 	text-align: center;
@@ -1383,6 +1383,9 @@ label.star:before {
 	font-weight: bold;
 	color: rgb(138, 109, 59)
 }
+
+.asset_c{
+	margin-bottom:20px;}
 
 @media (min-width: 1500px) {
 .container {

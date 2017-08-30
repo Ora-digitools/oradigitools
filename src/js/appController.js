@@ -31,7 +31,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         'performance': { label: 'Performance' },
         'sitemap': { label: 'Sitemap' },
         'terms': { label: 'Terms of Use & Privacy' },
-        'cookies': { label: 'Cookie Preferences' }
+        'cookies': { label: 'Cookie Preferences' },
+		'mentorship': { label: 'Mentorship Program' }
       });
 
       //welcome,cloud hubs, profiles,catalogs, assets, performance
@@ -52,7 +53,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our People', 'profileslist', '?root=profileslist'),
         new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
-        new headerLink('Our Assets', 'assets', '?root=assets')
+        new headerLink('Our Assets', 'assets', '?root=assets'),
+		new headerLink('Mentorship Program', 'mentorship', '?root=mentorship')
 
       ]);
 

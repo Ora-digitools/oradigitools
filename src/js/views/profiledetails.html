@@ -40,8 +40,8 @@
       <div>
         <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:openeditprofiledialog">Edit</button>
       </div>
-      <p>Hub :     &nbsp;&nbsp; <span data-bind="text:center"></span></p>
-      <p>Pillar :   &nbsp;&nbsp; <span data-bind="text:pillar"></span></p>
+      <p>Hub: <span data-bind="text:center"></span></p>
+      <p>Pillar: <span data-bind="text:pillar"></span></p>
     </div>
     <!-- Hub -->
   </div>
@@ -186,6 +186,14 @@
                 </div>
               </div>
               <!-- Organization -->
+               <!-- Mentorship -->
+              <div class="profileSection" data-bind="with:profile">
+                <div class="greyBg profileSummaryh">Mentorship Program <sup class="red">New!</sup></div>
+                <div class="profileSummary">
+                  Click <a href="/?root=mentorship">here</a> to know more about the Mentorship Program.
+                </div>
+              </div>
+              <!-- Mentorship -->
               <!-- Mentors -->
               <div class="profileSection ssoenabled suggestedcolumn">
                 <div class="greyBg profileSummaryh">Suggested Mentors</div>
@@ -813,7 +821,11 @@
     </div>
   </div>
 </div>
-
+<div style="display:none" id="menteedialog" title="Mentor added successfully" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
+  <div class="oj-dialog-body">
+    Thank you! A request has been sent to the mentor for approval.
+  </div>
+</div>
 <div id="enlargephoto" class="w3-modal w3-animate-zoom" style="z-index: 9999" onclick="this.style.display='none'">
   <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
   <div class="w3-modal-content w3-animate-zoom">
