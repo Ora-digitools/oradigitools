@@ -14,7 +14,13 @@ var ismentor=false;
 /**
  * Example of Require.js boostrap javascript
  */
+
+ // BASE URL FOR DEV
+// var baseurl="solutionengineering-devops.us.oracle.com:7003/ords/seaas/seaas/";
+
+// BASE URL FOR PRODUCTION
 var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
+
 var selecteduuid="";
 requirejs.config(
 {

@@ -88,17 +88,21 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       // MENTOR AND MENTEE variable
       self.skillarray = ko.observableArray([]);
-      this.thresholdValues = [{ max: 1, shortDesc: 'Familiar' },
-      { max: 2, shortDesc: 'Needs Improvement' },
+      this.thresholdValues = [{ max: 1, shortDesc: 'Aware' },
+      { max: 2, shortDesc: 'Beginner' },
       { max: 3, shortDesc: 'Proficient' },
-      { max: 4, shortDesc: 'Expert' },
-      { max: 5, shortDesc: 'Master' }];
+      { max: 4, shortDesc: 'Advanced' },
+      { max: 5, shortDesc: 'Expert' }];
 
       self.recommendedMentors = ko.observableArray([]);
       self.associatedmentors = ko.observableArray([]);
       self.associatedmentees = ko.observableArray([]);
       self.pendingmentorrequest = ko.observableArray([]);
       self.pendingmenteesrequest = ko.observableArray([]);
+
+      //REJECTION REASON
+      self.mentorrejectionreason=ko.observableArray([]);
+      self.menteerejectionreason=ko.observableArray([]);
       //----- END -----//
 
 
@@ -162,6 +166,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       self.getFilters = function () {
         self.listofhubs([]);
         self.listofpillars([]);
+        self.mentorrejectionreason([]);
+        self.menteerejectionreason([]);
         $.getJSON(baseurl + "ListValues/SOLUTION_HUBS").
           then(function (hubs) {
             $.each(hubs.items, function () {
@@ -175,6 +181,30 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               self.listofpillars.push(this.value);
             })
           });
+
+        $.getJSON(baseurl + "ListValues/MENTOR_DELETE_REASON").
+          then(function (reasons) {
+            $.each(reasons.items, function () {
+              var reason={
+                value:this.value,
+                label:this.value
+              }
+              self.mentorrejectionreason.push(reason);
+            })
+          });
+
+        $.getJSON(baseurl + "ListValues/ MENTEE_REJECT_REASON").
+          then(function (reasons) {
+            $.each(reasons.items, function () {
+              var reason={
+                value:this.value,
+                label:this.value
+              }
+              self.menteerejectionreason.push(reason);
+            })
+          });
+
+
       }
 
 
@@ -391,9 +421,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       self.iseditpermitted = function () {
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
-          setssostatus('.ssoenabled', 'inline-block');          
+          setssostatus('.ssoenabled', 'inline-block');
         } else {
-          setssostatus('.ssoenabled', 'none');
+          setssostatus('.ssoenabled', 'inline-block');
         }
       }
 
@@ -1421,7 +1451,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             contentType: 'application/json; charset=utf-8',
             data: ko.toJSON(mentor),
             success: function (data) {
-				$("#menteedialog").ojDialog("open");
+              $("#menteedialog").ojDialog("open");
               getAssociatedMentors();
               getRecommendedMentors();
               hidedialog();
@@ -1461,13 +1491,13 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
                   profile_photo_url: imageurl,
                   name: this.display_name,
                   uuid: this.uuid,
-                  status:this.status
+                  status: this.status
                 }
                 var status = this.status;
                 // if (status == 'Pending' || status == 'Denied') {
                 //   self.associatedmentors.push();
                 // } else {
-                  self.associatedmentors.push(mentor);
+                self.associatedmentors.push(mentor);
                 // }
                 count++;
               }
@@ -1491,7 +1521,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
             for (var i = 0; i < mentees.length; i++) {
               var imageurl = self.defaultimage;
-              var menteeobj=mentees[i];
+              var menteeobj = mentees[i];
               if (!menteeobj.profile_photo_url.endsWith("GetPhoto/")) {
                 imageurl = menteeobj.profile_photo_url;
               }
@@ -1596,7 +1626,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
 
       }
 
-      refreshmentorship=function(){
+      refreshmentorship = function () {
         getAssociatedMentors();
         getRecommendedMentors();
       }

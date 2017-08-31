@@ -58,7 +58,7 @@
 <div style="display: none" class="row" id="menteereqalert">
   <div class="container nopaddingmd">
     <div class="alert alert-warning fade in alert-dismissable margintop30">
-    
+
       <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
       <strong>You have new Mentee requests.<br><a href="#" id="menteereqOpener" data-bind="click:menteepopup">Click here to view</a></strong>
     </div>
@@ -127,8 +127,8 @@
 
                   <!-- Mentors -->
                   <div class="profileSection">
-                    <div class="greyBg profileSummaryh">My Mentors 
-                      <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:refreshmentorship">Refresh</button>                      
+                    <div class="greyBg profileSummaryh">My Mentors
+                      <button name="ssoenabled" type="button" class="btn  btn-info btn-xs pull-right ssoenabled" data-toggle="modal" data-bind="click:refreshmentorship">Refresh</button>
                     </div>
                     <div class="profileSummary selectedmentor">
                       <div class="row" data-bind="foreach:associatedmentors">
@@ -139,7 +139,7 @@
                           <p style="color:green">(Pending)</p>
                           <!-- /ko -->
                         </div>
-                        
+
                       </div>
                     </div>
                   </div>
@@ -186,7 +186,7 @@
                 </div>
               </div>
               <!-- Organization -->
-               <!-- Mentorship -->
+              <!-- Mentorship -->
               <div class="profileSection" data-bind="with:profile">
                 <div class="greyBg profileSummaryh">Mentorship Program <sup class="red">New!</sup></div>
                 <div class="profileSummary">
@@ -767,13 +767,11 @@
   <div class="oj-dialog-body">
     <div class="form-group">
       <label>Reason for removing the Mentor</label>
-      <select id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',value:removementorreason,
+      <select id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',options: mentorrejectionreason,value:removementorreason,
                                                   rootAttributes: {style:'max-width:30em'}}">
-          <option value="My mentoring activities completed - Gained skill">My mentoring activities completed - Gained skill</option>
-          <option value="Mentor was selected by mistake">Mentor was selected by mistake</option>
-          <option value="Mentor do not have enough time to coach">Mentor does not have enough time to coach</option>
-          <option value="Mentor do not have skills which I expected to learn">Need more depth on specialized skill area</option>
-        </select>
+          
+
+                 </select>
     </div>
     <div class="w3-center">
       <button id="submitfeedbackbutton" class="w3-btn w3-round-large w3-gray">Submit</button>
@@ -785,11 +783,8 @@
   <div class="oj-dialog-body">
     <div class="form-group">
       <label>Reason for denying Mentoring request</label>
-      <select id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',value:denymentorshipreason,
+      <select id="groupSelect" data-bind="ojComponent: {component: 'ojSelect',options: mentorrejectionreason,value:denymentorshipreason,
                                                   rootAttributes: {style:'max-width:30em'}}">
-          <option value="Not enough time">Not enough time</option>
-          <option value="Mismatch">Mismatch</option>
-          <option value="Other">Other</option>
         </select>
     </div>
     <div class="w3-center">
@@ -801,23 +796,23 @@
 <div style="display:none" id="menteereq" title="Mentee Requests" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 400px;'}}">
   <div class="oj-dialog-body">
     <div class="form-group">
-    <div class="profileSummary mentors" data-bind="foreach:pendingmenteesrequest">
-                  <!-- row -->
-                  <div class="col-xs-12 mentorrow nopadding ">
-                    <div class="col-xs-2 col-sm-4 col-md-4 nopadding leftcenterelement" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-8 suggestedm">
-                      <div class="col-xs-12   col-md-12 col-lg-8  nopadding leftcenterelement">
-                        <div data-bind="text:name" class="nopadding bold"></div>
-                      </div>
-                      <div class="col-xs-12   col-md-12 col-lg-4 nopadding leftcenterelement">
-                        <button class="w3-badge w3-round-large w3-green" data-bind="click:acceptMentee" title="Accept Mentee"><i class="fa fa-check" aria-hidden="true"></i></button>
-                        <button class="w3-badge w3-round-large  w3-red" data-bind="click:showdeletementeereqdialog" title="Delete Mentee"><i class="fa fa-times" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
+      <div class="profileSummary mentors" data-bind="foreach:pendingmenteesrequest">
+        <!-- row -->
+        <div class="col-xs-12 mentorrow nopadding ">
+          <div class="col-xs-2 col-sm-4 col-md-4 nopadding leftcenterelement" style="cursor: pointer" data-bind="click:gotoprofile"><img data-bind="attr:{src:profile_photo_url}" class="img-rounded img-responsive"></div>
+          <div class="col-xs-10 col-sm-8 col-md-8 suggestedm">
+            <div class="col-xs-12   col-md-12 col-lg-8  nopadding leftcenterelement">
+              <div data-bind="text:name" class="nopadding bold"></div>
+            </div>
+            <div class="col-xs-12   col-md-12 col-lg-4 nopadding leftcenterelement">
+              <button class="w3-badge w3-round-large w3-green" data-bind="click:acceptMentee" title="Accept Mentee"><i class="fa fa-check" aria-hidden="true"></i></button>
+              <button class="w3-badge w3-round-large  w3-red" data-bind="click:showdeletementeereqdialog" title="Delete Mentee"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
 
-                  </div>
-                  <!-- row -->
-                </div>
+        </div>
+        <!-- row -->
+      </div>
     </div>
   </div>
 </div>
