@@ -5,11 +5,12 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojdialog'],
  function(oj, ko, $) {
   
     function AboutViewModel() {
       var self = this;
+	  
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additionaly available methods.
 
@@ -26,6 +27,10 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
        */
       self.handleActivated = function(info) {
         // Implement if needed
+		
+      };
+	  self.openModal = function() {
+       $("#modalDialog1").ojDialog("open");
       };
 
       /**

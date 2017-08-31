@@ -904,7 +904,14 @@ li.oj-selected .oj-tabs-gen-div {
 	background: #f9f8f8;
 	margin-bottom: 20px;
 	padding-bottom: 15px;
-	min-height: 625px;
+	min-height: 650px;
+	border: 1px solid #d2d2d2
+}
+.cloudhubs_shared {
+	background: #f9f8f8;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	min-height: auto;
 	border: 1px solid #d2d2d2
 }
 .hubName_austin {
@@ -945,6 +952,18 @@ li.oj-selected .oj-tabs-gen-div {
 	padding-top: 20px;
 	padding-left: 15px;
 	font-weight: bold;
+}
+.hubName_arch {
+	background: #324B5C ;
+color: rgb(255, 255, 255);
+display: block;
+font-size: 22px;
+font-weight: bold;
+height: auto;
+padding-bottom: 10px;
+padding-left: 15px;
+padding-top: 10px;
+width: 100%;
 }
 .hubdesc {
 	font-size: 16px;
@@ -1022,6 +1041,11 @@ li.oj-selected .oj-tabs-gen-div {
 	border-bottom: 1px solid #939699;
 	margin-top: 25px;
 	margin-bottom: 25px;
+}
+.Hborder1 {
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .imgcenter {
 	text-decoration: underline;
@@ -1383,9 +1407,21 @@ label.star:before {
 	font-weight: bold;
 	color: rgb(138, 109, 59)
 }
+.asset_c {
+	margin-bottom: 20px;
+}
 
-.asset_c{
-	margin-bottom:20px;}
+.mentorship p{
+	margin-bottom:17px;}
+	
+.mentorship .sliderButtons .watchvdo{
+	margin-top:10px;
+	font-size:15px;}
+
+
+
+.smalltitle{
+	font-size:14px;}		
 
 @media (min-width: 1500px) {
 .container {
@@ -1555,6 +1591,10 @@ label.star:before {
 .face {
 	border-right: none;
 }
+.icon-container {
+	width: auto;
+}
+
 }
 
 @media (min-width: 415px) and (max-width:768px) {
@@ -1564,6 +1604,7 @@ label.star:before {
 	float: none;
 	margin-bottom: 20px;
 }
+
 }
 
 @media (max-width: 768px) {
@@ -1573,6 +1614,9 @@ label.star:before {
 }
 .togglemenu {
 	padding-left: 0px;
+}
+.icon-container {
+	width: auto;
 }
 }
 
@@ -1611,6 +1655,7 @@ label.star:before {
 @media (max-width: 736px) {
 .icon {
 	margin-bottom: 10px;
+	min-height: 135px;
 }
 .watchvdo .fa-chevron-circle-right {
 	display: none
@@ -1628,6 +1673,13 @@ label.star:before {
 	font-size: 12px;
 }
 .row-centered div {
+	margin-bottom: 20px;
+}
+.cloudhubs_shared {
+	max-width: 362px;
+	margin: 0 auto;
+	display: table;
+	float:none;
 	margin-bottom: 20px;
 }
 }
@@ -1860,6 +1912,7 @@ ul#profiletabs {
 	max-height: 60px;
 	min-height: 60px;
 }
+
 }
 
 @media (min-width: 992px) and (max-width: 1280px) {
@@ -1869,6 +1922,7 @@ ul#profiletabs {
 .oj-listview-item:nth-child(4n) .face {
 	border-right: none;
 }
+
 }
 
 /*IE ONLY*/
