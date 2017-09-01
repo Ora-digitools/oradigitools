@@ -193,7 +193,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
             })
           });
 
-        $.getJSON(baseurl + "ListValues/ MENTEE_REJECT_REASON").
+        $.getJSON(baseurl + "ListValues/MENTOR_REJECT_REASON").
           then(function (reasons) {
             $.each(reasons.items, function () {
               var reason={
