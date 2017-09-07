@@ -423,7 +423,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
           setssostatus('.ssoenabled', 'inline-block');
         } else {
-          setssostatus('.ssoenabled', 'inline-block');
+          setssostatus('.ssoenabled', 'none');
         }
       }
 
