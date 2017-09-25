@@ -5,18 +5,11 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojmodule','ojs/ojmodule',],
+define(['ojs/ojcore', 'knockout', 'jquery'],
  function(oj, ko, $) {
-
+  
     function AboutViewModel() {
-      this.currentModule = ko.observable("second");
-              var self = this;
-              this.modulePath = ko.pureComputed(
-                function()
-                {
-                  return ('logo/' + self.currentModule());
-                }
-              );
+      var self = this;
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additionaly available methods.
 
@@ -34,7 +27,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojmodule','ojs/ojmodule',],
       self.handleActivated = function(info) {
         // Implement if needed
       };
-
+self.listofhubs = ko.observableArray([]);
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being
@@ -50,7 +43,7 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojmodule','ojs/ojmodule',],
 
 
       /**
-       * Optional ViewModel method invoked after the bindings are applied on this View.
+       * Optional ViewModel method invoked after the bindings are applied on this View. 
        * If the current View is retrieved from cache, the bindings will not be re-applied
        * and this callback will not be invoked.
        * @param {Object} info - An object with the following key-value pairs:
@@ -60,7 +53,29 @@ define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojmodule','ojs/ojmodule',],
       self.handleBindingsApplied = function(info) {
         // Implement if needed
       };
+var docsurl = "https://documents-gse00012318.documents.us2.oraclecloud.com:443/documents/api/";
+var apiurl = docsurl + "1.2/folders/FF26B603472D7EE4F979C0B9DCF42321441014A7A1DA/items";
 
+
+$.ajax({
+    url: apiurl,
+
+    headers: {
+        "Authorization": "Basic " + btoa('cloud.admin' + ":" + 'UNited@9Phase')
+    },
+    complete: function(data) {
+        
+        console.log(data);
+    },
+    success: function(data) {
+        
+        console.log(data);
+    },
+    error: function(xhr, status, error) {
+        console.log(xhr.responseText);
+    }
+});
+		
       /*
        * Optional ViewModel method invoked after the View is removed from the
        * document DOM.

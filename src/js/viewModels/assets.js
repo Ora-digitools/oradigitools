@@ -27,7 +27,7 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
       self.handleActivated = function(info) {
         // Implement if needed
       };
-
+self.listofhubs = ko.observableArray([]);
       /**
        * Optional ViewModel method invoked after the View is inserted into the
        * document DOM.  The application can put logic that requires the DOM being
@@ -54,6 +54,7 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
         // Implement if needed
       };
 
+		
       /*
        * Optional ViewModel method invoked after the View is removed from the
        * document DOM.

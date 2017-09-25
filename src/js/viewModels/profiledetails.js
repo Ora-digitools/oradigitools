@@ -423,7 +423,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
         if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
           setssostatus('.ssoenabled', 'inline-block');
         } else {
-          setssostatus('.ssoenabled', 'inline-block');
+          setssostatus('.ssoenabled', 'none');
         }
       }
 
@@ -1539,7 +1539,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
               }
             }
 
-            if (self.pendingmenteesrequest().length == 0) {
+            if (self.pendingmenteesrequest().length == 0 || self.profile().work_email() != ssoemail) {
               document.getElementById('menteereqalert').style.display = 'none';
               $("#menteereq").ojDialog("close");
             } else {

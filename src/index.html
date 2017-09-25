@@ -30,9 +30,6 @@
   <title>Solution Engineering</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="-1" />
   <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
 
   <!-- This is the main css file for the default Alta theme -->
@@ -114,11 +111,12 @@
                 ojComponent: {component:'ojButton', label: '',
                 chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}"> </button>
                   </div>
-                  <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11 navbar-header logo ">
+                  <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11 navbar-header">
 
                     <!-- Logo -->
-                    <a class="" href="?root=home"><img src="css/images/logo-new-v2.svg" class=""></a>
-
+                    
+<div data-bind="ojModule: logoPath">
+  </div>
                   </div>
                 </div>
                 <!-- Toggle for Mobile -->
@@ -135,7 +133,8 @@
       <div class="row">
         <footer>
           <div class="container">
-            <div class="footerheading">Oracle Cloud Solution Hubs</div>
+            <div class="footerheading"><div data-bind="ojModule: footerPath">
+  </div></div>
 
             <div class="footermenu">
               <ul>

@@ -6,7 +6,7 @@
  * Your application specific code will go here
  */
 define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarraytabledatasource',
-  'ojs/ojoffcanvas'],
+  'ojs/ojoffcanvas','ojs/ojtoolbar', 'ojs/ojmenu','ojs/ojnavigationlist',],
   function (oj, ko) {
     function ControllerViewModel() {
       var self = this;
@@ -32,8 +32,41 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         'sitemap': { label: 'Sitemap' },
         'terms': { label: 'Terms of Use & Privacy' },
         'cookies': { label: 'Cookie Preferences' },
-		'mentorship': { label: 'The Cloud Solution Mentor Community' }
+		'mentorship': { label: 'The Cloud Solution Mentor Community' },
+		'huboperations': { label: 'Hub Operations' },
+		'ecacertification': { label: 'ECA Certification' },
+		'eca-qualify': { label: 'ECA Qualify' },
+		'eca-certify': { label: 'ECA Certify' },
+		'eca-nominate': { label: 'ECA Nominate' },
+		'eca-board': { label: 'ECA Board' }
       });
+	  var str = window.location.href;
+    var res = str.split("root=");
+	// console.log(res[1]);
+	  
+	  if(res[1] == "ecacertification" || res[1] == "eca-qualify"|| res[1] == "eca-certify"|| res[1] == "eca-nominate"|| res[1] == "eca-board")
+	  {
+		  this.currentModule = ko.observable("eca");
+		 
+	  }
+	  else{
+		   this.currentModule = ko.observable("cloudhubs");
+		   
+	  }
+	  
+              var self = this;
+              self.logoPath = ko.pureComputed(
+                function()
+                {
+                  return ('logo/' + self.currentModule());
+                }
+              );
+			  self.footerPath = ko.pureComputed(
+                function()
+                {
+                  return ('footer/' + self.currentModule());
+                }
+              );
 
       //welcome,cloud hubs, profiles,catalogs, assets, performance
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
@@ -54,6 +87,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
         new headerLink('Our Assets', 'assets', '?root=assets'),
+		new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
 		
 
       ]);
