@@ -16,18 +16,11 @@ var ismentor=false;
  */
 
  // BASE URL FOR DEV
-<<<<<<< HEAD
  var baseurl="http://solutionengineering-devops.us.oracle.com:7003/ords/seaas/seaas/";
 
 // BASE URL FOR PRODUCTION
 //var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
 
-=======
-var baseurl="http://solutionengineering-devops.us.oracle.com:7003/ords/seaas/seaas/";
-
-// BASE URL FOR PRODUCTION
-// var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
->>>>>>> 8a2ae35ce52e701560d1fa9cb3ceec01f4e0d70d
 
 var selecteduuid="";
 requirejs.config(
