@@ -81,17 +81,30 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         this.linkTarget1 = linkTarget1;
 
       }
-      self.headerLinks = ko.observableArray([
+      var arr1 = [
+        new headerLink('Home', 'ecacertification', '?root=ecacertification'),
+        new headerLink('Qualify', 'eca-qualify', '?root=eca-qualify'),
+        new headerLink('Nominate', 'eca-nominate', '?root=eca-nominate'),
+        new headerLink('Certify', 'eca-certify', '?root=eca-certify'),
+        new headerLink('ECA Board', 'eca-board', '?root=eca-board')
+
+      ];
+      var arr2 = [
         new headerLink('Home', 'home', '?root=home'),
         new headerLink('Our People', 'profileslist', '?root=profileslist'),
         new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
         new headerLink('Our Assets', 'assets', '?root=assets'),
-		new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
-		
+    new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
+    
+      ];
 
-      ]);
-
+    if(res[1] == "ecacertification" || res[1] == "eca-qualify"|| res[1] == "eca-certify"|| res[1] == "eca-nominate"|| res[1] == "eca-board"){
+        self.headerLinks = ko.observableArray(arr1);  
+      }
+      else{      
+      self.headerLinks = ko.observableArray(arr2);
+      }
       // GET THE DOMAIN URL FOR PROFILE LINK
       getprofilebaseurl = function () {
         var url = window.location.href;
@@ -245,9 +258,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
       //------ END OF MENTOR MENTEE CODE
 
-
       self.addActive = function (routername, pid) {
-
         if (routername === pid) {
 
           return 'active';

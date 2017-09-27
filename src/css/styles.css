@@ -1620,6 +1620,9 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 .green_block {
 	background: #359344
 }
+.maroon_block {
+	background: #990000
+}
 .ecablocks_h {
 	min-height: 80px;
 }
@@ -2160,4 +2163,11 @@ width:100%;
 }
  _::-webkit-full-page-media, .sliderButtons .watchvdo {
 font-size:15px;
+}
+
+.active-eca-block{
+	border:4px solid #000000;
+}
+.inactive-eca-block{
+	opacity:0.3;
 }
