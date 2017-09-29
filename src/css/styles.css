@@ -416,6 +416,7 @@ footer {
 	font-weight: bold;
 	font-size: 36px;
 	margin-bottom: 20px;
+	line-height:44px;
 }
 .team img {
 	display: inline-block
@@ -1519,6 +1520,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	background-position: center;
 	display: flex;
 	align-items: center;
+	
 }
 #eca-text-carousel h1{
 	text-align:right;}
@@ -1618,10 +1620,10 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	background: #0b7691;
 }
 .green_block {
-	background: #359344
+	background: #359344;
 }
 .maroon_block {
-	background: #990000
+	background: #942545;
 }
 .ecablocks_h {
 	min-height: 80px;
@@ -2166,8 +2168,13 @@ font-size:15px;
 }
 
 .active-eca-block{
-	border:4px solid #000000;
+	-webkit-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .inactive-eca-block{
-	opacity:0.3;
+	background:rgb(222, 224, 224) none repeat scroll 0 0
 }
+.centeralign{
+	margin:0 auto;
+	float:none;}
