@@ -34,7 +34,7 @@
             Our Certification<br>
             Approach </div>
           <div class="ecablocks_b">
-          <div data-bind="click:editbox1" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+          <div data-bind="click:certificationApproachOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
             <p data-bind="text:textarea_data1"></p>
           </div>
         </div>
@@ -48,7 +48,7 @@
             Process 
             Approach </div>
           <div class="ecablocks_b">
-          <div data-bind="click:editbox2" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+          <div data-bind="click:certificationProcessApproachOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
             <p data-bind="text:textarea_data2"></p>
           </div>
         </div>
@@ -60,7 +60,8 @@
             Your Certification <br>
             Responsibilities </div>
           <div class="ecablocks_b">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada nulla urna, auctor ornare odio porttitor id. Maecenas nec turpis massa. Vivamus in tortor nisi. Ut vel cursus.</p>
+          <div data-bind="click:certificationResponsibilitiesOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="text:textarea_data3"></p>
           </div>
         </div>
       </div>
@@ -71,7 +72,8 @@
             Certification <br>
             Board Area </div>
           <div class="ecablocks_b">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada nulla urna, auctor ornare odio porttitor id. Maecenas nec turpis massa. Vivamus in tortor nisi. Ut vel cursus.</p>
+          <div data-bind="click:certificationBoardAreaOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="text:textarea_data4"></p>
           </div>
         </div>
       </div>
@@ -132,27 +134,49 @@
   </div>
 </div>
   <div id="dialogWrapper">
-  <div style="display:none" id="editDialog1" title="Edit Our Certification
-Approach " 
+  <div style="display:none" id="certificationApproachDialog" title="Edit Our Certification Approach" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea id="txt1" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
+     <div class="oj-dialog-body"><textarea id="txt1" style="width:280px;height:80px" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
         <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach1"> </button>
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach"> </button>
       </div>
   </div>
 
-  <div style="display:none" id="editDialog2" title="Edit Our Certification
-Approach " 
+  <div style="display:none" id="certificationProcessApproachDialog" title="Edit Our Certification Process Approach " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea data-bind="text:textarea_data2"></textarea>
+     <div class="oj-dialog-body"><textarea style="width:280px;height:80px" data-bind="value:textarea_data2, valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
         <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach2"> </button>
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_process_approach"> </button>
+      </div>
+  </div>
+
+  <div style="display:none" id="certificationResponsibilitiesDialog" title="Edit Your Certification 
+Responsibilities" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body"><textarea style="width:280px;height:80px" data-bind="value:textarea_data3, valueUpdate: 'keyup'"></textarea>
+       
+     </div>
+     <div class="oj-dialog-footer">
+        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_responsibilities"> </button>
+      </div>
+  </div>
+
+  <div style="display:none" id="certificationBoardAreaDialog" title="Edit Certification 
+Board Area" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body"><textarea style="width:280px;height:80px" data-bind="value:textarea_data4, valueUpdate: 'keyup'"></textarea>
+       
+     </div>
+     <div class="oj-dialog-footer">
+        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_board_area"> </button>
       </div>
   </div>
  

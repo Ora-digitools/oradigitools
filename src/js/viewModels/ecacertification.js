@@ -7,24 +7,15 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			var self = this;
 						  
 			self.textarea_data1 = ko.observable();
+			self.textarea_data2 = ko.observable();
+			self.textarea_data3 = ko.observable();
+			self.textarea_data4 = ko.observable();
 
-			self.textarea_data2 = ko.observable("Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.");
-
-			self.editbox1 = function() { 
-			$("#editDialog1").ojDialog("open");
-			};
-			self.editbox2 = function() { 
-			$("#editDialog2").ojDialog("open");
-			};
-
-			self.closebutton1 = function() { 
-			$("#editDialog1").ojDialog("close");
-			};
-			    
-			self.load_content = function(){
+			/** LOADS EDITABLE DATA ON PAGE LOAD */
+			self.load_content = function(sub_cat_1, text_area_div){
 		          	var certification_approach_data = {
 			            CATEGORY_NAME: 'HOME',
-			            SUB_CATEGORY_1: 'Our Certification Approach',
+			            SUB_CATEGORY_1: sub_cat_1,
 			            USERNAME:'premraj.sahu@oracle.com'
 		          	};
 		          $.ajax({
@@ -35,22 +26,23 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(certification_approach_data),
 		            success: function (data) {
-							console.log(ko.toJSON(data));
-							self.textarea_data1(data.content);
-
-							var content_id = data.content_id;
-							var content_data = data.content;
+							if (text_area_div == "oca")
+								self.textarea_data1(data.content);
+							else if (text_area_div == "ocpa")
+								self.textarea_data2(data.content);
+							else if (text_area_div == "ycr")
+								self.textarea_data3(data.content);
+							else if (text_area_div == "cba")
+								self.textarea_data4(data.content);
 
 			            }
 		          });
-		        
 				
 			};
-
-			self.edit_certification_approach1 = function(){
+			self.edit_certification_approach = function(){
 		          	var certification_approach_post_data = {
-			            CONTENT_ID: content_id,
-			            CATEGORY_CONTENT: content_data
+			            "content_id": 1,
+			            "category_content": self.textarea_data1
 		          	};
 		          $.ajax({
 		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
@@ -59,17 +51,104 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(certification_approach_post_data),
 		            success: function (data) {
-							//load_content();
+							certificationApproachClose();
 			            }
-		          });
-		        
-				
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 			};
-			self.load_content();
 
-			self.edit_certification_approach2 = function(){
-				//-----
+			self.edit_certification_process_approach = function(){
+		          	var certification_approach_post_data = {
+			            "content_id": 3,
+			            "category_content": self.textarea_data2
+		          	};
+		          $.ajax({
+		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+		  			data: ko.toJSON(certification_approach_post_data),
+		            success: function (data) {
+							certificationProcessApproachClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+		  				alert(err);
+		        });
 			};
+
+			self.certification_responsibilities = function(){
+		          	var certification_approach_post_data = {
+			            "content_id": 4,
+			            "category_content": self.textarea_data3
+		          	};
+		          $.ajax({
+		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+		  			data: ko.toJSON(certification_approach_post_data),
+		            success: function (data) {
+							certificationResponsibilitiesClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+		  				alert(err);
+		        });
+			};
+
+			self.certification_board_area = function(){
+		          	var certification_approach_post_data = {
+			            "content_id": 5,
+			            "category_content": self.textarea_data4
+		          	};
+		          $.ajax({
+		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+		  			data: ko.toJSON(certification_approach_post_data),
+		            success: function (data) {
+							certificationBoardAreaClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+		  				alert(err);
+		        });
+			};
+
+			self.load_content('Our Certification Approach', 'oca');
+			self.load_content('Our Certification Process Approach', 'ocpa');
+			self.load_content('Your Certification Responsibilities', 'ycr');
+			self.load_content('Certification Board Area', 'cba');
+
+
+			self.certificationApproachOpen = function() { 
+			$("#certificationApproachDialog").ojDialog("open");
+			};
+			certificationApproachClose = function() { 
+			$("#certificationApproachDialog").ojDialog("close");
+			};
+
+			self.certificationProcessApproachOpen = function() { 
+			$("#certificationProcessApproachDialog").ojDialog("open");
+			};
+			certificationProcessApproachClose = function() { 
+			$("#certificationProcessApproachDialog").ojDialog("close");
+			};
+
+			self.certificationResponsibilitiesOpen = function() { 
+			$("#certificationResponsibilitiesDialog").ojDialog("open");
+			};
+			certificationResponsibilitiesClose = function() { 
+			$("#certificationResponsibilitiesDialog").ojDialog("close");
+			};
+
+			self.certificationBoardAreaOpen = function() { 
+			$("#certificationBoardAreaDialog").ojDialog("open");
+			};
+			certificationBoardAreaClose = function() { 
+			$("#certificationBoardAreaDialog").ojDialog("close");
+			};
+
 		}
 	        return new CatalogViewModel();
 	});   
