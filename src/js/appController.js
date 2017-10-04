@@ -38,19 +38,72 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 		'eca-qualify': { label: 'ECA Qualify' },
 		'eca-certify': { label: 'ECA Certify' },
 		'eca-nominate': { label: 'ECA Nominate' },
-		'eca-board': { label: 'ECA Board' }
+		'eca-board': { label: 'ECA Board' },
+		'ecaenablement': { label: 'ECA Enablement' },
+		'salesstrategy': { label: 'Sales, Strategy Platform' },
+		'ecacore': { label: 'ECA Core' },
+		'ecaops': { label: 'ECA OPS' },
       });
-	  var str = window.location.href;
+	  
+
+      //welcome,cloud hubs, profiles,catalogs, assets, performance
+      oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+
+
+
+      // Footer
+      function headerLink(name, id, linkTarget, linkTarget1) {
+        this.name = name;
+        this.linkId = id;
+        this.linkTarget = linkTarget;
+        this.linkTarget1 = linkTarget1;
+
+      }
+	  var arr1 = [
+        new headerLink('Home', 'home', '?root=home'),
+        new headerLink('Our People', 'profileslist', '?root=profileslist'),
+        new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
+        new headerLink('Our Services', 'catalogs', '?root=catalogs'),
+        new headerLink('Our Assets', 'assets', '?root=assets'),
+    new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
+    
+      ];
+      var arr2 = [
+        new headerLink('Home', 'ecacertification', '?root=ecacertification'),
+        new headerLink('Qualify', 'eca-qualify', '?root=eca-qualify'),
+        new headerLink('Nominate', 'eca-nominate', '?root=eca-nominate'),
+        new headerLink('Certify', 'eca-certify', '?root=eca-certify'),
+        new headerLink('ECA Board', 'eca-board', '?root=eca-board')
+
+      ];
+	  var arr3 = [
+        new headerLink('Home', 'ecaenablement', '?root=ecaenablement'),
+		new headerLink('Sales, Strategy Platform', 'salesstrategy', '?root=salesstrategy'),
+		new headerLink('ECA Core', 'ecacore', '?root=ecacore'),
+		new headerLink('ECA OPS', 'ecaops', '?root=ecaops'),
+		
+       
+    
+      ];
+      var str = window.location.href;
     var res = str.split("root=");
 	// console.log(res[1]);
 	  
 	  if(res[1] == "ecacertification" || res[1] == "eca-qualify"|| res[1] == "eca-certify"|| res[1] == "eca-nominate"|| res[1] == "eca-board")
 	  {
 		  this.currentModule = ko.observable("eca");
+		  self.headerLinks = ko.observableArray(arr2);  
+		 
+	  }
+	  else if(res[1] == "ecaenablement" || res[1] == "salesstrategy" || res[1] == "ecacore" || res[1] == "ecaops")
+	  {
+		  this.currentModule = ko.observable("ecaenablement");
+		  self.headerLinks = ko.observableArray(arr3);
 		 
 	  }
 	  else{
 		   this.currentModule = ko.observable("cloudhubs");
+		   self.headerLinks = ko.observableArray(arr1);
 		   
 	  }
 	  
@@ -68,43 +121,6 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
                 }
               );
 
-      //welcome,cloud hubs, profiles,catalogs, assets, performance
-      oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
-
-
-
-      // Footer
-      function headerLink(name, id, linkTarget, linkTarget1) {
-        this.name = name;
-        this.linkId = id;
-        this.linkTarget = linkTarget;
-        this.linkTarget1 = linkTarget1;
-
-      }
-      var arr1 = [
-        new headerLink('Home', 'ecacertification', '?root=ecacertification'),
-        new headerLink('Qualify', 'eca-qualify', '?root=eca-qualify'),
-        new headerLink('Nominate', 'eca-nominate', '?root=eca-nominate'),
-        new headerLink('Certify', 'eca-certify', '?root=eca-certify'),
-        new headerLink('ECA Board', 'eca-board', '?root=eca-board')
-
-      ];
-      var arr2 = [
-        new headerLink('Home', 'home', '?root=home'),
-        new headerLink('Our People', 'profileslist', '?root=profileslist'),
-        new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
-        new headerLink('Our Services', 'catalogs', '?root=catalogs'),
-        new headerLink('Our Assets', 'assets', '?root=assets'),
-    new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
-    
-      ];
-
-    if(res[1] == "ecacertification" || res[1] == "eca-qualify"|| res[1] == "eca-certify"|| res[1] == "eca-nominate"|| res[1] == "eca-board"){
-        self.headerLinks = ko.observableArray(arr1);  
-      }
-      else{      
-      self.headerLinks = ko.observableArray(arr2);
-      }
       // GET THE DOMAIN URL FOR PROFILE LINK
       getprofilebaseurl = function () {
         var url = window.location.href;
@@ -259,6 +275,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       //------ END OF MENTOR MENTEE CODE
 
       self.addActive = function (routername, pid) {
+		  
         if (routername === pid) {
 
           return 'active';

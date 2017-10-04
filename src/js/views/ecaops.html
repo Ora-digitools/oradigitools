@@ -1,0 +1,134 @@
+<!-- Start Slider -->
+
+<div class="row ccontainer">
+  <div id="eca-text-carousel" class="carousel slide" data-ride="carousel"> 
+    <!-- Indicators --> 
+    
+    <!-- Wrapper for slides -->
+    <div class="col-xs-12">
+      <div class="container">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="carousel-content">
+              <div class="col-xs-12">
+                <div class="col-sm-3 col-lg-6 text-center leftImage"> </div>
+                <div class="col-sm-9 col-lg-6">
+                  <p>ECAL and Cloud Architecture Skills
+</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Slider -->
+<div class="row">
+  <div class="container">
+    <div class="ecarow1 col-xs-12 nopadding"> 
+      <!--blocks -->
+      <div class="col-xs-12 nopadding">
+        <div class="ecablocks">
+          <div class="ecablocks1_t greyBg "><img src="css/images/approach-icon.png" align="middle">&nbsp;
+            What You Need to Know </div>
+          <div class="ecablocks1_b col-xs-12">
+            <div data-bind="click:editbox1" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+            <ul class="col-sm-12 nopadding salesbuttons">
+              <li class="col-xs-4 active nopaddingxs"><div class="salesbuttons_i"> Engagement Management
+</div>
+               
+              </li>
+              <li class="col-xs-4 nopaddingxs"><div class="salesbuttons_i"> Resource Management
+</div>
+               
+              </li>
+              <li class="col-xs-4 nopaddingxs"><div class="salesbuttons_i"> Time Management
+</div>
+               
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--blocks --> 
+      <!--blocks --> 
+      
+    </div>
+    <div class="ecarow1 col-xs-12 nopadding">
+      <div class="col-xs-12 nopadding">
+        <div class="ecablocks">
+          <div class="ecablocks1_t"><img src="css/images/process-icon.png" align="middle">&nbsp;
+            Methods and Types </div>
+          <div class="ecablocks1_b col-xs-12">
+            <div data-bind="click:editbox2" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="text:textarea_data2"></p>
+            <oj-accordion id="accordionPage">
+              <oj-collapsible id="c1"> <span slot="header"><span>SCRM 
+</span></span>
+                <p class="oj-p">Description and Links
+SCRM Resource Links </p>
+              </oj-collapsible>
+              <oj-collapsible id="c3" > <span slot="header">SCRM and SE Services 
+</span>
+                <div>
+                  <p class="oj-p">Description and Links
+SCTA Resource Links
+/p>
+                </div>
+              </oj-collapsible>
+              <oj-collapsible id="c3" > <span slot="header">Sales Analytics
+
+</span>
+                <div>
+                  <p class="oj-p">Description and Links
+                    - Immersion
+                    -     Sales CentralDescription and Links
+SE OPS Links
+ </p>
+                </div>
+              </oj-collapsible>
+              <oj-collapsible id="c3" > <span slot="header">ASR Lookup
+
+ </span>
+                <div>
+                  <p class="oj-p">Description and Links
+SE Ops Links
+ </p>
+                </div>
+              </oj-collapsible>
+            
+            </oj-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dialogWrapper">
+  <div style="display:none" id="editDialog1" title="Edit Our Certification
+Approach " 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+    <div class="oj-dialog-body">
+      <textarea id="txt1" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach1"> </button>
+    </div>
+  </div>
+  <div style="display:none" id="editDialog2" title="Edit Our Certification
+Approach " 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+    <div class="oj-dialog-body">
+      <textarea data-bind="text:textarea_data2"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach2"> </button>
+    </div>
+  </div>
+</div>
