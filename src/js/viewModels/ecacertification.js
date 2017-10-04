@@ -3,23 +3,26 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 	function (oj, ko, $) {
         function CatalogViewModel() {
 
-			var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
+			var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
+			var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
 			var self = this;
 						  
 			self.textarea_data1 = ko.observable();
 			self.textarea_data2 = ko.observable();
 			self.textarea_data3 = ko.observable();
 			self.textarea_data4 = ko.observable();
+			self.certification_caledar_text = ko.observable();
 
 			/** LOADS EDITABLE DATA ON PAGE LOAD */
-			self.load_content = function(sub_cat_1, text_area_div){
+			self.load_content = function(sub_cat_1, text_area_div, sub_cat_2){
 		          	var certification_approach_data = {
 			            CATEGORY_NAME: 'HOME',
 			            SUB_CATEGORY_1: sub_cat_1,
+			            SUB_CATEGORY_2: sub_cat_2,
 			            USERNAME:'premraj.sahu@oracle.com'
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent',
+		            url:eca_get_url,
 		            cache: false,
 		            type: 'POST',
 		            //headers:certification_approach_data,
@@ -34,10 +37,11 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 								self.textarea_data3(data.content);
 							else if (text_area_div == "cba")
 								self.textarea_data4(data.content);
-
+							else if (text_area_div == "cc")
+								self.certification_caledar_text(data.content);
 			            }
 		          });
-				
+		
 			};
 			self.edit_certification_approach = function(){
 		          	var certification_approach_post_data = {
@@ -45,7 +49,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            "category_content": self.textarea_data1
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
@@ -64,7 +68,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            "category_content": self.textarea_data2
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
@@ -83,7 +87,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            "category_content": self.textarea_data3
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
@@ -102,7 +106,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            "category_content": self.textarea_data4
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
@@ -115,10 +119,30 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		        });
 			};
 
+			self.save_certification_caledar = function(){
+		          	var certification_calendar_post_data = {
+			            "content_id": 102,
+			            "category_content": self.certification_caledar_text
+		          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+		  			data: ko.toJSON(certification_calendar_post_data),
+		            success: function (data) {
+							certificationCalendarClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+		  				alert(err);
+		        });
+			};
+
 			self.load_content('Our Certification Approach', 'oca');
 			self.load_content('Our Certification Process Approach', 'ocpa');
 			self.load_content('Your Certification Responsibilities', 'ycr');
 			self.load_content('Certification Board Area', 'cba');
+			self.load_content('Certification Calendar', 'cc', 'Board Dates / Locations');
 
 
 			self.certificationApproachOpen = function() { 
@@ -148,8 +172,14 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			certificationBoardAreaClose = function() { 
 			$("#certificationBoardAreaDialog").ojDialog("close");
 			};
+			self.certificationCalendarOpen = function() { 
+			$("#certificationCalendarDialog").ojDialog("open");
+			};
+			certificationCalendarClose = function() { 
+			$("#certificationCalendarDialog").ojDialog("close");
+			};
+			
 
 		}
 	        return new CatalogViewModel();
 	});   
-

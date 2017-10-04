@@ -82,19 +82,10 @@
       <div class="col-lg-3">
         <div class="cert_calendar">
           <div class="cert_calendar_t"><img src="css/images/calendar-icon.png">&nbsp;Certification Calendar</div>
-          <div class="cert_calendar_b">Nomination Deadlines <br>
-            <ul>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-            </ul>
-            <br>
-            Board Dates / Locations
-            <ul>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-            </ul>
+          <div data-bind="click:certificationCalendarOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+          <div class="cert_calendar_b"> <br>
+            <p data-bind="text:certification_caledar_text"></p>
+         
           </div>
         </div>
       </div>
@@ -177,6 +168,17 @@ Board Area"
      <div class="oj-dialog-footer">
         <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
         <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_board_area"> </button>
+      </div>
+  </div>
+
+  <div style="display:none" id="certificationCalendarDialog" title="Edit Certification Caledar" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body"><textarea style="width:280px;height:80px" data-bind="value:certification_caledar_text, valueUpdate: 'keyup'"></textarea>
+       
+     </div>
+     <div class="oj-dialog-footer">
+        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:save_certification_caledar"> </button>
       </div>
   </div>
  
