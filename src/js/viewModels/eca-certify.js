@@ -140,7 +140,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							certifysecondGuidanceEditClose();
+							certifySecondGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -304,7 +304,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 
 			self.certifyThirdGuidanceEditOpen = function() { 
-				$("#certifythirdGuidanceDialog").ojDialog("open");
+				$("#certifyThirdGuidanceDialog").ojDialog("open");
 			};
 			certifyThirdGuidanceEditClose = function() { 
 				$("#certifyThirdGuidanceDialog").ojDialog("close");

@@ -148,7 +148,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							nominatesecondGuidanceEditClose();
+							nominateSecondGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -185,7 +185,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							nominatethirdGuidanceEditClose();
+							nominateThirdGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -352,7 +352,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 
 			self.nominateThirdGuidanceEditOpen = function() { 
-				$("#nominaTethirdGuidanceDialog").ojDialog("open");
+				$("#nominateThirdGuidanceDialog").ojDialog("open");
 			};
 			nominateThirdGuidanceEditClose = function() { 
 				$("#nominateThirdGuidanceDialog").ojDialog("close");
