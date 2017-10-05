@@ -65,7 +65,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
         new headerLink('Our Assets', 'assets', '?root=assets'),
-    new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
+   
     
       ];
       var arr2 = [
