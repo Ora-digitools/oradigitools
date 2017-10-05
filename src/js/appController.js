@@ -65,15 +65,14 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
         new headerLink('Our Hubs', 'cloudhubs', '?root=cloudhubs'),
         new headerLink('Our Services', 'catalogs', '?root=catalogs'),
         new headerLink('Our Assets', 'assets', '?root=assets'),
-    new headerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
+   
     
       ];
       var arr2 = [
         new headerLink('Home', 'ecacertification', '?root=ecacertification'),
         new headerLink('Qualify', 'eca-qualify', '?root=eca-qualify'),
         new headerLink('Nominate', 'eca-nominate', '?root=eca-nominate'),
-        new headerLink('Certify', 'eca-certify', '?root=eca-certify'),
-        new headerLink('ECA Board', 'eca-board', '?root=eca-board')
+        new headerLink('Certify', 'eca-certify', '?root=eca-certify')
 
       ];
 	  var arr3 = [
