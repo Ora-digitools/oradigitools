@@ -5,8 +5,6 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			this.currentModule = ko.observable("second");
             var self = this;
 
-   			var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
-			var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
 						  
 			self.nominate_first_guidance_data = ko.observable();
 			self.nominate_second_guidance_data = ko.observable();

@@ -420,11 +420,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtagcloud', 'ojs/ojknockout', 
       };
 
       self.iseditpermitted = function () {
-        if (self.profile().work_email() === ssoemail || usertype === 'ADMIN') {
+        if (self.profile().work_email() === ssoemail || usertype === 'HUB_ADMIN') {
           setssostatus('.ssoenabled', 'inline-block');
         } else {
           setssostatus('.ssoenabled', 'none');
         }
+		if(usertype === 'ECAL_ADMIN'){
+			 setssostatus('.ecaladminshow', 'inline-block');
+			}
+			else{
+				 setssostatus('.ecaladminshow', 'none');
+				}
+				if(usertype === 'HMDOU_ADMIN'){
+			 setssostatus('.seadminshow', 'inline-block');
+			}
+			else{
+				 setssostatus('.seadminshow', 'none');
+				}
       }
 
       setInterval(function () {

@@ -2,9 +2,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
         'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton', 'ojs/ojdialog'],
 	function (oj, ko, $) {
         function CatalogViewModel() {
-
-			var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
-			var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
+	
 			var self = this;
 						  
 			self.textarea_data1 = ko.observable();
@@ -19,6 +17,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            CATEGORY_NAME: 'HOME',
 			            SUB_CATEGORY_1: sub_cat_1,
 			            SUB_CATEGORY_2: sub_cat_2,
+						SUB_CATEGORY_5: 'ECA CERTIFICATION',
 			            USERNAME:'premraj.sahu@oracle.com'
 		          	};
 		          $.ajax({
@@ -179,6 +178,35 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			$("#certificationCalendarDialog").ojDialog("close");
 			};
 			
+			self.iseditpermitted = function () {
+        //alert(usertype);
+		if(usertype === 'ECAL_ADMIN'){
+			 setssostatus('.ecaladminshow', 'inline-block');
+			}
+			else{
+				 setssostatus('.ecaladminshow', 'none');
+				}
+				
+      }
+
+      setInterval(function () {
+        self.iseditpermitted();
+      }, 1000);
+			
+			
+			setssostatus = function (selector, visibility) {
+        var nodes = document.querySelectorAll(selector),
+          node,
+          styleProperty = function (a, b) {
+            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+          };
+
+        [].forEach.call(nodes, function (a, b) {
+          node = a;
+
+          node.style.display = visibility;
+        });
+      }
 
 		}
 	        return new CatalogViewModel();

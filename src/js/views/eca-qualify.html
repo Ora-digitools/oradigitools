@@ -47,7 +47,7 @@
         </div>
         <div class="ecablocks_link">
         <div data-bind="click:firstLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:first_link_data"></p></a>
+        <p data-bind="text:first_link_data"></p>
 
         </div>
       </div>
@@ -69,7 +69,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:secondLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:second_link_data"></p></a>
+        <p data-bind="text:second_link_data"></p>
 
         </div>
       </div>
@@ -90,7 +90,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:thirdLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:third_link_data"></p></a>
+        <p data-bind="text:third_link_data"></p>
 
         </div>
       </div>
@@ -111,7 +111,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:fourthLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:fourth_link_data"></p></a>
+        <p data-bind="text:fourth_link_data"></p>
 
         </div>
       </div>
@@ -132,7 +132,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:fifthLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:fifth_link_data"></p></a>
+        <p data-bind="text:fifth_link_data"></p>
 
         </div>
       </div>
@@ -153,7 +153,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:sixthLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:sixth_link_data"></p></a>
+        <p data-bind="text:sixth_link_data"></p>
 
         </div>
       </div>
@@ -164,7 +164,7 @@
 <!-- first 6 blocks edit templates -->
 <div id="dialogWrapper">
   <div style="display:none" id="firstGuidanceDialog" title="Edit Role in Solution Engineering" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:first_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -175,7 +175,7 @@
   </div>
 
   <div style="display:none" id="secondGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:second_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -186,7 +186,7 @@
   </div>
 
   <div style="display:none" id="thirdGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:third_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -197,7 +197,7 @@
   </div>
 
   <div style="display:none" id="fourthGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -208,7 +208,7 @@
   </div>
 
   <div style="display:none" id="fifthGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -219,7 +219,7 @@
   </div>
 
   <div style="display:none" id="sixthGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:sixth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -235,7 +235,7 @@
 <!-- EDIT LINKS-->
 <div id="dialogWrapper">
   <div style="display:none" id="firstLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:first_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -246,7 +246,7 @@
   </div>
 
   <div style="display:none" id="secondLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:second_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -257,7 +257,7 @@
   </div>
 
   <div style="display:none" id="thirdLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:third_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -279,7 +279,7 @@
   </div>
 
   <div style="display:none" id="fifthLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fifth_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -290,7 +290,7 @@
   </div>
 
   <div style="display:none" id="sixthLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:sixth_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -309,15 +309,15 @@
         ECA CERTIFICATION PROCESS MODEL
     </div>
     
-    <div class="col-sm-12">
-    <div class="col-xs-8 centeralign">
+    <div class="col-sm-12 ">
+    <div class="processmodel_c col-sm-12"><div class=" haligncenter">
       <div class="col-sm-3">
         <div class="org_block process_allblocks active-eca-block">
           <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>Qualify</a>
         </div>
       </div>
       
-      <div class="col-sm-3">
+       <div class="col-sm-3">
        <div class="blue_block process_allblocks inactive-eca-block">
         <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>Nominate</a>
        </div>
@@ -328,13 +328,13 @@
           <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>Certify</a>
         </div>
       </div>
-
-      <div class="col-sm-3">
+ <div class="col-sm-3">
         <div class="maroon_block process_allblocks inactive-eca-block">
           <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>ECA Board</a>
         </div>
       </div>
-    </div>
+      </div>
     </div>
   </div> 
+</div>
 </div>

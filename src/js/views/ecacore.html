@@ -69,27 +69,31 @@
           
           <!-- tab contents -->
           <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs">
-            <oj-accordion id="accordionPage">
-              <oj-collapsible id="c1"> <span slot="header"><span> Cloud Architecture Foundation </span></span>
+         <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p> 
+            <oj-accordion id="accordionPage" multiple >
+              <oj-collapsible id="c1" expanded> <span slot="header"><span> Cloud Architecture Foundation </span></span>
                 <p class="oj-p">Description and Links
                   Migrate Areas and Asset Links from DIGITAL-SE </p>
               </oj-collapsible>
-              <oj-collapsible id="c1"> <span slot="header"><span> ECAL Framework </span></span>
+              <oj-collapsible id="c2" expanded> <span slot="header"><span> ECAL Framework </span></span>
                 <p class="oj-p">Description and Links
                   Migrate Areas and Asset Links from DIGITAL-SE </p>
               </oj-collapsible>
-              <oj-collapsible id="c1"> <span slot="header"><span> ECAL Execution </span></span>
+              <oj-collapsible id="c1" expanded> <span slot="header"><span> ECAL Execution </span></span>
                 <p class="oj-p">Description and Links
                   Migrate Areas and Asset Links from DIGITAL-SE </p>
               </oj-collapsible>
-              <oj-collapsible id="c1"> <span slot="header"><span> ECA Practitioner Assessment </span></span>
+              <oj-collapsible id="c1" expanded> <span slot="header"><span> ECA Practitioner Assessment </span></span>
                 <p class="oj-p">Description and Links
                   Migrate Areas and Asset Links from DIGITAL-SE </p>
               </oj-collapsible>
             </oj-accordion>
           </div>
           <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn">
-            <oj-accordion id="accordionPage">
+          <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p>
+            <oj-accordion id="accordionPage1" multiple>
               <oj-collapsible id="c1"> <span slot="header"><span>Cloud Solution Patterns </span></span>
                 <p class="oj-p">Description and Links
                   Migrate Areas and Asset Links from DIGITAL-SE </p>
@@ -131,7 +135,9 @@
             </oj-accordion>
           </div>
           <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
-           <oj-accordion id="accordionPage">
+          <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p>
+           <oj-accordion id="accordionPage2" multiple>
               <oj-collapsible id="c1"> <span slot="header"><span> ECAL Field Repository 
 </span></span>
                 <p class="oj-p">Description and Links
@@ -150,6 +156,36 @@
               
             </oj-accordion>
            </div>
+        </div>
+      </div>
+    </div>
+     <div class="ecarow col-xs-12">
+      
+       <div class="col-lg-12">
+        <div class="processmodel_c col-sm-12">
+         
+         <div class="haligncenter">
+        <div class="col-sm-3">
+        <div class="org_block process_allblocks inactive-eca-block">
+        <a href="?root=salesstrategy"><img src="css/images/qualify-icon.png"><br>Sales, Strategy Platform
+</a>
+        </div>
+        
+
+        </div>
+        <div class="col-sm-3">
+       <div class="blue_block process_allblocks active-eca-block">
+        <a href="?root=ecacore"> <img src="css/images/nominate-icon.png"><br>ECA Core</a>
+        </div>
+        </div>
+        <div class="col-sm-3">
+        <div class="green_block process_allblocks inactive-eca-block">
+      <a href="?root=ecaops"> <img src="css/images/certify-icon.png"><br>ECA OPS</a>
+        </div>
+        </div>
+
+
+        </div>
         </div>
       </div>
     </div>

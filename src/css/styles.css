@@ -1648,6 +1648,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 }
 .org_block {
 	background: #f39220;
+	
 }
 .blue_block {
 	background: #0b7691;
@@ -1676,6 +1677,14 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	padding: 5px;
 	float: right
 }
+.ecalogotext{
+	padding-top: 27px;
+	padding-left: 30px;
+	float: left;
+	}
+	
+.ecalogo img{
+	float:left;}
 
 @media (min-width: 1500px) {
 .container {
@@ -1886,6 +1895,11 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 .icon-container {
 	width: auto;
 }
+.ecalogotext{
+	padding-top: 5px;
+	padding-left: 0px;
+	float: left;
+	}
 }
 
 @media (max-width: 767px) {
@@ -2222,3 +2236,17 @@ font-size:15px;
 	margin: 0 auto;
 	float: none;
 }
+.haligncenter{
+	display:flex;
+	justify-content:center;
+	margin:0 auto;
+	max-width:80%;}
+.haligncenterm{
+	display:flex;
+	justify-content:center;
+	margin:0 auto;
+	}	
+	
+	
+
+	

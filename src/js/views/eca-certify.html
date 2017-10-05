@@ -53,7 +53,7 @@
         </div>
         <div class="ecablocks_link">
         <div data-bind="click:certifyFirstLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:certify_first_link_data"></p></a>
+        <p data-bind="text:certify_first_link_data"></p>
         </div>
       </div>
       <!--blocks --> 
@@ -76,7 +76,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:certifySecondLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:certify_second_link_data"></p></a>
+        <p data-bind="text:certify_second_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -98,7 +98,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:certifyThirdLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:certify_third_link_data"></p></a>
+        <p data-bind="text:certify_third_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -120,7 +120,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:certifyFourthLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="certify_text:fourth_link_data"></p></a>
+        <p data-bind="text:certify_fourth_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -142,7 +142,7 @@
         </div>
          <div class="ecablocks_link">
         <div data-bind="click:certifyFifthLinkEditOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-        <a href="#"><p data-bind="text:certify_fifth_link_data"></p></a>
+        <p data-bind="text:certify_fifth_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -155,7 +155,7 @@
 <!-- first 6 blocks edit templates -->
 <div id="dialogWrapper">
   <div style="display:none" id="certifyFirstGuidanceDialog" title="Edit Role in Solution Engineering" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_first_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -166,7 +166,7 @@
   </div>
 
   <div style="display:none" id="certifySecondGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_second_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -177,7 +177,7 @@
   </div>
 
   <div style="display:none" id="certifyThirdGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_third_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -188,7 +188,7 @@
   </div>
 
   <div style="display:none" id="certifyFourthGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -199,7 +199,7 @@
   </div>
 
   <div style="display:none" id="certifyFifthGuidanceDialog" title="Edit Core Skills Engagement" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -215,7 +215,7 @@
 <!-- EDIT LINKS-->
 <div id="dialogWrapper">
   <div style="display:none" id="certifyFirstLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_first_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -226,7 +226,7 @@
   </div>
 
   <div style="display:none" id="certifySecondLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_second_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -237,7 +237,7 @@
   </div>
 
   <div style="display:none" id="certifyThirdLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_third_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -248,7 +248,7 @@
   </div>
 
   <div style="display:none" id="certifyFourthLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fourth_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -259,7 +259,7 @@
   </div>
 
   <div style="display:none" id="certifyFifthLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fifth_link_data, valueUpdate: 'keyup'"></textarea>
        
      </div>
@@ -279,17 +279,17 @@
         ECA CERTIFICATION PROCESS MODEL
     </div>
     
-    <div class="col-sm-12">
-    <div class="col-xs-8 centeralign">
+    <div class="col-sm-12 ">
+    <div class="processmodel_c col-sm-12"><div class=" haligncenter">
       <div class="col-sm-3">
         <div class="org_block process_allblocks inactive-eca-block">
           <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>Qualify</a>
         </div>
       </div>
       
-      <div class="col-sm-3">
+       <div class="col-sm-3">
        <div class="blue_block process_allblocks inactive-eca-block">
-        <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>certify</a>
+        <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>Nominate</a>
        </div>
       </div>
      
@@ -298,11 +298,11 @@
           <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>Certify</a>
         </div>
       </div>
-
-      <div class="col-sm-3">
+ <div class="col-sm-3">
         <div class="maroon_block process_allblocks inactive-eca-block">
           <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>ECA Board</a>
         </div>
+      </div>
       </div>
     </div>
   </div> 

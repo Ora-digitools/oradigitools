@@ -3,8 +3,13 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 	function (oj, ko, $) {
         function CatalogViewModel() {
 
-			var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
 			var self = this;
+			
+			// getter
+var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
+			$( document ).ready(function() {
+    $("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
+});
 						  
 			self.textarea_data1 = ko.observable();
 
@@ -20,6 +25,17 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.closebutton1 = function() { 
 			$("#editDialog1").ojDialog("close");
 			};
+			
+			self.expandall = function(){
+					$("#accordionPage").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+					$("#accordionPage1").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+					$("#accordionPage2").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+					}
+					self.closeall = function(){
+					$("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
+					$("#accordionPage1").ojAccordion( { "expanded": [], "multiple": true } );
+					$("#accordionPage2").ojAccordion( { "expanded": [], "multiple": true } );
+					}
 			    
 			self.load_content = function(){
 		          	var certification_approach_data = {

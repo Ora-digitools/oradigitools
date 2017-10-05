@@ -22,6 +22,14 @@ var ismentor=false;
 //var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
 
 
+/* for live */
+//var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
+//var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
+
+/* for dev */	
+var eca_get_url="http://10.146.89.49:7003/ords/seaas/seaas/GetEcaContent";
+var eca_put_url="http://10.146.89.49:7003/ords/seaas/seaas/PutEcaData";	
+
 var selecteduuid="";
 requirejs.config(
 {

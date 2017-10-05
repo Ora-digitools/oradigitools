@@ -3,9 +3,16 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 	function (oj, ko, $) {
         function CatalogViewModel() {
 
-			var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
+
+			
+			
 			var self = this;
-						  
+			// getter
+var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
+			$( document ).ready(function() {
+    $("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
+});
+						
 			self.textarea_data1 = ko.observable();
 
 			self.textarea_data2 = ko.observable("Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.");
@@ -20,7 +27,16 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.closebutton1 = function() { 
 			$("#editDialog1").ojDialog("close");
 			};
-			    
+			    self.expandall = function(){
+					$("#accordionPage").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+					$("#accordionPage1").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+					$("#accordionPage2").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+					}
+					self.closeall = function(){
+					$("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
+					$("#accordionPage1").ojAccordion( { "expanded": [], "multiple": true } );
+					$("#accordionPage2").ojAccordion( { "expanded": [], "multiple": true } );
+					}
 			self.load_content = function(){
 		          	var certification_approach_data = {
 			            CATEGORY_NAME: 'HOME',
@@ -28,7 +44,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            USERNAME:'premraj.sahu@oracle.com'
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent',
+		            url:eca_get_url,
 		            cache: false,
 		            type: 'POST',
 		            //headers:certification_approach_data,
@@ -53,7 +69,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			            CATEGORY_CONTENT: content_data
 		          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
