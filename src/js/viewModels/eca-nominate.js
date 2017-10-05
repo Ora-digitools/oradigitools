@@ -22,10 +22,10 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.nominate_fifth_link_data = ko.observable();
 			self.nominate_sixth_link_data = ko.observable();
 
-			self.load_content = function(sub_cat_2, id_value, text_div){
+			self.nominate_load_content = function(sub_cat_2, id_value, text_div){
 	          	var certification_approach_data = {
 		            CATEGORY_NAME: 'ECA CERTIFICATION PROCESS MODEL',
-		            SUB_CATEGORY_1: 'Qualification Overview',
+		            SUB_CATEGORY_1: 'Nomination Overview',
 		            SUB_CATEGORY_2: sub_cat_2,
 		            SUB_CATEGORY_5: 'ECA CERTIFICATION',
 		            USERNAME:'premraj.sahu@oracle.com'
@@ -61,10 +61,10 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 				};
 
-			self.load_link= function(sub_cat_2, id_value, text_div){
+			self.nominate_load_link= function(sub_cat_2, id_value, text_div){
 	          	var certification_approach_data = {
 		            CATEGORY_NAME: 'ECA CERTIFICATION PROCESS MODEL',
-		            SUB_CATEGORY_1: 'Qualification Overview',
+		            SUB_CATEGORY_1: 'Nomination Overview',
 		            SUB_CATEGORY_2: sub_cat_2,
 		            SUB_CATEGORY_3: 'LINK',
 		            SUB_CATEGORY_5: 'ECA CERTIFICATION',
@@ -103,7 +103,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			nominate_edit_first_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 21,
+		            "content_id": 27,
 		            "category_content": self.nominate_first_guidance_data
 	          	};
 		          $.ajax({
@@ -113,7 +113,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							firstGuidanceEditClose();
+							nominateFirstGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -121,7 +121,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			nominate_edit_first_link = function(){
 	          	var editable_data = {
-		            "content_id": 1000,
+		            "content_id": 45,
 		            "category_content": self.nominate_first_link_data
 	          	};
 		          $.ajax({
@@ -131,7 +131,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							firstLinkEditClose();
+							nominateFirstLinkEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -140,7 +140,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			nominate_edit_second_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 22,
+		            "content_id": 28,
 		            "category_content": self.nominate_second_guidance_data
 	          	};
 		          $.ajax({
@@ -150,7 +150,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							secondGuidanceEditClose();
+							nominatesecondGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -158,7 +158,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			nominate_edit_second_link = function(){
 	          	var editable_data = {
-		            "content_id": 1001,
+		            "content_id": 46,
 		            "category_content": self.nominate_second_link_data
 	          	};
 		          $.ajax({
@@ -168,7 +168,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							secondLinkEditClose();
+							nominateSecondLinkEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -177,7 +177,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			nominate_edit_third_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 23,
+		            "content_id": 29,
 		            "category_content": self.nominate_third_guidance_data
 	          	};
 		          $.ajax({
@@ -187,7 +187,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							thirdGuidanceEditClose();
+							nominatethirdGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -195,7 +195,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			nominate_edit_third_link = function(){
 	          	var editable_data = {
-		            "content_id": 41,
+		            "content_id": 47,
 		            "category_content": self.nominate_third_link_data
 	          	};
 		          $.ajax({
@@ -205,7 +205,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							thirdLinkEditClose();
+							nominateThirdLinkEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -214,7 +214,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			nominate_edit_fourth_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 24,
+		            "content_id": 30,
 		            "category_content": self.nominate_fourth_guidance_data
 	          	};
 		          $.ajax({
@@ -224,7 +224,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							fourthGuidanceEditClose();
+							nominateFourthGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -232,7 +232,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			nominate_edit_fourth_link = function(){
 	          	var editable_data = {
-		            "content_id": 42,
+		            "content_id": 48,
 		            "category_content": self.nominate_fourth_link_data
 	          	};
 		          $.ajax({
@@ -242,7 +242,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							fourthLinkEditClose();
+							nominateFourthLinkEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -251,7 +251,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			nominate_edit_fifth_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 25,
+		            "content_id": 31,
 		            "category_content": self.nominate_fifth_guidance_data
 	          	};
 		          $.ajax({
@@ -261,7 +261,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							fifthGuidanceEditClose();
+							nominateFifthGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -269,7 +269,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			nominate_edit_fifth_link = function(){
 	          	var editable_data = {
-		            "content_id": 43,
+		            "content_id": 49,
 		            "category_content": self.nominate_fifth_link_data
 	          	};
 		          $.ajax({
@@ -279,7 +279,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							fifthLinkEditClose();
+							nominateFifthLinkEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -289,7 +289,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			nominate_edit_sixth_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 26,
+		            "content_id": 32,
 		            "category_content": self.nominate_sixth_guidance_data
 	          	};
 		          $.ajax({
@@ -299,7 +299,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							sixthGuidanceEditClose();
+							nominateSixthGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -307,7 +307,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			nominate_edit_sixth_link = function(){
 	          	var editable_data = {
-		            "content_id": 44,
+		            "content_id": 50,
 		            "category_content": self.nominate_sixth_link_data
 	          	};
 		          $.ajax({
@@ -317,7 +317,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							sixthLinkEditClose();
+							nominateSixthLinkEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -325,102 +325,102 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 
     		
-			self.load_content('What is your Role in Solution Engineering?', '21', 'g1');
-			self.load_content('Do I and My Manager believe I have the Core Skills?', '22', 'g2');
-			self.load_content('Am I an ECA Practitioner?', '23', 'g3');
-			self.load_content('Have I Produced Cloud Success?', '24', 'g4');
-			self.load_content('What Are My ECA Community Contributions?', '25', 'g5');
-			self.load_content('Can I Sell and Do I Lead?', '26', 'g6');
+			self.nominate_load_content('Build Your Customer Solution Summary', '27', 'g1');
+			self.nominate_load_content('Complete the Qualification Checklist', '28', 'g2');
+			self.nominate_load_content('Publish Your Engagement Deliverables', '29', 'g3');
+			self.nominate_load_content('Define and Present your Contributions', '30', 'g4');
+			self.nominate_load_content('Manager Review and Validation', '31', 'g5');
+			self.nominate_load_content('Submit Nomination for Certification', '32', 'g6');
 
-			self.load_link('What is your Role in Solution Engineering?', '1000', 'g1');
-			self.load_link('Do I and My Manager believe I have the Core Skills?', '1001', 'g2');
-			self.load_link('Am I an ECA Practitioner?', '41', 'g3');
-			self.load_link('Have I Produced Cloud Success?', '42', 'g4');
-			self.load_link('What Are My ECA Community Contributions?', '43', 'g5');
-			self.load_link('Can I Sell and Do I Lead?', '44', 'g6');
+			self.nominate_load_link('Build Your Customer Solution Summary', '45', 'g1');
+			self.nominate_load_link('Complete the Qualification Checklist', '46', 'g2');
+			self.nominate_load_link('Publish Your Engagement Deliverables', '47', 'g3');
+			self.nominate_load_link('Define and Present your Contributions', '48', 'g4');
+			self.nominate_load_link('Manager Review and Validation', '49', 'g5');
+			self.nominate_load_link('Submit Nomination for Certification', '50', 'g6');
 
-            self.firstGuidanceEditOpen = function() { 
-				$("#firstGuidanceDialog").ojDialog("open");
+            self.nominateFirstGuidanceEditOpen = function() { 
+				$("#nominateFirstGuidanceDialog").ojDialog("open");
 			};
-			firstGuidanceEditClose = function() { 
-				$("#firstGuidanceDialog").ojDialog("close");
-			};
-
-			self.secondGuidanceEditOpen = function() { 
-				$("#secondGuidanceDialog").ojDialog("open");
-			};
-			secondGuidanceEditClose = function() { 
-				$("#secondGuidanceDialog").ojDialog("close");
+			nominateFirstGuidanceEditClose = function() { 
+				$("#nominateFirstGuidanceDialog").ojDialog("close");
 			};
 
-			self.thirdGuidanceEditOpen = function() { 
-				$("#thirdGuidanceDialog").ojDialog("open");
+			self.nominateSecondGuidanceEditOpen = function() { 
+				$("#nominateSecondGuidanceDialog").ojDialog("open");
 			};
-			thirdGuidanceEditClose = function() { 
-				$("#thirdGuidanceDialog").ojDialog("close");
-			};
-
-			self.fourthGuidanceEditOpen = function() { 
-				$("#fourthGuidanceDialog").ojDialog("open");
-			};
-			fourthGuidanceEditClose = function() { 
-				$("#fourthGuidanceDialog").ojDialog("close");
+			nominateSecondGuidanceEditClose = function() { 
+				$("#nominateSecondGuidanceDialog").ojDialog("close");
 			};
 
-			self.fifthGuidanceEditOpen = function() { 
-				$("#fifthGuidanceDialog").ojDialog("open");
+			self.nominateThirdGuidanceEditOpen = function() { 
+				$("#nominaTethirdGuidanceDialog").ojDialog("open");
 			};
-			fifthGuidanceEditClose = function() { 
-				$("#fifthGuidanceDialog").ojDialog("close");
-			};
-
-			self.sixthGuidanceEditOpen = function() { 
-				$("#sixthGuidanceDialog").ojDialog("open");
-			};
-			sixthGuidanceEditClose = function() { 
-				$("#sixthGuidanceDialog").ojDialog("close");
+			nominateThirdGuidanceEditClose = function() { 
+				$("#nominateThirdGuidanceDialog").ojDialog("close");
 			};
 
-			self.firstLinkEditOpen = function() { 
-				$("#firstLinkDialog").ojDialog("open");
+			self.nominateFourthGuidanceEditOpen = function() { 
+				$("#nominateFourthGuidanceDialog").ojDialog("open");
 			};
-			firstLinkEditClose = function() { 
-				$("#firstLinkDialog").ojDialog("close");
-			};
-
-			self.secondLinkEditOpen = function() { 
-				$("#secondLinkDialog").ojDialog("open");
-			};
-			secondLinkEditClose = function() { 
-				$("#secondLinkDialog").ojDialog("close");
+			nominateFourthGuidanceEditClose = function() { 
+				$("#nominateFourthGuidanceDialog").ojDialog("close");
 			};
 
-			self.thirdLinkEditOpen = function() { 
-				$("#thirdLinkDialog").ojDialog("open");
+			self.nominateFifthGuidanceEditOpen = function() { 
+				$("#nominateFifthGuidanceDialog").ojDialog("open");
 			};
-			thirdLinkEditClose = function() { 
-				$("#thirdLinkDialog").ojDialog("close");
-			};
-
-			self.fourthLinkEditOpen = function() { 
-				$("#fourthLinkDialog").ojDialog("open");
-			};
-			fourthLinkEditClose = function() { 
-				$("#fourthLinkDialog").ojDialog("close");
+			nominateFifthGuidanceEditClose = function() { 
+				$("#nominateFifthGuidanceDialog").ojDialog("close");
 			};
 
-			self.fifthLinkEditOpen = function() { 
-				$("#fifthLinkDialog").ojDialog("open");
+			self.nominateSixthGuidanceEditOpen = function() { 
+				$("#nominateSixthGuidanceDialog").ojDialog("open");
 			};
-			fifthLinkEditClose = function() { 
-				$("#fifthLinkDialog").ojDialog("close");
+			nominateSixthGuidanceEditClose = function() { 
+				$("#nominateSixthGuidanceDialog").ojDialog("close");
 			};
 
-			self.sixthLinkEditOpen = function() { 
-				$("#sixthLinkDialog").ojDialog("open");
+			self.nominateFirstLinkEditOpen = function() { 
+				$("#nominateFirstLinkDialog").ojDialog("open");
 			};
-			sixthLinkEditClose = function() { 
-				$("#sixthLinkDialog").ojDialog("close");
+			nominateFirstLinkEditClose = function() { 
+				$("#nominateFirstLinkDialog").ojDialog("close");
+			};
+
+			self.nominateSecondLinkEditOpen = function() { 
+				$("#nominateSecondLinkDialog").ojDialog("open");
+			};
+			nominateSecondLinkEditClose = function() { 
+				$("#nominateSecondLinkDialog").ojDialog("close");
+			};
+
+			self.nominateThirdLinkEditOpen = function() { 
+				$("#nominateThirdLinkDialog").ojDialog("open");
+			};
+			nominateThirdLinkEditClose = function() { 
+				$("#nominateThirdLinkDialog").ojDialog("close");
+			};
+
+			self.nominateFourthLinkEditOpen = function() { 
+				$("#nominateFourthLinkDialog").ojDialog("open");
+			};
+			nominateFourthLinkEditClose = function() { 
+				$("#nominateFourthLinkDialog").ojDialog("close");
+			};
+
+			self.nominateFifthLinkEditOpen = function() { 
+				$("#nominateFifthLinkDialog").ojDialog("open");
+			};
+			nominateFifthLinkEditClose = function() { 
+				$("#nominateFifthLinkDialog").ojDialog("close");
+			};
+
+			self.nominateSixthLinkEditOpen = function() { 
+				$("#nominateSixthLinkDialog").ojDialog("open");
+			};
+			nominateSixthLinkEditClose = function() { 
+				$("#nominateSixthLinkDialog").ojDialog("close");
 			};
              
     }
