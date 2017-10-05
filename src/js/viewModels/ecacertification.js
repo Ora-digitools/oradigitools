@@ -179,34 +179,39 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			
 			self.iseditpermitted = function () {
-        //alert(usertype);
-		if(usertype === 'ECAL_ADMIN'){
-			 setssostatus('.ecaladminshow', 'inline-block');
-			}
-			else{
-				 setssostatus('.ecaladminshow', 'none');
-				}
-				
-      }
+       
+                if(usertype.includes("ECAL_ADMIN")){
+                    setssostatus('.ecaladminshow', 'inline-block');
+                    }
+                else{
+	                setssostatus('.ecaladminshow', 'none');
+	                }
+                        
+                if(usertype.includes("ECAL_ADMIN")||usertype.includes("ECAL_BOARD")){
+		        setssostatus('.ecalboardshow', 'inline-block');
+		        }
+		        else{
+		                        setssostatus('.ecalboardshow', 'none');
+		                        }
+                                                    
+		      }
 
-      setInterval(function () {
-        self.iseditpermitted();
-      }, 1000);
-			
-			
-			setssostatus = function (selector, visibility) {
+		      setInterval(function () {
+		        self.iseditpermitted();
+		      }, 1000);
+		                                                
+                                                
+        setssostatus = function (selector, visibility) {
         var nodes = document.querySelectorAll(selector),
           node,
           styleProperty = function (a, b) {
             return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
           };
-
-        [].forEach.call(nodes, function (a, b) {
-          node = a;
-
-          node.style.display = visibility;
-        });
-      }
+	 		[].forEach.call(nodes, function (a, b) {
+	          node = a;
+	          node.style.display = visibility;
+		    });
+    	  }
 
 		}
 	        return new CatalogViewModel();

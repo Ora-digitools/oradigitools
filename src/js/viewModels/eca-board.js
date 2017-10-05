@@ -25,7 +25,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.board_load_content = function(sub_cat_2, id_value, text_div){
 	          	var certification_approach_data = {
 		            CATEGORY_NAME: 'ECA CERTIFICATION PROCESS MODEL',
-		            SUB_CATEGORY_1: 'Qualification Overview',
+		            SUB_CATEGORY_1: 'ECA Board',
 		            SUB_CATEGORY_2: sub_cat_2,
 		            SUB_CATEGORY_5: 'ECA CERTIFICATION',
 		            USERNAME:'premraj.sahu@oracle.com'
@@ -64,7 +64,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.board_load_link= function(sub_cat_2, id_value, text_div){
 	          	var certification_approach_data = {
 		            CATEGORY_NAME: 'ECA CERTIFICATION PROCESS MODEL',
-		            SUB_CATEGORY_1: 'Qualification Overview',
+		            SUB_CATEGORY_1: 'ECA Board',
 		            SUB_CATEGORY_2: sub_cat_2,
 		            SUB_CATEGORY_3: 'LINK',
 		            SUB_CATEGORY_5: 'ECA CERTIFICATION',
@@ -103,7 +103,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			board_edit_first_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 21,
+		            "content_id": 103,
 		            "category_content": self.board_first_guidance_data
 	          	};
 		          $.ajax({
@@ -121,7 +121,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			board_edit_first_link = function(){
 	          	var editable_data = {
-		            "content_id": 1000,
+		            "content_id": 109,
 		            "category_content": self.board_first_link_data
 	          	};
 		          $.ajax({
@@ -140,7 +140,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			board_edit_second_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 22,
+		            "content_id": 104,
 		            "category_content": self.board_second_guidance_data
 	          	};
 		          $.ajax({
@@ -150,7 +150,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							boardsecondGuidanceEditClose();
+							boardSecondGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -158,7 +158,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			board_edit_second_link = function(){
 	          	var editable_data = {
-		            "content_id": 1001,
+		            "content_id": 110,
 		            "category_content": self.board_second_link_data
 	          	};
 		          $.ajax({
@@ -177,7 +177,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			board_edit_third_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 23,
+		            "content_id": 105,
 		            "category_content": self.board_third_guidance_data
 	          	};
 		          $.ajax({
@@ -187,7 +187,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							boardthirdGuidanceEditClose();
+							boardThirdGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
@@ -195,7 +195,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			board_edit_third_link = function(){
 	          	var editable_data = {
-		            "content_id": 41,
+		            "content_id": 111,
 		            "category_content": self.board_third_link_data
 	          	};
 		          $.ajax({
@@ -214,7 +214,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			board_edit_fourth_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 24,
+		            "content_id": 106,
 		            "category_content": self.board_fourth_guidance_data
 	          	};
 		          $.ajax({
@@ -232,7 +232,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			board_edit_fourth_link = function(){
 	          	var editable_data = {
-		            "content_id": 42,
+		            "content_id": 112,
 		            "category_content": self.board_fourth_link_data
 	          	};
 		          $.ajax({
@@ -251,7 +251,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			board_edit_fifth_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 25,
+		            "content_id": 107,
 		            "category_content": self.board_fifth_guidance_data
 	          	};
 		          $.ajax({
@@ -269,7 +269,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			board_edit_fifth_link = function(){
 	          	var editable_data = {
-		            "content_id": 43,
+		            "content_id": 113,
 		            "category_content": self.board_fifth_link_data
 	          	};
 		          $.ajax({
@@ -289,7 +289,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 
 			board_edit_sixth_guidance = function(){
 	          	var editable_data = {
-		            "content_id": 26,
+		            "content_id": 108,
 		            "category_content": self.board_sixth_guidance_data
 	          	};
 		          $.ajax({
@@ -307,7 +307,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			board_edit_sixth_link = function(){
 	          	var editable_data = {
-		            "content_id": 44,
+		            "content_id": 114,
 		            "category_content": self.board_sixth_link_data
 	          	};
 		          $.ajax({
@@ -325,19 +325,19 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 
     		
-			self.board_load_content('What is your Role in Solution Engineering?', '21', 'g1');
-			self.board_load_content('Do I and My Manager believe I have the Core Skills?', '22', 'g2');
-			self.board_load_content('Am I an ECA Practitioner?', '23', 'g3');
-			self.board_load_content('Have I Produced Cloud Success?', '24', 'g4');
-			self.board_load_content('What Are My ECA Community Contributions?', '25', 'g5');
-			self.board_load_content('Can I Sell and Do I Lead?', '26', 'g6');
+			self.board_load_content('Can I Sell and Do I Lead?', '108', 'g6');
+			self.board_load_content('Board Event Schedule and Evaluation Resources', '107', 'g5');
+			self.board_load_content('Nominations for Review', '106', 'g4');
+			self.board_load_content('Board Scheduling / Board Attendance', '105', 'g3');
+			self.board_load_content('Certification Criteria', '104', 'g2');
+			self.board_load_content('Board Role and Responsibilities', '103', 'g1');
 
-			self.board_load_link('What is your Role in Solution Engineering?', '1000', 'g1');
-			self.board_load_link('Do I and My Manager believe I have the Core Skills?', '1001', 'g2');
-			self.board_load_link('Am I an ECA Practitioner?', '41', 'g3');
-			self.board_load_link('Have I Produced Cloud Success?', '42', 'g4');
-			self.board_load_link('What Are My ECA Community Contributions?', '43', 'g5');
-			self.board_load_link('Can I Sell and Do I Lead?', '44', 'g6');
+			self.board_load_link('Can I Sell and Do I Lead?', '114', 'g6');
+			self.board_load_link('Board Event Schedule and Evaluation Resources', '113', 'g5');
+			self.board_load_link('Nominations for Review', '112', 'g4');
+			self.board_load_link('Board Scheduling / Board Attendance', '111', 'g3');
+			self.board_load_link('Certification Criteria', '110', 'g2');
+			self.board_load_link('Board Role and Responsibilities', '109', 'g1');
 
             self.boardFirstGuidanceEditOpen = function() { 
 				$("#boardFirstGuidanceDialog").ojDialog("open");
@@ -354,7 +354,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 
 			self.boardThirdGuidanceEditOpen = function() { 
-				$("#boardthirdGuidanceDialog").ojDialog("open");
+				$("#boardThirdGuidanceDialog").ojDialog("open");
 			};
 			boardThirdGuidanceEditClose = function() { 
 				$("#boardThirdGuidanceDialog").ojDialog("close");
@@ -422,7 +422,43 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			boardSixthLinkEditClose = function() { 
 				$("#boardSixthLinkDialog").ojDialog("close");
 			};
-             
+					// access for visibility of edit 
+						self.iseditpermitted = function () {
+       
+                if(usertype.includes("ECAL_ADMIN")){
+                    setssostatus('.ecaladminshow', 'inline-block');
+                    }
+                else{
+	                setssostatus('.ecaladminshow', 'none');
+	                }
+                        
+                if(usertype.includes("ECAL_ADMIN")||usertype.includes("ECAL_BOARD")){
+		        setssostatus('.ecalboardshow', 'inline-block');
+		        }
+		        else{
+		                        setssostatus('.ecalboardshow', 'none');
+		                        }
+                                                    
+		      }
+
+		      setInterval(function () {
+		        self.iseditpermitted();
+		      }, 1000);
+		                                                
+                                                
+        setssostatus = function (selector, visibility) {
+        var nodes = document.querySelectorAll(selector),
+          node,
+          styleProperty = function (a, b) {
+            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+          };
+	 		[].forEach.call(nodes, function (a, b) {
+	          node = a;
+	          node.style.display = visibility;
+		    });
+    	  }
+          
+          // code for edit visibility end               
     }
                 return new CatalogViewModel();
         });  
