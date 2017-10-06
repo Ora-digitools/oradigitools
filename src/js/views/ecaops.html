@@ -34,8 +34,8 @@
           <div class="ecablocks1_t greyBg "><img src="css/images/approach-icon.png" align="middle">&nbsp;
             What You Need to Know </div>
           <div class="ecablocks1_b col-xs-12">
-            <div data-bind="click:editbox1" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+            <div data-bind="click:ecacoreFirstBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_1"></p>
             <ul class="col-sm-12 nopadding salesbuttons">
               <li class="col-xs-4 active nopaddingxs"><div class="salesbuttons_i"> Engagement Management
 </div>
@@ -64,42 +64,39 @@
           <div class="ecablocks1_t"><img src="css/images/process-icon.png" align="middle">&nbsp;
             Methods and Types </div>
           <div class="ecablocks1_b col-xs-12">
-            <div data-bind="click:editbox2" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="text:textarea_data2"></p>
+            <div data-bind="click:ecacoreSecondBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_2"></p>
             <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
           <a href="#" data-bind="click:closeall">Close All</a></p> 
             <oj-accordion id="accordionPage">
               <oj-collapsible id="c1"> <span slot="header"><span>SCRM 
 </span></span>
-                <p class="oj-p">Description and Links
-SCRM Resource Links </p>
+          <div>
+                <div data-bind="click:ecacoreThirdBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_3"></p>
+            </div>
               </oj-collapsible>
               <oj-collapsible id="c3" > <span slot="header">SCRM and SE Services 
 </span>
                 <div>
-                  <p class="oj-p">Description and Links
-SCTA Resource Links
-/p>
+                  <div data-bind="click:ecacoreFourthBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_4"></p>
                 </div>
               </oj-collapsible>
               <oj-collapsible id="c3" > <span slot="header">Sales Analytics
 
 </span>
                 <div>
-                  <p class="oj-p">Description and Links
-                    - Immersion
-                    -     Sales CentralDescription and Links
-SE OPS Links
- </p>
+                  <div data-bind="click:ecacoreFifthBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_5"></p>
                 </div>
               </oj-collapsible>
               <oj-collapsible id="c3" > <span slot="header">ASR Lookup
 
  </span>
                 <div>
-                  <p class="oj-p">Description and Links
-SE Ops Links
- </p>
+                  <div data-bind="click:ecacoreSixthBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_6"></p>
                 </div>
               </oj-collapsible>
             
@@ -141,26 +138,76 @@ SE Ops Links
   </div>
 </div>
 <div id="dialogWrapper">
-  <div style="display:none" id="editDialog1" title="Edit Our Certification
+  <div style="display:none" id="ecacoreFirstBlockDialog" title="Edit Our Certification
 Approach " 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
     <div class="oj-dialog-body">
-      <textarea id="txt1" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
+      <textarea style="height:250px;width:100%" id="txt1" data-bind="value:ecacore_enablement_block_1, valueUpdate: 'keyup'"></textarea>
     </div>
     <div class="oj-dialog-footer"> 
       <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach1"> </button>
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveFirstBlockValue"> </button>
     </div>
   </div>
-  <div style="display:none" id="editDialog2" title="Edit Our Certification
+
+  <div style="display:none" id="ecacoreSecondBlockDialog" title="Edit Our Certification
 Approach " 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
     <div class="oj-dialog-body">
-      <textarea data-bind="text:textarea_data2"></textarea>
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_2, valueUpdate: 'keyup'"></textarea>
     </div>
     <div class="oj-dialog-footer"> 
       <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach2"> </button>
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveSecondBlockValue"> </button>
     </div>
   </div>
+
+    <div style="display:none" id="ecacoreThirdBlockDialog" title="Edit Our Certification
+Approach " 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_3, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveThirdBlockValue"> </button>
+    </div>
+  </div>
+
+    <div style="display:none" id="ecacoreFourthBlockDialog" title="Edit Our Certification
+Approach " 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_4, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveFourthBlockValue"> </button>
+    </div>
+  </div>
+
+    <div style="display:none" id="ecacoreFifthBlockDialog" title="Edit Our Certification
+Approach " 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_5, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveFifthBlockValue"> </button>
+    </div>
+  </div>
+
+    <div style="display:none" id="ecacoreSixthBlockDialog" title="Edit Our Certification
+Approach " 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_6, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveSixthBlockValue"> </button>
+    </div>
+  </div>
+
 </div>

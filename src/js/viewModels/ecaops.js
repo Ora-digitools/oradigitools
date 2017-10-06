@@ -10,82 +10,258 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 			$( document ).ready(function() {
     $("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
 });
-						  
-			self.textarea_data1 = ko.observable();
-
-			self.textarea_data2 = ko.observable("Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.");
-
-			self.editbox1 = function() { 
-			$("#editDialog1").ojDialog("open");
-			};
-			self.editbox2 = function() { 
-			$("#editDialog2").ojDialog("open");
-			};
-
-			self.closebutton1 = function() { 
-			$("#editDialog1").ojDialog("close");
-			};
-			
 			self.expandall = function(){
-					$("#accordionPage").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
-					$("#accordionPage1").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
-					$("#accordionPage2").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
-					}
-					self.closeall = function(){
-					$("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
-					$("#accordionPage1").ojAccordion( { "expanded": [], "multiple": true } );
-					$("#accordionPage2").ojAccordion( { "expanded": [], "multiple": true } );
-					}
-			    
-			self.load_content = function(){
-		          	var certification_approach_data = {
-			            CATEGORY_NAME: 'HOME',
-			            SUB_CATEGORY_1: 'Our Certification Approach',
-			            USERNAME:'premraj.sahu@oracle.com'
-		          	};
+				$("#accordionPage").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+				$("#accordionPage1").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+				$("#accordionPage2").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+				}
+				self.closeall = function(){
+				$("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
+				$("#accordionPage1").ojAccordion( { "expanded": [], "multiple": true } );
+				$("#accordionPage2").ojAccordion( { "expanded": [], "multiple": true } );
+				}
+						  
+			self.ecacore_enablement_block_1 = ko.observable();
+			self.ecacore_enablement_block_2 = ko.observable();
+			self.ecacore_enablement_block_3 = ko.observable();
+			self.ecacore_enablement_block_4 = ko.observable();
+			self.ecacore_enablement_block_5 = ko.observable();
+			self.ecacore_enablement_block_6 = ko.observable();
+
+			var id_ecacore_enablement_block_1;
+			var id_ecacore_enablement_block_2;
+			var id_ecacore_enablement_block_3;
+			var id_ecacore_enablement_block_4;
+			var id_ecacore_enablement_block_5;
+			var id_ecacore_enablement_block_6;
+
+			var editable_data_array = [{
+		            "content_id": id_ecacore_enablement_block_1,
+		            "category_content": self.ecacore_enablement_block_1
+	          	},{
+		            "content_id": id_ecacore_enablement_block_2,
+		            "category_content": self.ecacore_enablement_block_2
+	          	},{
+		            "content_id": id_ecacore_enablement_block_3,
+		            "category_content": self.ecacore_enablement_block_3
+	          	},{
+		            "content_id": id_ecacore_enablement_block_4,
+		            "category_content": self.ecacore_enablement_block_4
+	          	},{
+		            "content_id": id_ecacore_enablement_block_5,
+		            "category_content": self.ecacore_enablement_block_5
+	          	},{
+		            "content_id": id_ecacore_enablement_block_6,
+		            "category_content": self.ecacore_enablement_block_6
+	          	}]
+
+			self.enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
+	          	var certification_approach_data = {
+		            CATEGORY_NAME: 'ECA OPS',
+		            SUB_CATEGORY_1: sub_cat_1,
+		            SUB_CATEGORY_2: sub_cat_2,
+		            SUB_CATEGORY_3: sub_cat_3,
+		            SUB_CATEGORY_5: 'ECA Enablement',
+		            USERNAME:'premraj.sahu@oracle.com'
+	          	};
+	          $.ajax({
+	            url:eca_get_url,
+	            cache: false,
+	            type: 'POST',
+	            //headers:certification_approach_data,
+	            contentType: 'application/json; charset=utf-8',
+	  			data: ko.toJSON(certification_approach_data),
+	            success: function (data) {
+						if(text_div == 'e1'){
+							self.ecacore_enablement_block_1(data.content);
+							id_ecacore_enablement_block_1 = data.content_id;
+							}
+						else if(text_div == 'e2'){
+							self.ecacore_enablement_block_2(data.content);
+							id_ecacore_enablement_block_2 = data.content_id;
+							}
+						else if(text_div == 'e3'){
+							self.ecacore_enablement_block_3(data.content);
+							id_ecacore_enablement_block_3 = data.content_id;
+							}
+						else if(text_div == 'e4'){
+							self.ecacore_enablement_block_4(data.content);
+							id_ecacore_enablement_block_4 = data.content_id;
+							}
+						else if(text_div == 'e5'){
+							self.ecacore_enablement_block_5(data.content);
+							id_ecacore_enablement_block_5 = data.content_id;
+							}
+						else if(text_div == 'e6'){
+							self.ecacore_enablement_block_6(data.content);
+							id_ecacore_enablement_block_6 = data.content_id;
+							}
+				   	    }
+	          		});
+
+				};
+			self.ecacoreSaveFirstBlockValue = function(){
+	          	var editable_data = {
+		            "content_id": id_ecacore_enablement_block_1,
+		            "category_content": self.ecacore_enablement_block_1
+	          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
-		            //headers:certification_approach_data,
 		            contentType: 'application/json; charset=utf-8',
-          			data: ko.toJSON(certification_approach_data),
+          			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							console.log(ko.toJSON(data));
-							self.textarea_data1(data.content);
-
-							var content_id = data.content_id;
-							var content_data = data.content;
-
+							ecacoreFirstBlockClose();
 			            }
-		          });
-		        
-				
-			};
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 
-			self.edit_certification_approach1 = function(){
-		          	var certification_approach_post_data = {
-			            CONTENT_ID: content_id,
-			            CATEGORY_CONTENT: content_data
-		          	};
+			};
+			self.ecacoreSaveSecondBlockValue = function(){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_2,
+		            "category_content": self.ecacore_enablement_block_2
+	          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
-          			data: ko.toJSON(certification_approach_post_data),
+          			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							//load_content();
+							ecacoreSecondBlockClose();
 			            }
-		          });
-		        
-				
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 			};
-			self.load_content();
+			self.ecacoreSaveThirdBlockValue = function(){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_3,
+		            "category_content": self.ecacore_enablement_block_3
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreThirdBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 
-			self.edit_certification_approach2 = function(){
-				//-----
 			};
+			self.ecacoreSaveFourthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_4,
+		            "category_content": self.ecacore_enablement_block_4
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreFourthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveFifthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_5,
+		            "category_content": self.ecacore_enablement_block_5
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreFifthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveSixthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_6,
+		            "category_content": self.ecacore_enablement_block_6
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreSixthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.enablement_load_content('What You Need to Know', '', '', 'e1');
+			self.enablement_load_content('Methods and Types', '', '', 'e2');
+			self.enablement_load_content('Methods and Types', 'SCRM', 'SCRM','e3');
+			self.enablement_load_content('Methods and Types', 'SCRM and SE Services', 'SCRM and SE Services', 'e4');
+			self.enablement_load_content('Methods and Types', 'Sales Analytics', 'Sales Analytics', 'e5');
+			self.enablement_load_content('Methods and Types', 'ASR Lookup', 'ASR Lookup', 'e6');
+
+			self.ecacoreFirstBlockOpen = function() { 
+				$("#ecacoreFirstBlockDialog").ojDialog("open");
+			};
+			ecacoreFirstBlockClose = function() { 
+				$("#ecacoreFirstBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreSecondBlockOpen = function() { 
+				$("#ecacoreSecondBlockDialog").ojDialog("open");
+			};
+			ecacoreSecondBlockClose = function() { 
+				$("#ecacoreSecondBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreThirdBlockOpen = function() { 
+				$("#ecacoreThirdBlockDialog").ojDialog("open");
+			};
+			ecacoreThirdBlockClose = function() { 
+				$("#ecacoreThirdBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreFourthBlockOpen = function() { 
+				$("#ecacoreFourthBlockDialog").ojDialog("open");
+			};
+			ecacoreFourthBlockClose = function() { 
+				$("#ecacoreFourthBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreFifthBlockOpen = function() { 
+				$("#ecacoreFifthBlockDialog").ojDialog("open");
+			};
+			ecacoreFifthBlockClose = function() { 
+				$("#ecacoreFifthBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreSixthBlockOpen = function() { 
+				$("#ecacoreSixthBlockDialog").ojDialog("open");
+			};
+			ecacoreSixthBlockClose = function() { 
+				$("#ecacoreSixthBlockDialog").ojDialog("close");
+			};
+
 		}
 	        return new CatalogViewModel();
 	});   
