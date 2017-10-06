@@ -40,8 +40,8 @@ Strategy
 
  </div>
           <div class="ecablocks_b">
-          <div data-bind="click:editbox1" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="text:textarea_data1"></p>
+          <div data-bind="click:firstBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:enablement_block_1"></p>
           </div>
         </div>
       </div>
@@ -56,8 +56,8 @@ Approach
 
 </div>
           <div class="ecablocks_b">
-          <div data-bind="click:editbox2" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="text:textarea_data2"></p>
+          <div data-bind="click:secondBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:enablement_block_2"></p>
           </div>
         </div>
       </div>
@@ -70,7 +70,8 @@ Approach
 
 </div>
           <div class="ecablocks_b">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada nulla urna, auctor ornare odio porttitor id. Maecenas nec turpis massa. Vivamus in tortor nisi. Ut vel cursus.</p>
+            <div data-bind="click:thirdBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:enablement_block_3"></p>
           </div>
         </div>
       </div>
@@ -80,34 +81,9 @@ Approach
       <div class="col-lg-3">
         <div class="cert_calendar">
           <div class="cert_calendar_t"><img src="css/images/calendar-icon.png">&nbsp;ECA Community Resources</div>
-          <div class="cert_calendar_b">What's New<br>
-            <ul>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-            </ul>
-            <br>
-           ECA News
-            <ul>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-            </ul>
-			 <br>
-          ECA Blog
-            <ul>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-            </ul>
-			 <br>
-           ECA Certification
-            <ul>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-              <li>Lorem ipsum dolor sit - 28/9/2017</li>
-            </ul>
-          </div>
+            <div data-bind="click:fourthBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:enablement_block_4"></p>
+
         </div>
       </div>
        <div class="col-lg-9">
@@ -144,27 +120,50 @@ Approach
   </div>
 </div>
   <div id="dialogWrapper">
-  <div style="display:none" id="editDialog1" title="Edit Our Certification
-Approach " 
+  <div style="display:none" id="firstBlockDialog" title="Edit Our Enablement 
+Strategy" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea id="txt1" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
+     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_1, valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
         <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach1"> </button>
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:saveFirstBlockValue()"> </button>
       </div>
   </div>
 
-  <div style="display:none" id="editDialog2" title="Edit Our Certification
-Approach " 
+  <div style="display:none" id="secondBlockDialog" title="Edit Our Delivery 
+Approach" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea data-bind="text:textarea_data2"></textarea>
+     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_2,valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
         <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach2"> </button>
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:saveSecondBlockValue()"> </button>
+      </div>
+  </div>
+
+  <div style="display:none" id="thirdBlockDialog" title="Edit Your Enablement
+Responsibilities" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_3,valueUpdate: 'keyup'"></textarea>
+       
+     </div>
+     <div class="oj-dialog-footer">
+        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:saveThirdBlockValue()"> </button>
+      </div>
+  </div>
+
+  <div style="display:none" id="fourthBlockDialog" title="Edit ECA Community Resources" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_4,valueUpdate: 'keyup'"></textarea>
+       
+     </div>
+     <div class="oj-dialog-footer">
+        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:saveFourthBlockValue()"> </button>
       </div>
   </div>
  

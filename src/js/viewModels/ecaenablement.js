@@ -3,73 +3,175 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 	function (oj, ko, $) {
         function CatalogViewModel() {
 
-			var baseurl="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/";
 			var self = this;
 						  
-			self.textarea_data1 = ko.observable();
+			self.enablement_block_1 = ko.observable();
+			self.enablement_block_2 = ko.observable();
+			self.enablement_block_3 = ko.observable();
+			self.enablement_block_4 = ko.observable();
 
-			self.textarea_data2 = ko.observable("Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.");
+			var id_enablement_block_1;
+			var id_enablement_block_2;
+			var id_enablement_block_3;
+			var id_enablement_block_4;
 
-			self.editbox1 = function() { 
-			$("#editDialog1").ojDialog("open");
-			};
-			self.editbox2 = function() { 
-			$("#editDialog2").ojDialog("open");
-			};
+			var editable_data_array = [{
+		            "content_id": id_enablement_block_1,
+		            "category_content": self.enablement_block_1
+	          	},{
+		            "content_id": id_enablement_block_2,
+		            "category_content": self.enablement_block_2
+	          	},{
+		            "content_id": id_enablement_block_3,
+		            "category_content": self.enablement_block_3
+	          	},{
+		            "content_id": id_enablement_block_4,
+		            "category_content": self.enablement_block_4
+	          	}]
 
-			self.closebutton1 = function() { 
-			$("#editDialog1").ojDialog("close");
-			};
-			    
-			self.load_content = function(){
-		          	var certification_approach_data = {
-			            CATEGORY_NAME: 'HOME',
-			            SUB_CATEGORY_1: 'Our Certification Approach',
-			            USERNAME:'premraj.sahu@oracle.com'
-		          	};
+			self.enablement_load_content = function(category_name_value, sub_cat_1, text_div){
+	          	var certification_approach_data = {
+		            CATEGORY_NAME: category_name_value,
+		            SUB_CATEGORY_1: sub_cat_1,
+		            SUB_CATEGORY_5: 'ECA Enablement',
+		            USERNAME:'premraj.sahu@oracle.com'
+	          	};
+	          $.ajax({
+	            url:eca_get_url,
+	            cache: false,
+	            type: 'POST',
+	            //headers:certification_approach_data,
+	            contentType: 'application/json; charset=utf-8',
+	  			data: ko.toJSON(certification_approach_data),
+	            success: function (data) {
+						if(text_div == 'e1'){
+							self.enablement_block_1(data.content);
+							id_enablement_block_1 = data.content_id;
+							}
+						else if(text_div == 'e2'){
+							self.enablement_block_2(data.content);
+							id_enablement_block_2 = data.content_id;
+							}
+						else if(text_div == 'e3'){
+							self.enablement_block_3(data.content);
+							id_enablement_block_3 = data.content_id;
+							}
+						else if(text_div == 'e4'){
+							self.enablement_block_4(data.content);
+							id_enablement_block_4 = data.content_id;
+							}
+		        	    }
+	          		});
+
+				};
+			self.saveFirstBlockValue = function(){
+	          	var editable_data = {
+		            "content_id": id_enablement_block_1,
+		            "category_content": self.enablement_block_1
+	          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
-		            //headers:certification_approach_data,
 		            contentType: 'application/json; charset=utf-8',
-          			data: ko.toJSON(certification_approach_data),
+          			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							console.log(ko.toJSON(data));
-							self.textarea_data1(data.content);
-
-							var content_id = data.content_id;
-							var content_data = data.content;
-
+							firstBlockClose();
 			            }
-		          });
-		        
-				
-			};
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 
-			self.edit_certification_approach1 = function(){
-		          	var certification_approach_post_data = {
-			            CONTENT_ID: content_id,
-			            CATEGORY_CONTENT: content_data
-		          	};
+			};
+			self.saveSecondBlockValue = function(){
+				var editable_data = {
+		            "content_id": id_enablement_block_2,
+		            "category_content": self.enablement_block_2
+	          	};
 		          $.ajax({
-		            url:'http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData',
+		            url:eca_put_url,
 		            cache: false,
 		            type: 'POST',
 		            contentType: 'application/json; charset=utf-8',
-          			data: ko.toJSON(certification_approach_post_data),
+          			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							//load_content();
+							secondBlockClose();
 			            }
-		          });
-		        
-				
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 			};
-			self.load_content();
+			self.saveThirdBlockValue = function(){
+				var editable_data = {
+		            "content_id": id_enablement_block_3,
+		            "category_content": self.enablement_block_3
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							thirdBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
 
-			self.edit_certification_approach2 = function(){
-				//-----
 			};
+			self.saveFourthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_enablement_block_4,
+		            "category_content": self.enablement_block_4
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							fourthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.enablement_load_content('Our Enablement Strategy','', 'e1');
+			self.enablement_load_content('Our Delivery Approach','', 'e2');
+			self.enablement_load_content('Your Enablement Responsibilities','', 'e3');
+			self.enablement_load_content('ECA Community Resources', 'Whats New', 'e4');
+
+			self.firstBlockOpen = function() { 
+				$("#firstBlockDialog").ojDialog("open");
+			};
+			firstBlockClose = function() { 
+				$("#firstBlockDialog").ojDialog("close");
+			};
+
+			self.secondBlockOpen = function() { 
+				$("#secondBlockDialog").ojDialog("open");
+			};
+			secondBlockClose = function() { 
+				$("#secondBlockDialog").ojDialog("close");
+			};
+
+			self.thirdBlockOpen = function() { 
+				$("#thirdBlockDialog").ojDialog("open");
+			};
+			thirdBlockClose = function() { 
+				$("#thirdBlockDialog").ojDialog("close");
+			};
+
+			self.fourthBlockOpen = function() { 
+				$("#fourthBlockDialog").ojDialog("open");
+			};
+			fourthBlockClose = function() { 
+				$("#fourthBlockDialog").ojDialog("close");
+			};
+
 		}
 	        return new CatalogViewModel();
 	});   
