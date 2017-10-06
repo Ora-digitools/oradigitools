@@ -31,6 +31,7 @@
 <div class="row">
   <div class="container">
     <div class="ecarow col-sm-12"> 
+    <div class="haligncenterm"> 
       <!--blocks -->
       <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
         <div class="ecablocks_t">
@@ -138,24 +139,6 @@
         </div>
       </div>
       <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Can I Sell and Do I Lead?</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:boardSixthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:board_sixth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:boardSixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:board_sixth_link_data"></p>
-        </div>
       </div>
     </div>
   </div>
@@ -164,7 +147,7 @@
 <!-- new code for dialog box-->
 <!-- first 6 blocks edit templates -->
 <div id="dialogWrapper">
-  <div style="display:none" id="boardFirstGuidanceDialog" title="Edit Role in Solution Engineering" 
+  <div style="display:none" id="boardFirstGuidanceDialog" title="Edit Board Role and Responsibilities" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:board_first_guidance_data, valueUpdate: 'keyup'"></textarea>
        
@@ -175,7 +158,7 @@
       </div>
   </div>
 
-  <div style="display:none" id="boardSecondGuidanceDialog" title="Edit Core Skills Engagement" 
+  <div style="display:none" id="boardSecondGuidanceDialog" title="Edit Certification Criteria " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:board_second_guidance_data, valueUpdate: 'keyup'"></textarea>
        
@@ -186,7 +169,7 @@
       </div>
   </div>
 
-  <div style="display:none" id="boardThirdGuidanceDialog" title="Edit Core Skills Engagement" 
+  <div style="display:none" id="boardThirdGuidanceDialog" title="Edit Board Scheduling / Board Attendance" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:board_third_guidance_data, valueUpdate: 'keyup'"></textarea>
        
@@ -197,7 +180,7 @@
       </div>
   </div>
 
-  <div style="display:none" id="boardFourthGuidanceDialog" title="Edit Core Skills Engagement" 
+  <div style="display:none" id="boardFourthGuidanceDialog" title="Edit Nominations for Review" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:board_fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
@@ -208,7 +191,7 @@
       </div>
   </div>
 
-  <div style="display:none" id="boardFifthGuidanceDialog" title="Edit Core Skills Engagement" 
+  <div style="display:none" id="boardFifthGuidanceDialog" title="Edit Board Event Schedule and Evaluation Resources " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:board_fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
        
@@ -219,7 +202,7 @@
       </div>
   </div>
 
-  <div style="display:none" id="boardSixthGuidanceDialog" title="Edit Core Skills Engagement" 
+  <div style="display:none" id="boardSixthGuidanceDialog" title="Edit Can I Sell and Do I Lead?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
      <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:board_sixth_guidance_data, valueUpdate: 'keyup'"></textarea>
        

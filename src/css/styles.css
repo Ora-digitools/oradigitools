@@ -2144,7 +2144,14 @@ ul#profiletabs {
 	width: 60px;
 }
 }
-
+@media (min-width: 768px) {
+.processmodel_c .haligncenter{
+	display:flex;
+	justify-content:center;
+	margin:0 auto;
+	}
+}
+	
 @media (min-width: 1025px) {
 .col-md-0 {
 	display: none
@@ -2158,6 +2165,16 @@ ul#profiletabs {
 .nopaddingrightmd {
 	padding-right: 0px;
 }
+.haligncenter{
+	display:flex;
+	justify-content:center;
+	margin:0 auto;
+	max-width:80%;}
+.haligncenterm{
+	display:flex;
+	justify-content:center;
+	margin:0 auto;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -2236,17 +2253,8 @@ font-size:15px;
 	margin: 0 auto;
 	float: none;
 }
-.haligncenter{
-	display:flex;
-	justify-content:center;
-	margin:0 auto;
-	max-width:80%;}
-.haligncenterm{
-	display:flex;
-	justify-content:center;
-	margin:0 auto;
-	}	
-	
-	
+
+.pointer{
+	cursor:pointer;}	
 
 	
