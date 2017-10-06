@@ -40,7 +40,7 @@ Strategy
 
  </div>
           <div class="ecablocks_b">
-          <div data-bind="click:firstBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+          <div data-bind="click:firstBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
             <p data-bind="html:enablement_block_1"></p>
           </div>
         </div>
@@ -56,7 +56,7 @@ Approach
 
 </div>
           <div class="ecablocks_b">
-          <div data-bind="click:secondBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+          <div data-bind="click:secondBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
             <p data-bind="html:enablement_block_2"></p>
           </div>
         </div>
@@ -70,7 +70,7 @@ Approach
 
 </div>
           <div class="ecablocks_b">
-            <div data-bind="click:thirdBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+            <div data-bind="click:thirdBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
             <p data-bind="html:enablement_block_3"></p>
           </div>
         </div>
@@ -81,9 +81,9 @@ Approach
       <div class="col-lg-3">
         <div class="cert_calendar">
           <div class="cert_calendar_t"><img src="css/images/calendar-icon.png">&nbsp;ECA Community Resources</div>
-            <div data-bind="click:fourthBlockOpen" class="edit_icon col-xs-12"><img src="css/images/edit_icon.png"></div>
+           <div class="cert_calendar_b"> <div data-bind="click:fourthBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
             <p data-bind="html:enablement_block_4"></p>
-
+</div>
         </div>
       </div>
        <div class="col-lg-9">
@@ -122,8 +122,8 @@ Approach
   <div id="dialogWrapper">
   <div style="display:none" id="firstBlockDialog" title="Edit Our Enablement 
 Strategy" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_1, valueUpdate: 'keyup'"></textarea>
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+     <div class="oj-dialog-body"><textarea style="width:80%" data-bind="value:enablement_block_1, valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
@@ -134,8 +134,8 @@ Strategy"
 
   <div style="display:none" id="secondBlockDialog" title="Edit Our Delivery 
 Approach" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_2,valueUpdate: 'keyup'"></textarea>
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+     <div class="oj-dialog-body"><textarea style="width:80%" data-bind="value:enablement_block_2,valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
@@ -146,8 +146,8 @@ Approach"
 
   <div style="display:none" id="thirdBlockDialog" title="Edit Your Enablement
 Responsibilities" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_3,valueUpdate: 'keyup'"></textarea>
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+     <div class="oj-dialog-body"><textarea style="width:80%" data-bind="value:enablement_block_3,valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">
@@ -157,8 +157,8 @@ Responsibilities"
   </div>
 
   <div style="display:none" id="fourthBlockDialog" title="Edit ECA Community Resources" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:enablement_block_4,valueUpdate: 'keyup'"></textarea>
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+     <div class="oj-dialog-body"><textarea style="width:80%" data-bind="value:enablement_block_4,valueUpdate: 'keyup'"></textarea>
        
      </div>
      <div class="oj-dialog-footer">

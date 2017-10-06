@@ -2231,6 +2231,7 @@ ul#profiletabs {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 .mainContent {
 	margin-top: 40px;
+	
 }
 }
 
@@ -2256,5 +2257,35 @@ font-size:15px;
 
 .pointer{
 	cursor:pointer;}	
+	
+.closebar{
+	background:transparent;
+	border:none;
+	cursor:pointer;
+	}
+.closebar .oj-dialog-header-close-wrapper{
+	cursor: pointer;
+margin: 0;
+padding: 0;
+	}		
+.popupheading{
+	text-align:center;
+	background:transparent;
+	border-bottom:3px solid #fff;
+	color:rgb(0, 117, 143);
+	padding-bottom:10px;
+	}	
+.popupheading h3{
+	margin:0px;}	
+.popupbody{
+	padding:20px;
+	padding-top:0px;
+	}
+.popupbody  ul{
+	margin-bottom:20px;
+	
+	}	
+	
+	
 
 	
