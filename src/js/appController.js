@@ -84,6 +84,41 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
        
     
       ];
+	  // Footer
+      function footerLink(name, id, linkTarget, linkTarget1) {
+        this.name = name;
+        this.linkId = id;
+        this.linkTarget = linkTarget;
+        this.linkTarget1 = linkTarget1;
+      }
+	  var footer1 = [
+         new footerLink('Home', 'home', '?root=home'),
+        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
+        new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/', '_blank'),
+        new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
+        new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
+   
+    
+      ];
+      var footer2 = [
+         new footerLink('Home', 'home', '?root=ecacertification'),
+        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
+        new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),
+        new footerLink('Contact Board', 'contactmoard', 'mailto:eca_cert_board_us_grp@oracle.com'),
+         new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
+
+      ];
+	  var footer3 = [
+           new footerLink('Home', 'home', '?root=ecacertification'),
+        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
+        new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),
+        new footerLink('Contact Board', 'contactmoard', 'mailto:ecal-pmo-grp_us_grp@oracle.com'),
+         new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
+		
+       
+    
+      ];
+	  
       var str = window.location.href;
     var res = str.split("root=");
 	// console.log(res[1]);
@@ -92,17 +127,20 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 	  {
 		  this.currentModule = ko.observable("eca");
 		  self.headerLinks = ko.observableArray(arr2);  
+		  self.footerLinks = ko.observableArray(footer2);  
 		 
 	  }
 	  else if(res[1] == "ecaenablement" || res[1] == "salesstrategy" || res[1] == "ecacore" || res[1] == "ecaops")
 	  {
 		  this.currentModule = ko.observable("ecaenablement");
 		  self.headerLinks = ko.observableArray(arr3);
+		  self.footerLinks = ko.observableArray(footer3);  
 		 
 	  }
 	  else{
 		   this.currentModule = ko.observable("cloudhubs");
 		   self.headerLinks = ko.observableArray(arr1);
+		   self.footerLinks = ko.observableArray(footer1);  
 		   
 	  }
 	  
@@ -313,21 +351,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
 
 
-      // Footer
-      function footerLink(name, id, linkTarget, linkTarget1) {
-        this.name = name;
-        this.linkId = id;
-        this.linkTarget = linkTarget;
-        this.linkTarget1 = linkTarget1;
-      }
-      self.footerLinks = ko.observableArray([
-        new footerLink('Home', 'home', '?root=home'),
-        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
-        new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/', '_blank'),
-        new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
-        new footerLink('Contact Us', 'contactUs', 'mailto:oraclecloudhubs_us@oracle.com')
-
-      ]);
+      
+      
     }
 
     return new ControllerViewModel();
