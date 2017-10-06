@@ -428,7 +428,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
                     setssostatus('.ecaladminshow', 'inline-block');
                     }
                 else{
-	                setssostatus('.ecaladminshow', 'inline-block');
+	                setssostatus('.ecaladminshow', 'none');
 	                }
                         
                 if(usertype.includes("ECAL_ADMIN")||usertype.includes("ECAL_BOARD")){

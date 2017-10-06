@@ -124,6 +124,80 @@ require(['ojs/ojcore', 'knockout', 'jquery',
                                 
                                 $("#modalDialog12").ojDialog("open");
                         }
+						
+						closedialog13=function(){
+                                
+                                $("#modalDialog13").ojDialog("close");
+                        }
+
+                        opendialog13=function(){
+                                
+                                $("#modalDialog13").ojDialog("open");
+                        }
+						
+						closedialog14=function(){
+                                
+                                $("#modalDialog14").ojDialog("close");
+                        }
+
+                        opendialog14=function(){
+                                
+                                $("#modalDialog14").ojDialog("open");
+                        }
+						closedialog15=function(){
+                                
+                                $("#modalDialog15").ojDialog("close");
+                        }
+
+                        opendialog15=function(){
+                                
+                                $("#modalDialog15").ojDialog("open");
+                        }
+						closedialog16=function(){
+                                
+                                $("#modalDialog16").ojDialog("close");
+                        }
+
+                        opendialog16=function(){
+                                
+                                $("#modalDialog16").ojDialog("open");
+                        }
+						closedialog17=function(){
+                                
+                                $("#modalDialog17").ojDialog("close");
+                        }
+
+                        opendialog17=function(){
+                                
+                                $("#modalDialog17").ojDialog("open");
+                        }
+						closedialog18=function(){
+                                
+                                $("#modalDialog18").ojDialog("close");
+                        }
+
+                        opendialog18=function(){
+                                
+                                $("#modalDialog18").ojDialog("open");
+                        }
+						closedialog19=function(){
+                                
+                                $("#modalDialog19").ojDialog("close");
+                        }
+
+                        opendialog19=function(){
+                                
+                                $("#modalDialog19").ojDialog("open");
+                        }
+						closedialog20=function(){
+                                
+                                $("#modalDialog20").ojDialog("close");
+                        }
+
+                        opendialog20=function(){
+                                
+                                $("#modalDialog20").ojDialog("open");
+                        }
      
 
                         closedialogA=function(){

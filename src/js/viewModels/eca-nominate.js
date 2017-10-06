@@ -185,7 +185,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							nominatethirdGuidanceEditClose();
+							nominateThirdGuidanceEditClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
