@@ -21,41 +21,41 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 				$("#accordionPage2").ojAccordion( { "expanded": [], "multiple": true } );
 				}
 						  
-			self.ecacore_enablement_block_1 = ko.observable();
-			self.ecacore_enablement_block_2 = ko.observable();
-			self.ecacore_enablement_block_3 = ko.observable();
-			self.ecacore_enablement_block_4 = ko.observable();
-			self.ecacore_enablement_block_5 = ko.observable();
-			self.ecacore_enablement_block_6 = ko.observable();
+			self.ecaops_enablement_block_1 = ko.observable();
+			self.ecaops_enablement_block_2 = ko.observable();
+			self.ecaops_enablement_block_3 = ko.observable();
+			self.ecaops_enablement_block_4 = ko.observable();
+			self.ecaops_enablement_block_5 = ko.observable();
+			self.ecaops_enablement_block_6 = ko.observable();
 
-			var id_ecacore_enablement_block_1;
-			var id_ecacore_enablement_block_2;
-			var id_ecacore_enablement_block_3;
-			var id_ecacore_enablement_block_4;
-			var id_ecacore_enablement_block_5;
-			var id_ecacore_enablement_block_6;
+			var id_ecaops_enablement_block_1;
+			var id_ecaops_enablement_block_2;
+			var id_ecaops_enablement_block_3;
+			var id_ecaops_enablement_block_4;
+			var id_ecaops_enablement_block_5;
+			var id_ecaops_enablement_block_6;
 
 			var editable_data_array = [{
-		            "content_id": id_ecacore_enablement_block_1,
-		            "category_content": self.ecacore_enablement_block_1
+		            "content_id": id_ecaops_enablement_block_1,
+		            "category_content": self.ecaops_enablement_block_1
 	          	},{
-		            "content_id": id_ecacore_enablement_block_2,
-		            "category_content": self.ecacore_enablement_block_2
+		            "content_id": id_ecaops_enablement_block_2,
+		            "category_content": self.ecaops_enablement_block_2
 	          	},{
-		            "content_id": id_ecacore_enablement_block_3,
-		            "category_content": self.ecacore_enablement_block_3
+		            "content_id": id_ecaops_enablement_block_3,
+		            "category_content": self.ecaops_enablement_block_3
 	          	},{
-		            "content_id": id_ecacore_enablement_block_4,
-		            "category_content": self.ecacore_enablement_block_4
+		            "content_id": id_ecaops_enablement_block_4,
+		            "category_content": self.ecaops_enablement_block_4
 	          	},{
-		            "content_id": id_ecacore_enablement_block_5,
-		            "category_content": self.ecacore_enablement_block_5
+		            "content_id": id_ecaops_enablement_block_5,
+		            "category_content": self.ecaops_enablement_block_5
 	          	},{
-		            "content_id": id_ecacore_enablement_block_6,
-		            "category_content": self.ecacore_enablement_block_6
+		            "content_id": id_ecaops_enablement_block_6,
+		            "category_content": self.ecaops_enablement_block_6
 	          	}]
 
-			self.enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
+			self.ecaops_enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
 	          	var certification_approach_data = {
 		            CATEGORY_NAME: 'ECA OPS',
 		            SUB_CATEGORY_1: sub_cat_1,
@@ -73,37 +73,37 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 	  			data: ko.toJSON(certification_approach_data),
 	            success: function (data) {
 						if(text_div == 'e1'){
-							self.ecacore_enablement_block_1(data.content);
-							id_ecacore_enablement_block_1 = data.content_id;
+							self.ecaops_enablement_block_1(data.content);
+							id_ecaops_enablement_block_1 = data.content_id;
 							}
 						else if(text_div == 'e2'){
-							self.ecacore_enablement_block_2(data.content);
-							id_ecacore_enablement_block_2 = data.content_id;
+							self.ecaops_enablement_block_2(data.content);
+							id_ecaops_enablement_block_2 = data.content_id;
 							}
 						else if(text_div == 'e3'){
-							self.ecacore_enablement_block_3(data.content);
-							id_ecacore_enablement_block_3 = data.content_id;
+							self.ecaops_enablement_block_3(data.content);
+							id_ecaops_enablement_block_3 = data.content_id;
 							}
 						else if(text_div == 'e4'){
-							self.ecacore_enablement_block_4(data.content);
-							id_ecacore_enablement_block_4 = data.content_id;
+							self.ecaops_enablement_block_4(data.content);
+							id_ecaops_enablement_block_4 = data.content_id;
 							}
 						else if(text_div == 'e5'){
-							self.ecacore_enablement_block_5(data.content);
-							id_ecacore_enablement_block_5 = data.content_id;
+							self.ecaops_enablement_block_5(data.content);
+							id_ecaops_enablement_block_5 = data.content_id;
 							}
 						else if(text_div == 'e6'){
-							self.ecacore_enablement_block_6(data.content);
-							id_ecacore_enablement_block_6 = data.content_id;
+							self.ecaops_enablement_block_6(data.content);
+							id_ecaops_enablement_block_6 = data.content_id;
 							}
 				   	    }
 	          		});
 
 				};
-			self.ecacoreSaveFirstBlockValue = function(){
+			self.ecaopsSaveFirstBlockValue = function(){
 	          	var editable_data = {
-		            "content_id": id_ecacore_enablement_block_1,
-		            "category_content": self.ecacore_enablement_block_1
+		            "content_id": id_ecaops_enablement_block_1,
+		            "category_content": self.ecaops_enablement_block_1
 	          	};
 		          $.ajax({
 		            url:eca_put_url,
@@ -112,17 +112,17 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							ecacoreFirstBlockClose();
+							ecaopsFirstBlockClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
 		        });
 
 			};
-			self.ecacoreSaveSecondBlockValue = function(){
+			self.ecaopsSaveSecondBlockValue = function(){
 				var editable_data = {
-		            "content_id": id_ecacore_enablement_block_2,
-		            "category_content": self.ecacore_enablement_block_2
+		            "content_id": id_ecaops_enablement_block_2,
+		            "category_content": self.ecaops_enablement_block_2
 	          	};
 		          $.ajax({
 		            url:eca_put_url,
@@ -131,16 +131,16 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							ecacoreSecondBlockClose();
+							ecaopsSecondBlockClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
 		        });
 			};
-			self.ecacoreSaveThirdBlockValue = function(){
+			self.ecaopsSaveThirdBlockValue = function(){
 				var editable_data = {
-		            "content_id": id_ecacore_enablement_block_3,
-		            "category_content": self.ecacore_enablement_block_3
+		            "content_id": id_ecaops_enablement_block_3,
+		            "category_content": self.ecaops_enablement_block_3
 	          	};
 		          $.ajax({
 		            url:eca_put_url,
@@ -149,17 +149,17 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							ecacoreThirdBlockClose();
+							ecaopsThirdBlockClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
 		        });
 
 			};
-			self.ecacoreSaveFourthBlockValue = function(param1, param2){
+			self.ecaopsSaveFourthBlockValue = function(param1, param2){
 				var editable_data = {
-		            "content_id": id_ecacore_enablement_block_4,
-		            "category_content": self.ecacore_enablement_block_4
+		            "content_id": id_ecaops_enablement_block_4,
+		            "category_content": self.ecaops_enablement_block_4
 	          	};
 		          $.ajax({
 		            url:eca_put_url,
@@ -168,17 +168,17 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							ecacoreFourthBlockClose();
+							ecaopsFourthBlockClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
 		        });
 			};
 
-			self.ecacoreSaveFifthBlockValue = function(param1, param2){
+			self.ecaopsSaveFifthBlockValue = function(param1, param2){
 				var editable_data = {
-		            "content_id": id_ecacore_enablement_block_5,
-		            "category_content": self.ecacore_enablement_block_5
+		            "content_id": id_ecaops_enablement_block_5,
+		            "category_content": self.ecaops_enablement_block_5
 	          	};
 		          $.ajax({
 		            url:eca_put_url,
@@ -187,17 +187,17 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							ecacoreFifthBlockClose();
+							ecaopsFifthBlockClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
 		        });
 			};
 
-			self.ecacoreSaveSixthBlockValue = function(param1, param2){
+			self.ecaopsSaveSixthBlockValue = function(param1, param2){
 				var editable_data = {
-		            "content_id": id_ecacore_enablement_block_6,
-		            "category_content": self.ecacore_enablement_block_6
+		            "content_id": id_ecaops_enablement_block_6,
+		            "category_content": self.ecaops_enablement_block_6
 	          	};
 		          $.ajax({
 		            url:eca_put_url,
@@ -206,62 +206,97 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		            contentType: 'application/json; charset=utf-8',
           			data: ko.toJSON(editable_data),
 		            success: function (data) {
-							ecacoreSixthBlockClose();
+							ecaopsSixthBlockClose();
 			            }
 		          }).fail(function (xhr, textStatus, err) {
           				alert(err);
 		        });
 			};
 
-			self.enablement_load_content('What You Need to Know', '', '', 'e1');
-			self.enablement_load_content('Methods and Types', '', '', 'e2');
-			self.enablement_load_content('Methods and Types', 'SCRM', 'SCRM','e3');
-			self.enablement_load_content('Methods and Types', 'SCRM and SE Services', 'SCRM and SE Services', 'e4');
-			self.enablement_load_content('Methods and Types', 'Sales Analytics', 'Sales Analytics', 'e5');
-			self.enablement_load_content('Methods and Types', 'ASR Lookup', 'ASR Lookup', 'e6');
+			self.ecaops_enablement_load_content('What You Need to Know', '', '', 'e1');
+			self.ecaops_enablement_load_content('Methods and Types', '', '', 'e2');
+			self.ecaops_enablement_load_content('Methods and Types', 'SCRM', 'SCRM','e3');
+			self.ecaops_enablement_load_content('Methods and Types', 'SCRM and SE Services', 'SCRM and SE Services', 'e4');
+			self.ecaops_enablement_load_content('Methods and Types', 'Sales Analytics', 'Sales Analytics', 'e5');
+			self.ecaops_enablement_load_content('Methods and Types', 'ASR Lookup', 'ASR Lookup', 'e6');
 
-			self.ecacoreFirstBlockOpen = function() { 
-				$("#ecacoreFirstBlockDialog").ojDialog("open");
+			self.ecaopsFirstBlockOpen = function() { 
+				$("#ecaopsFirstBlockDialog").ojDialog("open");
 			};
-			ecacoreFirstBlockClose = function() { 
-				$("#ecacoreFirstBlockDialog").ojDialog("close");
-			};
-
-			self.ecacoreSecondBlockOpen = function() { 
-				$("#ecacoreSecondBlockDialog").ojDialog("open");
-			};
-			ecacoreSecondBlockClose = function() { 
-				$("#ecacoreSecondBlockDialog").ojDialog("close");
+			ecaopsFirstBlockClose = function() { 
+				$("#ecaopsFirstBlockDialog").ojDialog("close");
 			};
 
-			self.ecacoreThirdBlockOpen = function() { 
-				$("#ecacoreThirdBlockDialog").ojDialog("open");
+			self.ecaopsSecondBlockOpen = function() { 
+				$("#ecaopsSecondBlockDialog").ojDialog("open");
 			};
-			ecacoreThirdBlockClose = function() { 
-				$("#ecacoreThirdBlockDialog").ojDialog("close");
-			};
-
-			self.ecacoreFourthBlockOpen = function() { 
-				$("#ecacoreFourthBlockDialog").ojDialog("open");
-			};
-			ecacoreFourthBlockClose = function() { 
-				$("#ecacoreFourthBlockDialog").ojDialog("close");
+			ecaopsSecondBlockClose = function() { 
+				$("#ecaopsSecondBlockDialog").ojDialog("close");
 			};
 
-			self.ecacoreFifthBlockOpen = function() { 
-				$("#ecacoreFifthBlockDialog").ojDialog("open");
+			self.ecaopsThirdBlockOpen = function() { 
+				$("#ecaopsThirdBlockDialog").ojDialog("open");
 			};
-			ecacoreFifthBlockClose = function() { 
-				$("#ecacoreFifthBlockDialog").ojDialog("close");
-			};
-
-			self.ecacoreSixthBlockOpen = function() { 
-				$("#ecacoreSixthBlockDialog").ojDialog("open");
-			};
-			ecacoreSixthBlockClose = function() { 
-				$("#ecacoreSixthBlockDialog").ojDialog("close");
+			ecaopsThirdBlockClose = function() { 
+				$("#ecaopsThirdBlockDialog").ojDialog("close");
 			};
 
+			self.ecaopsFourthBlockOpen = function() { 
+				$("#ecaopsFourthBlockDialog").ojDialog("open");
+			};
+			ecaopsFourthBlockClose = function() { 
+				$("#ecaopsFourthBlockDialog").ojDialog("close");
+			};
+
+			self.ecaopsFifthBlockOpen = function() { 
+				$("#ecaopsFifthBlockDialog").ojDialog("open");
+			};
+			ecaopsFifthBlockClose = function() { 
+				$("#ecaopsFifthBlockDialog").ojDialog("close");
+			};
+
+			self.ecaopsSixthBlockOpen = function() { 
+				$("#ecaopsSixthBlockDialog").ojDialog("open");
+			};
+			ecaopsSixthBlockClose = function() { 
+				$("#ecaopsSixthBlockDialog").ojDialog("close");
+			};
+
+						self.iseditpermitted = function () {
+       
+                if(usertype.includes("ECAL_ADMIN")){
+                    setssostatus('.ecaladminshow', 'inline-block');
+                    }
+                else{
+	                setssostatus('.ecaladminshow', 'none');
+	                }
+                        
+                if(usertype.includes("ECAL_ADMIN")||usertype.includes("ECAL_BOARD")){
+		        setssostatus('.ecalboardshow', 'inline-block');
+		        }
+		        else{
+		                        setssostatus('.ecalboardshow', 'none');
+		                        }
+                                                    
+		      }
+
+		      setInterval(function () {
+		        self.iseditpermitted();
+		      }, 1000);
+		                                                
+                                                
+        setssostatus = function (selector, visibility) {
+        var nodes = document.querySelectorAll(selector),
+          node,
+          styleProperty = function (a, b) {
+            return window.getComputedStyle ? window.getComputedStyle(a).getPropertyValue(b) : a.currentStyle[b];
+          };
+	 		[].forEach.call(nodes, function (a, b) {
+	          node = a;
+	          node.style.display = visibility;
+		    });
+    	  }
+    	  
 		}
 	        return new CatalogViewModel();
 	});   
