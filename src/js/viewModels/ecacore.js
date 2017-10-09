@@ -36,6 +36,12 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.ecacore_enablement_block_15 = ko.observable();
 			self.ecacore_enablement_block_16 = ko.observable();
 			self.ecacore_enablement_block_17 = ko.observable();
+			self.ecacore_enablement_block_18 = ko.observable();
+			self.ecacore_enablement_block_19 = ko.observable();
+			self.ecacore_enablement_block_20 = ko.observable();
+			self.ecacore_enablement_block_21 = ko.observable();
+			self.ecacore_enablement_block_22 = ko.observable();
+
 
 			var id_ecacore_enablement_block_1;
 			var id_ecacore_enablement_block_2;
@@ -54,6 +60,11 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			var id_ecacore_enablement_block_15;
 			var id_ecacore_enablement_block_16;
 			var id_ecacore_enablement_block_17;
+			var id_ecacore_enablement_block_18;
+			var id_ecacore_enablement_block_19;
+			var id_ecacore_enablement_block_20;
+			var id_ecacore_enablement_block_21;
+			var id_ecacore_enablement_block_22;
 
 				var editable_data_array = [{
 		            "content_id": id_ecacore_enablement_block_1,
@@ -106,6 +117,21 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 	          	},{
 		            "content_id": id_ecacore_enablement_block_17,
 		            "category_content": self.ecacore_enablement_block_17
+	          	},{
+		            "content_id": id_ecacore_enablement_block_18,
+		            "category_content": self.ecacore_enablement_block_18
+	          	},{
+		            "content_id": id_ecacore_enablement_block_19,
+		            "category_content": self.ecacore_enablement_block_19
+	          	},{
+		            "content_id": id_ecacore_enablement_block_20,
+		            "category_content": self.ecacore_enablement_block_20
+	          	},{
+		            "content_id": id_ecacore_enablement_block_21,
+		            "category_content": self.ecacore_enablement_block_21
+	          	},{
+		            "content_id": id_ecacore_enablement_block_22,
+		            "category_content": self.ecacore_enablement_block_22
 	          	}]
 
 			self.ecacore_enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
@@ -192,6 +218,26 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 						else if(text_div == 'e17'){
 							self.ecacore_enablement_block_17(data.content);
 							id_ecacore_enablement_block_17 = data.content_id;
+							}
+						else if(text_div == 'e18'){
+							self.ecacore_enablement_block_18(data.content);
+							id_ecacore_enablement_block_18 = data.content_id;
+							}
+						else if(text_div == 'e19'){
+							self.ecacore_enablement_block_19(data.content);
+							id_ecacore_enablement_block_19 = data.content_id;
+							}
+						else if(text_div == 'e20'){
+							self.ecacore_enablement_block_20(data.content);
+							id_ecacore_enablement_block_20 = data.content_id;
+							}
+						else if(text_div == 'e21'){
+							self.ecacore_enablement_block_21(data.content);
+							id_ecacore_enablement_block_21 = data.content_id;
+							}
+						else if(text_div == 'e22'){
+							self.ecacore_enablement_block_22(data.content);
+							id_ecacore_enablement_block_22 = data.content_id;
 							}
 				   	    }
 	          		});
@@ -519,6 +565,101 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		        });
 			};
 
+			self.ecacoreSaveEighteenthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_18,
+		            "category_content": self.ecacore_enablement_block_18
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreEighteenthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveNineteenthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_19,
+		            "category_content": self.ecacore_enablement_block_19
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreNineteenthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveTwentiethBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_20,
+		            "category_content": self.ecacore_enablement_block_20
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreTwentiethBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveTwentyFirstBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_21,
+		            "category_content": self.ecacore_enablement_block_21
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreTwentyFirstBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveTwentySecondBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_22,
+		            "category_content": self.ecacore_enablement_block_22
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreTwentySecondBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
 			self.ecacore_enablement_load_content('What You Need to Know', '', '', 'e1');
 			self.ecacore_enablement_load_content('Methods and Types', '', '', 'e2');
 			self.ecacore_enablement_load_content('ECAL 101', 'Cloud Architecture Foundation', 'Cloud Architecture Foundation','e3');
@@ -535,7 +676,12 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Oracle Architect Certification', 'Oracle Architect Certification','e14');
 			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECAL Field Repository', 'ECAL Field Repository', 'e15');
 			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECA Engagement and Contribution', 'ECA Engagement and Contribution', 'e16');
-			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECAL Industry Solutions', 'ECAL Industry Solutions', 'e17');
+			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECAL Industry Solutions', 'ECAL Industry Solutions', '', 'e17');
+			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Migration & Adoption Planning', '', 'e18');
+			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Solution Proposal', '', 'e19');
+			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Onboarding & Adoption Prep', '', 'e20');
+			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Solution Deployment', '', 'e21');
+			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Cloud Value Review', '', 'e22');
 
 
 			self.ecacoreFirstBlockOpen = function() { 
@@ -655,6 +801,41 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			ecacoreSeventeenthBlockClose = function() { 
 				$("#ecacoreSeventeenthBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreEighteenthBlockOpen = function() { 
+				$("#ecacoreEighteenthBlockDialog").ojDialog("open");
+			};
+			ecacoreEighteenthBlockClose = function() { 
+				$("#ecacoreEighteenthBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreNineteenthBlockOpen = function() { 
+				$("#ecacoreNineteenthBlockDialog").ojDialog("open");
+			};
+			ecacoreNineteenthBlockClose = function() { 
+				$("#ecacoreNineteenthBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreTwentiethBlockOpen = function() { 
+				$("#ecacoreTwentiethBlockDialog").ojDialog("open");
+			};
+			ecacoreTwentiethBlockClose = function() { 
+				$("#ecacoreTwentiethBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreTwentyFirstBlockOpen = function() { 
+				$("#ecacoreTwentyFirstBlockDialog").ojDialog("open");
+			};
+			ecacoreTwentyFirstBlockClose = function() { 
+				$("#ecacoreTwentyFirstBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreTwentySecondBlockOpen = function() { 
+				$("#ecacoreTwentySecondBlockDialog").ojDialog("open");
+			};
+			ecacoreTwentySecondBlockClose = function() { 
+				$("#ecacoreTwentySecondBlockDialog").ojDialog("close");
 			};
 
 						self.iseditpermitted = function () {

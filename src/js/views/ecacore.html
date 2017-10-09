@@ -135,6 +135,37 @@
             <p data-bind="html:ecacore_enablement_block_11"></p>
                 </div>
                     </oj-collapsible>
+                    <oj-collapsible id="ic2"> <span slot="header">Migration & Adoption Planning </span>
+                      <div>
+                  <div data-bind="click:ecacoreEighteenthBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_18"></p>
+                </div>
+                    </oj-collapsible>
+                    <oj-collapsible id="ic2"> <span slot="header">Solution Proposal </span>
+                      <div>
+                  <div data-bind="click:ecacoreNineteenthBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_19"></p>
+                </div>
+                    </oj-collapsible>
+                    <oj-collapsible id="ic2"> <span slot="header">Onboarding & Adoption Prep </span>
+                      <div>
+                  <div data-bind="click:ecacoreTwentiethBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_20"></p>
+                </div>
+                    </oj-collapsible>
+                    <oj-collapsible id="ic2"> <span slot="header">Solution Deployment </span>
+                      <div>
+                  <div data-bind="click:ecacoreTwentyFirstBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_21"></p>
+                </div>
+                    </oj-collapsible>
+                    <oj-collapsible id="ic2"> <span slot="header">Cloud Value Review </span>
+                      <div>
+                  <div data-bind="click:ecacoreTwentySecondBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_22"></p>
+                </div>
+                    </oj-collapsible>
+
                   </oj-accordion>
                 </div>
               </oj-collapsible>
@@ -406,6 +437,61 @@
     <div class="oj-dialog-footer"> 
       <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
       <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveSeventeenthBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreEighteenthBlockDialog" title="Edit ECAL Industry Solutions" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_18, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveEighteenthBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreNineteenthBlockDialog" title="Edit ECAL Industry Solutions" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_19, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveNineteenthBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreTwentiethBlockDialog" title="Edit ECAL Industry Solutions" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_20, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveTwentiethBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreTwentyFirstBlockDialog" title="Edit ECAL Industry Solutions" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_21, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveTwentyFirstBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreTwentySecondBlockDialog" title="Edit ECAL Industry Solutions" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_22, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveTwentySecondBlockValue"> </button>
     </div>
   </div>
 
