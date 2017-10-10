@@ -28,6 +28,9 @@ self.expandall = function(){
 			self.sales_enablement_block_5 = ko.observable();
 			self.sales_enablement_block_6 = ko.observable();
 			self.sales_enablement_block_7 = ko.observable();
+			self.sales_enablement_block_8 = ko.observable();
+			self.sales_enablement_block_9 = ko.observable();
+			self.sales_enablement_block_10 = ko.observable();
 
 			var id_sales_enablement_block_1;
 			var id_sales_enablement_block_2;
@@ -36,6 +39,9 @@ self.expandall = function(){
 			var id_sales_enablement_block_5;
 			var id_sales_enablement_block_6;
 			var id_sales_enablement_block_7;
+			var id_sales_enablement_block_8;
+			var id_sales_enablement_block_9;
+			var id_sales_enablement_block_10;
 
 			var editable_data_array = [{
 		            "content_id": id_sales_enablement_block_1,
@@ -58,6 +64,15 @@ self.expandall = function(){
 	          	},{
 		            "content_id": id_sales_enablement_block_7,
 		            "category_content": self.sales_enablement_block_7
+	          	},{
+		            "content_id": id_sales_enablement_block_8,
+		            "category_content": self.sales_enablement_block_8
+	          	},{
+		            "content_id": id_sales_enablement_block_9,
+		            "category_content": self.sales_enablement_block_9
+	          	},{
+		            "content_id": id_sales_enablement_block_10,
+		            "category_content": self.sales_enablement_block_10
 	          	}]
 
 			self.enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
@@ -104,6 +119,18 @@ self.expandall = function(){
 						else if(text_div == 'e7'){
 							self.sales_enablement_block_7(data.content);
 							id_sales_enablement_block_7 = data.content_id;
+							}
+						else if(text_div == 'e8'){
+							self.sales_enablement_block_8(data.content);
+							id_sales_enablement_block_8 = data.content_id;
+							}
+						else if(text_div == 'e9'){
+							self.sales_enablement_block_9(data.content);
+							id_sales_enablement_block_9 = data.content_id;
+							}
+						else if(text_div == 'e10'){
+							self.sales_enablement_block_10(data.content);
+							id_sales_enablement_block_10 = data.content_id;
 							}
 				
 		        	    }
@@ -242,6 +269,63 @@ self.expandall = function(){
 		        });
 			};
 
+			self.salesSaveEighthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_sales_enablement_block_8,
+		            "category_content": self.sales_enablement_block_8
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							salesEighthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.salesSaveNinthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_sales_enablement_block_9,
+		            "category_content": self.sales_enablement_block_9
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							salesNinthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.salesSaveTenthBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_sales_enablement_block_10,
+		            "category_content": self.sales_enablement_block_10
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							salesTenthBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
 
 			self.enablement_load_content('What You Need to Know', '', '', 'e1');
 			self.enablement_load_content('Methods and Types', '', '', 'e2');
@@ -250,6 +334,9 @@ self.expandall = function(){
 			self.enablement_load_content('Methods and Types', 'On-Demand Product Resources', 'On-Demand Product Resources', 'e5');
 			self.enablement_load_content('Methods and Types', 'Live Product Community Events', 'Live Product Community Events', 'e6');
 			self.enablement_load_content('Methods and Types','Product and Solution Tutorials', 'Product and Solution Tutorials', 'e7');
+			self.enablement_load_content('What You Need to Know','Sales Strategy and Positioning', '', 'e8');
+			self.enablement_load_content('What You Need to Know','Cloud Platform and Product', '', 'e9');
+			self.enablement_load_content('What You Need to Know','Cloud Value Propositions and Sales Messaging', '', 'e10');
 
 			self.salesFirstBlockOpen = function() { 
 				$("#salesFirstBlockDialog").ojDialog("open");
@@ -299,6 +386,29 @@ self.expandall = function(){
 			salesSeventhBlockClose = function() { 
 				$("#salesSeventhBlockDialog").ojDialog("close");
 			};
+
+			self.salesEighthBlockOpen = function() { 
+				$("#salesEighthBlockDialog").ojDialog("open");
+			};
+			salesEighthBlockClose = function() { 
+				$("#salesEighthBlockDialog").ojDialog("close");
+			};
+
+			self.salesNinthBlockOpen = function() { 
+				$("#salesNinthBlockDialog").ojDialog("open");
+			};
+			salesNinthBlockClose = function() { 
+				$("#salesNinthBlockDialog").ojDialog("close");
+			};
+
+			self.salesTenthBlockOpen = function() { 
+				$("#salesTenthBlockDialog").ojDialog("open");
+			};
+			salesTenthBlockClose = function() { 
+				$("#salesTenthBlockDialog").ojDialog("close");
+			};
+
+
 
 						self.iseditpermitted = function () {
        
