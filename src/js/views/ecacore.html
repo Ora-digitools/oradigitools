@@ -58,21 +58,18 @@
           <ul class="col-sm-12 nopadding">
             <li class="col-xs-4 active nopaddingxs ecacorelinks"><div class="tabheading oj-sm-12">ECAL 101
               <div class="orangtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div></div>
-              <div class="oj-sm-12 linkdesc sales_desc"><p>ECAL Core Knowledge is focused on execution and delivery.  How to execute within the ECAL Framework, How to architect Cloud Solutions, and What are the solutions and execution practices that have driven success. 
-
-</p></div>
+              <div class="oj-sm-12 linkdesc sales_desc"><div data-bind="click:ecacoreECALBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_ecal"></p></div>
             </li>
             <li class="col-xs-4 active nopaddingxs ecacorelinks"><div class="tabheading oj-sm-12">Cloud Architecture Skills
               <div class="orangtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div></div>
-              <div class="oj-sm-12 linkdesc sales_desc"><p>ECAL Core Knowledge is focused on execution and delivery.  How to execute within the ECAL Framework, How to architect Cloud Solutions, and What are the solutions and execution practices that have driven success. 
-
-</p></div>
+              <div class="oj-sm-12 linkdesc sales_desc"><div data-bind="click:ecacoreCASBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_cas"></p></div>
             </li>
             <li class="col-xs-4 active nopaddingxs ecacorelinks"><div class="tabheading oj-sm-12">ECA Cloud Solutions
               <div class="orangtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div></div>
-              <div class="oj-sm-12 linkdesc sales_desc"><p>ECAL Core Knowledge is focused on execution and delivery.  How to execute within the ECAL Framework, How to architect Cloud Solutions, and What are the solutions and execution practices that have driven success. 
-
-</p></div>
+              <div class="oj-sm-12 linkdesc sales_desc"><div data-bind="click:ecacoreECSBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecacore_enablement_block_ecs"></p></div>
             </li>
           
           </ul>
@@ -502,6 +499,39 @@
     <div class="oj-dialog-footer"> 
       <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
       <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveTwentySecondBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreECALBlockDialog" title="Edit ECAL 101" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_ecal, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveECALBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreCASBlockDialog" title="Edit Cloud Architecture Skills" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_cas, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveCASBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecacoreECSBlockDialog" title="Edit ECA Cloud Solutions" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecacore_enablement_block_ecs, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecacoreSaveECSBlockValue"> </button>
     </div>
   </div>
 

@@ -41,6 +41,9 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.ecacore_enablement_block_20 = ko.observable();
 			self.ecacore_enablement_block_21 = ko.observable();
 			self.ecacore_enablement_block_22 = ko.observable();
+			self.ecacore_enablement_block_ecal = ko.observable();
+			self.ecacore_enablement_block_cas = ko.observable();
+			self.ecacore_enablement_block_ecs = ko.observable();
 
 
 			var id_ecacore_enablement_block_1;
@@ -65,6 +68,9 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			var id_ecacore_enablement_block_20;
 			var id_ecacore_enablement_block_21;
 			var id_ecacore_enablement_block_22;
+			var id_ecacore_enablement_block_ecal;
+			var id_ecacore_enablement_block_cas;
+			var id_ecacore_enablement_block_ecs;
 
 				var editable_data_array = [{
 		            "content_id": id_ecacore_enablement_block_1,
@@ -132,6 +138,15 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 	          	},{
 		            "content_id": id_ecacore_enablement_block_22,
 		            "category_content": self.ecacore_enablement_block_22
+	          	},{
+		            "content_id": id_ecacore_enablement_block_ecal,
+		            "category_content": self.ecacore_enablement_block_ecal
+	          	},{
+		            "content_id": id_ecacore_enablement_block_cas,
+		            "category_content": self.ecacore_enablement_block_cas
+	          	},{
+		            "content_id": id_ecacore_enablement_block_ecs,
+		            "category_content": self.ecacore_enablement_block_ecs
 	          	}]
 
 			self.ecacore_enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
@@ -238,6 +253,18 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 						else if(text_div == 'e22'){
 							self.ecacore_enablement_block_22(data.content);
 							id_ecacore_enablement_block_22 = data.content_id;
+							}
+						else if(text_div == 'ecal'){
+							self.ecacore_enablement_block_ecal(data.content);
+							id_ecacore_enablement_block_ecal = data.content_id;
+							}
+						else if(text_div == 'cas'){
+							self.ecacore_enablement_block_cas(data.content);
+							id_ecacore_enablement_block_cas = data.content_id;
+							}
+						else if(text_div == 'ecs'){
+							self.ecacore_enablement_block_ecs(data.content);
+							id_ecacore_enablement_block_ecs = data.content_id;
 							}
 				   	    }
 	          		});
@@ -661,6 +688,63 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		        });
 			};
 
+			self.ecacoreSaveECALBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_ecal,
+		            "category_content": self.ecacore_enablement_block_ecal
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreECALBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveCASBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_cas,
+		            "category_content": self.ecacore_enablement_block_cas
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreCASBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecacoreSaveECSBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecacore_enablement_block_ecs,
+		            "category_content": self.ecacore_enablement_block_ecs
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecacoreECSBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
 			self.ecacore_enablement_load_content('What You Need to Know', '', '', 'e1');
 			self.ecacore_enablement_load_content('Methods and Types', '', '', 'e2');
 			self.ecacore_enablement_load_content('ECAL 101', 'Cloud Architecture Foundation', 'Cloud Architecture Foundation','e3');
@@ -683,6 +767,10 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Onboarding & Adoption Prep', '', 'e20');
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Solution Deployment', '', 'e21');
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Cloud Value Review', '', 'e22');
+
+			self.ecacore_enablement_load_content('ECAL 101', '', '', 'ecal');
+			self.ecacore_enablement_load_content('Cloud Architecture Skills', '', '', 'cas');
+			self.ecacore_enablement_load_content('ECA Cloud Solutions', '', '', 'ecs');
 
 
 			self.ecacoreFirstBlockOpen = function() { 
@@ -837,6 +925,27 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			};
 			ecacoreTwentySecondBlockClose = function() { 
 				$("#ecacoreTwentySecondBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreECALBlockOpen = function() { 
+				$("#ecacoreECALBlockDialog").ojDialog("open");
+			};
+			ecacoreECALBlockClose = function() { 
+				$("#ecacoreECALBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreCASBlockOpen = function() { 
+				$("#ecacoreCASBlockDialog").ojDialog("open");
+			};
+			ecacoreCASBlockClose = function() { 
+				$("#ecacoreCASBlockDialog").ojDialog("close");
+			};
+
+			self.ecacoreECSBlockOpen = function() { 
+				$("#ecacoreECSBlockDialog").ojDialog("open");
+			};
+			ecacoreECSBlockClose = function() { 
+				$("#ecacoreECSBlockDialog").ojDialog("close");
 			};
 
 						self.iseditpermitted = function () {
