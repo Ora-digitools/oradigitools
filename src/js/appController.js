@@ -104,26 +104,30 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
          new footerLink('Home', 'home', '?root=ecacertification'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),
-        new footerLink('Contact Board', 'contactmoard', 'mailto:eca_cert_board_us_grp@oracle.com'),
          new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
 
       ];
 	  var footer3 = [
-           new footerLink('Home', 'home', '?root=ecacertification'),
+           new footerLink('Home', 'home', '?root=ecaenablement'),
+        new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
+        new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),        
+         new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
+		
+      ];
+	  var footer4 = [
+           new footerLink('Home', 'home', '?root=ecaenablement'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),
         new footerLink('Contact Board', 'contactmoard', 'mailto:ecal-pmo-grp_us_grp@oracle.com'),
          new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
 		
-       
-    
       ];
 	  
       var str = window.location.href;
     var res = str.split("root=");
 	// console.log(res[1]);
 	  
-	  if(res[1] == "ecacertification" || res[1] == "eca-qualify"|| res[1] == "eca-certify"|| res[1] == "eca-nominate"|| res[1] == "eca-board")
+	  if(res[1] == "ecacertification" || res[1] == "eca-qualify"|| res[1] == "eca-certify"|| res[1] == "eca-nominate")
 	  {
 		  this.currentModule = ko.observable("eca");
 		  self.headerLinks = ko.observableArray(arr2);  
@@ -137,6 +141,11 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 		  self.footerLinks = ko.observableArray(footer3);  
 		 
 	  }
+	   else if(res[1] == "eca-board"){
+		   this.currentModule = ko.observable("eca");
+		  self.headerLinks = ko.observableArray(arr2);  
+		  self.footerLinks = ko.observableArray(footer4);  
+		   }
 	  else{
 		   this.currentModule = ko.observable("cloudhubs");
 		   self.headerLinks = ko.observableArray(arr1);
@@ -317,6 +326,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 
           return 'active';
         }
+		
+		
 
       }
       debuglog = function (msg) {

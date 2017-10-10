@@ -641,6 +641,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 		        });
 			};
 
+
 			self.ecacoreSaveTwentySecondBlockValue = function(param1, param2){
 				var editable_data = {
 		            "content_id": id_ecacore_enablement_block_22,

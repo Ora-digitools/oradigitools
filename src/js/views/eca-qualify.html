@@ -1,11 +1,11 @@
 <!-- Start Slider -->
 
 <div class="row ccontainer">
-  <div id="eca-text-carousel" class="carousel slide" data-ride="carousel"> 
+  <div id="eca-text-carousel1" class="carousel slide" data-ride="carousel"> 
     <!-- Indicators --> 
     
     <!-- Wrapper for slides -->
-   <div class="row col-sm-12">
+    <div class="row col-sm-12">
       <div class="container">
         <div class="carousel-inner">
           <div class="item active">
@@ -46,9 +46,8 @@
           </div>
         </div>
         <div class="ecablocks_link">
-        <div data-bind="click:firstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:first_link_data"></p>
-
+          <div data-bind="click:firstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:first_link_data"></p>
         </div>
       </div>
       <!--blocks --> 
@@ -67,10 +66,9 @@
             </div>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:secondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:second_link_data"></p>
-
+        <div class="ecablocks_link">
+          <div data-bind="click:secondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:second_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -88,10 +86,9 @@
             </div>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:thirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:third_link_data"></p>
-
+        <div class="ecablocks_link">
+          <div data-bind="click:thirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:third_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -109,10 +106,9 @@
             </div>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:fourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:fourth_link_data"></p>
-
+        <div class="ecablocks_link">
+          <div data-bind="click:fourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:fourth_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -130,10 +126,9 @@
             </div>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:fifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:fifth_link_data"></p>
-
+        <div class="ecablocks_link">
+          <div data-bind="click:fifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:fifth_link_data"></p>
         </div>
       </div>
       <!--blocks -->
@@ -151,10 +146,9 @@
             </div>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:sixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:sixth_link_data"></p>
-
+        <div class="ecablocks_link">
+          <div data-bind="click:sixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:sixth_link_data"></p>
         </div>
       </div>
     </div>
@@ -165,176 +159,161 @@
 <div id="dialogWrapper">
   <div style="display:none" id="firstGuidanceDialog" title="Edit Role in Solution Engineering" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:first_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_first_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:first_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_first_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="secondGuidanceDialog" title="Edit Do I and My Manager believe I have the Core Skills?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:second_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_second_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:second_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_second_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="thirdGuidanceDialog" title="Edit Am I an ECA Practitioner?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:third_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_third_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:third_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_third_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="fourthGuidanceDialog" title="Edit Have I Produced Cloud Success?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fourth_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fourth_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="fifthGuidanceDialog" title="Edit What Are My ECA Community Contributions?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fifth_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fifth_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="sixthGuidanceDialog" title="Edit Can I Sell and Do I Lead?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:sixth_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_sixth_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:sixth_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_sixth_guidance"> </button>
+    </div>
   </div>
-
 </div>
-
 
 <!-- EDIT LINKS-->
 <div id="dialogWrapper">
   <div style="display:none" id="firstLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:first_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_first_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:first_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_first_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="secondLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:second_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_second_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:second_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_second_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="thirdLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:third_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_third_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:third_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_third_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="fourthLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fourth_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fourth_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:fourth_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fourth_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="fifthLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:fifth_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fifth_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:fifth_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_fifth_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="sixthLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:sixth_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_sixth_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:sixth_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_sixth_link"> </button>
+    </div>
   </div>
-
 </div>
 
 <!-- last 4 blocks for eca -->
 <div class="row">
   <div class="container">
-    <div class="col-sm-12 processmodel_h">
-        ECA CERTIFICATION PROCESS MODEL
-    </div>
-    
+    <div class="col-sm-12 processmodel_h"> ECA CERTIFICATION PROCESS MODEL </div>
     <div class="col-sm-12 ">
-    <div class="processmodel_c col-sm-12"><div class=" haligncenter">
-      <div class="col-sm-3">
-        <div class="org_block process_allblocks active-eca-block">
-          <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>Qualify</a>
+      <div class="processmodel_c col-sm-12">
+        <div class=" haligncenter">
+          <div class="col-sm-3">
+            <div class="org_block process_allblocks active-eca-block"> <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>
+              Qualify</a> </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="blue_block process_allblocks inactive-eca-block"> <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>
+              Nominate</a> </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="green_block process_allblocks inactive-eca-block"> <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>
+              Certify</a> </div>
+          </div>
+          <div class="col-sm-3 ecalboardshow">
+            <div class="maroon_block process_allblocks inactive-eca-block"> <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>
+              ECA Board</a> </div>
+          </div>
         </div>
-      </div>
-      
-       <div class="col-sm-3">
-       <div class="blue_block process_allblocks inactive-eca-block">
-        <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>Nominate</a>
-       </div>
-      </div>
-     
-      <div class="col-sm-3">
-        <div class="green_block process_allblocks inactive-eca-block">
-          <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>Certify</a>
+         <div class=" haligncenter">
+          <div class="col-sm-12">
+            <div class="lb_block"> <a href="?root=ecacertification">ECA Certification Overview</a> </div>
+          </div>
+         
         </div>
-      </div>
- <div class="col-sm-3 ecalboardshow">
-        <div class="maroon_block process_allblocks inactive-eca-block">
-          <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>ECA Board</a>
-        </div>
-      </div>
       </div>
     </div>
-  </div> 
-</div>
+  </div>
 </div>
