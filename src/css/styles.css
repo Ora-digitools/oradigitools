@@ -605,12 +605,69 @@ footer {
 	position: relative;
 	outline: none;
 }
+.ecacoretabs .oj-tabs-gen-div {
+	background: none;
+	text-align: auto;
+	padding: 0px 0 0;
+	font-size: 16px;
+	display: flex;
+	opacity: 1;
+	align-items: center;
+	justify-content: center;
+	min-height: 90px;
+	position: relative;
+	outline: none;
+}
+
+.ecacoretabs a:hover{
+	text-decoration:none !important;
+	
+	}
+
+.ecacoretabs li.oj-selected .tabheading {
+	opacity:1}
+
+.tabheading {
+	background: #efefef;
+	text-align: center;
+	padding: 0px 0 0;
+	font-size: 16px;
+	display: flex;
+	opacity: 0.4;
+	align-items: center;
+	justify-content: center;
+	min-height: 90px;
+	position: relative;
+	outline: none;
+	color:#000;
+	font-weight:bold;
+}
 .oj-tabs a {
 	outline: none;
 }
+.ecacoretabs .ecacorelinks  a {
+	width:100%;
+}
+.ecacoretabs .linkdesc{
+color: rgb(51, 51, 51);
+cursor: text;
+line-height: 1.25;
+text-align: left;
+text-decoration: none;
+font-size:14px;
+padding-top:10px;
+opacity:1;
+text-decoration:none !important;
+}
+.ecacoretabs .linkdesc:hover{
+	text-decoration:none;}
 li.oj-selected .oj-tabs-gen-div {
 	opacity: 1;
 	background: #efefef;
+}
+.ecacoretabs li.oj-selected .oj-tabs-gen-div {
+	opacity: 1;
+	background: none;
 }
 .oj-select {
 	font-size: inherit
@@ -647,6 +704,16 @@ li.oj-selected .oj-tabs-gen-div {
 	text-decoration: none;
 	color: #000;
 	font-weight: bold;
+}
+.ecacoretabs .oj-tabs .oj-tabs-conveyor a:link, .ecacoretabs .oj-tabs .oj-tabs-conveyor a:visited {
+	text-decoration: none;
+	color: rgb(51, 122, 183);
+	font-weight: bold;
+}
+.ecacoretabs .oj-tabs a:link, .ecacoretabs .oj-tabs a:visited {
+	text-decoration: none;
+	color: rgb(51, 122, 183);
+	font-weight: normal;
 }
 .ecarow .oj-tabs-gen-div .orangtab {
 	background: #999590 none repeat scroll 0 0;
@@ -1528,6 +1595,30 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	display: flex;
 	align-items: center;
 }
+#eca-text-carousel1 {
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	background: rgba(0, 0, 0, 0) url("images/eca_banner_bg_1.jpg") no-repeat scroll 0 0 / cover;
+	font-size: 18px;
+	font-style: italic;
+	min-height: 265px;
+	background-position: center;
+	display: flex;
+	align-items: center;
+}
+#ecaenablement-text-carousel {
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	background: rgba(0, 0, 0, 0) url("images/eca-enablement-header.jpg") no-repeat scroll 0 0 / cover;
+	font-size: 18px;
+	font-style: italic;
+	min-height: 265px;
+	background-position: center;
+	display: flex;
+	align-items: center;
+}
 #eca-text-carousel h1 {
 	text-align: right;
 }
@@ -1540,6 +1631,9 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	border: 1px solid #dee0e0;
 	padding-bottom: 15px;
 }
+.salesbuttons{
+	margin-top:20px;
+	}
 .salesbuttons li {
 	list-style: none;
 }
@@ -1548,7 +1642,11 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
  margin:5px;
  padding:20px;
  text-align:center;
- border-bottom:5px solid #f39220
+ border-bottom:5px solid #f39220;
+ font-weight:bold;
+}
+.salesbuttons .sales_desc {
+padding:5px;
 }
 
 .ecarow .aligncenter {
@@ -1622,6 +1720,8 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	font-weight: bold;
 }
 .process_allblocks {
+	margin-left:auto;
+	margin-right:auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1633,6 +1733,7 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 	flex-flow: column nowrap;
 	text-align: center;
 	margin-bottom: 10px;
+	
 }
 .process_allblocks img {
 	max-width: 80px;
@@ -1659,14 +1760,28 @@ a.oj-navigationlist-item-content .oj-navigationlist-item-label {
 .maroon_block {
 	background: #942545;
 }
-.ecablocks_h {
-	min-height: 80px;
+.maroon_block {
+	background: #942545;
+}
+.lb_block {
+	background: #5a92c0;
+	text-align:center;
+	padding:20px;
+	border-radius: 10px;
+	font-size: 16px;
 }
 .ecablocks_link {
 	margin-top: 20px;
 	border: 1px solid #bababa;
 	padding: 10px;
+	
 }
+.lb_block a{
+	color:#fff;
+	}
+.lb_block a:hover{
+	opacity:0.7;
+	}	
 .edit_icon {
 	cursor: pointer;
 }
@@ -2203,6 +2318,13 @@ ul#profiletabs {
 @media (min-width: 1200px) and (max-width: 1500px) {
 .cloud_hubs li {
 	font-size: 12px;
+}
+}
+
+@media (max-width: 1600px) {
+.linkdesc {
+	max-width:400px;
+	
 }
 }
 
