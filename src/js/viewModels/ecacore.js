@@ -676,7 +676,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Oracle Architect Certification', 'Oracle Architect Certification','e14');
 			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECAL Field Repository', 'ECAL Field Repository', 'e15');
 			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECA Engagement and Contribution', 'ECA Engagement and Contribution', 'e16');
-			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECAL Industry Solutions', 'ECAL Industry Solutions', '', 'e17');
+			self.ecacore_enablement_load_content('ECA Cloud Solutions', 'ECAL Industry Solutions', 'ECAL Industry Solutions', 'e17');
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Migration & Adoption Planning', '', 'e18');
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Solution Proposal', '', 'e19');
 			self.ecacore_enablement_load_content('Cloud Architecture Skills', 'Onboarding & Adoption Prep', '', 'e20');
