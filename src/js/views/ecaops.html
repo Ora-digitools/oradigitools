@@ -39,17 +39,17 @@
             <ul class="col-sm-12 nopadding salesbuttons">
               <li class="col-md-4 active nopaddingxs"><div class="salesbuttons_i"> Engagement Management
 </div>
-               <div class="sales_desc"><p>SCRM supports the management of Solution Engineering Resources and the alignment and reporting of SE activities and tasks against opportunities.  For the ECA, there exists specific requirements to track ECAL Events within SCRM in order to communicate the progress through the customer engagement.
-</p></div>
+               <div class="sales_desc"><div data-bind="click:ecaopsEMBlockOpen" class="edit_icon col-xs-12 "><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecaops_enablement_block_em"></p></div>
               </li>
               <li class="col-md-4 nopaddingxs"><div class="salesbuttons_i"> Resource Management
-</div><div class="sales_desc"><p>SCRM provides the primary tool for managing resources within your engagement.   Today, you will use SCRM for making Solution Engineering resource requests.  As we move the  SE as a Service Model, you will be able to request SE Services in support of key activities and tasks from the Oracle Cloud Solution Hubs and the Field Solution Engineering Teams through the SE as a Service Catalog.  Temporarily, there will be an application for making these requests, that will later (December 2017) migrated to the new SE as a Service Catalog application.
-</p></div>
+</div><div class="sales_desc"><div data-bind="click:ecaopsRMBlockOpen" class="edit_icon col-xs-12 "><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecaops_enablement_block_rm"></p></div>
                
               </li>
               <li class="col-md-4 nopaddingxs"><div class="salesbuttons_i"> Time Management
-</div><div class="sales_desc"><p>SCTA is the primary method for tracking activities and resources against opportunities and engagements within SCRM as well as the management of resource availability.
-</p></div>
+</div><div class="sales_desc"><div data-bind="click:ecaopsTMBlockOpen" class="edit_icon col-xs-12 "><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:ecaops_enablement_block_tm"></p></div>
                
                 
               </li>
@@ -210,6 +210,39 @@
     <div class="oj-dialog-footer"> 
       <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
       <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecaopsSaveSixthBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecaopsEMBlockDialog" title="Edit Engagement Management" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecaops_enablement_block_em, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecaopsSaveEMBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecaopsRMBlockDialog" title="Edit Resource Management" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecaops_enablement_block_rm, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecaopsSaveRMBlockValue"> </button>
+    </div>
+  </div>
+
+  <div style="display:none" id="ecaopsTMBlockDialog" title="Edit Time Management" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:ecaops_enablement_block_tm, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:ecaopsSaveTMBlockValue"> </button>
     </div>
   </div>
 

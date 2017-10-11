@@ -27,6 +27,9 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 			self.ecaops_enablement_block_4 = ko.observable();
 			self.ecaops_enablement_block_5 = ko.observable();
 			self.ecaops_enablement_block_6 = ko.observable();
+			self.ecaops_enablement_block_em = ko.observable();
+			self.ecaops_enablement_block_rm = ko.observable();
+			self.ecaops_enablement_block_tm = ko.observable();
 
 			var id_ecaops_enablement_block_1;
 			var id_ecaops_enablement_block_2;
@@ -34,6 +37,9 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 			var id_ecaops_enablement_block_4;
 			var id_ecaops_enablement_block_5;
 			var id_ecaops_enablement_block_6;
+			var id_ecaops_enablement_block_em;
+			var id_ecaops_enablement_block_rm;
+			var id_ecaops_enablement_block_tm;
 
 			var editable_data_array = [{
 		            "content_id": id_ecaops_enablement_block_1,
@@ -53,6 +59,15 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 	          	},{
 		            "content_id": id_ecaops_enablement_block_6,
 		            "category_content": self.ecaops_enablement_block_6
+	          	},{
+		            "content_id": id_ecaops_enablement_block_em,
+		            "category_content": self.ecaops_enablement_block_em
+	          	},{
+		            "content_id": id_ecaops_enablement_block_rm,
+		            "category_content": self.ecaops_enablement_block_rm
+	          	},{
+		            "content_id": id_ecaops_enablement_block_tm,
+		            "category_content": self.ecaops_enablement_block_tm
 	          	}]
 
 			self.ecaops_enablement_load_content = function(sub_cat_1, sub_cat_2, sub_cat_3, text_div){
@@ -95,6 +110,18 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 						else if(text_div == 'e6'){
 							self.ecaops_enablement_block_6(data.content);
 							id_ecaops_enablement_block_6 = data.content_id;
+							}
+						else if(text_div == 'em'){
+							self.ecaops_enablement_block_em(data.content);
+							id_ecaops_enablement_block_em = data.content_id;
+							}
+						else if(text_div == 'rm'){
+							self.ecaops_enablement_block_rm(data.content);
+							id_ecaops_enablement_block_rm = data.content_id;
+							}
+						else if(text_div == 'tm'){
+							self.ecaops_enablement_block_tm(data.content);
+							id_ecaops_enablement_block_tm = data.content_id;
 							}
 				   	    }
 	          		});
@@ -213,12 +240,73 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 		        });
 			};
 
+			self.ecaopsSaveEMBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecaops_enablement_block_em,
+		            "category_content": self.ecaops_enablement_block_em
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecaopsEMBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecaopsSaveRMBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecaops_enablement_block_rm,
+		            "category_content": self.ecaops_enablement_block_rm
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecaopsRMBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
+			self.ecaopsSaveTMBlockValue = function(param1, param2){
+				var editable_data = {
+		            "content_id": id_ecaops_enablement_block_tm,
+		            "category_content": self.ecaops_enablement_block_tm
+	          	};
+		          $.ajax({
+		            url:eca_put_url,
+		            cache: false,
+		            type: 'POST',
+		            contentType: 'application/json; charset=utf-8',
+          			data: ko.toJSON(editable_data),
+		            success: function (data) {
+							ecaopsTMBlockClose();
+			            }
+		          }).fail(function (xhr, textStatus, err) {
+          				alert(err);
+		        });
+			};
+
 			self.ecaops_enablement_load_content('What You Need to Know', '', '', 'e1');
 			self.ecaops_enablement_load_content('Methods and Types', '', '', 'e2');
 			self.ecaops_enablement_load_content('Methods and Types', 'SCRM', 'SCRM','e3');
 			self.ecaops_enablement_load_content('Methods and Types', 'SCRM and SE Services', 'SCRM and SE Services', 'e4');
 			self.ecaops_enablement_load_content('Methods and Types', 'Sales Analytics', 'Sales Analytics', 'e5');
 			self.ecaops_enablement_load_content('Methods and Types', 'ASR Lookup', 'ASR Lookup', 'e6');
+
+			self.ecaops_enablement_load_content('Engagement Management', '', '', 'em');
+			self.ecaops_enablement_load_content('Resource Management', '', '', 'rm');
+			self.ecaops_enablement_load_content('Time Management', '', '', 'tm');
 
 			self.ecaopsFirstBlockOpen = function() { 
 				$("#ecaopsFirstBlockDialog").ojDialog("open");
@@ -260,6 +348,27 @@ var expanded = $( "#accordionPage" ).ojAccordion( "option", "expanded" );
 			};
 			ecaopsSixthBlockClose = function() { 
 				$("#ecaopsSixthBlockDialog").ojDialog("close");
+			};
+
+			self.ecaopsEMBlockOpen = function() { 
+				$("#ecaopsEMBlockDialog").ojDialog("open");
+			};
+			ecaopsEMBlockClose = function() { 
+				$("#ecaopsEMBlockDialog").ojDialog("close");
+			};
+
+			self.ecaopsRMBlockOpen = function() { 
+				$("#ecaopsRMBlockDialog").ojDialog("open");
+			};
+			ecaopsRMBlockClose = function() { 
+				$("#ecaopsRMBlockDialog").ojDialog("close");
+			};
+
+			self.ecaopsTMBlockOpen = function() { 
+				$("#ecaopsTMBlockDialog").ojDialog("open");
+			};
+			ecaopsTMBlockClose = function() { 
+				$("#ecaopsTMBlockDialog").ojDialog("close");
 			};
 
 						self.iseditpermitted = function () {
