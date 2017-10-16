@@ -1,7 +1,7 @@
 <!-- Start Slider -->
 
 <div class="row ccontainer">
-  <div id="eca-text-carousel1" class="carousel slide" data-ride="carousel"> 
+  <div id="eca-text-carousel-qualify" class="carousel slide" data-ride="carousel"> 
     <!-- Indicators --> 
     
     <!-- Wrapper for slides -->
@@ -252,7 +252,7 @@
     </div>
   </div>
   <div style="display:none" id="fourthLinkDialog" title="Edit this link" 
-       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
     <div class="oj-dialog-body">
       <textarea style="height:250px;width:100%" data-bind="value:fourth_link_data, valueUpdate: 'keyup'"></textarea>
     </div>
