@@ -1,10 +1,63 @@
 define(['ojs/ojcore', 'knockout', 'jquery',
-        'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton', 'ojs/ojdialog'],
+        'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton', 'ojs/ojdialog','ojs/ojanimation'],
 	function (oj, ko, $) {
         function CatalogViewModel() {
 	
 			var self = this;
-						  
+			   
+ // Keep track of whether the front or back is showing
+    self.showingFront = true;
+	    self.showingBack = true;
+self.buttonClick = function(id) {
+	
+    var elem = document.getElementById(id);
+    // Determine startAngle and endAngle
+    var startAngle = self.showingFront ? '0deg' : '180deg';
+    var endAngle = self.showingFront ? '180deg' : '0deg';
+
+
+    var elemall = document.getElementsByClassName("flipped");
+
+    oj.AnimationUtils['flipIn'](elemall, {
+        'flipTarget': 'children',
+        'persist': 'all',
+        'startAngle': endAngle,
+        'endAngle': startAngle
+    });
+    $('.cardcontainer').removeClass("flipped");
+    $('#' + id).toggleClass("flipped");
+
+    // Animate the element
+    oj.AnimationUtils['flipOut'](elem, {
+        'flipTarget': 'children',
+        'persist': 'all',
+        'startAngle': startAngle,
+        'endAngle': endAngle
+    });
+
+    // self.showingFront = !self.showingFront;
+self.showingBack = true;
+};
+
+self.buttonClickclose = function(id) {
+	
+    var elem = document.getElementById(id);
+	
+    // Determine startAngle and endAngle
+    var startAngle = self.showingBack ? '180deg' : '0deg';
+    var endAngle = self.showingBack ? '0deg' : '180deg';
+
+    // Animate the element
+    oj.AnimationUtils['flipOut'](elem, {
+        'flipTarget': 'children',
+        'persist': 'all',
+        'startAngle': startAngle,
+        'endAngle': endAngle
+    });
+$('.cardcontainer').removeClass("flipped");
+    // self.showingFront = !self.showingFront;
+
+};
 			self.textarea_data1 = ko.observable();
 			self.textarea_data2 = ko.observable();
 			self.textarea_data3 = ko.observable();

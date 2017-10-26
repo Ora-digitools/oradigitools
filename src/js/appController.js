@@ -102,6 +102,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       ];
       var footer2 = [
          new footerLink('Home', 'home', '?root=ecacertification'),
+		 new footerLink('Cloud Solution Hub Site', 'solutionhub', 'http://solutionengineering.us.oracle.com/site/', '_blank'),
+		 new footerLink('Solution Engineering Site', 'solutionengineering', 'http://solutionengineering.us.oracle.com/excellence/', '_blank'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),
          new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
@@ -109,6 +111,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       ];
 	  var footer3 = [
            new footerLink('Home', 'home', '?root=ecaenablement'),
+		   new footerLink('Cloud Solution Hub Site', 'solutionhub', 'http://solutionengineering.us.oracle.com/site/', '_blank'),
+		 new footerLink('Solution Engineering Site', 'solutionengineering', 'http://solutionengineering.us.oracle.com/excellence/', '_blank'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),        
          new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),

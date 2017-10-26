@@ -25,162 +25,201 @@
 </div>
 <!-- End Slider -->
 <div class="row">
-  <div class="container">
-    <div class="ecarow col-xs-12"> 
-      <!--blocks -->
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="ecablocks">
-          <div class="ecablocks_t"><img src="css/images/approach-icon.png"><br>
-            Our Certification<br>
-            Approach </div>
-          <div class="ecablocks_b">
-          <div data-bind="click:certificationApproachOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:textarea_data1"></p>
-          </div>
-        </div>
-      </div>
-      <!--blocks --> 
-      <!--blocks -->
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="ecablocks">
-          <div class="ecablocks_t"><img src="css/images/process-icon.png"><br>
-            Our Certification <br>
-            Process 
-            Approach </div>
-          <div class="ecablocks_b">
-          <div data-bind="click:certificationProcessApproachOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:textarea_data2"></p>
-          </div>
-        </div>
-      </div>
-      <!--blocks -->
-     <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="ecablocks">
-          <div class="ecablocks_t"><img src="css/images/responsibilities-icon.png"><br>
-            Your Certification <br>
-            Responsibilities </div>
-          <div class="ecablocks_b">
-          <div data-bind="click:certificationResponsibilitiesOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:textarea_data3"></p>
-          </div>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="ecablocks">
-          <div class="ecablocks_t"><img src="css/images/board-area-icon.png"><br>
-            Certification <br>
-            Board Area </div>
-          <div class="ecablocks_b">
-          <div data-bind="click:certificationBoardAreaOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:textarea_data4"></p>
+<div class="toprow">
+<div class="container">
+  <div class="ecarow col-xs-12"> 
+    <!--blocks -->
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="certifyecablocks">
+        <div id="animationDemo">
+          <div id="animatable1" class="cardcontainer"> 
+            
+            <!-- back face of card -->
+            <div class="cardface backside oj-animation-backface" data-bind="click:buttonClickclose.bind($data, 'animatable1')">
+              <div class="ecablocks_b" >
+                <div data-bind="click:certificationApproachOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+                <p data-bind="html:textarea_data1"></p>
+               
+              </div>
+            </div>
+            
+            <!-- front face of card -->
+            <div class="cardface certifyblock1">
+              <div class="ecablocks_t" data-bind="click:buttonClick.bind($data, 'animatable1')"> Our Certification<br>
+                Approach </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!--blocks --> 
+    <!--blocks -->
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="certifyecablocks">
+        <div id="animationDemo">
+          <div id="animatable2" class="cardcontainer"> 
+            
+            <!-- back face of card -->
+            <div class="cardface backside oj-animation-backface" data-bind="click:buttonClickclose.bind($data, 'animatable2')">
+              <div class="ecablocks_b" >
+                <div data-bind="click:certificationProcessApproachOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:textarea_data2"></p>
+               
+              </div>
+            </div>
+            
+            <!-- front face of card -->
+            <div class="cardface certifyblock2" >
+              <div class="ecablocks_t" data-bind="click:buttonClick.bind($data, 'animatable2')">  Our Certification <br>
+            Process 
+            Approach </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--blocks --> 
+    <!--blocks -->
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="certifyecablocks">
+        <div id="animationDemo">
+          <div id="animatable3" class="cardcontainer"> 
+            
+            <!-- back face of card -->
+            <div class="cardface backside oj-animation-backface" data-bind="click:buttonClickclose.bind($data, 'animatable3')">
+              <div class="ecablocks_b" >
+                <div data-bind="click:certificationResponsibilitiesOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:textarea_data3"></p>
+                
+              </div>
+            </div>
+            
+            <!-- front face of card -->
+            <div class="cardface certifyblock3" data-bind="click:buttonClick.bind($data, 'animatable3')">
+              <div class="ecablocks_t" >  Your Certification <br>
+            Responsibilities </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--blocks --> 
+    <!--blocks -->
+    <div class="col-xs-12 col-md-6 col-lg-3">
+      <div class="certifyecablocks">
+        <div id="animationDemo">
+          <div id="animatable4" class="cardcontainer"> 
+            
+            <!-- back face of card -->
+            <div class="cardface backside oj-animation-backface" data-bind="click:buttonClickclose.bind($data, 'animatable4')">
+              <div class="ecablocks_b" >
+                <div data-bind="click:certificationBoardAreaOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:textarea_data4"></p>
+             
+              </div>
+            </div>
+            
+            <!-- front face of card -->
+            <div class="cardface certifyblock4">
+              <div class="ecablocks_t" data-bind="click:buttonClick.bind($data, 'animatable4')">  Certification <br>
+            Board Area  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+   </div>
+    <!--blocks -->
+    <div class="container">
     <div class="ecarow col-xs-12">
       <div class="col-lg-3">
         <div class="cert_calendar">
           <div class="cert_calendar_t"><img src="css/images/calendar-icon.png">&nbsp;Certification Calendar</div>
-          
-          <div class="cert_calendar_b"> <div data-bind="click:certificationCalendarOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <div class="cert_calendar_b">
+            <div data-bind="click:certificationCalendarOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
             <p data-bind="html:certification_caledar_text"></p>
-         
           </div>
         </div>
       </div>
-       <div class="col-lg-9">
+      <div class="col-lg-9">
         <div class="processmodel_c col-sm-12">
-         <div class="col-sm-12 processmodel_h">
-        ECA CERTIFICATION PROCESS MODEL
-        </div>
-         <div class="col-sm-12 haligncenterm">
-        <div class="col-sm-3">
-        <div class="org_block process_allblocks">
-        <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>Qualify</a>
-        </div>
-        
-        </div>
-        <div class="col-sm-3">
-       <div class="blue_block process_allblocks">
-        <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>Nominate</a>
-        </div>
-        </div>
-        <div class="col-sm-3">
-        <div class="green_block process_allblocks">
-      <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>Certify</a>
-        </div>
-        </div>
-
-         <div class="col-sm-3 ecalboardshow">
-        <div class="maroon_block process_allblocks">
-      <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>ECA Board</a>
-        </div>
-        </div>
-
-        </div>
+          <div class="col-sm-12 processmodel_h"> ECA CERTIFICATION PROCESS MODEL </div>
+          <div class="col-sm-12 haligncenterm">
+            <div class="col-sm-3">
+              <div class="org_block process_allblocks"> <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>
+                Qualify</a> </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="blue_block process_allblocks"> <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>
+                Nominate</a> </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="green_block process_allblocks"> <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>
+                Certify</a> </div>
+            </div>
+            <div class="col-sm-3 ecalboardshow">
+              <div class="maroon_block process_allblocks"> <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>
+                ECA Board</a> </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-  <div id="dialogWrapper">
+
+<div id="dialogWrapper">
   <div style="display:none" id="certificationApproachDialog" title="Edit Our Certification Approach" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea id="txt1" style="height:250px;width:100%" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea id="txt1" style="height:250px;width:100%" data-bind="value:textarea_data1, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_approach"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certificationProcessApproachDialog" title="Edit Our Certification Process Approach " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:textarea_data2, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_process_approach"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:textarea_data2, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:edit_certification_process_approach"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certificationResponsibilitiesDialog" title="Edit Your Certification 
 Responsibilities" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:textarea_data3, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_responsibilities"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:textarea_data3, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_responsibilities"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certificationBoardAreaDialog" title="Edit Certification 
 Board Area" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:textarea_data4, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_board_area"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:textarea_data4, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certification_board_area"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certificationCalendarDialog" title="Edit Certification Caledar" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certification_caledar_text, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:save_certification_caledar"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certification_caledar_text, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:save_certification_caledar"> </button>
+    </div>
   </div>
- 
-
 </div>

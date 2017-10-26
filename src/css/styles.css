@@ -1892,6 +1892,105 @@ padding:5px;
 	
 .ecalogo img{
 	float:left;}
+	
+.cardcontainer {
+  width: 100%;
+  height: 329px;
+  
+}
+
+.ecacardcontainer,.salescardcontainer {
+  width: 100%;
+  height: 175px;
+  
+}
+
+.certifyecablocks,.ecaopsblocks{
+	position: relative;
+    	}
+	
+.cardface {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  backface-visibility: hidden;
+  box-sizing: border-box; 
+  padding: 10px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  
+}
+.certifyblock1 {
+	background-image: url(images/certification_approach.jpg);
+}
+.certifyblock2 {
+	background-image: url(images/certification_process.jpg);
+}
+.certifyblock3 {
+	background-image: url(images/certification_responsibility.jpg);
+}
+.certifyblock4 {
+	background-image: url(images/certification_board_area.jpg);
+}
+
+.ecaopsblock1 {
+	background-image: url(images/engagement_mngmnt.jpg);
+}
+
+.ecaopsblock2 {
+	background-image: url(images/resource_mngmnt.jpg);
+}
+
+.ecaopsblock3 {
+	background-image: url(images/time.jpg);
+}
+.salesblock1 {
+	background-image: url(images/sales_strategy.jpg);
+}
+
+.salesblock2 {
+	background-image: url(images/cloud_positioning.jpg);
+}
+
+.salesblock3 {
+	background-image: url(images/cloud_value.jpg);
+}
+.backside {
+  transform: rotateY(180deg);
+   background-image: none;
+   background-color:#fff;
+   border:2px solid #bababa;
+   cursor:pointer;
+   
+}
+
+.cardcontainer .ecablocks_t,.ecacardcontainer .ecablocks_t,.salescardcontainer .ecablocks_t{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	background:rgba(0,0,0,0.6);
+	color:#fff;
+	font-size:18px;
+	font-weight:normal;	
+	cursor:pointer;
+	}
+
+.cardcontainer .ecablocks_b,.ecacardcontainer .ecablocks_b,.salescardcontainer .ecablocks_b{
+	padding-top:0px;
+	}
+.cardcontainer .toprow,.ecacardcontainer .toprow,.salescardcontainer .toprow{
+	background:#efefef;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-top:30px;
+}
+
+.cardcontainer .toprow .ecarow {
+	margin-top:0px;}	
 
 @media (min-width: 1500px) {
 .container {
@@ -2071,6 +2170,10 @@ padding:5px;
 .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab {
 	border: 1px solid #fff;
 }
+.certifyecablocks{
+	
+    margin-bottom: 40px;
+	}
 }
 @media (max-width: 1023px) {
 .ecablocks_link{
@@ -2431,7 +2534,7 @@ ul#profiletabs {
 
 @media (max-width: 1600px) {
 .linkdesc {
-	max-width:400px;
+	max-width:420px;
 	
 }
 }
@@ -2515,7 +2618,4 @@ padding: 0;
 	margin-bottom:20px;
 	
 	}	
-	
-	
-
 	
