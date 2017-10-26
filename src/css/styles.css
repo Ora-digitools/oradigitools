@@ -1899,10 +1899,15 @@ padding:5px;
   
 }
 
-.ecacardcontainer,.salescardcontainer {
+.ecacardcontainer {
+  width: 100%;
+  height: 238px;
+  
+}
+
+.salescardcontainer {
   width: 100%;
   height: 175px;
-  
 }
 
 .certifyecablocks,.ecaopsblocks{
