@@ -2179,6 +2179,8 @@ padding:5px;
 	
     margin-bottom: 40px;
 	}
+	
+	
 }
 @media (max-width: 1023px) {
 .ecablocks_link{
@@ -2219,6 +2221,11 @@ padding:5px;
 	padding-top: 5px;
 	padding-left: 0px;
 	float: left;
+	}
+	
+	.certifyecablocks, .ecaopsblocks{
+	margin-bottom:20px;
+	
 	}
 }
 
@@ -2465,6 +2472,12 @@ ul#profiletabs {
 	min-height: 45px;
 	width: 45px;
 }
+}
+
+@media (max-width: 439px) {
+.salescardcontainer{
+	min-height:250px;
+	}
 }
 
 @media (min-width: 440px) and (max-width: 578px) {

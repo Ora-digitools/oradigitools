@@ -93,6 +93,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       }
 	  var footer1 = [
          new footerLink('Home', 'home', '?root=home'),
+		 new footerLink('ECA Certification', 'ecacertification', '?root=ecacertification'),
+		 new footerLink('ECA Enablement', 'ecaenablement', '?root=ecaenablement'),
+		 new footerLink('Solution Engineering Site', 'solutionengineering', 'http://solutionengineering.us.oracle.com/excellence/', '_blank'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Cloud Accelerate Site', 'cloudaccelerate', 'http://innovate.us.oracle.com/cloudaccelerate/', '_blank'),
         new footerLink('Contact Site Administrator', 'contactadmin', 'mailto:cloudsolutionhub_siteadmin_us_grp@oracle.com'),
@@ -168,6 +171,12 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
                 function()
                 {
                   return ('footer/' + self.currentModule());
+                }
+              );
+			  self.contactPath = ko.pureComputed(
+                function()
+                {
+                  return ('contact/' + self.currentModule());
                 }
               );
 
