@@ -31,135 +31,113 @@
 <div class="row">
   <div class="container">
     <div class="ecarow col-sm-12"> 
+     <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p> 
       <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Build Your Customer Solution Summary
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:nominateFirstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+     
+      <oj-accordion id="accordionPage" multiple>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Build Your Customer Solution Summary?</div>
+          <div class="certifyecablocks_t">
+            <div class="certifyecablocks_h_2"> Guidance </div>
+             <div data-bind="click:nominateFirstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:nominate_first_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ecablocks_link">
-        <div data-bind="click:nominateFirstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+          <div data-bind="click:nominateFirstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
         <p data-bind="html:nominate_first_link_data"></p>
-
+          </div>
         </div>
-      </div>
-      <!--blocks --> 
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Complete the Qualification Checklist
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:nominateSecondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Complete the Qualification Checklist</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+          <div data-bind="click:nominateSecondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:nominate_second_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:nominateSecondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+          <div data-bind="click:nominateSecondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
         <p data-bind="html:nominate_second_link_data"></p>
+          </div>
         </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Publish Your Engagement Deliverables
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:nominateThirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Publish Your Engagement Deliverables</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:nominateThirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:nominate_third_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:nominateThirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+          <div data-bind="click:nominateThirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
        <p data-bind="html:nominate_third_link_data"></p>
+          </div>
         </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Define and Present your Contributions
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:nominateFourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Define and Present your Contributions</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:nominateFourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:nominate_fourth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:nominateFourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+          <div data-bind="click:nominateFourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
         <p data-bind="html:nominate_fourth_link_data"></p>
+          </div>
         </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Manager Review and Validation
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:nominateFifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        
+        </oj-collapsible>
+         <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Manager Review and Validation</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+          <div data-bind="click:nominateFifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:nominate_fifth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:nominateFifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+          <div data-bind="click:nominateFifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
         <p data-bind="html:nominate_fifth_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Submit Nomination for Certification 
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:nominateSixthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:nominate_sixth_guidance_data"></p>
-              </div>
-            </div>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:nominateSixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Submit Nomination for Certification</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+        <div data-bind="click:nominateSixthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+                <p data-bind="html:nominate_sixth_guidance_data"></p>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+          <div data-bind="click:nominateSixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
         <p data-bind="html:nominate_sixth_link_data"></p>
-
+          </div>
         </div>
-      </div>
+          </div>
+        </oj-collapsible>
+      </oj-accordion>
+      </div>  
+      <!--blocks --> 
+    
+      <!--blocks --> 
+    
     </div>
   </div>
 </div>

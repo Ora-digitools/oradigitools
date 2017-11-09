@@ -1,0 +1,40 @@
+html, body, .container{
+    height: 100%;
+}
+.navbar-brand{
+    color:#454545;
+    float: none;
+}
+.navbar-brand > img{
+    width: 32%;
+    display: inline-block;
+    margin-top: -4px;
+}
+.panel {
+    margin-top: 25%;
+}
+.ochat-widget-mini .ochat-header{
+	background:transparent !important;
+	}
+.ochat-widget-mini .openicon .ochat-icon{
+	background-size: cover !important;
+display: inline-block;
+height: 71px !important;
+padding: 0;
+pointer-events: none;
+width: 80px !important;
+	}	
+.ochat-widget-mini .openicon .ochat-right{
+	bottom:0px !important;
+	top: auto !important;
+	padding:0px;}	
+
+.ochat-widget.ochat-widget-mini{
+	background-color: rgba(0, 0, 0, 0) !important;
+border: medium none !important;
+
+	}	
+
+.ochat-profile-pic{
+	width:35px !important;
+	height:35px !important;}

@@ -6,7 +6,7 @@
  * Your application specific code will go here
  */
 define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarraytabledatasource',
-  'ojs/ojoffcanvas','ojs/ojtoolbar', 'ojs/ojmenu','ojs/ojnavigationlist',],
+  'ojs/ojoffcanvas','ojs/ojtoolbar', 'ojs/ojmenu','ojs/ojnavigationlist','chatbotsettings','chatbotwidget'],
   function (oj, ko) {
     function ControllerViewModel() {
       var self = this;
@@ -105,7 +105,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       ];
       var footer2 = [
          new footerLink('Home', 'home', '?root=ecacertification'),
-		 new footerLink('Cloud Solution Hub Site', 'solutionhub', 'http://solutionengineering.us.oracle.com/site/', '_blank'),
+		 new footerLink('Cloud Solution Hub Site', 'solutionhub', 'http://solutionengineering.us.oracle.com/hubs/', '_blank'),
 		 new footerLink('Solution Engineering Site', 'solutionengineering', 'http://solutionengineering.us.oracle.com/excellence/', '_blank'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),
@@ -114,7 +114,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       ];
 	  var footer3 = [
            new footerLink('Home', 'home', '?root=ecaenablement'),
-		   new footerLink('Cloud Solution Hub Site', 'solutionhub', 'http://solutionengineering.us.oracle.com/site/', '_blank'),
+		   new footerLink('Cloud Solution Hub Site', 'solutionhub', 'http://solutionengineering.us.oracle.com/hubs/', '_blank'),
 		 new footerLink('Solution Engineering Site', 'solutionengineering', 'http://solutionengineering.us.oracle.com/excellence/', '_blank'),
         new footerLink('ECAL Site', 'ecal', 'http://innovate.us.oracle.com/ecal/', '_blank'),
         new footerLink('Contact PMO Team', 'contactpmo', 'mailto:eca-pmo-grp_us_grp@oracle.com'),        
@@ -156,7 +156,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 	  else{
 		   this.currentModule = ko.observable("cloudhubs");
 		   self.headerLinks = ko.observableArray(arr1);
-		   self.footerLinks = ko.observableArray(footer1);  
+		   self.footerLinks = ko.observableArray(footer1); 
+		   document.getElementsByClassName('ochat-widget')[0].style.display = "none"; 
 		   
 	  }
 	  

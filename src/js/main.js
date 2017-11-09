@@ -55,6 +55,9 @@ requirejs.config(
     'proj4': 'libs/proj4js/dist/proj4-src',
     'css': 'libs/require-css/css',
 	 'bootjs': 'libs/bootjs/bootstrap-tabcollapse',
+	 'chatbotsettings': 'libs/chatbot/settings',
+	 'chatbotwidget': 'libs/chatbot/ochat-widget',
+	 
   }
   //endinjector
   ,

@@ -13,8 +13,7 @@
               <div class="col-sm-12">
                 <div class="col-sm-3 col-lg-6 text-center leftImage"> </div>
                 <div class="col-sm-9 col-lg-6">
-                  <h1><em>                                              Certification and the Certification Event 
- </em> </h1>
+                  <h1><em> Certification and the Certification Event </em> </h1>
                 </div>
               </div>
             </div>
@@ -25,292 +24,249 @@
   </div>
 </div>
 <div class="row text-center team"><img src="css/images/certify-icon-orange.png" class="img-responsive">
-  <h1><span class="borderBottom">Certification Overview 
-
- </span></h1>
+  <h1><span class="borderBottom">Certification Overview </span></h1>
 </div>
 <!-- End Slider -->
 <div class="row">
   <div class="container">
-    <div class="ecarow col-sm-12">
-    <div class="aligncenter">
+    <div class="ecarow col-sm-12"> 
+     <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p> 
       <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Nomination Acceptance and Scheduling
-
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:certifyFirstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:certify_first_guidance_data"></p>
-              </div>
-            </div>
+      <div class="col-md-12 nopadding"> 
+      <oj-accordion id="accordionPage" multiple>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Nomination Acceptance and Scheduling </div>
+          <div class="certifyecablocks_t">
+            <div class="certifyecablocks_h_2"> Guidance </div>
+             <div data-bind="click:certifyFirstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:certify_first_guidance_data"></p>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+            <div data-bind="click:certifyFirstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:certify_first_link_data"></p>
           </div>
         </div>
-        <div class="ecablocks_link">
-        <div data-bind="click:certifyFirstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:certify_first_link_data"></p>
         </div>
-      </div>
-      <!--blocks --> 
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> My Certification Board
-
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:certifySecondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">My Certification Board</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:certifySecondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:certify_second_guidance_data"></p>
-              </div>
-            </div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+           <div data-bind="click:certifySecondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:certify_second_link_data"></p>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:certifySecondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:certify_second_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Preparing for the Board
-
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:certifyThirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Preparing for the Board</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+          <div data-bind="click:certifyThirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:certify_third_guidance_data"></p>
-              </div>
-            </div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+           <div data-bind="click:certifyThirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:certify_third_link_data"></p>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:certifyThirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:certify_third_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> What to Expect?
-
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:certifyFourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">What to Expect?</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+          <div data-bind="click:certifyFourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:certify_fourth_guidance_data"></p>
-              </div>
-            </div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+           <div data-bind="click:certifyFourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:certify_fourth_link_data"></p>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:certifyFourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:certify_fourth_link_data"></p>
         </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Certification Board Findings 
-
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:certifyFifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        
+        </oj-collapsible>
+         <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Certification Board Findings</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+         <div data-bind="click:certifyFifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
                 <p data-bind="html:certify_fifth_guidance_data"></p>
-              </div>
-            </div>
+           <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+          <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+          <div>
+           <div data-bind="click:certifyFifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:certify_fifth_link_data"></p>
           </div>
         </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:certifyFifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:certify_fifth_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      </div>
+          </div>
+        </oj-collapsible>
+        
+      </oj-accordion>
+      </div>  </div>
+      <!--blocks --> 
+    
+      <!--blocks --> 
+    
     </div>
   </div>
 </div>
 
-<!-- new code for dialog box-->
+<!-- new code for dialog box--> 
 <!-- first 6 blocks edit templates -->
 <div id="dialogWrapper">
   <div style="display:none" id="certifyFirstGuidanceDialog" title="Edit Nomination Acceptance and Scheduling " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_first_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_first_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_first_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_first_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifySecondGuidanceDialog" title="Edit My Certification Board " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_second_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_second_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_second_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_second_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifyThirdGuidanceDialog" title="Edit Preparing for the Board " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_third_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_third_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_third_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_third_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifyFourthGuidanceDialog" title="Edit What to Expect?" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fourth_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_fourth_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fourth_guidance"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifyFifthGuidanceDialog" title="Edit Certification Board Findings " 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fifth_guidance"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_fifth_guidance_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fifth_guidance"> </button>
+    </div>
   </div>
-
 </div>
-
 
 <!-- EDIT LINKS-->
 <div id="dialogWrapper">
   <div style="display:none" id="certifyFirstLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_first_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_first_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_first_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_first_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifySecondLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_second_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_second_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_second_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_second_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifyThirdLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_third_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_third_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_third_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_third_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifyFourthLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fourth_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fourth_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_fourth_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fourth_link"> </button>
+    </div>
   </div>
-
   <div style="display:none" id="certifyFifthLinkDialog" title="Edit this link" 
        data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
-     <div class="oj-dialog-body"><textarea style="height:250px;width:100%" data-bind="value:certify_fifth_link_data, valueUpdate: 'keyup'"></textarea>
-       
-     </div>
-     <div class="oj-dialog-footer">
-        <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
-        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fifth_link"> </button>
-      </div>
+    <div class="oj-dialog-body">
+      <textarea style="height:250px;width:100%" data-bind="value:certify_fifth_link_data, valueUpdate: 'keyup'"></textarea>
+    </div>
+    <div class="oj-dialog-footer"> 
+      <!-- <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:closebutton1"> </button> -->
+      <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'SAVE'},click:certify_edit_fifth_link"> </button>
+    </div>
   </div>
-
 </div>
-
 
 <!-- last 4 blocks for eca -->
 <div class="row">
   <div class="container">
-    <div class="col-sm-12 processmodel_h">
-        ECA CERTIFICATION PROCESS MODEL
-    </div>
-    
+    <div class="col-sm-12 processmodel_h"> ECA CERTIFICATION PROCESS MODEL </div>
     <div class="col-sm-12 ">
-    <div class="processmodel_c col-sm-12"><div class=" haligncenter">
-      <div class="col-sm-3">
-        <div class="org_block process_allblocks inactive-eca-block">
-          <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>Qualify</a>
+      <div class="processmodel_c col-sm-12">
+        <div class=" haligncenter">
+          <div class="col-sm-3">
+            <div class="org_block process_allblocks inactive-eca-block"> <a href="?root=eca-qualify"><img src="css/images/qualify-icon.png"><br>
+              Qualify</a> </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="blue_block process_allblocks inactive-eca-block"> <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>
+              Nominate</a> </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="green_block process_allblocks active-eca-block"> <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>
+              Certify</a> </div>
+          </div>
+          <div class="col-sm-3 ecalboardshow">
+            <div class="maroon_block process_allblocks inactive-eca-block"> <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>
+              ECA Board</a> </div>
+          </div>
         </div>
-      </div>
-      
-       <div class="col-sm-3">
-       <div class="blue_block process_allblocks inactive-eca-block">
-        <a href="?root=eca-nominate"> <img src="css/images/nominate-icon.png"><br>Nominate</a>
-       </div>
-      </div>
-     
-      <div class="col-sm-3">
-        <div class="green_block process_allblocks active-eca-block">
-          <a href="?root=eca-certify"> <img src="css/images/certify-icon.png"><br>Certify</a>
-        </div>
-      </div>
- <div class="col-sm-3 ecalboardshow">
-        <div class="maroon_block process_allblocks inactive-eca-block">
-          <a href="?root=eca-board"> <img src="css/images/board-area-icon-white.png"><br>ECA Board</a>
-        </div>
-      </div>
-      </div>
-      <div class=" haligncenter">
+        <div class=" haligncenter">
           <div class="col-sm-12">
             <div class="lb_block"> <a href="?root=ecacertification">ECA Certification Overview</a> </div>
           </div>
-         
         </div>
+      </div>
     </div>
-  </div> 
-</div>
+  </div>
 </div>

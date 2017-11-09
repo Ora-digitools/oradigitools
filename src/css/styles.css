@@ -1055,6 +1055,7 @@ li.oj-selected .oj-tabs-gen-div {
 	color: #F29111;
 	font-weight: bold;
 }
+
 .watchvdo {
 	background: rgb(147, 150, 153) none repeat scroll 0 0;
 	border: medium none;
@@ -1743,6 +1744,10 @@ padding:5px;
 	padding: 5px;
 	margin-bottom: 40px;
 }
+.certifyecablocks_o {
+	padding: 5px;
+	margin-bottom: 20px;
+}
 .ecablocks img {
 	margin-bottom: 10px;
 }
@@ -1753,11 +1758,35 @@ padding:5px;
 	font-weight: bold;
 	
 }
+.certifyecablocks_t {
+	background: rgb(222, 224, 224) url("images/certifybg_new.png") no-repeat scroll right top;
+	text-align: left;
+	padding: 15px !important;
+	font-weight: normal;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	margin-bottom:20px;
+	
+}
 .ecablocks_tsmall{
 	min-height:auto;
 	}
 .ecablocks_h{
 	min-height:60px;
+}
+
+.certifyecablocks_h{
+	min-height:auto;
+	font-weight:bold;
+	font-size:16px;
+	margin-bottom:10px;
+	
+}
+.certifyecablocks_h_2{
+	min-height:auto;
+	font-weight:bold;
+	font-size:18px;
+	margin-bottom:20px;
+	
 }
 .ecablocks1_t {
 	background: #EFEFEF;
@@ -1876,6 +1905,8 @@ padding:5px;
 	}	
 .edit_icon {
 	cursor: pointer;
+	position:absolute;
+	right:0px;
 }
 .edit_icon img {
 	margin-bottom: 0px;
@@ -1910,6 +1941,11 @@ padding:5px;
   height: 175px;
 }
 
+.ecaenablementcardcontainer {
+  width: 100%;
+  height: 260px;
+}
+
 .certifyecablocks,.ecaopsblocks{
 	position: relative;
     	}
@@ -1926,8 +1962,14 @@ padding:5px;
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
+  cursor:pointer;
   
 }
+
+.ecaenablementcardcontainer .cardface{
+	background-size:contain;
+	
+	}
 .certifyblock1 {
 	background-image: url(images/certification_approach.jpg);
 }
@@ -1962,6 +2004,18 @@ padding:5px;
 
 .salesblock3 {
 	background-image: url(images/cloud_value.jpg);
+}
+
+.enableblock1 {
+	background-image: url(images/our_enablement_strategy.jpg);
+}
+
+.enableblock2 {
+	background-image: url(images/our_delivery_approach.jpg);
+}
+
+.enableblock3 {
+	background-image: url(images/your_enablement.jpg);
 }
 .backside {
   transform: rotateY(180deg);
@@ -2225,7 +2279,6 @@ padding:5px;
 	
 	.certifyecablocks, .ecaopsblocks{
 	margin-bottom:20px;
-	
 	}
 }
 
@@ -2387,6 +2440,14 @@ ul#profiletabs {
 .nav {
 	padding-left: 15px;
 }
+.ecaenablementcardcontainer .cardface{
+	background-size:cover;
+}
+.enableblock1,.enableblock2{
+	background-position:left}
+	
+.enableblock3{
+	background-position:center;}
 }
 
 @media (max-width: 375px) {
@@ -2475,7 +2536,7 @@ ul#profiletabs {
 }
 
 @media (max-width: 439px) {
-.salescardcontainer{
+.salescardcontainer,.cardcontainer,.ecacardcontainer{
 	min-height:250px;
 	}
 }

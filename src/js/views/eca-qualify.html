@@ -30,127 +30,113 @@
 <div class="row">
   <div class="container">
     <div class="ecarow col-sm-12"> 
+     <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p> 
       <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> What is your Role in Solution Engineering?</div>
-          <div class="ecablocks_button">
+      <div class="col-md-12 nopadding"> 
+      <oj-accordion id="accordionPage" multiple>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h"> What is your Role in Solution Engineering?</div>
+          <div class="certifyecablocks_t">
+            <div class="certifyecablocks_h_2"> Guidance </div>
+            <div data-bind="click:firstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+            <p data-bind="html:first_guidance_data"></p>
             <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
               <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
               <div>
-                <div data-bind="click:firstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:first_guidance_data"></p>
+                <div data-bind="click:firstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+                <p data-bind="html:first_link_data"></p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="ecablocks_link">
-          <div data-bind="click:firstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-          <p data-bind="html:first_link_data"></p>
-        </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Do I and My Manager believe I have the Core Skills?</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:secondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:second_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:secondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+              <p data-bind="html:second_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Am I an ECA Practitioner?</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:thirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:third_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:thirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+              <p data-bind="html:third_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Have I Produced Cloud  Success?</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:fourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:fourth_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:fourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+              <p data-bind="html:fourth_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+         <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">What Are My ECA Community Contributions?</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+          <div data-bind="click:fifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:fifth_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:fifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+              <p data-bind="html:fifth_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Can I Sell and Do I Lead?</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+         <div data-bind="click:sixthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:sixth_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:sixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+              <p data-bind="html:sixth_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+      </oj-accordion>
       </div>
       <!--blocks --> 
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Do I and My Manager believe I have the Core Skills?</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:secondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:second_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ecablocks_link">
-          <div data-bind="click:secondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-          <p data-bind="html:second_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Am I an ECA Practitioner?</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:thirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:third_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ecablocks_link">
-          <div data-bind="click:thirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-          <p data-bind="html:third_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Have I Produced Cloud  Success?</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:fourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:fourth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ecablocks_link">
-          <div data-bind="click:fourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-          <p data-bind="html:fourth_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> What Are My ECA Community Contributions?</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:fifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:fifth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ecablocks_link">
-          <div data-bind="click:fifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-          <p data-bind="html:fifth_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Can I Sell and Do I Lead?</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:sixthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:sixth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ecablocks_link">
-          <div data-bind="click:sixthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-          <p data-bind="html:sixth_link_data"></p>
-        </div>
-      </div>
+    
+      <!--blocks --> 
+    
     </div>
   </div>
 </div>
@@ -307,11 +293,10 @@
               ECA Board</a> </div>
           </div>
         </div>
-         <div class=" haligncenter">
+        <div class=" haligncenter">
           <div class="col-sm-12">
             <div class="lb_block"> <a href="?root=ecacertification">ECA Certification Overview</a> </div>
           </div>
-         
         </div>
       </div>
     </div>
