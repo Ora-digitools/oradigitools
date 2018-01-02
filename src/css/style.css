@@ -1,40 +1,113 @@
-html, body, .container{
-    height: 100%;
+html, body, .container {
+height: 100%;
 }
-.navbar-brand{
-    color:#454545;
-    float: none;
+.navbar-brand {
+color: #454545;
+float: none;
 }
-.navbar-brand > img{
-    width: 32%;
-    display: inline-block;
-    margin-top: -4px;
+.navbar-brand > img {
+width: 32%;
+display: inline-block;
+margin-top: -4px;
 }
 .panel {
-    margin-top: 25%;
+margin-top: 25%;
 }
-.ochat-widget-mini .ochat-header{
-	background:transparent !important;
-	}
-.ochat-widget-mini .openicon .ochat-icon{
-	background-size: cover !important;
+.ochat-widget-mini .ochat-header {
+background: transparent !important;
+height: 80px !important;
+}
+.ochat-header {
+background: #1c3142 !important
+}
+.ochat-widget-mini .openicon .ochat-icon {
+background-size: cover !important;
 display: inline-block;
-height: 71px !important;
+height: 80px !important;
 padding: 0;
 pointer-events: none;
-width: 80px !important;
-	}	
-.ochat-widget-mini .openicon .ochat-right{
-	bottom:0px !important;
-	top: auto !important;
-	padding:0px;}	
-
-.ochat-widget.ochat-widget-mini{
-	background-color: rgba(0, 0, 0, 0) !important;
+width: 90px !important;
+}
+.ochat-widget-mini .openicon .ochat-right {
+bottom: 0px !important;
+top: auto !important;
+padding: 0px;
+right: 15px !important
+}
+.ochat-widget.ochat-widget-mini {
+background-color: rgba(0, 0, 0, 0) !important;
 border: medium none !important;
+height: 80px !important;
+box-shadow: none !important;
+}
+.ochat-profile-pic {
+width: 35px !important;
+height: 35px !important;
+}
+.ochat-chat-scroll-content {
+margin-bottom: 70px !important;
+}
+.ochat-widget {
+z-index: 1000 !important;
 
-	}	
+resize: both;
+overflow: hidden;
 
-.ochat-profile-pic{
-	width:35px !important;
-	height:35px !important;}
+border-radius: 10px !important;
+border: 5px solid rgb(27, 48, 65)!important;
+-webkit-box-shadow: 0px -1px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -1px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px -1px 5px 0px rgba(0,0,0,0.75);
+}
+.closeicon button {
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+.ochat-header::after, .ochat-footer::before {
+background: none !important
+}
+.ochat-header-title {
+cursor: move;
+font-weight: normal;
+}
+.ochat-chat-bubble.ochat-right, .ochat-chat-bubble.ochat-right::before {
+background: rgb(123, 149, 162)!important
+}
+.ochat_chat {
+color: #1b3041 !important
+}
+.ochat-choices-list a {
+border-bottom: 1px solid rgb(204, 204, 204);
+color: rgb(137, 136, 136) !important;
+}
+.ochat-card {
+background: rgb(236, 236, 236) none repeat scroll 0 0 !important;
+}
+a.href-link,a.ochat-button  {
+color: rgb(123, 149, 162) !important;
+}
+
+@media (max-width: 414px) {
+.ochat-widget {
+width: 100% !important;
+height: 85% !important;
+z-index: 1000 !important;
+}
+.ochat-widget.ochat-widget-mini {
+height: 80px !important;
+}
+.ochat-header .ochat-button.ochat-right{
+	right:15px !important;
+	}
+.ochat-chat-message-input{
+	font-size:16px;}	
+}
+@media (min-width: 767px) and (max-width: 1024px){
+.ochat-widget {
+width: 80% !important;
+height: 85% !important;
+}
+}

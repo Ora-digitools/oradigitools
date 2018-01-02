@@ -11,6 +11,11 @@ var dorefresh=true;
 var uuid="";
 var profilelink = '';
 var ismentor=false;
+
+
+
+
+
 /**
  * Example of Require.js boostrap javascript
  */
@@ -23,12 +28,12 @@ var ismentor=false;
 
 
 /* for live */
-//var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
-//var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
+var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
+var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
 
 /* for dev */	
-var eca_get_url="http://10.146.89.49:7003/ords/seaas/seaas/GetEcaContent";
-var eca_put_url="http://10.146.89.49:7003/ords/seaas/seaas/PutEcaData";	
+//var eca_get_url="http://10.146.89.49:7003/ords/seaas/seaas/GetEcaContent";
+//var eca_put_url="http://10.146.89.49:7003/ords/seaas/seaas/PutEcaData";	
 
 var selecteduuid="";
 requirejs.config(
@@ -79,7 +84,7 @@ requirejs.config(
  * objects in the callback
  */
 require(['ojs/ojcore', 'knockout',  'appController', 'ojs/ojknockout',
-  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojconveyorbelt', 'ojs/ojtabs', 'ojs/ojdialog'],
+  'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojfilmstrip', 'ojs/ojradioset', 'ojs/ojconveyorbelt', 'ojs/ojtabs', 'ojs/ojdialog','chatbotsettings','chatbotwidget'],
   function (oj, ko, app) { // this callback gets executed when all required modules are loaded
 
     $(function() {

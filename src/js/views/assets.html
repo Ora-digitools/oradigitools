@@ -4,9 +4,7 @@
   <h1><span class="borderBottom">OUR ASSETS</span></h1>
 </div>
 <div class="container container_services">
-  <div class="row">
-    
-  </div>
+  <div class="row"> </div>
   <div class="row assetsrow">
     <div class="">
       <div class="col-xs-6 col-sm-4 col-lg-2 asset_c"><a href="http://innovate.us.oracle.com/sb/" target="_blank"><img src="css/images/tech-asset-bank-icon.png" ></a><br>
@@ -22,14 +20,83 @@
       <div class="col-xs-6 col-sm-4 col-lg-2 asset_c"><a href="http://innovate.us.oracle.com/CloudGPS" target="_blank"><img src="css/images/gps.png"></a><br>
         <br>
         Cloud GPS</div>
-        <div class="col-xs-6 col-sm-4 col-lg-2 asset_c"><a href="http://innovate.us.oracle.com/cloudaccelerate/digital.html" target="_blank"><img src="css/images/digital-accelerate-icon-green.png"></a><br>
+      <div class="col-xs-6 col-sm-4 col-lg-2 asset_c"><a href="http://innovate.us.oracle.com/cloudaccelerate/digital.html" target="_blank"><img src="css/images/digital-accelerate-icon-green.png"></a><br>
         <br>
         Digital Accelerate</div>
-        <div class="col-xs-6 col-sm-4 col-lg-2 asset_c"><a href="http://launch.oracle.com/?opcworkshops" target="_blank"><img src="css/images/OPC-workshop-icon.png"></a><br>
+      <div class="col-xs-6 col-sm-4 col-lg-2 asset_c"><a href="http://launch.oracle.com/?opcworkshops" target="_blank"><img src="css/images/OPC-workshop-icon.png"></a><br>
         <br>
         OPC Workshops</div>
     </div>
   </div>
- 
-
+  <div class="row text-center team">
+    <h1><span class="borderBottom">Featured Solutions</span></h1>
+    <div class="row featuredassetscontainer">
+      <div class="col-md-2 col-md-offset-2 featuredassets"><a href="https://otube.oracle.com/media/0_up7e77e5" target="_blank"><img src="css/images/otube-screen-ar.jpg" class="img-responsive"></a>
+        <p><a href="https://otube.oracle.com/media/0_up7e77e5" target="_blank">Augmented Reality</a></p>
+      </div>
+      <div class="col-md-2 featuredassets"><a href="https://otube.oracle.com/media/Fastfood+Chatbot+-Wendy%27s/0_ritnlny8" target="_blank"><img src="css/images/chatbot-resize.jpg" class="img-responsive"></a>
+        <p><a href="https://otube.oracle.com/media/Fastfood+Chatbot+-Wendy%27s/0_ritnlny8" target="_blank">Chatbot</a></p>
+      </div>
+      <div class="col-md-2 featuredassets"><a href="https://otube.oracle.com/media/Oracle+does+Virtual+Reality%21/0_jfpabl2n" target="_blank"><img src="css/images/vr-image.jpg" class="img-responsive"></a>
+        <p><a href="https://otube.oracle.com/media/Oracle+does+Virtual+Reality%21/0_jfpabl2n" target="_blank">Virtual Reality</a></p>
+      </div>
+      <div class="col-md-2 featuredassets"><a href="https://oradocs-corp.documents.us2.oraclecloud.com/documents/fileview/D051460C44095162F958CEFDF6C3FF17C1177A968060/_Bank_On-boarding_with_Block_Chain_V1.1.pptx" target="_blank"><img src="css/images/otube-screen-bc.jpg" class="img-responsive"></a>
+        <p><a href="https://oradocs-corp.documents.us2.oraclecloud.com/documents/fileview/D051460C44095162F958CEFDF6C3FF17C1177A968060/_Bank_On-boarding_with_Block_Chain_V1.1.pptx" target="_blank">Blockchain</a></p>
+      </div>
+    </div>
+    <div class="row featuredassetscontainer" data-bind="foreach: allassets">
+    <!-- ko if: $index() < 5 -->
+     <!-- ko if: $index() === 0 && asset_name.length > 0 -->
+      <div class="col-md-2 col-md-offset-2 featuredassets">
+      <i class="fa fa-pencil-square-o admin" aria-hidden="true" style="cursor: pointer" title="Edit community call" data-bind="click:function(){$parent.editassets(this)}"
+                            target="_blank">
+                            </i><a href="#" target="_blank"><img data-bind="attr:{src: imageurl}" class="img-responsive"></a>
+        <p><a href="#" target="_blank"><span data-bind='text: asset_name'></span></a></p>
+      </div>
+       <!-- /ko -->
+        <!-- ko if: $index() > 0 && asset_name.length > 0 -->
+      <div class="col-md-2  featuredassets">
+      <i class="fa fa-pencil-square-o admin" aria-hidden="true" style="cursor: pointer" title="Edit community call" data-bind="click:function(){$parent.editassets(this)}"
+                            target="_blank">
+                            </i><a href="#" target="_blank"><img data-bind="attr:{src: imageurl}" class="img-responsive"></a>
+        <p><a href="#" target="_blank"><span data-bind='text: asset_name'></span></a></p>
+      </div>
+      <!-- /ko -->
+      <!-- /ko -->
+    </div>
+  </div>
+</div>
+<div style="display:none" id="editasset" title="Edit Asset" data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width: 80%;'}}">
+  <div class="dialogbodymain">
+    <div class="dialogbody"> 
+      <!-- body start -->
+      <div class="col-sm-12 inputrow nopadding editassetform" data-bind="with:createAsset">
+        <div class="col-sm-6 nopadding">
+          <div class="col-sm-12 nopadding">
+            <label>Name</label>
+          </div>
+          <div class="col-sm-12 nopadding">
+            <input type="text" placeholder="" data-bind="ojComponent: {component: 'ojInputText',value:asset_name}" />
+          </div>
+          <div class="col-sm-12 nopadding">
+            <label>Link</label>
+          </div>
+          <div class="col-sm-12 nopadding">
+            <input type="text" placeholder="" data-bind="ojComponent: {component: 'ojInputText',value:asset_name}" />
+          </div>
+        </div>
+        <div class="col-sm-6 nopadding">
+          <div class="col-sm-12 nopadding">
+            <label>Image</label>
+          </div>
+          <div class="col-sm-12 nopadding">
+            <input class="btn btn-default file" id="input-1" type="file" onchange="saveImage(event)">
+            <div id="preview"><img data-bind="attr: { 'src': imageurl }" style="max-width:200px"></div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-default apply col-sm-2 savebutton" data-dismiss="modal" data-bind="click:saveAsset">Save</button>
+      <!-- body end --> 
+    </div>
+  </div>
 </div>

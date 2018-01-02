@@ -6,10 +6,6 @@
  var ssoemail;
  var email;
  var username;
- var uuid;
- var holder = null;
- var holdernew = null; 
-var imgurl;
  getemailfromcookie = function () {
 
         // debuglog('~~~~~~~~~~~~~~~  COOKIE  ~~~~~~~~~~~~~');
@@ -31,44 +27,14 @@ var imgurl;
         if (email) {
            username = email.substring(0, email.indexOf("."));
         } else {
-           username = "User";
+           username = "1";
         }
-		
-		
-      } 
-	  getemailfromcookie();
+      }
 	  
-	 $.ajax({
-            url: "http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEmployeeType/"+email,
-           dataType: 'json',
-			 async: false, 
-            success: function (data) {				
-				        
-			  var allitems = data;
-	$.each(allitems.items, function(index, items) {
-		$.ajax({
-            url: "http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetFullUserProfile/"+items.uuid,
-           dataType: 'json',
-			 async: false, 
-            success: function (data) {				
-			var profiledetails = data;
-			$.each(profiledetails.items, function(index, items) {
-				
-				imgurl = items.profile_photo_url;
-
-			});
-            }
-          }).fail(function (xhr, textStatus, err) {
-            console.log(err);
-          });
-	});
-            }
-          }).fail(function (xhr, textStatus, err) {
-            console.log(err);
-          });
-
-
- 
+	   
+	    getemailfromcookie();
+		
+		
 var ochatWidgetSettings = {
     uri: 'ws://129.158.71.78:8888/chat/ws',// bot chat server uri
     channel: 'F085BAEB-A7AF-4356-B957-B34133BB7A5E',// bot channel id
@@ -94,4 +60,16 @@ var ochatWidgetSettings = {
     //
 };
 
-console.log(ochatWidgetSettings);
+
+
+/*for resize
+
+$(document).on('click', '.closeicon button', function () {
+    // your function here
+	document.getElementById('dragclass').style.position = 'fixed';
+document.getElementById('dragclass').style.bottom = 0; //or whatever 
+document.getElementById('dragclass').style.right = 0; // or whatever
+document.getElementById('dragclass').style.left = 'auto';
+	document.getElementById('dragclass').style.top = 'auto';
+});
+*/

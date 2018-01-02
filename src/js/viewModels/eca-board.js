@@ -1,12 +1,21 @@
 define(['ojs/ojcore', 'knockout', 'jquery',
-        'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton'],
+        'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton','ojs/ojaccordion'],
     function (oj, ko, $) {
         function CatalogViewModel() {
 			this.currentModule = ko.observable("second");
             var self = this;
-
-   			var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
-			var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
+self.expandall = function(){
+				$("#accordionPage").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+				$("#accordionPage1").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+				$("#accordionPage2").ojAccordion( { "expanded": [0,1,2,3,4,5,6,8,9,10], "multiple": true } );
+				}
+				self.closeall = function(){
+				$("#accordionPage").ojAccordion( { "expanded": [], "multiple": true } );
+				$("#accordionPage1").ojAccordion( { "expanded": [], "multiple": true } );
+				$("#accordionPage2").ojAccordion( { "expanded": [], "multiple": true } );
+				}
+   			//var eca_get_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEcaContent";
+			//var eca_put_url="http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/PutEcaData";
 						  
 			self.board_first_guidance_data = ko.observable();
 			self.board_second_guidance_data = ko.observable();

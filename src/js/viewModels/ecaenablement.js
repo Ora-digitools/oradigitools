@@ -1,5 +1,5 @@
 define(['ojs/ojcore', 'knockout', 'jquery',
-        'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton', 'ojs/ojdialog','ojs/ojdialog','ojs/ojdialog','chatbotsettings','chatbotwidget'],
+        'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/ojradioset','ojs/ojcollapsible','ojs/ojbutton', 'ojs/ojdialog','ojs/ojdialog','ojs/ojdialog'],
 	function (oj, ko, $) {
         function CatalogViewModel() {
 

@@ -139,6 +139,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 		  this.currentModule = ko.observable("eca");
 		  self.headerLinks = ko.observableArray(arr2);  
 		  self.footerLinks = ko.observableArray(footer2);  
+		   document.getElementsByClassName('ochat-widget')[0].style.display = "none"; 
 		 
 	  }
 	  else if(res[1] == "ecaenablement" || res[1] == "salesstrategy" || res[1] == "ecacore" || res[1] == "ecaops")
@@ -152,6 +153,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
 		   this.currentModule = ko.observable("eca");
 		  self.headerLinks = ko.observableArray(arr2);  
 		  self.footerLinks = ko.observableArray(footer4);  
+		  // document.getElementsByClassName('ochat-widget')[0].style.display = "none"; 
 		   }
 	  else{
 		   this.currentModule = ko.observable("cloudhubs");

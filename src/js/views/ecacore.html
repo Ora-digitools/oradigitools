@@ -58,23 +58,24 @@
             <li class="col-xs-4 active nopadding ecacorelinks"><div class="tabheading oj-sm-12">ECAL 101
               <div class="orangtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div></div>
               <div class="oj-sm-12 linkdesc sales_desc"><div data-bind="click:ecacoreECALBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:ecacore_enablement_block_ecal"></p></div>
+            </div>
             </li>
             <li class="col-xs-4 active nopadding ecacorelinks"><div class="tabheading oj-sm-12">Cloud Architecture Skills
               <div class="orangtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div></div>
               <div class="oj-sm-12 linkdesc sales_desc"><div data-bind="click:ecacoreCASBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:ecacore_enablement_block_cas"></p></div>
+            </div>
             </li>
             <li class="col-xs-4 active nopadding ecacorelinks"><div class="tabheading oj-sm-12">ECA Cloud Solutions
               <div class="orangtab arrowdown"><span class="glyphicon glyphicon-chevron-down"></span></div></div>
               <div class="oj-sm-12 linkdesc sales_desc"><div data-bind="click:ecacoreECSBlockOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-            <p data-bind="html:ecacore_enablement_block_ecs"></p></div>
+            </div>
             </li>
           
           </ul>
           
           <!-- tab contents -->
-          <div id="tabs-1" class="margintop30 col-sm-12 nopaddingxs">
+          <div id="tabs-1" class=" col-sm-12 nopaddingxs">
+          <p data-bind="html:ecacore_enablement_block_ecal"></p>
          <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
           <a href="#" data-bind="click:closeall">Close All</a></p> 
             <oj-accordion id="accordionPage" multiple >
@@ -104,7 +105,8 @@
               </oj-collapsible>
             </oj-accordion>
           </div>
-          <div id="tabs-2" class="margintop30 col-sm-12 nopaddingxs fadeIn">
+          <div id="tabs-2" class=" col-sm-12 nopaddingxs fadeIn">
+          <p data-bind="html:ecacore_enablement_block_cas"></p>
           <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
           <a href="#" data-bind="click:closeall">Close All</a></p>
             <oj-accordion id="accordionPage1" multiple>
@@ -195,7 +197,8 @@
               </oj-collapsible>
             </oj-accordion>
           </div>
-          <div id="tabs-3" class="nopaddingxs margintop30 col-sm-12 fade in"> 
+          <div id="tabs-3" class="nopaddingxs  col-sm-12 fade in"> 
+          <p data-bind="html:ecacore_enablement_block_ecs"></p>
           <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
           <a href="#" data-bind="click:closeall">Close All</a></p>
            <oj-accordion id="accordionPage2" multiple>

@@ -6,10 +6,6 @@
  var ssoemail;
  var email;
  var username;
- var uuid;
- var holder = null;
- var holdernew = null; 
-var imgurl;
  getemailfromcookie = function () {
 
         // debuglog('~~~~~~~~~~~~~~~  COOKIE  ~~~~~~~~~~~~~');
@@ -31,44 +27,14 @@ var imgurl;
         if (email) {
            username = email.substring(0, email.indexOf("."));
         } else {
-           username = "User";
+           username = "1";
         }
-		
-		
-      } 
-	  getemailfromcookie();
+      }
 	  
-	 $.ajax({
-            url: "http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetEmployeeType/"+email,
-           dataType: 'json',
-			 async: false, 
-            success: function (data) {				
-				        
-			  var allitems = data;
-	$.each(allitems.items, function(index, items) {
-		$.ajax({
-            url: "http://solutionengineering.us.oracle.com:7003/ords/seaas/seaas/GetFullUserProfile/"+items.uuid,
-           dataType: 'json',
-			 async: false, 
-            success: function (data) {				
-			var profiledetails = data;
-			$.each(profiledetails.items, function(index, items) {
-				
-				imgurl = items.profile_photo_url;
-
-			});
-            }
-          }).fail(function (xhr, textStatus, err) {
-            console.log(err);
-          });
-	});
-            }
-          }).fail(function (xhr, textStatus, err) {
-            console.log(err);
-          });
-
-
- 
+	   
+	    getemailfromcookie();
+		
+		
 var ochatWidgetSettings = {
     uri: 'ws://129.158.71.78:8888/chat/ws',// bot chat server uri
     channel: 'F085BAEB-A7AF-4356-B957-B34133BB7A5E',// bot channel id
@@ -94,4 +60,56 @@ var ochatWidgetSettings = {
     //
 };
 
-console.log(ochatWidgetSettings);
+/*for drag*/
+dragElement(document.getElementById(("dragclass")));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "chatheader")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "chatheader").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+/*for resize
+
+$(document).on('click', '.closeicon button', function () {
+    // your function here
+	document.getElementById('dragclass').style.position = 'fixed';
+document.getElementById('dragclass').style.bottom = 0; //or whatever 
+document.getElementById('dragclass').style.right = 0; // or whatever
+document.getElementById('dragclass').style.left = 'auto';
+	document.getElementById('dragclass').style.top = 'auto';
+});
+*/

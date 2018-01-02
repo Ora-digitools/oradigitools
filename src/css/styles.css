@@ -557,6 +557,7 @@ footer {
 	border: none;
 	padding: 5px 20px;
 	margin-top: 20px;
+	margin-bottom:20px;
 }
 .apply {
 	background: #dfe4e7;
@@ -565,6 +566,7 @@ footer {
 	border: none;
 	padding: 10px 30px;
 	margin-top: 20px;
+	margin-bottom:20px;
 }
 #navDrawer {
 	background: #324b5c;
@@ -669,6 +671,7 @@ li.oj-selected .oj-tabs-gen-div {
 	opacity: 1;
 	background: none;
 }
+
 .oj-select {
 	font-size: inherit
 }
@@ -1908,6 +1911,9 @@ padding:5px;
 	position:absolute;
 	right:0px;
 }
+.linkdesc  .edit_icon{
+	position:relative !important;
+	}
 .edit_icon img {
 	margin-bottom: 0px;
 	background: #dee0e0;
@@ -2233,8 +2239,7 @@ padding:5px;
 	
     margin-bottom: 40px;
 	}
-	
-	
+
 }
 @media (max-width: 1023px) {
 .ecablocks_link{
@@ -2280,6 +2285,11 @@ padding:5px;
 	.certifyecablocks, .ecaopsblocks{
 	margin-bottom:20px;
 	}
+		
+	.tabheading{
+	line-height:21px;}	
+	.oj-tabs a{
+		padding:0px;}
 }
 
 @media (max-width: 767px) {
@@ -2628,6 +2638,16 @@ ul#profiletabs {
 	max-height: 60px;
 	min-height: 60px;
 }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+.oj-conveyorbelt-content-container{
+	flex:unset;
+	width:100%;
+	}
+
 }
 
 @media (min-width: 992px) and (max-width: 1280px) {
@@ -2698,3 +2718,23 @@ padding: 0;
 	
 	}	
 	
+.featuredassets img{
+	margin-bottom:10px;
+	}	
+
+.featuredassetscontainer{
+	margin-top:40px;}
+	
+.dialogbody{
+	padding:20px;
+	}	
+.editassetform .oj-inputtext{
+	max-width:80%;
+	margin-bottom:20px;
+	}
+	
+.editassetform input[type="file"]{
+	margin-bottom:20px;
+	}
+.savebutton{
+	float:right;}			

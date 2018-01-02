@@ -27,119 +27,101 @@
   <h1><span class="borderBottom">What Does the Board Do? 
  </span></h1>
 </div>
-<!-- End Slider -->
 <div class="row">
   <div class="container">
     <div class="ecarow col-sm-12"> 
-    <div class="haligncenterm"> 
+     <p align="right"><a href="#" data-bind="click:expandall">Expand All</a> /
+          <a href="#" data-bind="click:closeall">Close All</a></p> 
       <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h">Board Role and Responsibilities
-</div>
-          <div class="ecablocks_button">
+      <div class="col-md-12 nopadding"> 
+      <oj-accordion id="accordionPage" multiple>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h"> Board Role and Responsibilities</div>
+          <div class="certifyecablocks_t">
+            <div class="certifyecablocks_h_2"> Guidance </div>
+             <div data-bind="click:boardFirstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+                <p data-bind="html:board_first_guidance_data"></p>
             <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
               <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
               <div>
-                <div data-bind="click:boardFirstGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:board_first_guidance_data"></p>
+                <div data-bind="click:boardFirstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        <p data-bind="html:board_first_link_data"></p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="ecablocks_link">
-        <div data-bind="click:boardFirstLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:board_first_link_data"></p>
-        </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Certification Criteria</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:boardSecondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:board_second_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+             <div data-bind="click:boardSecondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+       <p data-bind="html:board_second_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Board Scheduling / Board Attendance</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:boardThirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:board_third_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:boardThirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        <p data-bind="html:board_third_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+        <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Nominations for Review </div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+           <div data-bind="click:boardFourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:board_fourth_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+             <div data-bind="click:boardFourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        <p data-bind="html:board_fourth_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+         <oj-collapsible id="c1">
+          <div class="certifyecablocks_h">Board Event Schedule and Evaluation Resources</div>
+          <div class="certifyecablocks_t">
+          <div class="certifyecablocks_h_2"> Guidance </div>
+          <div data-bind="click:boardFifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+          <p data-bind="html:board_fifth_guidance_data"></p>
+          <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
+            <button class="guidancebutton" id= "button"
+            data-bind="ojComponent: { component: 'ojButton', label: 'Additional Details ' }"> </button>
+            <div>
+              <div data-bind="click:boardFifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
+        <p data-bind="html:board_fifth_link_data"></p>
+            </div>
+          </div>
+          </div>
+        </oj-collapsible>
+       
+      </oj-accordion>
       </div>
       <!--blocks --> 
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Certification Criteria
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:boardSecondGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:board_second_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:boardSecondLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-       <p data-bind="html:board_second_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Board Scheduling / Board Attendance
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:boardThirdGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:board_third_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:boardThirdLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:board_third_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Nominations for Review 
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:boardFourthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:board_fourth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:boardFourthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:board_fourth_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      <div class="col-md-6 col-lg-2 nopadding ecablocks_o">
-        <div class="ecablocks_t">
-          <div class="ecablocks_h"> Board Event Schedule and Evaluation Resources
-</div>
-          <div class="ecablocks_button">
-            <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible'}">
-              <button class="guidancebutton" id= "button"
-            data-bind="ojComponent: { component: 'ojButton', label: 'Guidance' }"> </button>
-              <div>
-                <div data-bind="click:boardFifthGuidanceEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-                <p data-bind="html:board_fifth_guidance_data"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="ecablocks_link">
-        <div data-bind="click:boardFifthLinkEditOpen" class="edit_icon col-xs-12 ecaladminshow"><img src="css/images/edit_icon.png"></div>
-        <p data-bind="html:board_fifth_link_data"></p>
-        </div>
-      </div>
-      <!--blocks -->
-      </div>
+    
+      <!--blocks --> 
+    
     </div>
   </div>
 </div>
